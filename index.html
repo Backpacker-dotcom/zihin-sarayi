@@ -168,6 +168,20 @@ a.btn{text-decoration:none;text-align:center}.wa{background:#25d366;color:#08240
 .qa .cm{max-width:100%;margin:6px 0}.qa-a{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.qa-a .btn{margin:0;width:auto}
 .ncard summary{cursor:pointer;list-style:none}.ncard[open] summary{margin-bottom:6px}
 nav button{font-size:10px}nav i{font-size:18px}
+
+.edbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-end;margin:-4px 0 10px}.edbar .ednote{margin:0;flex:1}
+.edc{border-color:var(--gold)}.edh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.edh span{font-size:12px;color:var(--mut)}
+.edl{display:grid;gap:4px;margin:10px 0;max-height:60vh;overflow-y:auto}
+.edr{display:flex;gap:8px;align-items:center;background:#0e0c17;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.edr .grow{cursor:pointer;min-width:0}.edr b{display:block;font-weight:600;font-size:14px;overflow-wrap:anywhere}.edr span{display:block;font-size:13px;color:var(--mut)}
+.edr.hd{background:#2a2317;border-color:#5a4a26}.edr.hd b{color:var(--gold)}
+.edr.on{flex-direction:column;align-items:stretch;border-color:var(--gold)}.edr.on input{margin-top:0}
+.edb{display:flex;gap:2px;flex:none}.edb button{width:30px;height:30px;border-radius:8px;font-size:14px;color:var(--mut)}.edb button:hover{background:#262240}
+.eda{display:flex;flex-wrap:wrap;gap:6px}.eda .btn{margin:0;width:auto}
+.eadd{display:grid;gap:6px;border-top:1px solid var(--line);padding-top:10px}.eadd input,.eadd select{margin-top:0}
+.eds{display:grid;gap:0}.eds .btn[disabled]{opacity:.4}
+.nsr{display:grid;grid-template-columns:90px 1fr;gap:8px}.nsr input{margin-top:6px}
+.hidw{opacity:.45}.wedit{display:grid;gap:6px;margin-top:8px}.wedit input{margin-top:0}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -3076,7 +3090,7 @@ const normS=s=>{s=norm(s);CONTR.forEach(([a,b])=>{s=s.split(a).join(b)});return 
 /* ---------- SRS ---------- */
 const dueList=()=>WORDS.filter(w=>S.c[w.w]&&S.c[w.w].d<=today()).map(w=>w.i);
 const newToday=()=>Object.values(S.c).filter(c=>c.b===today()).length;
-const nextNew=n=>WORDS.filter(w=>!S.c[w.w]).slice(0,n).map(w=>w.i);
+const nextNew=n=>WORDS.filter(w=>!S.c[w.w]&&!w.hid).slice(0,n).map(w=>w.i);
 const known=()=>Object.values(S.c).filter(c=>c.r>0).length;
 function nextI(c,q){if(q==0)return 0;if(q==1)return Math.max(1,Math.round(c.i*1.2));
   if(q==2)return c.r==0?1:c.r==1?3:Math.round(c.i*c.e);return c.r==0?3:Math.round(Math.max(c.i,1)*c.e*1.3)}
@@ -3158,7 +3172,7 @@ function vPalace(){
     const placed=ids.filter(i=>S.c[WORDS[i].w]);
     return `<div class="bar"><button class="back" onclick="V.room=null;render()">‹ Saray</button><span class="grow">${r+1}. Oda · ${THEMES[r%THEMES.length]}</span></div>
     ${storeWarn()}<p class="note">Her satır bu odadaki bir durak. Kelimeyi o eşyanın üstünde canlandır, sahneni kutuya yaz ve kaydet. Odayı hep kapıdan masaya aynı sırayla dolaş.</p>
-    ${ids.map(i=>{const w=WORDS[i],c=S.c[w.w],h=HINT[w.w];return `<div class="loc2 ${c?'':'empty'}"><div class="l2h"><span class="ln">${LOCI[i%10]}</span><b>${esc(w.w)}</b>${spk(w.w)}<span class="grow">${esc(w.t)}</span>${c?`<span class="iv">${fmtI(c.i)}</span>`:''}</div>
+    ${ids.map(i=>{const w=WORDS[i],c=S.c[w.w],h=HINT[w.w];return `<div class="loc2 ${c?'':'empty'} ${w.hid?'hidw':''}"><div class="l2h"><span class="ln">${LOCI[i%10]}</span><b>${esc(w.w)}</b>${spk(w.w)}<span class="grow">${esc(w.t)}${w.hid?' · listeden çıkarıldı':''}</span>${c?`<span class="iv">${fmtI(c.i)}</span>`:''}${canEditC()?`<button class="lnk" onclick="V.wo=V.wo===${i}?null:${i};render()">✏️</button>`:''}</div>${V.wo===i?wordEditRow(i):''}
       ${h?`<div class="mine">${esc(h)}</div>`:''}<textarea id="m${i}" rows="2" placeholder="${LOCI[i%10]} üstünde bu kelimeyle ilgili sahneni yaz…">${c?esc(c.m||''):''}</textarea>
       <div class="l2f"><button class="btn sm" onclick="saveM(${i})">${c?'Kaydet':'Yerleştir ve kaydet'}</button>${V.saved===i?'<span class="okm">✓ Kaydedildi</span>':''}</div></div>`}).join('')}
     ${placed.length?`<button class="btn" onclick="startReview([${placed}])">Bu odada saray turu yap</button>`:''}`}
@@ -3166,7 +3180,7 @@ function vPalace(){
   for(let r=0;r<rooms;r++){const l=WORDS[r*10].l;if(l!=lv){if(lv)h+='</div>';h+=`<h2>${l} Katı</h2><div class="rooms">`;lv=l}
     let p=0,t=0;for(let i=r*10;i<Math.min(WORDS.length,r*10+10);i++){t++;if(S.c[WORDS[i].w])p++}
     h+=`<button class="room ${p==t?'full':p?'part':''}" onclick="V.room=${r};render()"><b>${r+1}</b><span>${THEMES[r%THEMES.length]}</span><i>${p}/${t}</i></button>`}
-  return `<h1 class="pt">Hafıza Sarayı</h1>${storeWarn()}<div class="box gold"><small>NASIL KULLANILIR</small><b>1.</b> Aşağıdan bir odaya dokun. <b>2.</b> Her odada 10 durak var: kapı, askılık, ayna… Her durakta bir kelime bekliyor. <b>3.</b> Kelimeyi o eşyanın üstünde bir sahneyle canlandır, sahneni kutuya yaz, kaydet. <b>4.</b> "Saray turu" ile odayı dolaşıp kendini sına.<p>Sarı çerçeve: yarım kalmış oda · yeşil: tamamlanmış oda. Toplam ${WORDS.length} kelime, ${rooms} oda.</p></div>${h}</div>`}
+  V.nw=V.nw||{w:'',t:''};return `<h1 class="pt">Hafıza Sarayı</h1>${storeWarn()}${canEditC()?`<details class="card ncard"><summary><b>＋ Ekibe özel kelime ekle</b></summary><p class="note">Eklenen kelimeler "Ekip Katı"na yerleşir ve herkesin yeni kelime sırasına girer. Mevcut bir kelimenin Türkçesini değiştirmek için odasını açıp ✏️'ye dokun.</p><div class="nsr"><input id="f-nw-w" placeholder="İngilizce, ör. turndown service" value="${esc(V.nw.w)}" oninput="V.nw.w=this.value"><input id="f-nw-t" placeholder="Türkçe, ör. akşam oda hazırlığı" value="${esc(V.nw.t)}" oninput="V.nw.t=this.value"></div><button class="btn sm" onclick="addWord()">Kelimeyi ekle</button></details>`:''}<div class="box gold"><small>NASIL KULLANILIR</small><b>1.</b> Aşağıdan bir odaya dokun. <b>2.</b> Her odada 10 durak var: kapı, askılık, ayna… Her durakta bir kelime bekliyor. <b>3.</b> Kelimeyi o eşyanın üstünde bir sahneyle canlandır, sahneni kutuya yaz, kaydet. <b>4.</b> "Saray turu" ile odayı dolaşıp kendini sına.<p>Sarı çerçeve: yarım kalmış oda · yeşil: tamamlanmış oda. Toplam ${WORDS.length} kelime, ${rooms} oda.</p></div>${h}</div>`}
 
 const nextG=()=>GRAM.findIndex((g,i)=>!S.g[i]);
 function openG(i){V.tab='gram';V.g={i,step:-1};render()}
@@ -3231,7 +3245,7 @@ function lAns(k){const l=V.ls,q=l.qs[l.qi];if(l.rev)return;
 function lNext(){const l=V.ls;l.qi++;if(l.qi>=l.qs.length)return lFinish();lSetup();render();lAuto()}
 function lFinish(){const l=V.ls,id=LESSONS[l.i].id;l.qi=l.qs.length;l.fin=true;S.ls[id]=Math.max(S.ls[id]||0,l.score);l.gain+=30;addXP(30);S.log[today()]=(S.log[today()]||0)+1;save();render();confetti()}
 function vLesson(){const l=V.ls,L=LESSONS[l.i],back=`<button class="back" onclick="V.ls=null;render()">‹ Dersler</button>`;
-  if(l.qi<0){const body=L.b.slice(0,-1).map(blk).join(''),n=lines(L.b[L.b.length-1][1]).length;
+  if(l.qi<0){let xn=0;const body=L.b.slice(0,-1).map(b=>{if(b[0]!='x')return blk(b);const k=L.id+'~'+(xn++);if(V.ed&&V.ed.key==k)return edView((b[1]||'Örnekler')+' · '+L.t);return blk(b)+(canEditC()?`<div class="edbar">${edNote(b.ed)}<button class="lnk" onclick="edLx('${k}')">✏️ Bu örnekleri düzenle</button></div>`:'')}).join(''),n=lines(L.b[L.b.length-1][1]).length;
     return `<div class="bar">${back}<span class="grow">${LGN(L)}</span></div><h1 class="pt">${L.t}</h1><p class="lead">${L.s}</p><div class="lesson">${body}</div>${T.uid&&!isStaff()?`<button class="btn ghost" onclick="askAbout('${L.id}')">🙋 Bu konuyu hocama sor</button>`:''}<button class="btn" onclick="lStart()">Alıştırmalara geç · ${n} soru →</button>`}
   const n=l.qs.length,top=`<div class="bar">${back}<div class="prog"><i style="width:${100*l.qi/Math.max(n,1)}%"></i></div><span>${l.combo>=3?'🔥 '+l.combo:''}</span></div>`;
   if(l.fin||l.qi>=n){const nx=l.i+1<LESSONS.length&&LESSONS[l.i+1].l==L.l,L2=lvl();
@@ -3315,12 +3329,14 @@ function resetS(b){if(b.dataset.sure){try{localStorage.removeItem(KEY)}catch(e){
 /* ---------- Otel ---------- */
 const hl=s=>s.split('\n').filter(x=>x.trim());
 function vHotel(){
+  if(V.ot!=null&&!HOTEL[V.ot])V.ot=null;
   if(V.ot!=null){const H=HOTEL[V.ot],t=V.otab||0,src=hl(t==0?H.s:H.w);
     return `<div class="bar"><button class="back" onclick="V.ot=null;render()">‹ Otel</button><span class="grow">${H.i} ${H.t}</span></div>
     <div class="seg"><button class="${t==0?'on':''}" onclick="V.otab=0;render()">Cümleler · ${hl(H.s).filter(x=>x[0]!='#').length}</button><button class="${t==1?'on':''}" onclick="V.otab=1;render()">Kelimeler · ${hl(H.w).length}</button></div>
-    <div class="xs">${src.map(r=>{if(r[0]=='#')return `<span class="tag hs">${esc(r.slice(1).trim())}</span>`;const e=r.split(' | ');return `<div class="ex"><div><b>${esc(e[0])}</b><span>${esc(e[1])}</span></div>${spk(e[0])}</div>`}).join('')}</div>`}
+    ${V.ed&&V.ed.key==(t==0?'hs:':'hw:')+H.t?edView(H.t+' · '+(t==0?'cümleler':'kelimeler')):(canEditC()?`<div class="edbar">${edNote(H.ed)}<button class="lnk" onclick="edStart('${t==0?'hs':'hw'}',${esc(JSON.stringify((t==0?'hs:':'hw:')+H.t))},HOTEL[${V.ot}].${t==0?'s':'w'},{t:HOTEL[${V.ot}].t,canReset:${!!H.ed&&!H.cid}})">✏️ Bu listeyi düzenle</button>${H.cid?`<button class="lnk danger" onclick="delSection('${H.cid}',this)">Bölümü sil</button>`:''}</div>`:'')+(src.length?`<div class="xs">${src.map(r=>{if(r[0]=='#')return `<span class="tag hs">${esc(r.slice(1).trim())}</span>`;const e=r.split(' | ');return `<div class="ex"><div><b>${esc(e[0])}</b><span>${esc(e[1]||'')}</span></div>${spk(e[0])}</div>`}).join('')}</div>`:'<p class="note">Bu listede henüz bir şey yok.</p>')}`}
   const ns=HOTEL.reduce((a,H)=>a+hl(H.s).filter(x=>x[0]!='#').length,0),nw=HOTEL.reduce((a,H)=>a+hl(H.w).length,0);
-  return `<h1 class="pt">Otel İngilizcesi</h1><p class="lead">Otelin bölümlerine göre mesleki İngilizce: ${HOTEL.length} bölüm, ${ns} hazır cümle, ${nw} kelime. Her satırı dinleyip sesli tekrar et.</p>
+  V.ns=V.ns||{i:'',t:''};return `<h1 class="pt">Otel İngilizcesi</h1><p class="lead">Otelin bölümlerine göre mesleki İngilizce: ${HOTEL.length} bölüm, ${ns} hazır cümle, ${nw} kelime. Her satırı dinleyip sesli tekrar et.${canEditC()?' Bir bölümü açıp "Bu listeyi düzenle" ile cümle ve kelime ekleyebilir, değiştirebilir ya da silebilirsin.':''}</p>
+  ${canEditC()?`<details class="card ncard"><summary><b>＋ Yeni bölüm ekle</b></summary><div class="nsr"><input id="f-ns-i" placeholder="Simge, ör. 🍹" value="${esc(V.ns.i)}" oninput="V.ns.i=this.value" maxlength="4"><input id="f-ns-t" placeholder="Bölüm adı, ör. Plaj barı" value="${esc(V.ns.t)}" oninput="V.ns.t=this.value"></div><button class="btn sm" onclick="addSection()">Bölümü oluştur</button></details>`:''}
   ${HOTEL.map((H,i)=>`<button class="row" onclick="V.ot=${i};V.otab=0;render();window.scrollTo(0,0)"><div class="num">${H.i}</div><div class="sb"><b>${H.t}</b><span>${hl(H.s).filter(x=>x[0]!='#').length} cümle · ${hl(H.w).length} kelime</span></div></button>`).join('')}`}
 
 /* ---------- Çatı ---------- */
@@ -3372,7 +3388,7 @@ async function tWrite(method,path,val){
   try{return await tReq(method,path,method=='DELETE'?undefined:val)}catch(e){toast('Kaydedilemedi. İnternet bağlantısını kontrol edip tekrar dene.');throw e}}
 const tPut=(p,v)=>tWrite('PUT',p,v),tPatch=(p,v)=>tWrite('PATCH',p,v),tDel=p=>tWrite('DELETE',p);
 
-async function tLoad(){const d=await tReq('GET','');T.D=d||{};T.loaded=true;qaEvents();return T.D}
+async function tLoad(){const d=await tReq('GET','');T.D=d||{};T.loaded=true;qaEvents();applyContent();return T.D}
 function tStream(){if(T.es){try{T.es.close()}catch(e){}T.es=null}if(typeof EventSource=='undefined')return;
   try{const es=new EventSource(tUrl(''));T.es=es;
     const h=ev=>{let m;try{m=JSON.parse(ev.data)}catch(x){return}if(!m||typeof m.path!='string')return;const segs=m.path.split('/');
@@ -3403,7 +3419,7 @@ function tSync(){if(!T.uid||!T.cfg)return;clearTimeout(tSync.h);tSync.h=setTimeo
   if(ps!=T.lastPr){try{await tReq('PUT','progress/'+T.uid,P);T.lastPr=ps}catch(e){}}},2500)}
 
 /* ----- canlı güncellemede yeniden çizim ----- */
-function tChanged(local){qaEvents();badges();clearTimeout(tChanged.h);tChanged.h=setTimeout(()=>{tCheckMe();
+function tChanged(local){qaEvents();const cc=applyContent();badges();if(cc&&!V.sess&&!V.ls&&!V.ex&&!V.ed&&!local&&['otel','palace','gram'].includes(V.tab)){render()}clearTimeout(tChanged.h);tChanged.h=setTimeout(()=>{tCheckMe();
   if(V.tab=='kutu'&&!V.ex)markRead();if(V.tab=='sor')qaMarkSeen();if(V.tab=='panel'&&V.pn&&V.pn.sel&&V.pn.t=='msg')markReadT(V.pn.sel);
   const gate=!T.uid;if(gate||(['kutu','panel','sinav','today','sor'].includes(V.tab)&&!V.ex&&!V.sess&&!V.ls))render()},local?0:150)}
 function badges(){const set=(id,n)=>{const e=document.getElementById(id);if(e){e.textContent=n>9?'9+':n;e.style.display=n?'':'none'}};
@@ -3728,6 +3744,79 @@ function qaEvents(){if(!T.uid||!T.D)return;const seen=T.qaKeys;const now=new Set
     Object.entries(q.r||{}).forEach(([rid,r])=>{if(!seen.has(id+'/'+rid)&&r.f!=T.uid&&(isStaff()||q.f==T.uid))ev.push([uname(r.f)+(isStaff()?' yazdı':' cevapladı'),r.x])})});
   T.qaKeys=now;if(!ev.length)return;
   ev.slice(0,3).forEach(([t,b])=>{toast('🙋 '+t);try{if(typeof Notification!='undefined'&&Notification.permission=='granted'&&document.hidden)new Notification('Zihin Sarayı · '+t,{body:String(b).slice(0,140)})}catch(e){}})}
+
+
+/* ================= İÇERİK DÜZENLEME (yönetici + öğretmen) ================= */
+const HOTEL_BASE=JSON.parse(JSON.stringify(HOTEL));
+const LX_BASE={};LESSONS.forEach(L=>{let n=0;L.b.forEach(b=>{if(b[0]=='x'){LX_BASE[L.id+'~'+n]=b[2];n++}})});
+const WORDS_BASE=WORDS.map(w=>Object.assign({},w));
+const skey=s=>String(s).replace(/[.#$\[\]\/\s]+/g,'_').slice(0,120);
+const canEditC=()=>!!T.uid&&isStaff();
+let CONTENT_SIG='';
+function applyContent(){const C=T.D.content||{},sig=JSON.stringify(C);if(sig==CONTENT_SIG)return false;CONTENT_SIG=sig;
+  HOTEL.length=0;HOTEL_BASE.forEach(H=>{const o=(C.hotel||{})[skey(H.t)];HOTEL.push(o?{i:H.i,t:H.t,s:o.s??H.s,w:o.w??H.w,ed:o}:Object.assign({},H))});
+  Object.entries(C.hotelx||{}).filter(([,x])=>x&&x.t).sort((a,b)=>a[1].at-b[1].at).forEach(([id,x])=>HOTEL.push({i:x.i||'📄',t:x.t,s:x.s||'',w:x.w||'',cid:id,ed:x}));
+  for(let i=EXAMS.length-1;i>=0;i--)if(EXAMS[i].key.startsWith('hc-'))EXAMS.splice(i,1);
+  const pos=EXAMS.findIndex(E=>E.key=='h-all');
+  HOTEL.filter(H=>H.cid&&hl(H.s).filter(r=>r[0]!='#').length>=4).forEach((H,j)=>EXAMS.splice(pos+j,0,{key:'hc-'+H.cid,grp:'Otel İngilizcesi sınavları',t:H.i+' '+H.t,n:12,gen:()=>hotelQs([HOTEL.findIndex(x=>x.cid==H.cid)],12)}));
+  LESSONS.forEach(L=>{let n=0;L.b.forEach(b=>{if(b[0]=='x'){const k=L.id+'~'+n,o=(C.lx||{})[k],base=LX_BASE[k];b[2]=o&&o.x&&o.a==lines(base)[0]?o.x:base;b.ed=o&&o.a==lines(base)[0]?o:null;n++}})});
+  WORDS.length=0;WORDS_BASE.forEach(w=>{const o=(C.words||{})[skey(w.w)];WORDS.push(Object.assign({},w,o?{t:o.t||w.t,hid:!!o.h,ed:o}:{}))});
+  Object.entries(C.wordx||{}).filter(([,x])=>x&&x.w&&x.t).sort((a,b)=>a[1].at-b[1].at).forEach(([id,x])=>WORDS.push({w:x.w,t:x.t,l:'Ekip',i:WORDS.length,cid:id,ed:x}));
+  return true}
+const edNote=o=>o&&o.by?`<p class="note ednote">✏️ ${esc(uname(o.by))} düzenledi · ${fmtT(o.at)}</p>`:'';
+
+/* ----- satır düzenleyici ----- */
+function edParse(text){return hl(text||'').map(r=>r[0]=='#'?{h:1,e:r.slice(1).trim()}:(([e,t])=>({e:e||'',t:t||''}))(r.split(' | ')))}
+const edCompose=L=>L.filter(x=>(x.e||'').trim()).map(x=>x.h?'# '+x.e.trim():x.e.trim().replace(/\s*\|\s*/g,' ')+' | '+(x.t||'').trim().replace(/\s*\|\s*/g,' ')).join('\n');
+function edStart(kind,key,text,meta){V.ed={kind,key,meta:meta||{},L:edParse(text),ei:-1,add:{e:'',t:'',pos:'end'},n0:edCompose(edParse(text))};render()}
+function edCancel(b){if(V.ed&&edCompose(V.ed.L)!=V.ed.n0&&!b.dataset.sure){b.dataset.sure=1;b.textContent='Kaydedilmemiş değişiklikler silinsin mi?';return}V.ed=null;render()}
+function edRowSet(i,k,v){V.ed.L[i][k]=v}
+function edMove(i,d){const L=V.ed.L,j=i+d;if(j<0||j>=L.length)return;[L[i],L[j]]=[L[j],L[i]];render()}
+function edDel(i){V.ed.L.splice(i,1);V.ed.ei=-1;render()}
+function edAdd(head){const E=V.ed,a=E.add;if(head){E.L.push({h:1,e:'Yeni başlık'});E.ei=E.L.length-1;render();return}
+  if(!(a.e||'').trim()||!(a.t||'').trim())return toast('İngilizcesini ve Türkçesini yaz.');
+  const row={e:a.e.trim(),t:a.t.trim()};let at=E.L.length;
+  if(a.pos!=='end'){const hi=+a.pos;at=hi+1;while(at<E.L.length&&!E.L[at].h)at++}
+  E.L.splice(at,0,row);E.add={e:'',t:'',pos:a.pos};render();setTimeout(()=>{const x=document.getElementById('f-add-e');if(x)x.focus()},40)}
+function edView(title){const E=V.ed,heads=E.L.map((x,i)=>x.h?[i,x.e]:null).filter(Boolean),words=E.kind=='hw';
+  const rows=E.L.map((x,i)=>{if(E.ei==i)return x.h?`<div class="edr on"><input id="f-edh-${i}" value="${esc(x.e)}" oninput="edRowSet(${i},'e',this.value)" placeholder="Alt başlık"><div class="eda"><button class="btn sm" onclick="V.ed.ei=-1;render()">Tamam</button></div></div>`
+      :`<div class="edr on"><input id="f-ede-${i}" value="${esc(x.e)}" oninput="edRowSet(${i},'e',this.value)" placeholder="İngilizce"><input id="f-edt-${i}" value="${esc(x.t)}" oninput="edRowSet(${i},'t',this.value)" placeholder="Türkçe"><div class="eda"><button class="btn sm" onclick="V.ed.ei=-1;render()">Tamam</button><button class="btn sm ghost danger" onclick="edDel(${i})">Sil</button></div></div>`;
+    return `<div class="edr ${x.h?'hd':''}"><div class="grow" onclick="V.ed.ei=${i};render()">${x.h?`<b>${esc(x.e)}</b>`:`<b>${esc(x.e)}</b><span>${esc(x.t)}</span>`}</div>
+      <div class="edb"><button title="Yukarı" onclick="edMove(${i},-1)">↑</button><button title="Aşağı" onclick="edMove(${i},1)">↓</button><button title="Düzenle" onclick="V.ed.ei=${i};render()">✏️</button><button title="Sil" onclick="edDel(${i})">🗑</button></div></div>`}).join('');
+  const ch=edCompose(E.L)!=E.n0,cnt=E.L.filter(x=>!x.h).length;
+  return `<div class="card edc"><div class="edh"><b>✏️ ${esc(title)}</b><span>${cnt} ${words?'kelime':'cümle'}${ch?' · kaydedilmedi':''}</span></div>
+  <p class="note">Bir satıra dokunarak düzelt; ↑ ↓ ile sırasını değiştir; 🗑 ile sil. Değişiklikler "Kaydet"e basınca herkese yansır.</p>
+  <div class="edl">${rows||'<p class="note">Henüz satır yok.</p>'}</div>
+  <div class="eadd"><b>Yeni ${words?'kelime':'cümle'} ekle</b><input id="f-add-e" placeholder="İngilizce" value="${esc(E.add.e)}" oninput="V.ed.add.e=this.value"><input id="f-add-t" placeholder="Türkçe" value="${esc(E.add.t)}" oninput="V.ed.add.t=this.value" onkeydown="if(event.key=='Enter')edAdd()">
+    ${heads.length?`<select id="f-add-p" onchange="V.ed.add.pos=this.value"><option value="end">En sona</option>${heads.map(([i,t])=>`<option value="${i}" ${String(E.add.pos)==String(i)?'selected':''}>"${esc(t)}" başlığının altına</option>`).join('')}</select>`:''}
+    <div class="two"><button class="btn sm" onclick="edAdd()">+ Ekle</button>${words?'':'<button class="btn sm ghost" onclick="edAdd(1)">+ Alt başlık</button>'}</div></div>
+  <div class="eds"><button class="btn" onclick="edSave()" ${ch?'':'disabled'}>Kaydet</button><button class="btn ghost" onclick="edCancel(this)">Vazgeç</button>
+  ${E.meta.canReset?`<button class="btn ghost danger" onclick="edReset(this)">Orijinal hâline döndür</button>`:''}</div></div>`}
+async function edSave(){const E=V.ed,text=edCompose(E.L),by=T.uid,at=Date.now();
+  try{if(E.kind=='hs'||E.kind=='hw'){const H=HOTEL.find(x=>x.t==E.meta.t);if(!H)return;const s=E.kind=='hs'?text:H.s,w=E.kind=='hw'?text:H.w;
+      if(H.cid)await tPatch('content/hotelx/'+H.cid,{s,w,by,at});else await tPut('content/hotel/'+skey(H.t),{s,w,by,at})}
+    else if(E.kind=='lx')await tPut('content/lx/'+E.key,{x:text,a:lines(LX_BASE[E.key])[0],by,at});
+    V.ed=null;applyContent();toast('Kaydedildi; herkesin ekranına yansıdı.');render()}catch(e){}}
+async function edReset(b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Tüm düzenlemeler silinsin mi?';return}const E=V.ed;
+  try{if(E.kind=='lx')await tDel('content/lx/'+E.key);else{const H=HOTEL.find(x=>x.t==E.meta.t);await tDel('content/hotel/'+skey(H.t))}V.ed=null;applyContent();toast('Orijinal hâline döndü.');render()}catch(e){}}
+
+/* ----- yeni otel bölümü ----- */
+async function addSection(){const f=V.ns||{},t=(f.t||'').trim();if(!t)return toast('Bölüme bir ad ver.');if(HOTEL.some(H=>H.t==t))return toast('Bu adda bir bölüm zaten var.');
+  const id=genId();try{await tPut('content/hotelx/'+id,{i:(f.i||'').trim()||'📄',t,s:'',w:'',by:T.uid,at:Date.now()});V.ns=null;applyContent();const i=HOTEL.findIndex(H=>H.cid==id);V.ot=i;V.otab=0;edStart('hs','hs:'+t,'',{t});window.scrollTo(0,0)}catch(e){}}
+function delSection(cid,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Bölüm silinsin mi?';return}tDel('content/hotelx/'+cid).then(()=>{V.ot=null;applyContent();render()}).catch(()=>{})}
+
+/* ----- kelimeler ----- */
+async function saveWord(w){const f=(V.we||{})[w]||{},W=WORDS.find(x=>x.w==w);if(!W)return;const t=(f.t??W.t).trim();if(!t)return toast('Türkçesi boş olamaz.');
+  try{if(W.cid)await tPatch('content/wordx/'+W.cid,{t,by:T.uid,at:Date.now()});else await tPut('content/words/'+skey(w),{t,h:!!W.hid,by:T.uid,at:Date.now()});delete V.we[w];V.wo=null;applyContent();toast('Kelime güncellendi.');render()}catch(e){}}
+async function toggleHide(w){const W=WORDS.find(x=>x.w==w);try{await tPut('content/words/'+skey(w),{t:W.t,h:!W.hid,by:T.uid,at:Date.now()});applyContent();render()}catch(e){}}
+function delWord(cid,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Silinsin mi?';return}tDel('content/wordx/'+cid).then(()=>{applyContent();render()}).catch(()=>{})}
+async function addWord(){const f=V.nw||{},w=(f.w||'').trim(),t=(f.t||'').trim();if(!w||!t)return toast('İngilizcesini ve Türkçesini yaz.');
+  if(WORDS.some(x=>x.w.toLowerCase()==w.toLowerCase()))return toast('Bu kelime listede zaten var.');
+  try{await tPut('content/wordx/'+genId(),{w,t,by:T.uid,at:Date.now()});V.nw={w:'',t:''};applyContent();toast('Kelime "Ekip Katı"na eklendi.');render()}catch(e){}}
+function edLx(k){const [id,n]=k.split('~'),L=LESSONS.find(x=>x.id==id);if(!L)return;const b=L.b.filter(x=>x[0]=='x')[+n];if(b)edStart('lx',k,b[2],{canReset:!!b.ed})}
+function wordEditRow(i){const w=WORDS[i];V.we=V.we||{};const f=V.we[w.w]||{};
+  return `<div class="wedit"><input id="f-we-${i}" value="${esc(f.t??w.t)}" oninput="(V.we['${esc(w.w)}']=V.we['${esc(w.w)}']||{}).t=this.value" placeholder="Türkçesi">
+  <div class="eda"><button class="btn sm" onclick="saveWord(${esc(JSON.stringify(w.w))})">Kaydet</button>${w.cid?`<button class="btn sm ghost danger" onclick="delWord('${w.cid}',this)">Sil</button>`:`<button class="btn sm ghost" onclick="toggleHide(${esc(JSON.stringify(w.w))})">${w.hid?'Tekrar göster':'Listeden gizle'}</button>`}<button class="btn sm ghost" onclick="V.wo=null;render()">Kapat</button></div></div>`}
 
 /* ----- açılış ----- */
 (function boot(){const m=/[#&]z=([A-Za-z0-9_-]+)/.exec(location.hash||'');

@@ -182,6 +182,28 @@ nav button{font-size:10px}nav i{font-size:18px}
 .eds{display:grid;gap:0}.eds .btn[disabled]{opacity:.4}
 .nsr{display:grid;grid-template-columns:90px 1fr;gap:8px}.nsr input{margin-top:6px}
 .hidw{opacity:.45}.wedit{display:grid;gap:6px;margin-top:8px}.wedit input{margin-top:0}
+
+.kbtn{background:linear-gradient(90deg,#e2b45c,#f3d38c)}
+.hwc.col{flex-direction:column;align-items:stretch}.hwt{display:flex;gap:10px;align-items:center}
+.hgr{display:grid;grid-template-columns:1fr 70px 1.2fr auto;gap:6px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.hgr input{margin:0;padding:8px}.hgr .btn{margin:0}
+.hgr .grow b{display:block;font-size:14px}.hgr .grow span{font-size:12px;color:var(--mut)}
+.hwc.col>.hgr{grid-template-columns:70px 1fr auto}
+@media(max-width:600px){.hgr{grid-template-columns:70px 1fr auto}.hgr .grow{grid-column:1/-1}}
+table.gb{font-size:13px;min-width:820px}table.gb tr{cursor:pointer}table.gb td,table.gb th{white-space:nowrap}table.gb tr:hover td{background:#211d33}
+.karne{background:#f7f1e3;color:#2a2418;border-radius:6px;padding:22px 18px;font-family:Georgia,serif;box-shadow:0 0 0 6px #e8dcc0,0 0 0 7px #b89b5e;margin:10px 4px 20px}
+.kh{text-align:center;border-bottom:2px double #b89b5e;padding-bottom:10px}.kh small{letter-spacing:3px;font-size:11px;color:#7a6a48}.kh b{display:block;font-size:15px;letter-spacing:1px}
+.kh h2{font:700 32px Georgia,serif;letter-spacing:8px;margin:6px 0 2px;color:#7a2e1f;text-transform:none}.kh span{font-size:13px;color:#6a5a3a}
+.kinfo{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin:12px 0;font-family:system-ui}.kinfo small{display:block;font-size:10px;color:#7a6a48;text-transform:uppercase;letter-spacing:1px}.kinfo b{font-size:14px}
+table.ktab{width:100%;border-collapse:collapse;font-family:system-ui;font-size:13px}.ktab th{background:#e8dcc0;color:#4a3c22;text-align:left;padding:6px}.ktab td{border-bottom:1px solid #d8c9a6;padding:7px 6px;vertical-align:top;color:#2a2418}
+.ktab td:first-child{color:#2a2418;font-weight:600;white-space:normal;width:34%}.kn{text-align:center;width:52px}.kn b{display:block;font:700 22px Georgia,serif;color:#7a2e1f}.kn small{font-size:10px;color:#6a5a3a}
+.kavg{display:flex;justify-content:space-between;align-items:center;margin:12px 0;padding:8px 12px;background:#e8dcc0;border-radius:6px;font-family:system-ui}.kavg b{font:700 24px Georgia,serif;color:#7a2e1f}
+.kstamp{display:block;width:max-content;margin:10px auto;border:3px solid #a3261a;color:#a3261a;font:700 16px system-ui;letter-spacing:2px;padding:8px 16px;border-radius:8px;transform:rotate(-4deg)}
+.kbox{background:#fffaf0;border:1px solid #d8c9a6;border-radius:6px;padding:10px 12px;margin:8px 0;font-size:15px;line-height:1.5}.kbox small{display:block;font:700 10px system-ui;letter-spacing:1.5px;color:#7a6a48;margin-bottom:4px}
+.kbox.kt{border-color:#b89b5e}.kbox.kp{font-style:italic}
+.ksig{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px;text-align:center}.ksig i{display:block;font:italic 20px "Brush Script MT","Segoe Script",cursive;color:#2a3e7a;border-bottom:1px solid #7a6a48;padding-bottom:2px}.ksig small{font:11px system-ui;color:#6a5a3a}
+.kfoot{text-align:center;font:11px system-ui;color:#8a7a58;margin:14px 0 0}
+@media print{body{background:#fff}nav,.noprint,#toast{display:none!important}#app,main{max-width:none;padding:0}.karne{box-shadow:none;margin:0}}
+.hwc .gr b,.res .gr b{display:inline}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -3342,13 +3364,13 @@ function vHotel(){
 /* ---------- Çatı ---------- */
 function curTabs(){const t=[['today','☀','Bugün'],['gram','📖','Ders'],['sinav','📝','Sınav'],['otel','🏨','Otel'],['palace','🏛','Saray']];
   if(T.uid){t.push(['sor','🙋','Sor']);t.push(isStaff()?['panel','🧑‍🏫','Panel']:['kutu','📬','Kutu'])}return t}
-function go(t){V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
+function go(t){V.kv=null;V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
 const needGate=()=>(T.cfg&&!T.uid)||(!T.cfg&&!loadJ('zs_solo',0));
 function render(){const ae=document.activeElement,aid=ae&&ae.id&&/^f-/.test(ae.id)?ae.id:null;let ss=null,se=null;try{ss=ae.selectionStart;se=ae.selectionEnd}catch(e){}
   let v,nav=true;const gate=needGate();
   if(gate){v=vGate();nav=false}
   else{if(V.tab=='panel'&&!isStaff())V.tab='today';if(V.tab=='kutu'&&(!T.uid||isStaff()))V.tab='today';
-    v=V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
+    v=V.kv&&T.uid?vKarneView():V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
     if(V.sess||(V.tab=='sinav'&&V.ex&&!V.ex.done))nav=false}
   if(v==='')return;const app=document.getElementById('app');app.className=!gate&&V.tab=='panel'?'wide':'';
   app.innerHTML=`<main>${v}</main>`+(nav?`<nav>${curTabs().map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><i>${t[1]}</i>${t[2]}${t[0]=='kutu'||t[0]=='panel'||t[0]=='sor'?`<em class="bdg" id="bdg-${t[0]}" style="display:none"></em>`:''}</button>`).join('')}</nav>`:'');
@@ -3433,11 +3455,12 @@ const resultsOf=uid=>Object.entries((T.D.results||{})[uid]||{}).map(([id,r])=>Ob
 const gradeOf=(uid,rid)=>((T.D.grades||{})[uid]||{})[rid];
 const needGrade=uid=>resultsOf(uid).filter(r=>r.open&&!gradeOf(uid,r.id)).length;
 function myHw(){return Object.entries(T.D.homework||{}).map(([id,h])=>Object.assign({id},h)).filter(h=>h.to=='all'||(h.to&&h.to[T.uid])).sort((a,b)=>b.at-a.at)}
-const hwDone=(hid,uid)=>!!(((T.D.hwdone||{})[hid]||{})[uid]);
+const hwRec=(hid,uid)=>((T.D.hwdone||{})[hid]||{})[uid]||null;
+const hwDone=(hid,uid)=>!!(hwRec(hid,uid)||{}).at;
 const newGrades=()=>Object.values((T.D.grades||{})[T.uid]||{}).filter(g=>g.at>(S.gSeen||0)).length;
-const kutuCount=()=>unreadS()+myHw().filter(h=>!hwDone(h.id,T.uid)).length+newGrades();
+const kutuCount=()=>unreadS()+myHw().filter(h=>!h.arch&&!hwDone(h.id,T.uid)).length+newGrades()+newKarne();
 const panelCount=()=>students().reduce((a,[id])=>a+unreadT(id)+needGrade(id),0);
-function markRead(){if(!T.uid)return;let ch=false;if(unreadS()){tPatch('reads/'+T.uid,{s:Date.now()});ch=true}if(newGrades()){S.gSeen=Date.now();save();ch=true}if(ch)badges()}
+function markRead(){if(!T.uid)return;let ch=false;if(newKarne()){S.kSeen=Date.now();ch=true;save()}if(unreadS()){tPatch('reads/'+T.uid,{s:Date.now()});ch=true}if(newGrades()){S.gSeen=Date.now();save();ch=true}if(ch)badges()}
 function markReadT(uid){if(unreadT(uid))tPatch('reads/'+uid,{t:Date.now()})}
 
 /* ----- oturum ----- */
@@ -3497,7 +3520,7 @@ function vGate(){
     <button class="btn ghost" onclick="leaveTeam(this)">Bu cihazı ekip bağlantısından çıkar</button></div>`}
 
 /* ================= SINAVLAR ================= */
-function customExams(){return Object.entries(T.D.exams||{}).map(([id,e])=>Object.assign({id},e)).sort((a,b)=>b.at-a.at)}
+function customExams(all){return Object.entries(T.D.exams||{}).map(([id,e])=>Object.assign({id},e)).filter(e=>all||!e.arch).sort((a,b)=>b.at-a.at)}
 function examByKey(key){const E=EXAMS.find(x=>x.key==key);if(E)return E;
   if(key&&key.startsWith('c-')){const c=(T.D.exams||{})[key.slice(2)];if(c)return {key,t:c.t,grp:'Öğretmenin sınavları',written:(c.qs||[]).some(q=>q.k=='open'),gen:()=>JSON.parse(JSON.stringify(c.qs||[]))}}return null}
 function startExam(key,hw){const E=examByKey(key);if(!E)return toast('Bu sınav artık yok.');const qs=E.gen();if(!qs.length)return toast('Bu sınavda soru yok.');
@@ -3520,7 +3543,7 @@ function exSubmit(){const X=V.ex,items=X.qs.map((q,i)=>{const a=X.ans[i];let g='
   S.exb=S.exb||{};if(R.p!=null)S.exb[X.key]=Math.max(S.exb[X.key]||0,R.p);
   S.exh=(S.exh||[]);S.exh.unshift({key:R.key,t:R.t,at:R.at,c,n:R.n,p:R.p,open});S.exh=S.exh.slice(0,60);
   addXP(10+c*2);S.log[today()]=(S.log[today()]||0)+1;save();
-  const rid=genId();if(T.uid){tPut('results/'+T.uid+'/'+rid,R).catch(()=>{});if(X.hw)tPut('hwdone/'+X.hw+'/'+T.uid,{at:Date.now(),rid}).catch(()=>{})}
+  const rid=genId();if(T.uid){tPut('results/'+T.uid+'/'+rid,R).catch(()=>{});if(X.hw)tPatch('hwdone/'+X.hw+'/'+T.uid,{at:Date.now(),rid}).catch(()=>{});setTimeout(()=>autoKarne(X),400)}
   X.done=R;X.sent=!!T.uid;render();window.scrollTo(0,0);if(R.p!=null&&R.p>=70)confetti()}
 function vExamRun(){const X=V.ex,n=X.qs.length;
   if(X.done){const R=X.done;
@@ -3529,7 +3552,7 @@ function vExamRun(){const X=V.ex,n=X.qs.length;
     ${R.open?`<p>${R.open} yazılı cevabın öğretmenin tarafından değerlendirilecek.</p>`:''}
     <p class="note">${X.sent?'Sonuç öğretmenine gönderildi.':'Sonuç bu cihazda kaydedildi.'}</p></div>
     <h2>Cevapların</h2>${R.items.map((it,i)=>`<div class="rv ${it.ok===true?'good':it.ok===false?'bad':''}"><small>${i+1}. ${esc(it.q)}</small><b>${it.ok===true?'✓':it.ok===false?'✗':'✍'} ${esc(it.g||'— boş —')}</b>${it.ok===false?`<span>Doğrusu: ${esc(it.s)}</span>`:''}</div>`).join('')}
-    <button class="btn" onclick="V.ex=null;render()">Sınavlara dön</button>`}
+    ${X.karne?`<button class="btn kbtn" onclick="openKarne('${T.uid||''}','${X.karne}')">🎓 Karnen çıktı! Hemen gör</button>`:''}<button class="btn ${X.karne?'ghost':''}" onclick="V.ex=null;render()">Sınavlara dön</button>`}
   if(X.confirm){const empty=X.qs.filter((q,i)=>!filled(q,X.ans[i])).length;
     return `<div class="card center"><h3>Sınavı bitir</h3><p>${n-empty}/${n} soruyu cevapladın.${empty?` <b>${empty} soru boş.</b>`:''}</p>
     <button class="btn" onclick="exSubmit()">${T.uid?'Gönder':'Bitir'}</button><button class="btn ghost" onclick="V.ex.confirm=false;render()">Geri dön</button></div>`}
@@ -3553,7 +3576,7 @@ function vSinav(){if(V.ex)return vExamRun();
   if(ce.length)h+=`<h2>Öğretmenin hazırladığı sınavlar</h2>`+ce.map(e=>row('c-'+e.id,e.t,(e.d?e.d+' · ':'')+(e.qs||[]).length+' soru',(e.qs||[]).length)).join('');
   Object.entries(groups).forEach(([g,L])=>{h+=`<h2>${g}</h2>`+L.map(E=>row(E.key,E.t,E.d,E.n)).join('')});
   const mine=T.uid?resultsOf(T.uid):(S.exh||[]).map((x,i)=>Object.assign({id:'l'+i},x));
-  h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>`+(mine.length?mine.slice(0,30).map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
+  h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>`+(mine.length?mine.map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
     return `<div class="res"><div class="grow"><b>${esc(r.t)}</b><span>${fmtT(r.at)}${r.p!=null?` · otomatik %${r.p}`:''}</span>${g?`<div class="gr"><b>Not: ${esc(g.s)}</b>${g.n?` · ${esc(g.n)}`:''}<small>${esc(uname(g.by))}</small></div>`:r.open&&T.uid?'<div class="note">Öğretmen değerlendirmesi bekleniyor</div>':''}</div>${g?`<span class="pill">${esc(g.s)}</span>`:''}</div>`}).join(''):'<p class="note">Henüz sınav çözmedin.</p>');
   return h}
 
@@ -3563,21 +3586,22 @@ function chatBox(uid,asStaff){const ms=msgsOf(uid),mine=m=>asStaff?m.f!=uid:m.f=
   <textarea id="f-chat-${uid}" rows="2" placeholder="Mesaj yaz…" oninput="(V.ch=V.ch||{})['${uid}']=this.value">${esc((V.ch||{})[uid]||'')}</textarea><button class="btn" onclick="sendMsg('${uid}')">Gönder</button>`}
 async function sendMsg(uid){const x=((V.ch||{})[uid]||'').trim();if(!x)return;V.ch[uid]='';const id=genId();
   try{await tPut('msgs/'+uid+'/'+id,{f:T.uid,x:x.slice(0,4000),at:Date.now()});if(isStaff())tPatch('reads/'+uid,{t:Date.now()});else tPatch('reads/'+uid,{s:Date.now()})}catch(e){V.ch[uid]=x}render()}
-function hwDoneSelf(hid){tPut('hwdone/'+hid+'/'+T.uid,{at:Date.now()}).then(()=>{toast('Ödev tamamlandı olarak işaretlendi.');render()}).catch(()=>{})}
+function hwDoneSelf(hid){tPatch('hwdone/'+hid+'/'+T.uid,{at:Date.now()}).then(()=>{toast('Ödev tamamlandı olarak işaretlendi.');render()}).catch(()=>{})}
 function vKutu(){setTimeout(markRead,300);const hw=myHw(),gr=Object.entries((T.D.grades||{})[T.uid]||{}).map(([rid,g])=>Object.assign({rid},g)).sort((a,b)=>b.at-a.at);
   const rmap={};resultsOf(T.uid).forEach(r=>rmap[r.id]=r);
   return `<h1 class="pt">Kutum</h1><p class="lead">Ödevlerin, notların ve öğretmeninle mesajların.</p>
-  <h2>Ödevler</h2>${hw.length?hw.map(x=>{const d=hwDone(x.id,T.uid),E=x.ex&&examByKey(x.ex);return `<div class="hwc ${d?'done':''}"><div class="grow"><b>${d?'✓ ':''}${esc(x.t)}</b>${x.x?`<p>${esc(x.x).replace(/\n/g,'<br>')}</p>`:''}<span>${esc(uname(x.by))} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${E?' · sınav: '+esc(E.t):''}</span></div>
-    ${d?'':E?`<button class="btn sm" onclick="startExam('${x.ex}','${x.id}')">Başla</button>`:`<button class="btn sm" onclick="hwDoneSelf('${x.id}')">Yaptım</button>`}</div>`}).join(''):'<p class="note">Şu an ödevin yok.</p>'}
+  ${karneListHtml(T.uid)}
+  <h2>Ödevler</h2>${hw.length?hw.map(x=>{const d=hwDone(x.id,T.uid),E=x.ex&&examByKey(x.ex),r=hwRec(x.id,T.uid)||{};if(x.arch&&!d&&r.g==null)return '';return `<div class="hwc ${d?'done':''}"><div class="grow"><b>${d?'✓ ':''}${esc(x.t)}${x.arch?' · geçmiş':''}</b>${x.x&&!d?`<p>${esc(x.x).replace(/\n/g,'<br>')}</p>`:''}<span>${esc(uname(x.by))} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${E?' · sınav: '+esc(E.t):''}</span>${r.g!=null?`<div class="gr">Ödev notu: <b>${esc(r.g)}</b>${r.n?' · '+esc(r.n):''}</div>`:''}</div>${r.g!=null?`<span class="pill">${esc(r.g)}</span>`:''}
+    ${d||x.arch?'':E?`<button class="btn sm" onclick="startExam('${x.ex}','${x.id}')">Başla</button>`:`<button class="btn sm" onclick="hwDoneSelf('${x.id}')">Yaptım</button>`}</div>`}).join(''):'<p class="note">Şu an ödevin yok.</p>'}
   <h2>Notlarım</h2>${gr.length?gr.map(g=>{const r=rmap[g.rid];return `<div class="res"><div class="grow"><b>${esc(r?r.t:'Sınav')}</b><span>${fmtT(g.at)} · ${esc(uname(g.by))}</span>${g.n?`<div class="gr">${esc(g.n)}</div>`:''}</div><span class="pill">${esc(g.s)}</span></div>`}).join(''):'<p class="note">Henüz not verilmedi.</p>'}
   <h2>Öğretmenimle mesajlar</h2>${chatBox(T.uid,false)}`}
 
 /* ================= ÖĞRETMEN / YÖNETİCİ PANELİ ================= */
 function vPanel(){V.pn=V.pn||{t:'ogr',sel:null};const P=V.pn;
   if(P.sel&&U()[P.sel])return vStudent(P.sel);
-  const tabs=[['ogr','Öğrenciler'],['odev','Ödevler'],['sinav','Sınav hazırla'],['kul','Kullanıcılar']];
+  const tabs=[['ogr','Öğrenciler'],['defter','Not defteri'],['odev','Ödevler'],['sinav','Sınav hazırla'],['kul','Kullanıcılar']];
   let h=`<h1 class="pt">${isOwnerR()?'Yönetim':'Öğretmen'} paneli</h1><div class="seg">${tabs.map(([k,n])=>`<button class="${P.t==k?'on':''}" onclick="V.pn.t='${k}';render()">${n}</button>`).join('')}</div>`;
-  if(P.t=='odev')return h+vHwAdmin();if(P.t=='sinav')return h+vBuilder();if(P.t=='kul')return h+vUsers();
+  if(P.t=='odev')return h+vHwAdmin();if(P.t=='defter')return h+vGradebook();if(P.t=='sinav')return h+vBuilder();if(P.t=='kul')return h+vUsers();
   const st=students();if(!st.length)return h+`<p class="lead">Henüz öğrenci yok. "Kullanıcılar" sekmesinden ön büro ekibini ekle.</p>`;
   return h+`<p class="lead">${st.length} öğrenci. Bir kişiye dokununca ilerlemesini, sınavlarını ve mesajlarını görürsün.</p>`+st.map(([id,u])=>{const p=(T.D.progress||{})[id]||{},rs=resultsOf(id),auto=rs.filter(r=>r.p!=null),avg=auto.length?Math.round(auto.reduce((a,r)=>a+r.p,0)/auto.length):null,ng=needGrade(id),um=unreadT(id);
     return `<button class="row" onclick="V.pn.sel='${id}';V.pn.st='ozet';render();window.scrollTo(0,0)"><div class="num av">${esc(u.n.trim()[0]||'?')}</div><div class="sb"><b>${esc(u.n)}${u.a===false?' · pasif':''}</b>
@@ -3586,8 +3610,10 @@ function vPanel(){V.pn=V.pn||{t:'ogr',sel:null};const P=V.pn;
 function vStudent(uid){const P=V.pn,u=U()[uid],p=(T.D.progress||{})[uid]||{},rs=resultsOf(uid),t=P.st||'ozet';
   if(t=='msg')setTimeout(()=>markReadT(uid),300);
   let h=`<div class="bar"><button class="back" onclick="V.pn.sel=null;render()">‹ Öğrenciler</button><span class="grow">${esc(u.n)}</span></div>
-  <div class="seg">${[['ozet','İlerleme'],['sinav','Sınavlar'+(needGrade(uid)?' ✍'+needGrade(uid):'')],['msg','Mesajlar'+(unreadT(uid)?' ●':'')]].map(([k,n])=>`<button class="${t==k?'on':''}" onclick="V.pn.st='${k}';render()">${n}</button>`).join('')}</div>`;
+  <div class="seg">${[['ozet','İlerleme'],['sinav','Sınavlar'+(needGrade(uid)?' ✍'+needGrade(uid):'')],['odev','Ödevler'],['karne','Karne'],['msg','Mesajlar'+(unreadT(uid)?' ●':'')]].map(([k,n])=>`<button class="${t==k?'on':''}" onclick="V.pn.st='${k}';render()">${n}</button>`).join('')}</div>`;
   if(t=='msg')return h+chatBox(uid,true);
+  if(t=='karne')return h+karneAdmin(uid);
+  if(t=='odev')return h+studentHw(uid);
   if(t=='ozet'){const done=LESSONS.filter(L=>p.ls&&L.id in p.ls);
     return h+`<div class="stats"><div><b>${p.xp||0}</b><span>XP · ${esc(p.lv||'Stajyer')}</span></div><div><b>${done.length}/${LESSONS.length}</b><span>ders</span></div><div><b>${p.k||0}</b><span>kelime</span></div></div>
     <div class="stats"><div><b>${p.sk||0}</b><span>gün seri</span></div><div><b>${rs.length}</b><span>sınav</span></div><div><b style="font-size:15px">${fmtT(p.t)}</b><span>son çalışma</span></div></div>
@@ -3616,13 +3642,24 @@ function vHwAdmin(){V.hw=V.hw||{t:'',x:'',ex:'',due:'',all:true,to:{}};const f=V
   <label>Kime</label><label class="chk"><input type="checkbox" ${f.all?'checked':''} onchange="V.hw.all=this.checked;render()"> Tüm öğrenciler</label>
   ${f.all?'':st.map(([id,u])=>`<label class="chk"><input type="checkbox" ${f.to[id]?'checked':''} onchange="V.hw.to['${id}']=this.checked"> ${esc(u.n)}</label>`).join('')}
   <button class="btn" onclick="saveHw()">Ödevi gönder</button></div>
-  <h2>Verilen ödevler</h2>${list.length?list.map(x=>{const tgt=x.to=='all'?st.map(s=>s[0]):Object.keys(x.to||{}),dn=tgt.filter(id=>hwDone(x.id,id));
-    return `<div class="hwc"><div class="grow"><b>${esc(x.t)}</b>${x.x?`<p>${esc(x.x)}</p>`:''}<span>${x.to=='all'?'Herkese':tgt.map(uname).map(esc).join(', ')} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${x.ex&&examByKey(x.ex)?' · sınav: '+esc(examByKey(x.ex).t):''}</span>
-    <span class="dn">Tamamlayan ${dn.length}/${tgt.length}${dn.length?': '+dn.map(uname).map(esc).join(', '):''}</span></div><button class="btn sm ghost danger" onclick="delHw('${x.id}',this)">Sil</button></div>`}).join(''):'<p class="note">Henüz ödev verilmedi.</p>'}`}
+  <h2>Verilen ödevler</h2>${hwListHtml(list.filter(x=>!x.arch),st)}
+  ${list.some(x=>x.arch)?`<details class="card ncard"><summary><b>🗄 Arşiv · ${list.filter(x=>x.arch).length} ödev</b></summary><p class="note">Arşivdeki ödevler öğrencinin aktif listesinden kalkar ama notları ve tamamlanma kayıtları saklı kalır.</p>${hwListHtml(list.filter(x=>x.arch),st,true)}</details>`:''}`}
+function hwListHtml(list,st,arch){if(!list.length)return '<p class="note">Henüz ödev verilmedi.</p>';return list.map(x=>{const tgt=x.to=='all'?st.map(s=>s[0]):Object.keys(x.to||{}),dn=tgt.filter(id=>hwDone(x.id,id)),op=(V.hwo||{})[x.id];
+    return `<div class="hwc col"><div class="hwt"><div class="grow"><b>${esc(x.t)}</b>${x.x?`<p>${esc(x.x)}</p>`:''}<span>${x.to=='all'?'Herkese':tgt.map(uname).map(esc).join(', ')} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${x.ex&&examByKey(x.ex)?' · sınav: '+esc(examByKey(x.ex).t):''}</span>
+    <span class="dn">Tamamlayan ${dn.length}/${tgt.length}</span></div>${arch?`<button class="btn sm ghost" onclick="unarchHw('${x.id}')">Geri al</button>`:`<button class="btn sm ghost danger" onclick="delHw('${x.id}',this)">Arşivle</button>`}</div>
+    <button class="lnk" onclick="(V.hwo=V.hwo||{})['${x.id}']=!${!!op};render()">${op?'Notlandırmayı kapat':'Öğrenci öğrenci gör ve notlandır'}</button>
+    ${op?tgt.map(id=>{const r=hwRec(x.id,id)||{},k=x.id+'_'+id,f=(V.hg||{})[k]||{g:r.g??'',n:r.n??''},res=r.rid&&resultsOf(id).find(y=>y.id==r.rid);
+      return `<div class="hgr"><div class="grow"><b>${esc(uname(id))}</b><span>${r.at?'✓ '+fmtT(r.at):'Henüz yapmadı'}${res&&res.p!=null?' · sınav %'+res.p:''}${r.gat?' · not: '+esc(r.g)+' ('+esc(uname(r.gby))+')':''}</span></div>
+      <input id="f-hg-${k}" inputmode="numeric" placeholder="Not" value="${esc(f.g)}" oninput="hgSet('${k}','g',this.value)"><input id="f-hn-${k}" placeholder="Kısa yorum" value="${esc(f.n)}" oninput="hgSet('${k}','n',this.value)"><button class="btn sm" onclick="saveHwGrade('${x.id}','${id}')">Kaydet</button></div>`}).join(''):''}</div>`}).join('')}
+function hgSet(k,f,v){V.hg=V.hg||{};const [hid,uid]=k.split('_'),r=hwRec(hid,uid)||{};V.hg[k]=V.hg[k]||{g:r.g??'',n:r.n??''};V.hg[k][f]=v}
+async function saveHwGrade(hid,uid){const k=hid+'_'+uid,r=hwRec(hid,uid)||{},f=(V.hg||{})[k]||{g:r.g??'',n:r.n??''},g=String(f.g).trim();
+  if(g===''||isNaN(+g)||+g<0||+g>100)return toast('Ödev notu 0 ile 100 arasında bir sayı olmalı.');
+  try{await tPatch('hwdone/'+hid+'/'+uid,{g:+g,n:(f.n||'').trim().slice(0,1000),gby:T.uid,gat:Date.now()});delete V.hg[k];toast('Ödev notu kaydedildi.');render()}catch(e){}}
 async function saveHw(){const f=V.hw;if(!(f.t||'').trim())return toast('Ödeve bir başlık yaz.');const to=f.all?'all':Object.fromEntries(Object.entries(f.to).filter(([,v])=>v));
   if(to!='all'&&!Object.keys(to).length)return toast('En az bir öğrenci seç.');
   try{await tPut('homework/'+genId(),{t:f.t.trim(),x:(f.x||'').trim(),ex:f.ex||'',due:f.due||'',to,by:T.uid,at:Date.now()});V.hw=null;toast('Ödev gönderildi.');render()}catch(e){}}
-function delHw(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Emin misin?';return}tDel('homework/'+id).then(()=>tDel('hwdone/'+id)).catch(()=>{});render()}
+function delHw(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Arşive kaldırılsın mı?';return}tPatch('homework/'+id,{arch:true,archAt:Date.now()}).catch(()=>{});render()}
+function unarchHw(id){tPatch('homework/'+id,{arch:false}).catch(()=>{});render()}
 
 function vBuilder(){V.eb=V.eb||{t:'',d:'',qs:[]};const f=V.eb,ce=customExams();
   const qed=(q,i)=>{const hd=`<div class="qh"><b>${i+1}. ${{mc:'Çoktan seçmeli',gap:'Boşluk doldurma',tr:'Çeviri',open:'Yazılı (sen notlarsın)'}[q.k]}</b><button class="lnk danger" onclick="V.eb.qs.splice(${i},1);render()">Kaldır</button></div>`;
@@ -3643,7 +3680,7 @@ async function saveExam(){const f=V.eb;if(!(f.t||'').trim())return toast('Sınav
     else if(q.k=='open')qs.push({k:'open',q:q.q.trim()});
     else{const as=(q.as||'').split('/').map(s=>s.trim()).filter(Boolean);if(!as.length)return toast((i+1)+'. sorunun doğru cevabını yaz.');qs.push({k:q.k,q:q.q.trim(),a:as})}}
   try{await tPut('exams/'+genId(),{t:f.t.trim(),d:(f.d||'').trim(),qs,by:T.uid,at:Date.now()});V.eb=null;toast('Sınav kaydedildi; öğrencilerin Sınav sekmesinde görünüyor.');render()}catch(e){}}
-function delExam(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Emin misin?';return}tDel('exams/'+id).catch(()=>{});render()}
+function delExam(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Arşive kaldırılsın mı?';return}tPatch('exams/'+id,{arch:true}).catch(()=>{});render()}
 
 function credText(c){return `${c.n.split(' ')[0]}, Zihin Sarayı İngilizce eğitim bağlantın:\n${teamLink()}\n\nKullanıcı adın: ${c.u}\nŞifren: ${c.p}\n\nGiriş yaptıktan sonra şifreni Ayarlar bölümünden değiştirebilirsin.`}
 function copyText(t){try{navigator.clipboard.writeText(t).then(()=>toast('Kopyalandı.'),()=>toast('Kopyalanamadı; metni seçip kopyala.'))}catch(e){toast('Kopyalanamadı; metni seçip kopyala.')}}
@@ -3817,6 +3854,86 @@ function edLx(k){const [id,n]=k.split('~'),L=LESSONS.find(x=>x.id==id);if(!L)ret
 function wordEditRow(i){const w=WORDS[i];V.we=V.we||{};const f=V.we[w.w]||{};
   return `<div class="wedit"><input id="f-we-${i}" value="${esc(f.t??w.t)}" oninput="(V.we['${esc(w.w)}']=V.we['${esc(w.w)}']||{}).t=this.value" placeholder="Türkçesi">
   <div class="eda"><button class="btn sm" onclick="saveWord(${esc(JSON.stringify(w.w))})">Kaydet</button>${w.cid?`<button class="btn sm ghost danger" onclick="delWord('${w.cid}',this)">Sil</button>`:`<button class="btn sm ghost" onclick="toggleHide(${esc(JSON.stringify(w.w))})">${w.hid?'Tekrar göster':'Listeden gizle'}</button>`}<button class="btn sm ghost" onclick="V.wo=null;render()">Kapat</button></div></div>`}
+
+
+/* ================= KARNE ================= */
+const KNOT=['','Geçmez','Geçer','Orta','İyi','Pekiyi'];
+const pct2not=p=>p==null?null:p>=85?5:p>=70?4:p>=55?3:p>=45?2:1;
+const KSUB=[
+ {k:'gram',n:'Gramer Akrobasisi',m:r=>/^(u-a1-|a1-final|irr)/.test(r.key),c:['Am, is, are üçlüsüyle hâlâ küs; barıştırmak lazım.','Zamanları karıştırıyor ama en azından hep aynı yönde karıştırıyor.','Kurallar yerine oturuyor; ara sıra "I am agree" kaçıyor.','Cümleler tıkır tıkır. Do ile does artık kavga etmiyor.','Gramer onun elinde jonglör topu gibi. Mr Brown bile hata bulamadı.']},
+ {k:'otel',n:'Resepsiyon Diplomasisi',m:r=>/^(h-|hc-|u-o-|o-final|durum)/.test(r.key),c:['Misafire hâlâ "What?" diyor. Pamuk bile daha kibar.','"Could you" ile tanıştı ama henüz arkadaş olmadılar.','Check-in akıcı, check-out biraz tökezliyor.','Şikâyet eden misafiri gülümseterek uğurluyor.','Telefonu açtığında misafirler "Bu otel 5 yıldızlı mıydı?" diye soruyor.']},
+ {k:'kelime',n:'Kelime Avcılığı',m:r=>/^v-/.test(r.key),c:['Kelimeler kaçıyor, avcı hâlâ dürbünü arıyor.','Birkaç kelime avlandı; çoğu kaçmayı başardı.','Av çantası dolmaya başladı.','Kelime avında usta; çanta ağır.','Sözlük bu öğrenciden çekiniyor.']},
+ {k:'yazili',n:'Kalem Kuvveti (yazılı)',m:r=>r.open>0,teacher:1,c:['Kalem elinde ama mürekkep bitmiş gibi.','Cümleler kısa, kalp büyük.','E-postaları okunuyor, misafir anlıyor.','Yazdıkları acentelerin dosyasında saklanıyor.','Kalemi Shakespeare\'e kafa tutuyor.']},
+ {k:'ozel',n:'Öğretmenin Özel Sınavları',m:r=>/^c-/.test(r.key),c:['Hocanın sorularıyla bakışma yarışmasını hoca kazandı.','Hocanın sorularını çözmeye niyetli; niyet önemli.','Hocanın sorularına artık "kolaymış" diyor.','Hoca yeni soru yazmaya yetişemiyor.','Hoca bu öğrenci için daha zor sorular arıyor.']}];
+const KHW=['Ödevler hâlâ ödev olarak bekliyor. Ödevler de onu bekliyor.','Ödevlerin bir kısmı yapıldı; kalanı "yarın" dosyasında.','Ödevleri yapıyor, bazen son dakikada.','Ödevler zamanında ve özenli.','Ödev vermeye yetişemiyoruz.'];
+const KMEM=['Sarayda henüz tek oda bile yok; şimdilik çadır.','Sarayın temeli atıldı.','Saray yükseliyor; birkaç oda dolu.','Saray gösterişli; misafir ağırlanır.','Saray değil, artık bir şato.'];
+const KYORUM=['Bu dönem İngilizceyle mesafeli bir ilişki yaşandı. Gelecek dönem ilk adımı biz atalım.','Başlangıç yapıldı. Her şampiyon bir gün "Hello" diyerek başlamıştır.','Gidişat güzel. Biraz daha tekrar ile misafirler "Teşekkürler" yerine "Thank you" duyacak.','Çok başarılı bir dönem. Resepsiyonun yıldızı parlıyor.','Olağanüstü! Bu gidişle Mr Brown şikâyet edecek bir şey bulamayacak.'];
+const KPAMUK=['Pamuk bu karneyi okudu, kuyruğunu salladı. Bu iyiye işaret.','Pamuk karnenin üstüne yattı; onay anlamına geliyor.','Pamuk "miyav" dedi. Çevirisi: "Fena değil."','Pamuk karneyi kokladı ve uzaklaştı. Çekimser.','Pamuk bu dönem en çok sizin masanızda uyudu. Bu bir takdirdir.'];
+const KDAV=['Kediye hiç sataşmadı.','Misafirlere hep gülümsedi.','Kahve makinesini bozmadı.','Şefin terliğini saklamadı.'];
+const hsh=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
+const karneOf=uid=>Object.entries((T.D.karne||{})[uid]||{}).map(([id,k])=>Object.assign({id},k)).sort((a,b)=>b.at-a.at);
+const newKarne=()=>T.uid?karneOf(T.uid).filter(k=>k.at>(S.kSeen||0)).length:0;
+function rscore(uid,r){const g=gradeOf(uid,r.id);return g?+g.s:r.p}
+function makeKarne(uid,opt){const ks=karneOf(uid),to=Date.now(),seed=uid+to,all=resultsOf(uid);let from=ks.length?ks[0].to:0,genel=false;
+  let rs=all.filter(r=>r.at>from&&r.at<=to);if(!rs.length&&opt.by!='auto'&&all.length){from=0;genel=true;rs=all}
+  const rows=KSUB.map(S0=>{const xs=rs.filter(S0.m).map(r=>S0.teacher?(gradeOf(uid,r.id)?+gradeOf(uid,r.id).s:null):rscore(uid,r)).filter(v=>v!=null);
+    if(!xs.length)return {n:S0.n,s:null,c:'Bu dönem bu derse uğramadı. Ders de onu özledi.'};const p=Math.round(xs.reduce((a,b)=>a+b,0)/xs.length),nt=pct2not(p);return {n:S0.n,s:nt,p,c:S0.c[nt-1],cnt:xs.length}});
+  const hws=Object.entries(T.D.homework||{}).map(([id,h])=>Object.assign({id},h)).filter(h=>(h.to=='all'||(h.to&&h.to[uid]))&&h.at>from&&h.at<=to);
+  if(hws.length){const done=hws.filter(h=>hwDone(h.id,uid)).length,gs=hws.map(h=>(hwRec(h.id,uid)||{}).g).filter(g=>g!=null).map(Number),
+    p=Math.round(gs.length?(gs.reduce((a,b)=>a+b,0)/gs.length)*0.5+100*done/hws.length*0.5:100*done/hws.length),nt=pct2not(p);rows.push({n:'Ödev Disiplini',s:nt,p,c:KHW[nt-1]+` (${done}/${hws.length} ödev)`})}
+  else rows.push({n:'Ödev Disiplini',s:null,c:'Bu dönem ödev verilmedi. Öğrenci de itiraz etmedi.'});
+  const pr=(T.D.progress||{})[uid]||{},k=pr.k||0,mn=k>=200?5:k>=100?4:k>=50?3:k>=20?2:1;rows.push({n:'Hafıza Sarayı Mimarlığı',s:mn,c:KMEM[mn-1]+` (${k} kelime)`});
+  const sc=rows.filter(r=>r.s!=null&&r.n!='Hafıza Sarayı Mimarlığı'),avg=sc.length?Math.round(100*sc.reduce((a,r)=>a+r.s,0)/sc.length)/100:null;
+  const belge=avg==null?'':avg>=4.25?'TAKDİR BELGESİ':avg>=3.5?'TEŞEKKÜR BELGESİ':'';
+  return {no:ks.length+1,at:to,from,to,genel,by:opt.by||'auto',note:(opt.note||'').trim().slice(0,1500),n:rs.length,upto:all.length,rows,avg,belge,
+    dav:KDAV[hsh(seed)%KDAV.length],yorum:avg==null?'Bu dönem pek sınav çözülmedi; karne de biraz boş kaldı. Sınav sekmesi seni bekliyor!':KYORUM[Math.min(4,Math.max(0,Math.round(avg)-1))],pamuk:KPAMUK[hsh(seed+'p')%KPAMUK.length]}}
+async function autoKarne(X){if(!T.uid||isStaff())return;const n=resultsOf(T.uid).length;if(!n||n%5)return;if(karneOf(T.uid).some(k=>k.upto==n))return;
+  const K=makeKarne(T.uid,{by:'auto'}),kid=genId();try{await tPut('karne/'+T.uid+'/'+kid,K);if(V.ex&&V.ex.done){V.ex.karne=kid;render()};confetti()}catch(e){}}
+async function sendKarne(uid){const note=((V.kn||{})[uid]||'').trim(),K=makeKarne(uid,{by:T.uid,note}),kid=genId();
+  try{await tPut('karne/'+uid+'/'+kid,K);V.kn[uid]='';toast('Karne gönderildi; öğrencinin kutusuna düştü.');openKarne(uid,kid)}catch(e){}}
+function openKarne(uid,kid){V.kv={uid:uid||T.uid,kid};render();window.scrollTo(0,0)}
+function karneListHtml(uid){const ks=karneOf(uid);if(!ks.length)return `<h2>Karnelerim</h2><p class="note">Her 5 sınavda bir karnen çıkar. Şu an ${resultsOf(uid).length%5}/5.</p>`;
+  return `<h2>Karnelerim</h2>`+ks.map(k=>`<button class="row" onclick="openKarne('${uid}','${k.id}')"><div class="num">🎓</div><div class="sb"><b>${k.no}. karne${k.belge?' · '+k.belge:''}</b><span>${fmtT(k.at)} · ${k.by=='auto'?'otomatik':esc(uname(k.by))+' gönderdi'}${k.avg!=null?' · ortalama '+String(k.avg).replace('.',','):''}</span></div></button>`).join('')}
+function karneAdmin(uid){V.kn=V.kn||{};const ks=karneOf(uid),pend=resultsOf(uid).filter(r=>r.at>(ks.length?ks[0].to:0)).length;
+  return `<div class="card"><h3>Karne yolla</h3><p class="note">Son karneden bu yana ${pend} sınav var. Karne bu dönemin sınavlarını, ödevlerini ve verdiğin notları toplar; mizahi yorumlar kendiliğinden yazılır.</p>
+  <textarea id="f-kn-${uid}" rows="3" placeholder="Öğrenciye kendi notun (isteğe bağlı) — karnenin altına “Öğretmenin notu” olarak eklenir" oninput="V.kn['${uid}']=this.value">${esc(V.kn[uid]||'')}</textarea>
+  <button class="btn" onclick="sendKarne('${uid}')">🎓 Karneyi yolla</button></div>
+  <h2>Geçmiş karneler</h2>${ks.length?ks.map(k=>`<button class="row" onclick="openKarne('${uid}','${k.id}')"><div class="num">🎓</div><div class="sb"><b>${k.no}. karne${k.belge?' · '+k.belge:''}</b><span>${fmtT(k.at)} · ${k.by=='auto'?'otomatik (5 sınav)':esc(uname(k.by))} · ${k.n} sınav${k.avg!=null?' · ort. '+String(k.avg).replace('.',','):''}</span></div></button>`).join(''):'<p class="note">Henüz karne yok.</p>'}`}
+function vKarneView(){const {uid,kid}=V.kv,k=((T.D.karne||{})[uid]||{})[kid];if(!k){V.kv=null;return vToday()}
+  const teachers=Object.values(U()).filter(u=>u.r=='teacher').map(u=>u.n),owner=Object.values(U()).find(u=>u.r=='owner');
+  return `<div class="bar noprint"><button class="back" onclick="V.kv=null;render()">‹ Geri</button><span class="grow"></span><button class="lnk" onclick="window.print()">🖨 Yazdır / PDF</button></div>
+  <div class="karne"><div class="kh"><small>T.C. ZİHİN SARAYI</small><b>OTEL İNGİLİZCESİ OKULU</b><h2>KARNE</h2><span>${k.no}. karne · ${k.genel?'genel değerlendirme (tüm sınavlar)':(k.from?fmtT(k.from).split(' ').slice(0,2).join(' ')+' – ':'başlangıçtan ')+fmtT(k.to).split(' ').slice(0,2).join(' ')}</span></div>
+  <div class="kinfo"><div><small>Öğrencinin adı soyadı</small><b>${esc(uname(uid))}</b></div><div><small>Görevi</small><b>Ön büro</b></div><div><small>${k.genel?'Toplam':'Bu dönem'} çözülen sınav</small><b>${k.n}</b></div></div>
+  <table class="ktab"><tr><th>Ders</th><th>Not</th><th>Öğretmen görüşü</th></tr>${k.rows.map(r=>`<tr><td>${esc(r.n)}</td><td class="kn">${r.s!=null?`<b>${r.s}</b><small>${KNOT[r.s]}</small>`:'<small>—</small>'}</td><td>${esc(r.c)}</td></tr>`).join('')}
+  <tr><td>Davranış</td><td class="kn"><b>5</b><small>Pekiyi</small></td><td>${esc(k.dav)}</td></tr></table>
+  <div class="kavg"><span>Dönem ortalaması</span><b>${k.avg!=null?String(k.avg).replace('.',','):'—'}</b></div>
+  ${k.belge?`<div class="kstamp">${k.belge=='TAKDİR BELGESİ'?'🏆':'🎖'} ${k.belge}</div>`:''}
+  <div class="kbox"><small>GENEL DEĞERLENDİRME</small>${esc(k.yorum)}</div>
+  ${k.note?`<div class="kbox kt"><small>ÖĞRETMENİN NOTU</small>${esc(k.note).replace(/\n/g,'<br>')}</div>`:''}
+  <div class="kbox kp"><small>PAMUK'UN GÖRÜŞÜ 🐾</small>${esc(k.pamuk)}</div>
+  <div class="ksig"><div><i>${esc(teachers[0]||'—')}</i><small>Sınıf öğretmeni</small></div><div><i>${esc(owner?owner.n:'—')}</i><small>Okul müdürü</small></div></div>
+  <p class="kfoot">${k.by=='auto'?'Bu karne 5 sınav tamamlandığı için otomatik düzenlenmiştir.':esc(uname(k.by))+' tarafından gönderildi'} · ${fmtT(k.at)}</p></div>`}
+
+/* ----- öğrencinin ödev kaydı ve not defteri ----- */
+function hwOf(uid){return Object.entries(T.D.homework||{}).map(([id,h])=>Object.assign({id},h)).filter(h=>h.to=='all'||(h.to&&h.to[uid])).sort((a,b)=>b.at-a.at)}
+function studentHw(uid){const hw=hwOf(uid);if(!hw.length)return '<p class="note">Bu kişiye henüz ödev verilmedi.</p>';
+  return hw.map(x=>{const r=hwRec(x.id,uid)||{},k=x.id+'_'+uid,f=(V.hg||{})[k]||{g:r.g??'',n:r.n??''},res=r.rid&&resultsOf(uid).find(y=>y.id==r.rid);
+    return `<div class="hwc col"><div class="grow"><b>${esc(x.t)}${x.arch?' · arşiv':''}</b><span>${fmtT(x.at)} · ${r.at?'✓ yaptı '+fmtT(r.at):'yapmadı'}${res&&res.p!=null?' · sınav %'+res.p:''}${r.gat?' · not '+esc(r.g)+' ('+esc(uname(r.gby))+', '+fmtT(r.gat)+')':''}</span>${r.n?`<div class="gr">${esc(r.n)}</div>`:''}</div>
+    <div class="hgr"><input id="f-hg-${k}" inputmode="numeric" placeholder="Not" value="${esc(f.g)}" oninput="hgSet('${k}','g',this.value)"><input id="f-hn-${k}" placeholder="Kısa yorum" value="${esc(f.n)}" oninput="hgSet('${k}','n',this.value)"><button class="btn sm" onclick="saveHwGrade('${x.id}','${uid}')">Kaydet</button></div></div>`}).join('')}
+function gbRows(){return students().map(([id,u])=>{const p=(T.D.progress||{})[id]||{},rs=resultsOf(id),sc=rs.map(r=>rscore(id,r)).filter(v=>v!=null),tg=rs.map(r=>gradeOf(id,r.id)).filter(Boolean).map(g=>+g.s),
+  hw=hwOf(id),hd=hw.filter(h=>hwDone(h.id,id)).length,hg=hw.map(h=>(hwRec(h.id,id)||{}).g).filter(g=>g!=null).map(Number),ks=karneOf(id),avg=a=>a.length?Math.round(a.reduce((x,y)=>x+y,0)/a.length):null;
+  return {id,n:u.n,a:u.a!==false,ls:Object.keys(p.ls||{}).length,k:p.k||0,xp:p.xp||0,ex:rs.length,exAvg:avg(sc),tg:avg(tg),hw:hw.length,hd,hg:avg(hg),kc:ks.length,kl:ks[0]?ks[0].avg:null,last:p.t}})}
+function vGradebook(){const R=gbRows();if(!R.length)return '<p class="note">Henüz öğrenci yok.</p>';const d=v=>v==null?'—':v;
+  return `<p class="lead">Tüm kayıtlar kalıcıdır: sınav sonuçları, verilen notlar, ödevler, ödev notları ve karneler silinmez. Bir öğrenciye dokunarak ayrıntısına inebilirsin.</p>
+  <div class="tw"><table class="gb"><tr><th>Öğrenci</th><th>Ders</th><th>Kelime</th><th>Sınav</th><th>Sınav ort.</th><th>Hoca notu ort.</th><th>Ödev</th><th>Ödev notu ort.</th><th>Karne</th><th>Son karne</th><th>Son çalışma</th></tr>
+  ${R.map(r=>`<tr onclick="V.pn.sel='${r.id}';V.pn.st='ozet';render();window.scrollTo(0,0)"><td><b>${esc(r.n)}</b>${r.a?'':' (pasif)'}</td><td>${r.ls}</td><td>${r.k}</td><td>${r.ex}</td><td>${d(r.exAvg)}</td><td>${d(r.tg)}</td><td>${r.hd}/${r.hw}</td><td>${d(r.hg)}</td><td>${r.kc}</td><td>${r.kl!=null?String(r.kl).replace('.',','):'—'}</td><td>${fmtT(r.last)}</td></tr>`).join('')}</table></div>
+  <button class="btn ghost" onclick="exportGb()">⬇ Not defterini indir (Excel / CSV)</button>`}
+function exportGb(){const R=gbRows(),q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+  const head=['Öğrenci','Biten ders','Bilinen kelime','XP','Sınav sayısı','Sınav ortalaması','Öğretmen notu ortalaması','Verilen ödev','Yapılan ödev','Ödev notu ortalaması','Karne sayısı','Son karne ortalaması','Son çalışma'];
+  const rows=R.map(r=>[r.n,r.ls,r.k,r.xp,r.ex,r.exAvg,r.tg,r.hw,r.hd,r.hg,r.kc,r.kl,r.last?new Date(r.last).toLocaleString('tr-TR'):'']);
+  const det=[];students().forEach(([id,u])=>resultsOf(id).forEach(r=>{const g=gradeOf(id,r.id);det.push([u.n,r.t,new Date(r.at).toLocaleString('tr-TR'),r.p,g?g.s:'',g?g.n:''])}));
+  const csv='﻿'+[head,...rows].map(r=>r.map(q).join(';')).join('\n')+'\n\n'+[['Öğrenci','Sınav','Tarih','Otomatik puan','Öğretmen notu','Öğretmen yorumu'],...det].map(r=>r.map(q).join(';')).join('\n');
+  try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='zihin-sarayi-not-defteri-'+new Date().toISOString().slice(0,10)+'.csv';document.body.appendChild(a);a.click();a.remove()}catch(e){toast('İndirme bu ortamda desteklenmiyor.')}}
 
 /* ----- açılış ----- */
 (function boot(){const m=/[#&]z=([A-Za-z0-9_-]+)/.exec(location.hash||'');

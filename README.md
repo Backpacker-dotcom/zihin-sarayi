@@ -1,6 +1,6 @@
 # Zihin Sarayı · İngilizce
 
-Ön büro ekibi için İngilizce eğitim uygulaması: A1 dersleri, Zeytin Otel hikâyesi, otel İngilizcesi, hafıza sarayı ve 44 hazır sınav.
+Ön büro ekibi için İngilizce eğitim uygulaması: A1 dersleri, Zeytin Otel hikâyesi, otel İngilizcesi, hafıza sarayı ve 64 hazır sınav, 8 Otel İngilizcesi dersi, 21 otel bölümü.
 Öğretmen not verir, mesajlaşır, ödev ve kendi sınavını verir. Veriler Firebase Realtime Database'te ekip koduyla tutulur (Turno ile aynı yapı).
 
 - Uygulama: https://backpacker-dotcom.github.io/zihin-sarayi/

@@ -163,6 +163,11 @@ a.btn{text-decoration:none;text-align:center}.wa{background:#25d366;color:#08240
 .faq summary{cursor:pointer;font-weight:600;list-style:none}.faq summary::before{content:'＋ ';color:var(--gold)}.faq details[open] summary::before{content:'－ '}
 .faq details p{margin:8px 0 2px;color:var(--mut);font-size:15px}
 .seg button{font-size:12.5px}
+.qa .qh{display:flex;gap:10px;align-items:flex-start}.qa .qh b{display:block}.qa .qh .grow span{display:block;font-size:12px;color:var(--mut)}
+.qa .qx{font-size:16px;margin:10px 0;line-height:1.5;overflow-wrap:anywhere}.qa.ans{border-color:#2f4a35}
+.qa .cm{max-width:100%;margin:6px 0}.qa-a{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.qa-a .btn{margin:0;width:auto}
+.ncard summary{cursor:pointer;list-style:none}.ncard[open] summary{margin-bottom:6px}
+nav button{font-size:10px}nav i{font-size:18px}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -3095,7 +3100,7 @@ function autoSay(){const s=V.sess;if(!s||s.kind!='review'||s.pos>=s.q.length)ret
 /* ---------- Görünümler ---------- */
 function vToday(){return todayHead()+vToday0()}
 function todayHead(){if(!T.uid)return `<div class="who"><span></span><button class="lnk" onclick="go('road')">⚙ Ayarlar</button></div>`;const m=me()||{};let x='';
-  if(isStaff()){const n=panelCount();x=`<div class="step"><div class="num">🧑‍🏫</div><div class="sb"><b>Panel</b><span>${n?n+' bekleyen iş (not verilecek sınav, okunmamış mesaj)':'Bekleyen iş yok'} · ${students().length} öğrenci</span></div><button class="btn sm" onclick="go('panel')">Aç</button></div>`}
+  if(isStaff()){const n=panelCount();const oq=qaCount();x=(oq?`<div class="step"><div class="num">🙋</div><div class="sb"><b>Cevap bekleyen sorular</b><span>${oq} soru</span></div><button class="btn sm" onclick="go('sor')">Aç</button></div>`:'')+`<div class="step"><div class="num">🧑‍🏫</div><div class="sb"><b>Panel</b><span>${n?n+' bekleyen iş (not verilecek sınav, okunmamış mesaj)':'Bekleyen iş yok'} · ${students().length} öğrenci</span></div><button class="btn sm" onclick="go('panel')">Aç</button></div>`}
   else{const hw=myHw().filter(h=>!hwDone(h.id,T.uid)).length,k=kutuCount();if(k)x=`<div class="step"><div class="num">📬</div><div class="sb"><b>Kutun</b><span>${hw?hw+' bekleyen ödev':''}${hw&&k>hw?' · ':''}${k>hw?(k-hw)+' yeni mesaj ya da not':''}</span></div><button class="btn sm" onclick="go('kutu')">Aç</button></div>`}
   return `<div class="who"><span>👤 ${esc(m.n||'')} · ${ROLE[m.r]||''}</span><button class="lnk" onclick="go('road')">⚙ Ayarlar</button></div>`+x}
 function vToday0(){
@@ -3227,7 +3232,7 @@ function lNext(){const l=V.ls;l.qi++;if(l.qi>=l.qs.length)return lFinish();lSetu
 function lFinish(){const l=V.ls,id=LESSONS[l.i].id;l.qi=l.qs.length;l.fin=true;S.ls[id]=Math.max(S.ls[id]||0,l.score);l.gain+=30;addXP(30);S.log[today()]=(S.log[today()]||0)+1;save();render();confetti()}
 function vLesson(){const l=V.ls,L=LESSONS[l.i],back=`<button class="back" onclick="V.ls=null;render()">‹ Dersler</button>`;
   if(l.qi<0){const body=L.b.slice(0,-1).map(blk).join(''),n=lines(L.b[L.b.length-1][1]).length;
-    return `<div class="bar">${back}<span class="grow">${LGN(L)}</span></div><h1 class="pt">${L.t}</h1><p class="lead">${L.s}</p><div class="lesson">${body}</div><button class="btn" onclick="lStart()">Alıştırmalara geç · ${n} soru →</button>`}
+    return `<div class="bar">${back}<span class="grow">${LGN(L)}</span></div><h1 class="pt">${L.t}</h1><p class="lead">${L.s}</p><div class="lesson">${body}</div>${T.uid&&!isStaff()?`<button class="btn ghost" onclick="askAbout('${L.id}')">🙋 Bu konuyu hocama sor</button>`:''}<button class="btn" onclick="lStart()">Alıştırmalara geç · ${n} soru →</button>`}
   const n=l.qs.length,top=`<div class="bar">${back}<div class="prog"><i style="width:${100*l.qi/Math.max(n,1)}%"></i></div><span>${l.combo>=3?'🔥 '+l.combo:''}</span></div>`;
   if(l.fin||l.qi>=n){const nx=l.i+1<LESSONS.length&&LESSONS[l.i+1].l==L.l,L2=lvl();
     return top+`<div class="card center"><div class="big">${l.score}/${l.n0}</div><h3>${l.score==l.n0?'Kusursuz! 🏆':l.score>=l.n0*.7?'Ders tamamlandı 🎉':'Bitti; bir kez daha okumaya değer'}</h3><p class="xpg">+${l.gain} XP</p><p>Unvanın: <b>${L2.name}</b>${L2.next?` · ${L2.next} olmaya ${L2.left} XP`:''}</p>
@@ -3320,17 +3325,17 @@ function vHotel(){
 
 /* ---------- Çatı ---------- */
 function curTabs(){const t=[['today','☀','Bugün'],['gram','📖','Ders'],['sinav','📝','Sınav'],['otel','🏨','Otel'],['palace','🏛','Saray']];
-  if(T.uid)t.push(isStaff()?['panel','🧑‍🏫','Panel']:['kutu','📬','Kutu']);return t}
+  if(T.uid){t.push(['sor','🙋','Sor']);t.push(isStaff()?['panel','🧑‍🏫','Panel']:['kutu','📬','Kutu'])}return t}
 function go(t){V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
 const needGate=()=>(T.cfg&&!T.uid)||(!T.cfg&&!loadJ('zs_solo',0));
 function render(){const ae=document.activeElement,aid=ae&&ae.id&&/^f-/.test(ae.id)?ae.id:null;let ss=null,se=null;try{ss=ae.selectionStart;se=ae.selectionEnd}catch(e){}
   let v,nav=true;const gate=needGate();
   if(gate){v=vGate();nav=false}
   else{if(V.tab=='panel'&&!isStaff())V.tab='today';if(V.tab=='kutu'&&(!T.uid||isStaff()))V.tab='today';
-    v=V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='panel'?vPanel():vRoad();
+    v=V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
     if(V.sess||(V.tab=='sinav'&&V.ex&&!V.ex.done))nav=false}
   if(v==='')return;const app=document.getElementById('app');app.className=!gate&&V.tab=='panel'?'wide':'';
-  app.innerHTML=`<main>${v}</main>`+(nav?`<nav>${curTabs().map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><i>${t[1]}</i>${t[2]}${t[0]=='kutu'||t[0]=='panel'?`<em class="bdg" id="bdg-${t[0]}" style="display:none"></em>`:''}</button>`).join('')}</nav>`:'');
+  app.innerHTML=`<main>${v}</main>`+(nav?`<nav>${curTabs().map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><i>${t[1]}</i>${t[2]}${t[0]=='kutu'||t[0]=='panel'||t[0]=='sor'?`<em class="bdg" id="bdg-${t[0]}" style="display:none"></em>`:''}</button>`).join('')}</nav>`:'');
   if(aid){const e=document.getElementById(aid);if(e){e.focus();try{if(ss!=null)e.setSelectionRange(ss,se)}catch(x){}}}else{const a=document.getElementById('ans');if(a)a.focus()}
   badges()}
 function goBack(){if(V.ex){V.ex=null;render();return true}if(V.sess||V.g||V.ls||V.ot!=null||V.room!=null||(V.pn&&V.pn.sel)){V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.pn)V.pn.sel=null;render();return true}if(V.tab!='today'){go('today');return true}return false}
@@ -3367,7 +3372,7 @@ async function tWrite(method,path,val){
   try{return await tReq(method,path,method=='DELETE'?undefined:val)}catch(e){toast('Kaydedilemedi. İnternet bağlantısını kontrol edip tekrar dene.');throw e}}
 const tPut=(p,v)=>tWrite('PUT',p,v),tPatch=(p,v)=>tWrite('PATCH',p,v),tDel=p=>tWrite('DELETE',p);
 
-async function tLoad(){const d=await tReq('GET','');T.D=d||{};T.loaded=true;return T.D}
+async function tLoad(){const d=await tReq('GET','');T.D=d||{};T.loaded=true;qaEvents();return T.D}
 function tStream(){if(T.es){try{T.es.close()}catch(e){}T.es=null}if(typeof EventSource=='undefined')return;
   try{const es=new EventSource(tUrl(''));T.es=es;
     const h=ev=>{let m;try{m=JSON.parse(ev.data)}catch(x){return}if(!m||typeof m.path!='string')return;const segs=m.path.split('/');
@@ -3398,11 +3403,11 @@ function tSync(){if(!T.uid||!T.cfg)return;clearTimeout(tSync.h);tSync.h=setTimeo
   if(ps!=T.lastPr){try{await tReq('PUT','progress/'+T.uid,P);T.lastPr=ps}catch(e){}}},2500)}
 
 /* ----- canlı güncellemede yeniden çizim ----- */
-function tChanged(local){badges();clearTimeout(tChanged.h);tChanged.h=setTimeout(()=>{tCheckMe();
-  if(V.tab=='kutu'&&!V.ex)markRead();if(V.tab=='panel'&&V.pn&&V.pn.sel&&V.pn.t=='msg')markReadT(V.pn.sel);
-  const gate=!T.uid;if(gate||(['kutu','panel','sinav','today'].includes(V.tab)&&!V.ex&&!V.sess&&!V.ls))render()},local?0:150)}
+function tChanged(local){qaEvents();badges();clearTimeout(tChanged.h);tChanged.h=setTimeout(()=>{tCheckMe();
+  if(V.tab=='kutu'&&!V.ex)markRead();if(V.tab=='sor')qaMarkSeen();if(V.tab=='panel'&&V.pn&&V.pn.sel&&V.pn.t=='msg')markReadT(V.pn.sel);
+  const gate=!T.uid;if(gate||(['kutu','panel','sinav','today','sor'].includes(V.tab)&&!V.ex&&!V.sess&&!V.ls))render()},local?0:150)}
 function badges(){const set=(id,n)=>{const e=document.getElementById(id);if(e){e.textContent=n>9?'9+':n;e.style.display=n?'':'none'}};
-  set('bdg-kutu',T.uid&&!isStaff()?kutuCount():0);set('bdg-panel',T.uid&&isStaff()?panelCount():0);
+  set('bdg-kutu',T.uid&&!isStaff()?kutuCount():0);set('bdg-sor',qaCount());set('bdg-panel',T.uid&&isStaff()?panelCount():0);
   const lv=document.getElementById('livedot');if(lv)lv.className='live '+(T.live?'on':'')}
 const msgsOf=uid=>Object.entries((T.D.msgs||{})[uid]||{}).map(([id,m])=>Object.assign({id},m)).sort((a,b)=>a.at-b.at);
 const readsOf=uid=>(T.D.reads||{})[uid]||{};
@@ -3654,6 +3659,76 @@ function acctBox(){if(!T.cfg)return '';if(!T.uid)return '';const m=me()||{};V.cp
   <label>Şifre değiştir</label>${inp('cp.o','mevcut şifre','password')}${inp('cp.n','yeni şifre','password')}<button class="btn ghost" onclick="changePw()">Şifreyi değiştir</button>
   <button class="btn" onclick="logout()">Çıkış yap</button><p class="note">Resepsiyondaki ortak bilgisayarı kullanıyorsan işin bitince çıkış yap.</p></div>`}
 
+/* ================= HOCAYA SOR ================= */
+const qaList=()=>Object.entries(T.D.qa||{}).map(([id,q])=>Object.assign({id},q)).filter(q=>q&&q.f&&q.x&&(isStaff()||!q.pv||q.f==T.uid)).sort((a,b)=>(b.la||b.at)-(a.la||a.at));
+const qaReplies=q=>Object.entries(q.r||{}).map(([id,r])=>Object.assign({id},r)).sort((a,b)=>a.at-b.at);
+const qaLastFrom=q=>{const r=qaReplies(q);return r.length?r[r.length-1].f:q.f};
+const qaSeen=()=>((T.D.qread||{})[T.uid]||{}).at||0;
+const qaCount=()=>{if(!T.uid)return 0;if(isStaff())return qaList().filter(q=>q.st!='ans').length;
+  return qaList().filter(q=>q.f==T.uid&&qaLastFrom(q)!=T.uid&&(q.la||0)>qaSeen()).length};
+function qaMarkSeen(){if(T.uid&&!isStaff()&&qaCount())tPatch('qread/'+T.uid,{at:Date.now()})}
+const lessonTitle=id=>{const L=LESSONS.find(x=>x.id==id);if(L)return LGN(L)+' · '+L.t;const H=HOTEL.find(x=>'otel:'+x.t==id);return H?'Otel · '+H.t:''};
+function topicOptions(sel){return `<option value="">Genel soru</option><optgroup label="Konu anlatımı">${LESSONS.map(L=>`<option value="${L.id}" ${sel==L.id?'selected':''}>${esc(LGN(L)+' · '+L.t)}</option>`).join('')}</optgroup><optgroup label="Otel bölümleri">${HOTEL.map(H=>`<option value="otel:${esc(H.t)}" ${sel=='otel:'+H.t?'selected':''}>${esc(H.t)}</option>`).join('')}</optgroup>`}
+function askAbout(lid){V.ask={x:'',lid:lid||'',pv:false};V.ls=null;go('sor');setTimeout(()=>{const e=document.getElementById('f-ask-x');if(e)e.focus()},60)}
+async function sendQ(){const f=V.ask||{},x=(f.x||'').trim();if(!x)return toast('Önce sorunu yaz.');
+  const id=genId(),now=Date.now();
+  try{await tPut('qa/'+id,{f:T.uid,x:x.slice(0,3000),lid:f.lid||'',pv:!!f.pv,st:'open',at:now,la:now});V.ask={x:'',lid:'',pv:false};toast('Sorun hocana gönderildi.');render();
+    notifyMail('Yeni soru · '+uname(T.uid),{'Soran':uname(T.uid),'Konu':lessonTitle(f.lid)||'Genel','Soru':x},'q')}catch(e){}}
+async function sendR(qid){const x=(((V.rp||{})[qid])||'').trim();if(!x)return;const q=(T.D.qa||{})[qid];if(!q)return;const now=Date.now(),staff=isStaff();
+  V.rp[qid]='';
+  try{await tPut('qa/'+qid+'/r/'+genId(),{f:T.uid,x:x.slice(0,4000),at:now});await tPatch('qa/'+qid,{la:now,st:staff?'ans':'open'});render();
+    if(staff)notifyMail(uname(T.uid)+' cevapladı · '+uname(q.f),{'Soran':uname(q.f),'Soru':q.x,'Cevap':x,'Cevaplayan':uname(T.uid)},'a');
+    else notifyMail('Ek soru · '+uname(T.uid),{'Soran':uname(T.uid),'İlk soru':q.x,'Ek mesaj':x},'q')}catch(e){V.rp[qid]=x}}
+function delQ(qid,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Silinsin mi?';return}tDel('qa/'+qid).catch(()=>{});render()}
+function setQSt(qid,st){tPatch('qa/'+qid,{st}).catch(()=>{});render()}
+function vSor(){setTimeout(qaMarkSeen,300);const staff=isStaff();V.ask=V.ask||{x:'',lid:'',pv:false};V.qf=V.qf||(staff?'open':'mine');
+  const all=qaList(),open=all.filter(q=>q.st!='ans');
+  const list=staff?(V.qf=='open'?open:all):(V.qf=='mine'?all.filter(q=>q.f==T.uid):all.filter(q=>!q.pv));
+  let h=`<h1 class="pt">Hocaya sor</h1><p class="lead">${staff?'Ekibin soruları burada. Cevabın soran kişiye anında düşer.':'Takıldığın her şeyi sor: bir kelime, bir kural, misafire ne diyeceğin. Cevaplar herkesin öğrenmesi için görünür; istersen yalnızca hocan görsün.'}</p>`;
+  if(!staff)h+=`<div class="card"><label>Sorun</label><textarea id="f-ask-x" rows="3" placeholder="ör. Misafir 'Can I get a late check-out?' dedi, ne cevap vermeliyim?" oninput="V.ask.x=this.value">${esc(V.ask.x)}</textarea>
+    <label>Konu (isteğe bağlı)</label><select id="f-ask-l" onchange="V.ask.lid=this.value">${topicOptions(V.ask.lid)}</select>
+    <label class="chk"><input type="checkbox" ${V.ask.pv?'checked':''} onchange="V.ask.pv=this.checked"> Sadece hocam görsün</label><button class="btn" onclick="sendQ()">Soruyu gönder</button></div>`;
+  else h+=notifyCard();
+  h+=`<div class="seg">${(staff?[['open','Cevap bekleyen · '+open.length],['all','Tümü · '+all.length]]:[['mine','Sorularım'],['all','Herkesin soruları']]).map(([k,n])=>`<button class="${V.qf==k?'on':''}" onclick="V.qf='${k}';render()">${n}</button>`).join('')}</div>`;
+  if(!list.length)h+=`<p class="note center">${staff?(V.qf=='open'?'Cevap bekleyen soru yok. 🎉':'Henüz soru gelmedi.'):'Burada henüz soru yok.'}</p>`;
+  h+=list.map(q=>{const rs=qaReplies(q),mine=q.f==T.uid,canR=staff||mine,t=lessonTitle(q.lid);
+    return `<div class="card qa ${q.st=='ans'?'ans':''}"><div class="qh"><div class="grow"><b>${esc(uname(q.f))}</b><span>${fmtT(q.at)}${t?' · '+esc(t):''}${q.pv?' · 🔒 yalnızca hoca':''}</span></div><span class="pill ${q.st=='ans'?'':'warn'}">${q.st=='ans'?'Cevaplandı':'Cevap bekliyor'}</span></div>
+    <div class="qx">${esc(q.x).replace(/\n/g,'<br>')}</div>
+    ${rs.map(r=>`<div class="cm ${U()[r.f]&&U()[r.f].r!='student'?'me':''}"><small>${esc(uname(r.f))} · ${fmtT(r.at)}</small>${esc(r.x).replace(/\n/g,'<br>')}</div>`).join('')}
+    ${canR?`<textarea id="f-rp-${q.id}" rows="2" placeholder="${staff?'Cevabını yaz…':'Ek soru ya da teşekkür yaz…'}" oninput="(V.rp=V.rp||{})['${q.id}']=this.value">${esc((V.rp||{})[q.id]||'')}</textarea>
+      <div class="qa-a"><button class="btn sm" onclick="sendR('${q.id}')">${staff?'Cevapla':'Gönder'}</button>${staff?`<button class="btn sm ghost" onclick="setQSt('${q.id}','${q.st=='ans'?'open':'ans'}')">${q.st=='ans'?'Tekrar aç':'Cevaplandı say'}</button><button class="btn sm ghost danger" onclick="delQ('${q.id}',this)">Sil</button>`:(mine&&!rs.length?`<button class="btn sm ghost danger" onclick="delQ('${q.id}',this)">Sil</button>`:'')}</div>`:''}</div>`}).join('');
+  return h}
+
+/* ----- bildirimler: e-posta (FormSubmit, Turno ile aynı) + tarayıcı ----- */
+function mailTargets(kind){const m=T.D.meta||{},out=new Set();if(m.ne&&(kind=='q'||m.na!==false))out.add(m.ne);
+  if(kind=='q')Object.values(U()).forEach(u=>{if(u.r=='teacher'&&u.em&&u.a!==false)out.add(u.em)});
+  const mine=(me()||{}).em;if(mine)out.delete(mine);return [...out]}
+function notifyMail(subj,fields,kind){mailTargets(kind).forEach(to=>{try{fetch('https://formsubmit.co/ajax/'+encodeURIComponent(to),{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+  body:JSON.stringify(Object.assign({_subject:'Zihin Sarayı · '+subj,_template:'box',_captcha:'false'},fields,{'Uygulama':teamLink().split('#')[0]}))}).catch(()=>{})}catch(e){}})}
+function saveNotify(){const f=V.nt||{},m=T.D.meta||{};const ne=(f.ne!=null?f.ne:m.ne||'').trim(),em=(f.em!=null?f.em:(me()||{}).em||'').trim();
+  if(ne&&!/^\S+@\S+\.\S+$/.test(ne)||em&&!/^\S+@\S+\.\S+$/.test(em))return toast('E-posta adresi geçersiz görünüyor.');
+  const ops=[];if(isOwnerR())ops.push(tPatch('meta',{ne,na:f.na!=null?!!f.na:m.na!==false}));if(role()=='teacher')ops.push(tPatch('users/'+T.uid,{em}));
+  Promise.all(ops).then(()=>{V.nt=null;toast('Bildirim ayarı kaydedildi.');render()}).catch(()=>{})}
+function testMail(){const t=isOwnerR()?((V.nt||{}).ne??(T.D.meta||{}).ne):((V.nt||{}).em??(me()||{}).em);if(!t)return toast('Önce e-posta adresini yaz ve kaydet.');
+  fetch('https://formsubmit.co/ajax/'+encodeURIComponent(t),{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({_subject:'Zihin Sarayı · Deneme bildirimi',_template:'box',_captcha:'false','Mesaj':'Bildirimler çalışıyor.'})})
+  .then(()=>toast('Deneme gönderildi. İlk seferde FormSubmit\'ten gelen e-postadaki "Activate Form" düğmesine bas.')).catch(()=>toast('Gönderilemedi. İnternet bağlantısını kontrol et.'))}
+function notifyCard(){const m=T.D.meta||{};V.nt=V.nt||{};const perm=typeof Notification!='undefined'?Notification.permission:'unsupported';
+  return `<details class="card ncard" ${V.ntOpen?'open':''} ontoggle="V.ntOpen=this.open"><summary><b>🔔 Bildirim ayarları</b></summary>
+  ${isOwnerR()?`<label>Yönetici bildirim e-postası (her yeni soru buraya gelir)</label><input id="f-nt-ne" placeholder="ör. ufuk.gulen@ortunc.com" value="${esc(V.nt.ne??m.ne??'')}" oninput="V.nt.ne=this.value">
+    <label class="chk"><input type="checkbox" ${(V.nt.na??(m.na!==false))?'checked':''} onchange="V.nt.na=this.checked"> Öğretmenin verdiği cevaplar da bana gelsin</label>`
+  :`<label>Senin e-postan (yeni sorular buraya gelir)</label><input id="f-nt-em" placeholder="ör. irem@ortunc.com" value="${esc(V.nt.em??(me()||{}).em??'')}" oninput="V.nt.em=this.value">`}
+  <div class="two"><button class="btn sm" onclick="saveNotify()">Kaydet</button><button class="btn sm ghost" onclick="testMail()">Deneme gönder</button></div>
+  <p class="note">E-postalar Turno'daki gibi FormSubmit üzerinden gider. Her adrese ilk e-postada bir onay mesajı gelir; içindeki "Activate Form" düğmesine bir kez basman gerekir.</p>
+  <label>Tarayıcı bildirimi (bu sekme açıkken)</label>${perm=='granted'?'<p class="note">✓ Açık. Sekme arka plandayken yeni soru ve cevaplarda bildirim çıkar.</p>':perm=='unsupported'?'<p class="note">Bu tarayıcı bildirim desteklemiyor.</p>':`<button class="btn sm ghost" onclick="askPerm()">Tarayıcı bildirimlerini aç</button>`}</details>`}
+function askPerm(){try{Notification.requestPermission().then(()=>render())}catch(e){}}
+function qaEvents(){if(!T.uid||!T.D)return;const seen=T.qaKeys;const now=new Set(),ev=[];
+  Object.entries(T.D.qa||{}).forEach(([id,q])=>{if(!q||!q.f)return;now.add(id);Object.keys(q.r||{}).forEach(r=>now.add(id+'/'+r));
+    if(!seen)return;
+    if(!seen.has(id)&&q.f!=T.uid&&isStaff())ev.push(['Yeni soru · '+uname(q.f),q.x]);
+    Object.entries(q.r||{}).forEach(([rid,r])=>{if(!seen.has(id+'/'+rid)&&r.f!=T.uid&&(isStaff()||q.f==T.uid))ev.push([uname(r.f)+(isStaff()?' yazdı':' cevapladı'),r.x])})});
+  T.qaKeys=now;if(!ev.length)return;
+  ev.slice(0,3).forEach(([t,b])=>{toast('🙋 '+t);try{if(typeof Notification!='undefined'&&Notification.permission=='granted'&&document.hidden)new Notification('Zihin Sarayı · '+t,{body:String(b).slice(0,140)})}catch(e){}})}
+
 /* ----- açılış ----- */
 (function boot(){const m=/[#&]z=([A-Za-z0-9_-]+)/.exec(location.hash||'');
   if(m){try{const c=JSON.parse(b64d(m[1]));if(c.u&&c.t){const o=loadJ('zs_cfg',null);if(!o||o.t!==c.t||o.u!==c.u){saveJ('zs_cfg',c);saveJ('zs_sess',null)}}}catch(e){}
@@ -3664,4 +3739,5 @@ function acctBox(){if(!T.cfg)return '';if(!T.uid)return '';const m=me()||{};V.cp
       tReq('GET',s.uid,undefined,true).then(r=>{if(r&&typeof r=='object'&&(r.su||0)>(S.su||0)){S=Object.assign(load(),r);try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}if(!V.sess&&!V.ls&&!V.ex)render()}}).catch(()=>{})}
     tConnect()}
   render()})();
+
 </script></body></html>

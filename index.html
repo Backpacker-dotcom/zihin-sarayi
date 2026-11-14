@@ -217,6 +217,32 @@ table.ktab{width:100%;border-collapse:collapse;font-family:system-ui;font-size:1
 
 .steps{margin:8px 0;padding-left:20px}.steps li{margin:6px 0;font-size:14px}.rules{max-height:220px;overflow:auto;font-size:11px}
 code{background:#262240;border-radius:4px;padding:1px 5px;font-size:13px}
+
+/* yarış, ilan, çıktılar */
+.lives{font-size:13px;letter-spacing:1px}
+.opt.good{border-color:var(--grn);background:#16261a;color:var(--grn)}.opt.bad{border-color:var(--red);background:#2a1716;color:var(--red)}
+.gfb{margin:10px 0;padding:10px 12px;border-radius:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.gfb.good{background:#16261a}.gfb.bad{background:#2a1716}.gfb span{flex:1 1 100%;font-size:14px;color:var(--mut)}
+.gcard p{margin:0 0 10px}.gcard h3{margin:14px 0 6px;font-size:15px}.gdone{padding:10px;border:1px dashed var(--gold);border-radius:10px;text-align:center;margin-bottom:8px}
+.lbt{display:flex;flex-direction:column;gap:6px;margin:6px 0}.lbr{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;flex-wrap:wrap}
+.lbr.me{border-color:var(--gold)}.lbr .rk{width:26px;text-align:center;font-weight:700;color:var(--mut)}.lbr b{flex:1}.lbr small{flex:1 1 100%;margin-left:36px;color:var(--mut);font-size:12px;order:5}.lbr em{font-style:normal;color:var(--gold);font-weight:700}
+.bdgs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}.bdgc{border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;opacity:.45;filter:grayscale(1)}
+.bdgc.on{opacity:1;filter:none;border-color:var(--gold);background:#231f12}.bdgc i{font-style:normal;font-size:26px;display:block}.bdgc b{display:block;font-size:12px;line-height:1.25}.bdgc small{display:block;font-size:10.5px;color:var(--mut);line-height:1.25;margin-top:3px}
+.newt{font-style:normal;font-size:11px;background:var(--red);color:#fff;border-radius:6px;padding:1px 6px;margin-left:4px}
+.hans{margin:8px 0 4px;padding:8px 10px;border-left:3px solid var(--teal);background:#15232a;border-radius:6px;font-size:14px}.hans small{display:block;color:var(--mut);font-size:11.5px}
+.hwc.col textarea{margin-top:8px}.bt td{white-space:nowrap}.ptools{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:4px 0}
+.sheet{background:#fff;color:#1a1a1a;border-radius:8px;padding:26px 24px;margin:8px 0 30px;font-family:Georgia,serif;line-height:1.45}
+.sheet .shh{text-align:center;border-bottom:2px solid #7a2e1f;padding-bottom:10px;margin-bottom:14px}.shh small{letter-spacing:2px;font-size:11px;color:#7a2e1f}.shh h1{font-size:24px;margin:4px 0;color:#1a1a1a}.shh span{font-size:14px;color:#555}
+.shinfo{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}.shinfo div{border:1px solid #bbb;border-radius:4px;padding:6px 8px}.shinfo small{display:block;font-size:10.5px;color:#666}.shinfo b{font-size:14px}
+.shbox{border:1px solid #bbb;border-radius:4px;padding:10px 12px;margin:10px 0;font-size:14.5px}.shbox.ans{background:#f6f8f6}
+.shq{font-size:16px;margin:16px 0 8px;color:#7a2e1f}.pq{margin:0 0 14px;font-size:14.5px;break-inside:avoid}.po{display:grid;grid-template-columns:1fr 1fr;gap:3px 16px;margin:4px 0 0 18px}
+.pw{margin:6px 0 0 18px}.pw span{display:inline-block;border:1px solid #999;border-radius:4px;padding:1px 7px;margin:2px}.pgap{display:inline-block;width:120px;border-bottom:1px solid #333}
+.wl{border-bottom:1px solid #aaa;height:26px}.pa{font-size:14px;margin:0 0 6px}.pbreak{break-after:page;height:20px}
+.shgrade{margin-top:18px;font-size:15px}.pt2{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}.pt2 th,.pt2 td{border:1px solid #aaa;padding:6px 8px;text-align:left}.pt2 th{background:#f1ece0}
+.pt2.board{font-size:16px}.pt2.board tr.top td{background:#fbf5df}.pt2.hwt td,.pt2.hwt th{text-align:center}.pt2.hwt td:first-child{text-align:left}.pt2 td.na{color:#bbb}
+.shleg{font-size:13px;margin-top:8px;columns:2}.shf{font-size:13px;color:#555;margin-top:12px;text-align:center}.shs{margin-top:28px}.sheet .ksig i{color:#1a1a1a}
+@media print{.sheet{border-radius:0;padding:0;margin:0}#app.wide{max-width:none}.ptools{display:none}}
+@media (max-width:520px){.shinfo{grid-template-columns:1fr 1fr}.po{grid-template-columns:1fr}.bdgs{grid-template-columns:repeat(2,1fr)}nav button{font-size:9.5px}}
+.sheet th{color:#1a1a1a!important;font-weight:700}.sheet td{color:#1a1a1a}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -3136,6 +3162,26 @@ const RULES_JSON={
                 }
               }
             }
+          },
+          "boards": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+          },
+          "goal": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+          },
+          "lb": {
+            "$uid": {
+              ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
+              ".validate": "newData.child('xp').isNumber() && newData.child('xp').val()>=0 && newData.child('xp').val()<1000000 && newData.child('wx').isNumber() && newData.child('wx').val()<100000"
+            }
+          },
+          "dc": {
+            "$d": {
+              "$uid": {
+                ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid && !data.exists()) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
+                ".validate": "newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=10"
+              }
+            }
           }
         },
         "u": {
@@ -3161,7 +3207,8 @@ const RULES_JSON={
             },
             "hwdone": {
               "$h": {
-                ".write": "auth!=null && auth.uid===$uid"
+                ".write": "auth!=null && auth.uid===$uid",
+                ".validate": "!newData.child('ans').exists() || (newData.child('ans').isString() && newData.child('ans').val().length<=6000)"
               }
             },
             "karne": {
@@ -3266,7 +3313,10 @@ const mode=c=>c.r<2?'recall':c.r<4?'type':(c.r%2?'listen':'type');
 function autoSay(){const s=V.sess;if(!s||s.kind!='review'||s.pos>=s.q.length)return;const w=WORDS[s.q[s.pos]];if(mode(S.c[w.w])=='listen')say(w.w)}
 
 /* ---------- Görünümler ---------- */
-function vToday(){return todayHead()+vToday0()}
+function vToday(){return todayHead()+yarisTeaser()+vToday0()}
+function yarisTeaser(){try{const d=today(),m=dcMine(d),nb=newBoards();
+  return (nb?`<div class="step"><div class="num">📌</div><div class="sb"><b>Yeni ilan</b><span>${nb} yeni sonuç listesi yayınlandı</span></div><button class="btn sm" onclick="go('yaris')">Gör</button></div>`:'')+
+  (m==null?`<div class="step"><div class="num">🎯</div><div class="sb"><b>Günün yarışması</b><span>10 soru, tek hak, süre yok</span></div><button class="btn sm" onclick="gStart('dc')">Katıl</button></div>`:'')}catch(e){return ''}}
 function todayHead(){if(!T.uid)return `<div class="who"><span></span><button class="lnk" onclick="go('road')">⚙ Ayarlar</button></div>`;const m=me()||{};let x='';
   if(isStaff()){const n=panelCount();const oq=qaCount();x=(oq?`<div class="step"><div class="num">🙋</div><div class="sb"><b>Cevap bekleyen sorular</b><span>${oq} soru</span></div><button class="btn sm" onclick="go('sor')">Aç</button></div>`:'')+`<div class="step"><div class="num">🧑‍🏫</div><div class="sb"><b>Panel</b><span>${n?n+' bekleyen iş (not verilecek sınav, okunmamış mesaj)':'Bekleyen iş yok'} · ${students().length} öğrenci</span></div><button class="btn sm" onclick="go('panel')">Aç</button></div>`}
   else{const hw=myHw().filter(h=>!hwDone(h.id,T.uid)).length,k=kutuCount();if(k)x=`<div class="step"><div class="num">📬</div><div class="sb"><b>Kutun</b><span>${hw?hw+' bekleyen ödev':''}${hw&&k>hw?' · ':''}${k>hw?(k-hw)+' yeni mesaj ya da not':''}</span></div><button class="btn sm" onclick="go('kutu')">Aç</button></div>`}
@@ -3494,21 +3544,21 @@ function vHotel(){
   ${HOTEL.map((H,i)=>`<button class="row" onclick="V.ot=${i};V.otab=0;render();window.scrollTo(0,0)"><div class="num">${H.i}</div><div class="sb"><b>${H.t}</b><span>${hl(H.s).filter(x=>x[0]!='#').length} cümle · ${hl(H.w).length} kelime</span></div></button>`).join('')}`}
 
 /* ---------- Çatı ---------- */
-function curTabs(){const t=[['today','☀','Bugün'],['gram','📖','Ders'],['sinav','📝','Sınav'],['otel','🏨','Otel'],['palace','🏛','Saray']];
+function curTabs(){const t=[['today','☀','Bugün'],['gram','📖','Ders'],['sinav','📝','Sınav'],['otel','🏨','Otel'],['palace','🏛','Saray'],['yaris','🏆','Yarış']];
   if(T.uid){t.push(['sor','🙋','Sor']);t.push(isStaff()?['panel','🧑‍🏫','Panel']:['kutu','📬','Kutu'])}return t}
-function go(t){V.kv=null;V.rep=null;V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
+function go(t){V.kv=null;V.pr=null;V.gm=null;V.rep=null;V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
 const needGate=()=>(T.cfg&&!T.uid)||(!T.cfg&&!loadJ('zs_solo',0));
 function render(){const ae=document.activeElement,aid=ae&&ae.id&&/^f-/.test(ae.id)?ae.id:null;let ss=null,se=null;try{ss=ae.selectionStart;se=ae.selectionEnd}catch(e){}
   let v,nav=true;const gate=needGate();
   if(gate){v=vGate();nav=false}
   else{if(V.tab=='panel'&&!isStaff())V.tab='today';if(V.tab=='kutu'&&(!T.uid||isStaff()))V.tab='today';
-    v=V.rep?vReport():V.kv&&T.uid?vKarneView():V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
-    if(V.sess||(V.tab=='sinav'&&V.ex&&!V.ex.done))nav=false}
-  if(v==='')return;const app=document.getElementById('app');app.className=!gate&&V.tab=='panel'?'wide':'';
-  app.innerHTML=`<main>${v}</main>`+(nav?`<nav>${curTabs().map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><i>${t[1]}</i>${t[2]}${t[0]=='kutu'||t[0]=='panel'||t[0]=='sor'?`<em class="bdg" id="bdg-${t[0]}" style="display:none"></em>`:''}</button>`).join('')}</nav>`:'');
+    v=V.pr?vPrint():V.rep?vReport():V.kv&&T.uid?vKarneView():V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='yaris'?vYaris():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
+    if(V.sess||(V.tab=='sinav'&&V.ex&&!V.ex.done)||(V.tab=='yaris'&&V.gm&&!V.gm.done))nav=false}
+  if(v==='')return;const app=document.getElementById('app');app.className=!gate&&(V.tab=='panel'||V.pr)?'wide':'';
+  app.innerHTML=`<main>${v}</main>`+(nav?`<nav>${curTabs().map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><i>${t[1]}</i>${t[2]}${t[0]=='kutu'||t[0]=='panel'||t[0]=='sor'||t[0]=='yaris'?`<em class="bdg" id="bdg-${t[0]}" style="display:none"></em>`:''}</button>`).join('')}</nav>`:'');
   if(aid){const e=document.getElementById(aid);if(e){e.focus();try{if(ss!=null)e.setSelectionRange(ss,se)}catch(x){}}}else{const a=document.getElementById('ans');if(a)a.focus()}
   badges()}
-function goBack(){if(V.ex){V.ex=null;render();return true}if(V.sess||V.g||V.ls||V.ot!=null||V.room!=null||(V.pn&&V.pn.sel)){V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.pn)V.pn.sel=null;render();return true}if(V.tab!='today'){go('today');return true}return false}
+function goBack(){if(V.pr){V.pr=null;render();return true}if(V.gm){V.gm=null;render();return true}if(V.ex){V.ex=null;render();return true}if(V.sess||V.g||V.ls||V.ot!=null||V.room!=null||(V.pn&&V.pn.sel)){V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.pn)V.pn.sel=null;render();return true}if(V.tab!='today'){go('today');return true}return false}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b)say(b.dataset.say)});
 
 /* ================= EKİP: Firebase Realtime Database (Turno ile aynı yapı) ================= */
@@ -3554,7 +3604,7 @@ async function rUrl(p){const t=await token();return ROOT()+(p?'/'+p:'')+'.json'+
 async function tReq(method,p,body){const go=async()=>fetch(await rUrl(p),{method,body:body===undefined?undefined:JSON.stringify(body)});
   let r=await go();if(r.status==401&&T.uid){T.tok=null;r=await go()}
   if(!r.ok){const e=new Error(r.status==401?'DENIED':'HTTP '+r.status);e.status=r.status;throw e}return r.json()}
-const PUBK=['users','meta','homework','exams','content','qa'],UCAT=['results','grades','msgs','reads','karne','progress','qread','pq'];
+const PUBK=['users','meta','homework','exams','content','qa','boards','goal','lb','dc'],UCAT=['results','grades','msgs','reads','karne','progress','qread','pq'];
 function netPath(p){const s=p.split('/'),c=s[0];
   if(PUBK.includes(c))return 'pub/'+p;
   if(c=='hwdone'||c=='hwgrade')return 'u/'+s[2]+'/'+c+'/'+s[1]+(s.length>3?'/'+s.slice(3).join('/'):'');
@@ -3608,14 +3658,14 @@ function tCheckMe(denied){if(!T.uid)return;if(!denied&&!T.loaded)return;if(!deni
 function tSync(){if(!T.uid||!T.cfg)return;clearTimeout(tSync.h);tSync.h=setTimeout(async()=>{
   const st=JSON.stringify(S);if(st!=T.lastSt){try{await tReq('PUT','st/'+T.uid,JSON.parse(st));T.lastSt=st}catch(e){}}
   const lg={},t0=today();for(let d=t0-59;d<=t0;d++)if(S.log[d])lg[d]=S.log[d];const P={xp:S.xp||0,lv:lvl().name,ls:S.ls||{},k:known(),sk:streak(),t:Date.now(),lg,bk:wordBuckets(S),due:dueList().length,exb:S.exb||{}},ps=JSON.stringify(Object.assign({},P,{t:0}));
-  if(ps!=T.lastPr){try{await tReq('PUT','u/'+T.uid+'/progress',P);T.lastPr=ps}catch(e){}}},2500)}
+  if(ps!=T.lastPr){try{await tReq('PUT','u/'+T.uid+'/progress',P);T.lastPr=ps}catch(e){}}lbSync()},2500)}
 
 /* ----- canlı güncellemede yeniden çizim ----- */
 function tChanged(local){qaEvents();const cc=applyContent();badges();if(cc&&!V.sess&&!V.ls&&!V.ex&&!V.ed&&!local&&['otel','palace','gram'].includes(V.tab)){render()}clearTimeout(tChanged.h);tChanged.h=setTimeout(()=>{tCheckMe();
   if(V.tab=='kutu'&&!V.ex)markRead();if(V.tab=='sor')qaMarkSeen();if(V.tab=='panel'&&V.pn&&V.pn.sel&&V.pn.t=='msg')markReadT(V.pn.sel);
-  const gate=!T.uid;if(gate||(['kutu','panel','sinav','today','sor'].includes(V.tab)&&!V.ex&&!V.sess&&!V.ls))render()},local?0:150)}
+  const gate=!T.uid;if(gate||(['kutu','panel','sinav','today','sor','yaris'].includes(V.tab)&&!V.ex&&!V.sess&&!V.ls&&!V.gm&&!V.pr))render()},local?0:150)}
 function badges(){const set=(id,n)=>{const e=document.getElementById(id);if(e){e.textContent=n>9?'9+':n;e.style.display=n?'':'none'}};
-  set('bdg-kutu',T.uid&&!isStaff()?kutuCount():0);set('bdg-sor',qaCount());set('bdg-panel',T.uid&&isStaff()?panelCount():0);
+  set('bdg-kutu',T.uid&&!isStaff()?kutuCount():0);set('bdg-sor',qaCount());set('bdg-panel',T.uid&&isStaff()?panelCount():0);set('bdg-yaris',newBoards());
   const lv=document.getElementById('livedot');if(lv)lv.className='live '+(T.live?'on':'')}
 const msgsOf=uid=>Object.entries((T.D.msgs||{})[uid]||{}).map(([id,m])=>Object.assign({id},m)).sort((a,b)=>a.at-b.at);
 const readsOf=uid=>(T.D.reads||{})[uid]||{};
@@ -3768,7 +3818,7 @@ function vSinav(){if(V.ex)return vExamRun();
   if(ce.length)h+=`<h2>Öğretmenin hazırladığı sınavlar</h2>`+ce.map(e=>row('c-'+e.id,e.t,(e.d?e.d+' · ':'')+(e.qs||[]).length+' soru',(e.qs||[]).length)).join('');
   Object.entries(groups).forEach(([g,L])=>{h+=`<h2>${g}</h2>`+L.map(E=>row(E.key,E.t,E.d,E.n)).join('')});
   const mine=T.uid?resultsOf(T.uid):(S.exh||[]).map((x,i)=>Object.assign({id:'l'+i},x));
-  h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>${isStaff()?'':`<button class="lnk" onclick="openReport()">📊 İlerleme raporumu aç</button>`}`+(mine.length?mine.map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
+  h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>${isStaff()?'':`<button class="lnk" onclick="openReport()">📊 İlerleme raporumu aç</button>`}${mine.length?` <button class="lnk" onclick="V.pr={k:'res',uid:T.uid||null};render();window.scrollTo(0,0)">🖨 Sonuçlarımı yazdır</button>`:''}`+(mine.length?mine.map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
     return `<div class="res"><div class="grow"><b>${esc(r.t)}</b><span>${fmtT(r.at)}${r.p!=null?` · otomatik %${r.p}`:''}</span>${g?`<div class="gr"><b>Not: ${esc(g.s)}</b>${g.n?` · ${esc(g.n)}`:''}<small>${esc(uname(g.by))}</small></div>`:r.open&&T.uid?'<div class="note">Öğretmen değerlendirmesi bekleniyor</div>':''}</div>${g?`<span class="pill">${esc(g.s)}</span>`:''}</div>`}).join(''):'<p class="note">Henüz sınav çözmedin.</p>');
   return h}
 
@@ -3778,23 +3828,30 @@ function chatBox(uid,asStaff){const ms=msgsOf(uid),mine=m=>asStaff?m.f!=uid:m.f=
   <textarea id="f-chat-${uid}" rows="2" placeholder="Mesaj yaz…" oninput="(V.ch=V.ch||{})['${uid}']=this.value">${esc((V.ch||{})[uid]||'')}</textarea><button class="btn" onclick="sendMsg('${uid}')">Gönder</button>`}
 async function sendMsg(uid){const x=((V.ch||{})[uid]||'').trim();if(!x)return;V.ch[uid]='';const id=genId();
   try{await tPut('msgs/'+uid+'/'+id,{f:T.uid,x:x.slice(0,4000),at:Date.now()});if(isStaff())tPatch('reads/'+uid,{t:Date.now()});else tPatch('reads/'+uid,{s:Date.now()})}catch(e){V.ch[uid]=x}render()}
-function hwDoneSelf(hid){tPatch('hwdone/'+hid+'/'+T.uid,{at:Date.now()}).then(()=>{toast('Ödev tamamlandı olarak işaretlendi.');render()}).catch(()=>{})}
+function hwDoneSelf(hid){const a=(((V.hs||{})[hid])||'').trim();
+  tPut('hwdone/'+hid+'/'+T.uid,Object.assign({},((T.D.hwdone||{})[hid]||{})[T.uid]||{},{at:Date.now()},a?{ans:a.slice(0,6000)}:{})).then(()=>{if(V.hs)delete V.hs[hid];if(V.hse)delete V.hse[hid];toast(a?'Ödevin teslim edildi; öğretmenine ulaştı.':'Ödev tamamlandı olarak işaretlendi.');render()}).catch(()=>{})}
+function hwSubBox(x,r){const d=hwDone(x.id,T.uid),ed=(V.hse||{})[x.id];
+  if(x.ex)return '';
+  if(d&&!ed)return `${r.ans?`<div class="hans"><small>Teslim ettiğin cevap · ${fmtT(r.at)}</small>${esc(r.ans).replace(/\n/g,'<br>')}</div>`:''}${r.g==null&&!x.arch?`<button class="lnk" onclick="(V.hse=V.hse||{})['${x.id}']=1;(V.hs=V.hs||{})['${x.id}']=${esc(JSON.stringify(r.ans||''))};render()">Cevabımı değiştir</button>`:''}`;
+  if(x.arch)return '';
+  return `<textarea id="f-hs-${x.id}" rows="4" placeholder="Cevabını buraya yaz (İngilizce cümleler, çeviriler…). Yazmadan da “Yaptım” diyebilirsin." oninput="(V.hs=V.hs||{})['${x.id}']=this.value">${esc((V.hs||{})[x.id]||'')}</textarea>
+  <div class="two"><button class="btn sm" onclick="hwDoneSelf('${x.id}')">${(V.hs||{})[x.id]?'📤 Teslim et':'📤 Teslim et / Yaptım'}</button><button class="btn sm ghost" onclick="V.pr={k:'hw',id:'${x.id}',uid:T.uid};render();window.scrollTo(0,0)">🖨 Yazdır</button></div>`}
 function vKutu(){setTimeout(markRead,300);const hw=myHw(),gr=Object.entries((T.D.grades||{})[T.uid]||{}).map(([rid,g])=>Object.assign({rid},g)).sort((a,b)=>b.at-a.at);
   const rmap={};resultsOf(T.uid).forEach(r=>rmap[r.id]=r);
   return `<h1 class="pt">Kutum</h1><p class="lead">Ödevlerin, notların ve öğretmeninle mesajların.</p>
   <button class="row rbtn" onclick="openReport()"><div class="num">📊</div><div class="sb"><b>İlerleme raporum</b><span>Alanlara göre başarı, sınav grafiği, ders ve kelime ilerlemesi, öneriler</span></div></button>
   ${karneListHtml(T.uid)}
-  <h2>Ödevler</h2>${hw.length?hw.map(x=>{const d=hwDone(x.id,T.uid),E=x.ex&&examByKey(x.ex),r=hwRec(x.id,T.uid)||{};if(x.arch&&!d&&r.g==null)return '';return `<div class="hwc ${d?'done':''}"><div class="grow"><b>${d?'✓ ':''}${esc(x.t)}${x.arch?' · geçmiş':''}</b>${x.x&&!d?`<p>${esc(x.x).replace(/\n/g,'<br>')}</p>`:''}<span>${esc(uname(x.by))} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${E?' · sınav: '+esc(E.t):''}</span>${r.g!=null?`<div class="gr">Ödev notu: <b>${esc(r.g)}</b>${r.n?' · '+esc(r.n):''}</div>`:''}</div>${r.g!=null?`<span class="pill">${esc(r.g)}</span>`:''}
-    ${d||x.arch?'':E?`<button class="btn sm" onclick="startExam('${x.ex}','${x.id}')">Başla</button>`:`<button class="btn sm" onclick="hwDoneSelf('${x.id}')">Yaptım</button>`}</div>`}).join(''):'<p class="note">Şu an ödevin yok.</p>'}
+  <h2>Ödevler</h2>${hw.length?hw.map(x=>{const d=hwDone(x.id,T.uid),E=x.ex&&examByKey(x.ex),r=hwRec(x.id,T.uid)||{};if(x.arch&&!d&&r.g==null)return '';return `<div class="hwc ${d?'done':''} ${x.ex?'':'col'}"><div class="grow"><b>${d?'✓ ':''}${esc(x.t)}${x.arch?' · geçmiş':''}</b>${x.x&&!d?`<p>${esc(x.x).replace(/\n/g,'<br>')}</p>`:''}<span>${esc(uname(x.by))} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${E?' · sınav: '+esc(E.t):''}</span>${r.g!=null?`<div class="gr">Ödev notu: <b>${esc(r.g)}</b>${r.n?' · '+esc(r.n):''}</div>`:''}</div>${r.g!=null?`<span class="pill">${esc(r.g)}</span>`:''}
+    ${d||x.arch?'':E?`<button class="btn sm" onclick="startExam('${x.ex}','${x.id}')">Başla</button><button class="btn sm ghost" onclick="V.pr={k:'hw',id:'${x.id}',uid:T.uid};render();window.scrollTo(0,0)">🖨</button>`:''}${hwSubBox(x,r)}</div>`}).join(''):'<p class="note">Şu an ödevin yok.</p>'}
   <h2>Notlarım</h2>${gr.length?gr.map(g=>{const r=rmap[g.rid];return `<div class="res"><div class="grow"><b>${esc(r?r.t:'Sınav')}</b><span>${fmtT(g.at)} · ${esc(uname(g.by))}</span>${g.n?`<div class="gr">${esc(g.n)}</div>`:''}</div><span class="pill">${esc(g.s)}</span></div>`}).join(''):'<p class="note">Henüz not verilmedi.</p>'}
   <h2>Öğretmenimle mesajlar</h2>${chatBox(T.uid,false)}`}
 
 /* ================= ÖĞRETMEN / YÖNETİCİ PANELİ ================= */
 function vPanel(){V.pn=V.pn||{t:'ogr',sel:null};const P=V.pn;
   if(P.sel&&U()[P.sel])return vStudent(P.sel);
-  const tabs=[['ogr','Öğrenciler'],['defter','Not defteri'],['odev','Ödevler'],['sinav','Sınav hazırla'],['kul','Kullanıcılar']];
+  const tabs=[['ogr','Öğrenciler'],['defter','Not defteri'],['odev','Ödevler'],['ilan','📌 İlan'],['sinav','Sınav hazırla'],['kul','Kullanıcılar']];
   let h=`<h1 class="pt">${isOwnerR()?'Yönetim':'Öğretmen'} paneli</h1><div class="seg">${tabs.map(([k,n])=>`<button class="${P.t==k?'on':''}" onclick="V.pn.t='${k}';render()">${n}</button>`).join('')}</div>`;
-  if(P.t=='odev')return h+vHwAdmin();if(P.t=='defter')return h+vGradebook();if(P.t=='sinav')return h+vBuilder();if(P.t=='kul')return h+vUsers();
+  if(P.t=='odev')return h+vHwAdmin();if(P.t=='ilan')return h+vIlan();if(P.t=='defter')return h+vGradebook();if(P.t=='sinav')return h+vBuilder();if(P.t=='kul')return h+vUsers();
   const st=students();if(!st.length)return h+`<p class="lead">Henüz öğrenci yok. "Kullanıcılar" sekmesinden ön büro ekibini ekle.</p>`;
   return h+`<p class="lead">${st.length} öğrenci. Bir kişiye dokununca ilerlemesini, sınavlarını ve mesajlarını görürsün.</p>`+st.map(([id,u])=>{const p=(T.D.progress||{})[id]||{},rs=resultsOf(id),auto=rs.filter(r=>r.p!=null),avg=auto.length?Math.round(auto.reduce((a,r)=>a+r.p,0)/auto.length):null,ng=needGrade(id),um=unreadT(id);
     return `<button class="row" onclick="V.pn.sel='${id}';V.pn.st='ozet';render();window.scrollTo(0,0)"><div class="num av">${esc(u.n.trim()[0]||'?')}</div><div class="sb"><b>${esc(u.n)}${u.a===false?' · pasif':''}</b>
@@ -3812,7 +3869,7 @@ function vStudent(uid){const P=V.pn,u=U()[uid],p=(T.D.progress||{})[uid]||{},rs=
     <div class="stats"><div><b>${p.sk||0}</b><span>gün seri</span></div><div><b>${rs.length}</b><span>sınav</span></div><div><b style="font-size:15px">${fmtT(p.t)}</b><span>son çalışma</span></div></div>
     <h2>Bitirdiği dersler</h2>${done.length?done.map(L=>`<div class="aff"><b>${L.l=='H'?'Hafıza':L.l}</b><span>${esc(L.t)} · alıştırma ${p.ls[L.id]} doğru</span></div>`).join(''):'<p class="note">Henüz ders bitirmedi.</p>'}
     <button class="btn" onclick="openReport('${uid}')">📊 Ayrıntılı ilerleme raporu</button><button class="btn ghost" onclick="V.pn.t='odev';V.pn.sel=null;V.hw={t:'',x:'',ex:'',due:'',all:false,to:{'${uid}':true}};render();window.scrollTo(0,0)">Bu kişiye ödev ver</button>`}
-  return h+(rs.length?rs.map(r=>{const g=gradeOf(uid,r.id),op=(V.pn.op||{})[r.id],gf=(V.gf||{})[r.id]||{s:g?g.s:(r.p!=null&&!r.open?r.p:''),n:g?g.n||'':''};
+  return h+`<button class="btn ghost" onclick="V.pr={k:'res',uid:'${uid}'};render();window.scrollTo(0,0)">🖨 Sınav sonuçlarını yazdır / PDF</button>`+(rs.length?rs.map(r=>{const g=gradeOf(uid,r.id),op=(V.pn.op||{})[r.id],gf=(V.gf||{})[r.id]||{s:g?g.s:(r.p!=null&&!r.open?r.p:''),n:g?g.n||'':''};
     return `<div class="card rcard"><div class="rh"><div class="grow"><b>${esc(r.t)}</b><span>${fmtT(r.at)}${r.p!=null?` · otomatik %${r.p} (${r.c}/${r.n})`:''}${r.open?` · ${r.open} yazılı cevap`:''}${r.hw?' · ödev':''}</span></div>${g?`<span class="pill">${esc(g.s)}</span>`:r.open?'<span class="pill warn">notlanacak</span>':''}</div>
     <button class="lnk" onclick="(V.pn.op=V.pn.op||{})['${r.id}']=!${!!op};render()">${op?'Cevapları gizle':'Cevapları göster'}</button>
     ${op?(r.items||[]).map((it,i)=>`<div class="rv ${it.ok===true?'good':it.ok===false?'bad':'open'}"><small>${i+1}. ${esc(it.q)}</small><b>${it.ok===true?'✓':it.ok===false?'✗':'✍'} ${esc(it.g||'— boş —').replace(/\n/g,'<br>')}</b>${it.ok===false?`<span>Doğrusu: ${esc(it.s)}</span>`:''}</div>`).join(''):''}
@@ -3834,15 +3891,17 @@ function vHwAdmin(){V.hw=V.hw||{t:'',x:'',ex:'',due:'',all:true,to:{}};const f=V
   <label>Son gün (isteğe bağlı)</label><input id="f-hw-due" type="date" value="${esc(f.due)}" oninput="V.hw.due=this.value">
   <label>Kime</label><label class="chk"><input type="checkbox" ${f.all?'checked':''} onchange="V.hw.all=this.checked;render()"> Tüm öğrenciler</label>
   ${f.all?'':st.map(([id,u])=>`<label class="chk"><input type="checkbox" ${f.to[id]?'checked':''} onchange="V.hw.to['${id}']=this.checked"> ${esc(u.n)}</label>`).join('')}
+  <label class="chk"><input type="checkbox" ${f.sep?'checked':''} onchange="V.hw.sep=this.checked"> Her kişiye ayrı ayrı gönder (her biri ayrı ödev olur; ayrı takip, ayrı arşiv)</label>
   <button class="btn" onclick="saveHw()">Ödevi gönder</button></div>
+  <button class="btn ghost" onclick="V.pr={k:'hwt'};render();window.scrollTo(0,0)">🖨 Ödev çizelgesini yazdır</button>
   <h2>Verilen ödevler</h2>${hwListHtml(list.filter(x=>!x.arch),st)}
   ${list.some(x=>x.arch)?`<details class="card ncard"><summary><b>🗄 Arşiv · ${list.filter(x=>x.arch).length} ödev</b></summary><p class="note">Arşivdeki ödevler öğrencinin aktif listesinden kalkar ama notları ve tamamlanma kayıtları saklı kalır.</p>${hwListHtml(list.filter(x=>x.arch),st,true)}</details>`:''}`}
 function hwListHtml(list,st,arch){if(!list.length)return '<p class="note">Henüz ödev verilmedi.</p>';return list.map(x=>{const tgt=x.to=='all'?st.map(s=>s[0]):Object.keys(x.to||{}),dn=tgt.filter(id=>hwDone(x.id,id)),op=(V.hwo||{})[x.id];
     return `<div class="hwc col"><div class="hwt"><div class="grow"><b>${esc(x.t)}</b>${x.x?`<p>${esc(x.x)}</p>`:''}<span>${x.to=='all'?'Herkese':tgt.map(uname).map(esc).join(', ')} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${x.ex&&examByKey(x.ex)?' · sınav: '+esc(examByKey(x.ex).t):''}</span>
-    <span class="dn">Tamamlayan ${dn.length}/${tgt.length}</span></div>${arch?`<button class="btn sm ghost" onclick="unarchHw('${x.id}')">Geri al</button>`:`<button class="btn sm ghost danger" onclick="delHw('${x.id}',this)">Arşivle</button>`}</div>
+    <span class="dn">Tamamlayan ${dn.length}/${tgt.length}</span></div><button class="btn sm ghost" title="Ödev kâğıdını yazdır" onclick="V.pr={k:'hw',id:'${x.id}'};render();window.scrollTo(0,0)">🖨</button>${arch?`<button class="btn sm ghost" onclick="unarchHw('${x.id}')">Geri al</button>`:`<button class="btn sm ghost danger" onclick="delHw('${x.id}',this)">Arşivle</button>`}</div>
     <button class="lnk" onclick="(V.hwo=V.hwo||{})['${x.id}']=!${!!op};render()">${op?'Notlandırmayı kapat':'Öğrenci öğrenci gör ve notlandır'}</button>
     ${op?tgt.map(id=>{const r=hwRec(x.id,id)||{},k=x.id+'_'+id,f=(V.hg||{})[k]||{g:r.g??'',n:r.n??''},res=r.rid&&resultsOf(id).find(y=>y.id==r.rid);
-      return `<div class="hgr"><div class="grow"><b>${esc(uname(id))}</b><span>${r.at?'✓ '+fmtT(r.at):'Henüz yapmadı'}${res&&res.p!=null?' · sınav %'+res.p:''}${r.gat?' · not: '+esc(r.g)+' ('+esc(uname(r.gby))+')':''}</span></div>
+      return `<div class="hgr"><div class="grow"><b>${esc(uname(id))}</b><span>${r.at?'✓ '+fmtT(r.at):'Henüz yapmadı'}${res&&res.p!=null?' · sınav %'+res.p:''}${r.gat?' · not: '+esc(r.g)+' ('+esc(uname(r.gby))+')':''}</span>${r.ans?`<div class="hans">${esc(r.ans).replace(/\n/g,'<br>')}</div>`:''}</div><button class="btn sm ghost" title="Bu kişinin ödev kâğıdı" onclick="V.pr={k:'hw',id:'${x.id}',uid:'${id}'};render();window.scrollTo(0,0)">🖨</button>
       <input id="f-hg-${k}" inputmode="numeric" placeholder="Not" value="${esc(f.g)}" oninput="hgSet('${k}','g',this.value)"><input id="f-hn-${k}" placeholder="Kısa yorum" value="${esc(f.n)}" oninput="hgSet('${k}','n',this.value)"><button class="btn sm" onclick="saveHwGrade('${x.id}','${id}')">Kaydet</button></div>`}).join(''):''}</div>`}).join('')}
 function hgSet(k,f,v){V.hg=V.hg||{};const [hid,uid]=k.split('_'),r=hwRec(hid,uid)||{};V.hg[k]=V.hg[k]||{g:r.g??'',n:r.n??''};V.hg[k][f]=v}
 async function saveHwGrade(hid,uid){const k=hid+'_'+uid,r=hwRec(hid,uid)||{},f=(V.hg||{})[k]||{g:r.g??'',n:r.n??''},g=String(f.g).trim();
@@ -3850,7 +3909,10 @@ async function saveHwGrade(hid,uid){const k=hid+'_'+uid,r=hwRec(hid,uid)||{},f=(
   try{await tPut('hwgrade/'+hid+'/'+uid,{g:+g,n:(f.n||'').trim().slice(0,1000),gby:T.uid,gat:Date.now()});delete V.hg[k];toast('Ödev notu kaydedildi.');render()}catch(e){}}
 async function saveHw(){const f=V.hw;if(!(f.t||'').trim())return toast('Ödeve bir başlık yaz.');const to=f.all?'all':Object.fromEntries(Object.entries(f.to).filter(([,v])=>v));
   if(to!='all'&&!Object.keys(to).length)return toast('En az bir öğrenci seç.');
-  try{await tPut('homework/'+genId(),{t:f.t.trim(),x:(f.x||'').trim(),ex:f.ex||'',due:f.due||'',to,by:T.uid,at:Date.now()});V.hw=null;toast('Ödev gönderildi.');render()}catch(e){}}
+  const base={t:f.t.trim(),x:(f.x||'').trim(),ex:f.ex||'',due:f.due||'',by:T.uid,at:Date.now()};
+  const ids=f.sep?(to=='all'?students().filter(([,u])=>u.a!==false).map(s=>s[0]):Object.keys(to)):null;
+  try{if(ids){for(const id of ids)await tPut('homework/'+genId(),Object.assign({},base,{to:{[id]:true}}));toast(ids.length+' kişiye ayrı ayrı gönderildi.')}
+    else{await tPut('homework/'+genId(),Object.assign({},base,{to}));toast('Ödev gönderildi.')}V.hw=null;render()}catch(e){}}
 function delHw(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Arşive kaldırılsın mı?';return}tPatch('homework/'+id,{arch:true,archAt:Date.now()}).catch(()=>{});render()}
 function unarchHw(id){tPatch('homework/'+id,{arch:false}).catch(()=>{});render()}
 
@@ -4129,7 +4191,7 @@ function vKarneView(){const {uid,kid}=V.kv,k=((T.D.karne||{})[uid]||{})[kid];if(
 function hwOf(uid){return Object.entries(T.D.homework||{}).map(([id,h])=>Object.assign({id},h)).filter(h=>h.to=='all'||(h.to&&h.to[uid])).sort((a,b)=>b.at-a.at)}
 function studentHw(uid){const hw=hwOf(uid);if(!hw.length)return '<p class="note">Bu kişiye henüz ödev verilmedi.</p>';
   return hw.map(x=>{const r=hwRec(x.id,uid)||{},k=x.id+'_'+uid,f=(V.hg||{})[k]||{g:r.g??'',n:r.n??''},res=r.rid&&resultsOf(uid).find(y=>y.id==r.rid);
-    return `<div class="hwc col"><div class="grow"><b>${esc(x.t)}${x.arch?' · arşiv':''}</b><span>${fmtT(x.at)} · ${r.at?'✓ yaptı '+fmtT(r.at):'yapmadı'}${res&&res.p!=null?' · sınav %'+res.p:''}${r.gat?' · not '+esc(r.g)+' ('+esc(uname(r.gby))+', '+fmtT(r.gat)+')':''}</span>${r.n?`<div class="gr">${esc(r.n)}</div>`:''}</div>
+    return `<div class="hwc col"><div class="grow"><b>${esc(x.t)}${x.arch?' · arşiv':''}</b><span>${fmtT(x.at)} · ${r.at?'✓ yaptı '+fmtT(r.at):'yapmadı'}${res&&res.p!=null?' · sınav %'+res.p:''}${r.gat?' · not '+esc(r.g)+' ('+esc(uname(r.gby))+', '+fmtT(r.gat)+')':''}</span>${r.ans?`<div class="hans"><small>Teslim ettiği cevap</small>${esc(r.ans).replace(/\n/g,'<br>')}</div>`:''}${r.n?`<div class="gr">${esc(r.n)}</div>`:''}<button class="lnk" onclick="V.pr={k:'hw',id:'${x.id}',uid:'${uid}'};render();window.scrollTo(0,0)">🖨 Ödev kâğıdı</button></div>
     <div class="hgr"><input id="f-hg-${k}" inputmode="numeric" placeholder="Not" value="${esc(f.g)}" oninput="hgSet('${k}','g',this.value)"><input id="f-hn-${k}" placeholder="Kısa yorum" value="${esc(f.n)}" oninput="hgSet('${k}','n',this.value)"><button class="btn sm" onclick="saveHwGrade('${x.id}','${uid}')">Kaydet</button></div></div>`}).join('')}
 function gbRows(){return students().map(([id,u])=>{const p=(T.D.progress||{})[id]||{},rs=resultsOf(id),sc=rs.map(r=>rscore(id,r)).filter(v=>v!=null),tg=rs.map(r=>gradeOf(id,r.id)).filter(Boolean).map(g=>+g.s),
   hw=hwOf(id),hd=hw.filter(h=>hwDone(h.id,id)).length,hg=hw.map(h=>(hwRec(h.id,id)||{}).g).filter(g=>g!=null).map(Number),ks=karneOf(id),avg=a=>a.length?Math.round(a.reduce((x,y)=>x+y,0)/a.length):null;
@@ -4194,6 +4256,192 @@ function vReport(){const D=repData(V.rep.uid),uid=D.uid,sc=r=>uid?rscore(uid,r):
   <h2>Çalışma takvimi</h2><div class="card">${calH}</div>
   <h2>Öneriler</h2><div class="card"><ul class="tips">${tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
   ${rs.length?`<h2>Sınav geçmişi</h2><div class="card rhist">${rs.slice().reverse().map(r=>{const g=uid&&gradeOf(uid,r.id);return `<div class="hrow"><span>${fmtT(r.at)}</span><b>${esc(r.t)}</b><em>${r.p!=null?'%'+r.p:'—'}${g?' · not '+esc(g.s):''}</em></div>`}).join('')}</div>`:''}</div>`}
+
+
+/* ================= YARIŞ · İLAN PANOSU · ÇIKTILAR ================= */
+const wkOf=d=>d-((d+3)%7);
+function weekXP(){const w=wkOf(today());let s=0;for(let d=w;d<=w+6;d++)s+=((S.xd||{})[d]||0);return s}
+const fmtD=t=>t?new Date(t).toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'}):'—';
+const fmtDue=s=>{if(!s)return '';const p=String(s).split('-');return p.length==3?fmtD(new Date(+p[0],+p[1]-1,+p[2]).getTime()):s};
+const MEDAL=['🥇','🥈','🥉'];
+
+/* ----- rozetler ----- */
+const BADGES=[
+ ['ilk','🐣','İlk adım','İlk dersini bitir',()=>Object.keys(S.ls||{}).length>=1],
+ ['ders5','📚','Ders kurdu','5 ders bitir',()=>Object.keys(S.ls||{}).length>=5],
+ ['ders15','🎒','Sınıf birincisi adayı','15 ders bitir',()=>Object.keys(S.ls||{}).length>=15],
+ ['k50','🧠','Kelime avcısı','50 kelime öğren',()=>known()>=50],
+ ['k200','🏛','Saray mimarı','200 kelime öğren',()=>known()>=200],
+ ['s3','🔥','Ateşi yaktı','3 gün üst üste çalış',()=>streak()>=3],
+ ['s7','🌋','Yanardağ','7 gün üst üste çalış',()=>streak()>=7],
+ ['s30','☄️','Durdurulamaz','30 gün üst üste çalış',()=>streak()>=30],
+ ['ex1','📝','Sınav tadı','İlk sınavını çöz',()=>(S.exh||[]).length>=1],
+ ['ex10','🗂','Sınav canavarı','10 sınav çöz',()=>(S.exh||[]).length>=10],
+ ['p100','💯','Kusursuz','Bir sınavdan %100 al',()=>Object.values(S.exb||{}).some(v=>v>=100)],
+ ['dc1','🎯','Meydan okuyan','Günün yarışmasına katıl',()=>Object.keys(S.dcd||{}).length>=1],
+ ['dc10','🏹','Yarış kurdu','10 günün yarışmasına katıl',()=>Object.keys(S.dcd||{}).length>=10],
+ ['dcp','🌟','Günün yıldızı','Günün yarışmasında 10/10 yap',()=>Object.values(S.dcd||{}).some(v=>v>=10)],
+ ['sv10','❤️','Üç can ustası','Üç Can oyununda 10 doğru seri',()=>(S.sv||0)>=10],
+ ['sv25','💎','Ölümsüz resepsiyonist','Üç Can oyununda 25 doğru seri',()=>(S.sv||0)>=25],
+ ['xp1k','⭐','Bin yıldız','1000 XP topla',()=>(S.xp||0)>=1000],
+ ['wk300','🚀','Haftanın roketi','Bir haftada 300 XP topla',()=>weekXP()>=300]];
+function checkBadges(){S.bdg=S.bdg||{};const nw=BADGES.filter(b=>!S.bdg[b[0]]&&b[4]());if(!nw.length)return;
+  nw.forEach(b=>S.bdg[b[0]]=Date.now());save();toast('Yeni rozet: '+nw.map(b=>b[1]+' '+b[2]).join(', '));confetti()}
+(function(){const o=save;save=function(){o.apply(this,arguments);clearTimeout(checkBadges.h);checkBadges.h=setTimeout(()=>{try{checkBadges()}catch(e){}},700)}})();
+
+/* ----- lig kaydı (herkesin görebildiği özet) ----- */
+function lbEntry(){return {xp:S.xp||0,lv:lvl().name,wk:wkOf(today()),wx:weekXP(),sk:streak(),k:known(),sv:S.sv||0,bd:Object.keys(S.bdg||{}).join(','),t:Date.now()}}
+async function lbSync(){if(!T.uid||!T.cfg||!me())return;const e=lbEntry(),s=JSON.stringify(Object.assign({},e,{t:0}));if(s==T.lastLb)return;
+  try{await tReq('PUT','pub/lb/'+T.uid,e);T.lastLb=s;setPath(T.D,['lb',T.uid],e)}catch(x){}}
+function lbRows(mode){const wk=wkOf(today()),u=U();let L=Object.entries(T.D.lb||{}).filter(([id])=>u[id]&&u[id].a!==false).map(([id,e])=>({id,n:u[id].n,r:u[id].r,v:mode=='all'?(e.xp||0):(e.wk==wk?(e.wx||0):0),e}));
+  if(T.uid&&!L.some(x=>x.id==T.uid)){const e=lbEntry();L.push({id:T.uid,n:uname(T.uid),r:role(),v:mode=='all'?e.xp:e.wx,e})}
+  L=L.filter(x=>x.r=='student'||x.v>0).sort((a,b)=>b.v-a.v||a.n.localeCompare(b.n,'tr'));return rankIt(L,x=>x.v)}
+function rankIt(L,f){let prev=null,rk=0;return L.map((x,i)=>{const v=f(x);if(v!==prev){rk=i+1;prev=v}return Object.assign({rk},x)})}
+
+/* ----- oyun soruları ----- */
+function seeded(seed,fn){let s=(seed>>>0)||1;const R=Math.random;Math.random=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296};try{return fn()}finally{Math.random=R}}
+function gamePool(n){const a=[];
+  try{a.push(...hotelQs(HOTEL.map((_,i)=>i),Math.ceil(n*1.8)).filter(q=>q.k=='mc'))}catch(e){}
+  try{a.push(...vocabQs('A1',Math.ceil(n/2)),...vocabQs('A2',Math.ceil(n/3)))}catch(e){}
+  try{a.push(...shuffle(parseQ(DURUM)).slice(0,Math.ceil(n/2)))}catch(e){}
+  return shuffle(a.filter(q=>q.k=='mc'&&q.o&&q.o.length>1)).slice(0,n)}
+const dcQs=d=>seeded(d*7919+13,()=>gamePool(10));
+const dcMine=d=>{const r=T.uid&&((T.D.dc||{})[d]||{})[T.uid];return r?r.s:(S.dcd||{})[d]};
+function dcRank(d){const u=U();return rankIt(Object.entries((T.D.dc||{})[d]||{}).filter(([id])=>u[id]).map(([id,r])=>({id,n:u[id].n,s:r.s,at:r.at})).sort((a,b)=>b.s-a.s||a.n.localeCompare(b.n,'tr')),x=>x.s)}
+
+function gStart(k){if(k=='dc'){const d=today();if(dcMine(d)!=null)return toast('Bugünkü yarışmaya katıldın. Yarın yeni sorular gelir.');
+    V.gm={k,d,qs:dcQs(d),i:0,ok:0,pick:null}}
+  else V.gm={k,qs:gamePool(30),i:0,ok:0,lives:3,pick:null};
+  if(!V.gm.qs.length){V.gm=null;return toast('Soru bulunamadı.')}V.tab='yaris';render();window.scrollTo(0,0)}
+function gPick(j){const G=V.gm;if(G.pick!=null)return;G.pick=j;const q=G.qs[G.i];if(j===q.a)G.ok++;else if(G.k=='sv')G.lives--;render()}
+function gNext(){const G=V.gm;G.pick=null;G.i++;
+  if(G.k=='sv'){if(G.lives<=0)return gEnd();if(G.i>=G.qs.length-3)G.qs.push(...gamePool(30))}
+  else if(G.i>=G.qs.length)return gEnd();render();window.scrollTo(0,0)}
+function gEnd(){const G=V.gm;G.done=true;
+  if(G.k=='dc'){S.dcd=S.dcd||{};S.dcd[G.d]=G.ok;addXP(5+G.ok*3);S.log[today()]=(S.log[today()]||0)+1;save();
+    if(T.uid)tPut('dc/'+G.d+'/'+T.uid,{s:G.ok,at:Date.now()}).catch(()=>{});if(G.ok>=8)confetti()}
+  else{G.best=G.ok>(S.sv||0);S.sv=Math.max(S.sv||0,G.ok);addXP(Math.min(100,G.ok*2));S.log[today()]=(S.log[today()]||0)+1;save();if(G.best&&G.ok)confetti()}
+  render();window.scrollTo(0,0)}
+function gQuit(b){const G=V.gm;if(G.k=='dc'&&G.i>0){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Şu ana kadarki puan kaydedilsin mi?';return}return gEnd()}V.gm=null;render()}
+function vGame(){const G=V.gm,nm=G.k=='dc'?'🎯 Günün yarışması':'❤️ Üç Can';
+  if(G.done){const R=G.k=='dc'?dcRank(G.d):null;
+    return `<div class="bar"><button class="back" onclick="V.gm=null;render()">‹ Yarış</button><span class="grow">${nm}</span></div>
+    <div class="card center">${G.k=='dc'?`<div class="big">${G.ok}/10</div><h3>${G.ok==10?'Kusursuz! Günün yıldızı adayısın 🌟':G.ok>=8?'Harika bir gün!':G.ok>=5?'Fena değil, yarın daha iyisi!':'Isınma turuydu; yarın rövanş!'}</h3><p class="xpg">+${5+G.ok*3} XP</p>`
+      :`<div class="big">${G.ok}</div><h3>doğru seri</h3><p>${G.best?'🎉 Yeni rekor!':'Rekorun: '+(S.sv||0)}</p><p class="xpg">+${Math.min(100,G.ok*2)} XP</p>`}</div>
+    ${R&&R.length?`<h2>Bugünün sıralaması</h2>${rankTable(R.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,v:x.s+'/10'})))}`:''}
+    ${G.k=='sv'?`<button class="btn" onclick="gStart('sv')">Bir daha oyna</button>`:''}<button class="btn ghost" onclick="V.gm=null;render()">Yarış sayfasına dön</button>`}
+  const q=G.qs[G.i],p=G.pick;
+  const head=G.k=='dc'?`<span>${G.i+1}/10 · ${G.ok} doğru</span>`:`<span class="lives">${'❤️'.repeat(Math.max(0,G.lives))}${'🤍'.repeat(3-Math.max(0,G.lives))} · seri ${G.ok}</span>`;
+  return `<div class="bar"><button class="back" onclick="gQuit(this)">‹ Çık</button><span class="grow">${nm}</span>${head}</div>
+  <div class="card"><div class="qq">${esc(q.q)}</div>${q.o.map((o,j)=>`<button class="opt ${p==null?'':j===q.a?'good':j===p?'bad':''}" onclick="gPick(${j})">${esc(o)}</button>`).join('')}
+  ${p!=null?`<div class="gfb ${p===q.a?'good':'bad'}"><b>${p===q.a?pick(['Doğru! 👏','Süper!','Tam isabet 🎯','Aynen öyle!']):'Olmadı.'}</b>${q.w?`<span>${esc(q.w)}</span>`:''}${/[a-z]{3}/i.test(q.o[q.a])?`<button class="spk" data-say="${esc(q.o[q.a])}">🔊</button>`:''}</div>
+  <button class="btn" onclick="gNext()">${G.k=='sv'&&G.lives<=0?'Sonucu gör':G.k=='dc'&&G.i==9?'Sonucu gör':'Devam ›'}</button>`:''}</div>
+  <p class="note center">Süre yok, acele etme. ${G.k=='dc'?'Herkes bugün aynı 10 soruyu çözüyor; tek hakkın var.':'3 yanlışta oyun biter. Kaç doğruyu üst üste yapabileceksin?'}</p>`}
+const pick=a=>a[rnd(a.length)];
+function rankTable(L,cols){return `<div class="lbt">${L.map(x=>`<div class="lbr ${x.me?'me':''}"><span class="rk">${x.rk<=3?MEDAL[x.rk-1]:x.rk}</span><b>${esc(x.n)}</b>${x.sub?`<small>${esc(x.sub)}</small>`:''}<em>${esc(x.v)}</em></div>`).join('')}</div>`}
+
+/* ----- YARIŞ sekmesi ----- */
+const boardsAll=()=>Object.entries(T.D.boards||{}).map(([id,b])=>Object.assign({id},b)).sort((a,b)=>b.at-a.at);
+const newBoards=()=>T.uid&&!isStaff()?boardsAll().filter(b=>b.at>(S.bSeen||0)).length:0;
+function vYaris(){if(V.gm)return vGame();V.lm=V.lm||'wk';
+  if(newBoards())setTimeout(()=>{S.bSeen=Date.now();save();badges()},800);
+  const d=today(),mine=dcMine(d),R=T.uid?dcRank(d):[],yR=T.uid?dcRank(d-1).filter(x=>x.rk==1):[];
+  let h=`<h1 class="pt">Yarış 🏆</h1><p class="lead">Günün yarışması, Üç Can oyunu, haftalık lig ve rozetler. Hepsi seni otelin İngilizcesine biraz daha yaklaştırır.</p>`;
+  if(T.uid){const B=boardsAll();h+=`<h2>📌 İlan panosu</h2>`+(B.length?B.slice(0,V.ball?99:4).map(b=>`<button class="row" onclick="V.pr={k:'board',id:'${b.id}'};render();window.scrollTo(0,0)"><div class="num">📌</div><div class="sb"><b>${esc(b.t)}${b.at>(S.bSeen||0)&&!isStaff()?' <i class="newt">yeni</i>':''}</b><span>${fmtT(b.at)} · ${esc(uname(b.by))} · ${(b.rows||[]).length} kişi</span></div></button>`).join('')+(B.length>4&&!V.ball?`<button class="lnk" onclick="V.ball=1;render()">Tüm ilanlar (${B.length})</button>`:'')
+      :`<p class="note">${isStaff()?'Henüz ilan yok. Panel › İlan sekmesinden sınav sonuçlarını, karneleri ya da lig tablosunu yayınlayabilirsin.':'Öğretmenin sonuçları yayınladığında burada görünecek.'}</p>`);
+    if(isStaff())h+=`<button class="btn ghost" onclick="go('panel');V.pn={t:'ilan',sel:null};render()">＋ Yeni ilan yayınla</button>`}
+  h+=`<h2>🎯 Günün yarışması</h2><div class="card gcard"><p>Bugün herkes aynı 10 soruyu çözer. Tek hak, süre yok. Doğru başına 3 XP.</p>
+    ${mine!=null?`<div class="gdone">Bugün <b>${mine}/10</b> yaptın. Yarın yeni sorular!</div>`:`<button class="btn" onclick="gStart('dc')">Yarışmaya katıl</button>`}
+    ${yR.length?`<p class="note">Dünün birincisi: ${yR.map(x=>'🏅 <b>'+esc(x.n)+'</b> ('+x.s+'/10)').join(', ')}</p>`:''}
+    ${R.length?`<h3>Bugünün sıralaması</h3>${rankTable(R.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,v:x.s+'/10'})))}`:T.uid?'<p class="note">Bugün henüz kimse katılmadı. İlk sen ol!</p>':''}</div>`;
+  h+=`<h2>❤️ Üç Can</h2><div class="card gcard"><p>Otel cümleleri ve kelimeler art arda gelir. 3 yanlışta oyun biter. Rekorun: <b>${S.sv||0}</b></p><button class="btn" onclick="gStart('sv')">Oyna</button>
+    ${T.uid?(()=>{const L=rankIt(Object.entries(T.D.lb||{}).filter(([id,e])=>U()[id]&&U()[id].a!==false&&e.sv>0).map(([id,e])=>({id,n:uname(id),v:e.sv})).sort((a,b)=>b.v-a.v),x=>x.v).slice(0,5);return L.length?`<h3>Rekorlar</h3>`+rankTable(L.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,v:x.v+' seri'}))):''})():''}</div>`;
+  if(T.uid){const L=lbRows(V.lm),wk=wkOf(d),left=wk+7-d,G=T.D.goal||{},tot=Object.entries(T.D.lb||{}).filter(([id,e])=>U()[id]&&e.wk==wk).reduce((a,[,e])=>a+(e.wx||0),0),goal=+G.g||Math.max(500,students().length*250),gp=Math.min(100,Math.round(100*tot/goal));
+    h+=`<h2>🏆 Lig</h2><div class="seg"><button class="${V.lm=='wk'?'on':''}" onclick="V.lm='wk';render()">Bu hafta</button><button class="${V.lm=='all'?'on':''}" onclick="V.lm='all';render()">Tüm zamanlar</button></div>
+    ${L.length?rankTable(L.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,sub:(x.e.lv||'')+(x.e.sk?' · 🔥'+x.e.sk:'')+(x.e.bd?' · '+x.e.bd.split(',').length+' rozet':''),v:x.v+' XP'}))):'<p class="note">Henüz kimse XP toplamadı.</p>'}
+    <p class="note">${V.lm=='wk'?`Haftalık lig pazartesi sıfırlanır (${left==1?'yarın':left+' gün sonra'}). Ders, sınav, tekrar ve oyunların hepsi XP getirir.`:'Başından beri toplanan XP.'}</p>
+    <h2>🤝 Ekip hedefi</h2><div class="card"><div class="lvh"><b>${esc(G.x||'Bu haftanın ekip hedefi')}</b><span>${tot} / ${goal} XP</span></div><div class="prog"><i style="width:${gp}%"></i></div>
+    <small class="note">${gp>=100?'🎉 Hedef tutturuldu! Ekibe alkış.':'Herkesin bu hafta topladığı XP birlikte sayılır.'}</small>
+    ${isStaff()?`<details><summary class="lnk">Hedefi ayarla</summary><div class="nsr"><input id="f-gl-x" placeholder="Ödül / hedef adı, ör. Cuma pizza günü 🍕" value="${esc((V.gl||{}).x??G.x??'')}" oninput="(V.gl=V.gl||{}).x=this.value"><input id="f-gl-g" inputmode="numeric" placeholder="XP" value="${esc((V.gl||{}).g??G.g??'')}" oninput="(V.gl=V.gl||{}).g=this.value"></div><button class="btn sm" onclick="saveGoal()">Kaydet</button></details>`:''}</div>`}
+  else h+=`<p class="note">Haftalık lig, ilan panosu ve günün sıralaması ekip girişiyle çalışır.</p>`;
+  S.bdg=S.bdg||{};const nE=BADGES.filter(b=>S.bdg[b[0]]).length;
+  h+=`<h2>🎖 Rozetlerim · ${nE}/${BADGES.length}</h2><div class="bdgs">${BADGES.map(b=>`<div class="bdgc ${S.bdg[b[0]]?'on':''}"><i>${b[1]}</i><b>${b[2]}</b><small>${S.bdg[b[0]]?fmtT(S.bdg[b[0]]).split(' ').slice(0,2).join(' '):b[3]}</small></div>`).join('')}</div>`;
+  return h}
+async function saveGoal(){const f=V.gl||{},G=T.D.goal||{},g=String(f.g??G.g??'').trim();if(g&&(isNaN(+g)||+g<1))return toast('XP hedefi bir sayı olmalı.');
+  try{await tPut('goal',{x:String(f.x??G.x??'').trim().slice(0,120),g:g?+g:0,by:T.uid,at:Date.now()});V.gl=null;toast('Ekip hedefi kaydedildi.');render()}catch(e){}}
+
+/* ----- İLAN (yayınlama) — panel sekmesi ----- */
+function ilKeys(){const m={};students().forEach(([id])=>resultsOf(id).forEach(r=>{if(!m[r.key]||m[r.key].at<r.at)m[r.key]={t:r.t,at:r.at}}));return Object.entries(m).sort((a,b)=>b[1].at-a[1].at)}
+function ilData(f){const st=students().filter(([,u])=>u.a!==false),avg=a=>a.length?Math.round(a.reduce((x,y)=>x+y,0)/a.length):null;let cols,L,title;
+  if(f.k=='exam'){const K=ilKeys(),key=f.key||(K[0]||[])[0];if(!key)return {cols:[],rows:[],title:'Sınav sonuçları'};const t=(K.find(x=>x[0]==key)||[,{t:key}])[1].t;title=t+' — sonuçlar';
+    cols=['Sıra','Ad Soyad','Puan','Derece','Deneme'];
+    L=st.map(([id,u])=>{const rs=resultsOf(id).filter(r=>r.key==key),sc=rs.map(r=>rscore(id,r)).filter(v=>v!=null),b=sc.length?Math.max(...sc):null;return {n:u.n,v:b,c:[b==null?(rs.length?'notlanacak':'girmedi'):String(b),b==null?'—':KNOT[pct2not(b)],String(rs.length)]}})}
+  else if(f.k=='period'){const from=+f.range?Date.now()-f.range*864e5:0;title=+f.range?'Son '+f.range+' günün başarı sıralaması':'Genel başarı sıralaması';cols=['Sıra','Ad Soyad','Ortalama','Sınav','Ödev'];
+    L=st.map(([id,u])=>{const rs=resultsOf(id).filter(r=>r.at>from),sc=rs.map(r=>rscore(id,r)).filter(v=>v!=null),a=avg(sc),hw=hwOf(id).filter(h=>h.at>from);return {n:u.n,v:a,c:[a==null?'—':String(a),String(rs.length),hw.length?hw.filter(h=>hwDone(h.id,id)).length+'/'+hw.length:'—']}})}
+  else if(f.k=='karne'){title='Karne sonuçları';cols=['Sıra','Ad Soyad','Karne ortalaması','Belge','Karne'];
+    L=st.map(([id,u])=>{const k=karneOf(id)[0];return {n:u.n,v:k&&k.avg!=null?k.avg:null,c:[k&&k.avg!=null?String(k.avg).replace('.',','):'—',k&&k.belge?k.belge:'—',k?k.no+'. karne':'henüz yok']}})}
+  else{title='Haftanın ligi';cols=['Sıra','Ad Soyad','Haftalık XP','Unvan','Seri'];
+    L=lbRows('wk').filter(x=>x.r=='student').map(x=>({n:x.n,v:x.v,c:[String(x.v),x.e.lv||'—',(x.e.sk||0)+' gün']}))}
+  L=L.filter(x=>f.miss||x.v!=null).sort((a,b)=>(b.v??-1)-(a.v??-1)||a.n.localeCompare(b.n,'tr'));
+  const rows=rankIt(L,x=>x.v).map(x=>[x.v==null?'—':String(x.rk),x.n,...x.c]);return {cols,rows,title}}
+function vIlan(){V.il=V.il||{k:'exam',key:'',range:30,t:'',x:'',miss:false};const f=V.il,D=ilData(f),K=ilKeys(),B=boardsAll();
+  const kinds=[['exam','Sınav sonucu'],['period','Başarı sıralaması'],['karne','Karneler'],['lig','Haftanın ligi']];
+  return `<p class="lead">Burada hazırladığın listeyi "Yayınla" dediğinde tüm ekip Yarış › İlan panosunda görür. Her ilan A4 olarak yazdırılıp PDF yapılabilir ve panoya asılabilir.</p>
+  <div class="card"><h3>Yeni ilan</h3><div class="seg">${kinds.map(([k,n])=>`<button class="${f.k==k?'on':''}" onclick="V.il.k='${k}';V.il.t='';render()">${n}</button>`).join('')}</div>
+  ${f.k=='exam'?(K.length?`<label>Sınav</label><select id="f-il-key" onchange="V.il.key=this.value;V.il.t='';render()">${K.map(([k,o])=>`<option value="${esc(k)}" ${(f.key||K[0][0])==k?'selected':''}>${esc(o.t)}</option>`).join('')}</select>`:'<p class="note">Henüz kimse sınav çözmedi.</p>'):''}
+  ${f.k=='period'?`<label>Dönem</label><select id="f-il-r" onchange="V.il.range=+this.value;V.il.t='';render()">${[[7,'Son 7 gün'],[30,'Son 30 gün'],[90,'Son 3 ay'],[0,'Başından beri']].map(([v,n])=>`<option value="${v}" ${+f.range==v?'selected':''}>${n}</option>`).join('')}</select>`:''}
+  <label>Başlık</label><input id="f-il-t" value="${esc(f.t||D.title)}" oninput="V.il.t=this.value">
+  <label>Not (isteğe bağlı, ilanın altına yazılır)</label><textarea id="f-il-x" rows="2" oninput="V.il.x=this.value" placeholder="ör. Tebrikler! Haftaya check-out sınavı var.">${esc(f.x)}</textarea>
+  <label class="chk"><input type="checkbox" ${f.miss?'checked':''} onchange="V.il.miss=this.checked;render()"> Sonucu olmayanları da listede göster</label>
+  <h3>Önizleme</h3>${D.rows.length?boardTable(D.cols,D.rows):'<p class="note">Bu seçimde listelenecek kimse yok.</p>'}
+  <button class="btn" ${D.rows.length?'':'disabled'} onclick="pubBoard()">📌 Yayınla</button></div>
+  <h2>Yayındaki ilanlar</h2>${B.length?B.map(b=>`<div class="hwc"><div class="grow"><b>${esc(b.t)}</b><span>${fmtT(b.at)} · ${esc(uname(b.by))} · ${(b.rows||[]).length} kişi</span></div>
+    <button class="btn sm ghost" onclick="V.pr={k:'board',id:'${b.id}'};render();window.scrollTo(0,0)">Gör / Yazdır</button><button class="btn sm ghost danger" onclick="delBoard('${b.id}',this)">Kaldır</button></div>`).join(''):'<p class="note">Yayında ilan yok.</p>'}`}
+function boardTable(cols,rows){return `<div class="tw"><table class="gb bt"><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((c,i)=>`<td>${i==0&&+c>=1&&+c<=3?MEDAL[+c-1]+' ':''}${i==1?'<b>'+esc(c)+'</b>':esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`}
+async function pubBoard(){const f=V.il,D=ilData(f);if(!D.rows.length)return;
+  try{await tPut('boards/'+genId(),{k:f.k,t:(f.t||D.title).trim().slice(0,160),x:(f.x||'').trim().slice(0,1500),cols:D.cols,rows:D.rows,at:Date.now(),by:T.uid});V.il=null;toast('İlan yayınlandı; herkes Yarış sekmesinde görüyor.');render()}catch(e){}}
+function delBoard(id,b){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Kaldırılsın mı?';return}tDel('boards/'+id).catch(()=>{});render()}
+
+/* ================= ÇIKTILAR (yazdır / PDF) ================= */
+function vPrint(){const P=V.pr;let body='',tools='';
+  if(P.k=='board'){const b=(T.D.boards||{})[P.id];if(!b){V.pr=null;return vYaris()}body=prBoard(b)}
+  else if(P.k=='hw'){body=prHw();if(isStaff()){const h=(T.D.homework||{})[P.id];tools=(h&&h.ex?`<button class="lnk" onclick="V.pr.qs=null;render()">🔄 Soruları yenile</button>`:'')+(h&&h.ex?`<label class="chk"><input type="checkbox" ${P.key?'checked':''} onchange="V.pr.key=this.checked;render()"> Cevap anahtarını ekle</label>`:'')}}
+  else if(P.k=='hwt')body=prHwt();
+  else if(P.k=='res'){body=prRes(P.uid);tools=`<label class="chk"><input type="checkbox" ${P.det?'checked':''} onchange="V.pr.det=this.checked;render()"> Yanlış cevapların ayrıntısını ekle</label>`}
+  return `<div class="bar noprint"><button class="back" onclick="V.pr=null;render()">‹ Geri</button><span class="grow"></span><button class="btn sm" onclick="window.print()">🖨 Yazdır / PDF</button></div>
+  ${tools?`<div class="noprint ptools">${tools}</div>`:''}<p class="note noprint">PDF için yazdırma ekranında hedef olarak "PDF olarak kaydet"i seç.</p><div class="sheet">${body}</div>`}
+const sheetHead=(kind,sub)=>`<div class="shh"><small>ZİHİN SARAYI · OTEL İNGİLİZCESİ OKULU</small><h1>${kind}</h1>${sub?`<span>${sub}</span>`:''}</div>`;
+const sigs=()=>{const t=Object.values(U()).find(u=>u.r=='teacher'),o=Object.values(U()).find(u=>u.r=='owner');return `<div class="ksig shs"><div><i>${esc(t?t.n:'')}</i><small>Öğretmen</small></div><div><i>${esc(o?o.n:'')}</i><small>Müdür</small></div></div>`};
+function prBoard(b){return sheetHead('📌 '+esc(b.t),fmtD(b.at))+`<table class="pt2 board">${'<tr>'+(b.cols||[]).map(c=>`<th>${esc(c)}</th>`).join('')+'</tr>'}${(b.rows||[]).map(r=>`<tr class="${+r[0]>=1&&+r[0]<=3?'top':''}">${r.map((c,i)=>`<td>${i==0&&+c>=1&&+c<=3?MEDAL[+c-1]:i==1?'<b>'+esc(c)+'</b>':esc(c)}</td>`).join('')}</tr>`).join('')}</table>
+  ${b.x?`<div class="shbox">${esc(b.x).replace(/\n/g,'<br>')}</div>`:''}<p class="shf">Tebrikler! Listede adını göremeyenler için: Yarış sekmesi seni bekliyor. 🐾</p>${sigs()}`}
+const LET='abcdefgh';
+function paperQ(q,i){const n=`<b>${i+1}.</b> `;
+  if(q.k=='mc')return `<div class="pq">${n}${esc(q.q)}<div class="po">${q.o.map((o,j)=>`<span>${LET[j]}) ${esc(o)}</span>`).join('')}</div></div>`;
+  if(q.k=='gap')return `<div class="pq">${n}${esc(q.q).replace('___','<u class="pgap"></u>')}</div>`;
+  if(q.k=='tr')return `<div class="pq">${n}İngilizceye çevir: <i>${esc(q.q)}</i><div class="wl"></div></div>`;
+  if(q.k=='ord'){const w=seeded(hsh(q.a[0]),()=>shuffle(q.a[0].split(' ')));return `<div class="pq">${n}Kelimeleri sıraya diz (${esc(q.q)}):<div class="pw">${w.map(x=>`<span>${esc(x)}</span>`).join(' ')}</div><div class="wl"></div></div>`}
+  if(q.k=='lis')return `<div class="pq">${n}Dinleme: öğretmeninin okuduğu cümleyi yaz.<div class="wl"></div></div>`;
+  if(q.k=='open')return `<div class="pq">${n}${esc(q.q)}${'<div class="wl"></div>'.repeat(6)}</div>`;
+  return `<div class="pq">${n}${esc(q.q||'')}<div class="wl"></div></div>`}
+function paperA(q,i){const a=q.k=='mc'?LET[q.a]+') '+q.o[q.a]:q.k=='open'?'Öğretmen değerlendirir':(q.a||[])[0]||'';return `<div class="pa"><b>${i+1}.</b> ${esc(a)}</div>`}
+function prHw(){const P=V.pr,h=(T.D.homework||{})[P.id];if(!h)return '<p>Ödev bulunamadı.</p>';const E=h.ex&&examByKey(h.ex);
+  if(E&&!P.qs)P.qs=E.gen();const r=P.uid?hwRec(P.id,P.uid)||{}:{},qs=E?P.qs||[]:[];
+  return sheetHead('ÖDEV KÂĞIDI',esc(h.t))+`<div class="shinfo"><div><small>Ad Soyad</small><b>${P.uid?esc(uname(P.uid)):'&nbsp;'}</b></div><div><small>Veriliş</small><b>${fmtD(h.at)}</b></div><div><small>Son gün</small><b>${h.due?fmtDue(h.due):'—'}</b></div><div><small>Veren</small><b>${esc(uname(h.by))}</b></div></div>
+  ${h.x?`<div class="shbox">${esc(h.x).replace(/\n/g,'<br>')}</div>`:''}
+  ${E?`<h3 class="shq">${esc(E.t)} · ${qs.length} soru</h3>${qs.map(paperQ).join('')}`:r.ans?'':`<h3 class="shq">Cevabın</h3>${'<div class="wl"></div>'.repeat(14)}`}
+  ${r.ans?`<h3 class="shq">Öğrencinin teslim ettiği cevap · ${fmtD(r.at)}</h3><div class="shbox ans">${esc(r.ans).replace(/\n/g,'<br>')}</div>`:''}
+  ${r.g!=null?`<div class="shgrade">Ödev notu: <b>${esc(r.g)}</b>${r.n?' · '+esc(r.n):''}</div>`:'<div class="shgrade">Not: ______ &nbsp;&nbsp; Öğretmen imzası: ____________</div>'}
+  ${P.key&&qs.length?`<div class="pbreak"></div>${sheetHead('CEVAP ANAHTARI',esc(h.t))}${qs.map(paperA).join('')}`:''}`}
+function prHwt(){const hw=Object.entries(T.D.homework||{}).map(([id,h])=>Object.assign({id},h)).filter(h=>!h.arch).sort((a,b)=>a.at-b.at),st=students().filter(([,u])=>u.a!==false);
+  if(!hw.length)return sheetHead('ÖDEV ÇİZELGESİ')+'<p>Aktif ödev yok.</p>';
+  return sheetHead('ÖDEV ÇİZELGESİ',fmtD(Date.now()))+`<table class="pt2 hwt"><tr><th>Ad Soyad</th>${hw.map((h,i)=>`<th title="${esc(h.t)}">${i+1}</th>`).join('')}<th>Yapılan</th></tr>
+  ${st.map(([id,u])=>{let c=0,t=0;const cells=hw.map(h=>{const on=h.to=='all'||(h.to&&h.to[id]);if(!on)return '<td class="na">·</td>';t++;const r=hwRec(h.id,id)||{};if(r.at)c++;return `<td>${r.g!=null?esc(r.g):r.at?'✓':''}</td>`}).join('');return `<tr><td><b>${esc(u.n)}</b></td>${cells}<td>${c}/${t}</td></tr>`}).join('')}</table>
+  <div class="shleg">${hw.map((h,i)=>`<div><b>${i+1}.</b> ${esc(h.t)}${h.due?' · son gün '+fmtDue(h.due):''}</div>`).join('')}</div><p class="shf">✓ teslim edildi · sayı: ödev notu · boş: henüz yapılmadı · nokta: bu kişiye verilmedi</p>`}
+function prRes(uid){const rs=uid?resultsOf(uid):(S.exh||[]).map((x,i)=>Object.assign({id:'l'+i},x)),sc=rs.map(r=>uid?rscore(uid,r):r.p).filter(v=>v!=null),avg=sc.length?Math.round(sc.reduce((a,b)=>a+b,0)/sc.length):null,P=V.pr;
+  const tg=uid?rs.map(r=>gradeOf(uid,r.id)).filter(Boolean).map(g=>+g.s):[];
+  return sheetHead('SINAV SONUÇ BELGESİ',fmtD(Date.now()))+`<div class="shinfo"><div><small>Ad Soyad</small><b>${esc(uid?uname(uid):'Ben')}</b></div><div><small>Sınav sayısı</small><b>${rs.length}</b></div><div><small>Ortalama</small><b>${avg??'—'}</b></div><div><small>Öğretmen notu ort.</small><b>${tg.length?Math.round(tg.reduce((a,b)=>a+b,0)/tg.length):'—'}</b></div></div>
+  ${rs.length?`<table class="pt2"><tr><th>Tarih</th><th>Sınav</th><th>Otomatik</th><th>Öğretmen notu</th><th>Yorum</th></tr>${rs.map(r=>{const g=uid&&gradeOf(uid,r.id);return `<tr><td>${fmtT(r.at)}</td><td>${esc(r.t)}${r.hw?' (ödev)':''}</td><td>${r.p!=null?'%'+r.p+' ('+r.c+'/'+r.n+')':'—'}</td><td>${g?'<b>'+esc(g.s)+'</b>':r.open?'bekliyor':'—'}</td><td>${g&&g.n?esc(g.n):''}</td></tr>`}).join('')}</table>`:'<p>Henüz sınav yok.</p>'}
+  ${P.det?rs.filter(r=>(r.items||[]).some(it=>it.ok===false)).map(r=>`<h3 class="shq">${esc(r.t)} · ${fmtT(r.at)}</h3>${r.items.filter(it=>it.ok===false).map(it=>`<div class="pa"><small>${esc(it.q)}</small><br>✗ ${esc(it.g||'boş')} → <b>${esc(it.s)}</b></div>`).join('')}`).join(''):''}${sigs()}`}
 
 /* ----- açılış ----- */
 (function boot(){const m=/[#&]z=([A-Za-z0-9_-]+)/.exec(location.hash||'');

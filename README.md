@@ -31,3 +31,12 @@ Zihin Sarayı için **ayrı bir Firebase projesi** önerilir (Turno'nun açık k
 - Sayfa yalnızca Firebase, Google giriş servisleri ve FormSubmit ile konuşabilir (Content-Security-Policy).
 - "Ortak bilgisayar" seçeneğiyle girilen oturum, tarayıcı kapanınca ve 30 dakika hareketsizlikte kapanır.
 - Otomatik sınav puanları öğrencinin cihazında hesaplanır; resmî değerlendirme için öğretmen notu esas alınmalıdır.
+
+## Yarış, ilan panosu ve çıktılar (3.1)
+
+- **Yarış sekmesi:** Günün yarışması (herkese aynı 10 soru, tek hak, süre yok), Üç Can oyunu, haftalık XP ligi, ekip hedefi, 18 rozet.
+- **İlan panosu:** Panel › 📌 İlan sekmesinden sınav sonucu, başarı sıralaması, karne listesi ya da lig tablosu yayınlanır; herkes Yarış sekmesinde görür. Her ilan A4 yazdırılır / PDF yapılır.
+- **Ödevler:** kişiye ayrı ayrı gönderme, öğrencinin yazılı cevap teslimi, ödev kâğıdı (cevap anahtarıyla) ve ödev çizelgesi çıktısı.
+- **Sınav sonuçları:** öğrenci ve öğretmen için sonuç belgesi çıktısı.
+
+> 3.1 ile `database.rules.json` güncellendi. Firebase › Realtime Database › Rules sekmesine yeni dosyayı yapıştırıp **Publish** etmek gerekir.

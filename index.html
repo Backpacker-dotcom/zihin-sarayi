@@ -204,6 +204,16 @@ table.ktab{width:100%;border-collapse:collapse;font-family:system-ui;font-size:1
 .kfoot{text-align:center;font:11px system-ui;color:#8a7a58;margin:14px 0 0}
 @media print{body{background:#fff}nav,.noprint,#toast{display:none!important}#app,main{max-width:none;padding:0}.karne{box-shadow:none;margin:0}}
 .hwc .gr b,.res .gr b{display:inline}
+
+.rbtn{border-color:var(--teal)}.rbtn .num{border-color:var(--teal);color:var(--teal)}
+.rph{text-align:center;margin:4px 0 14px}.rph small{letter-spacing:3px;font-size:11px;color:var(--teal)}.rph h1{font-size:28px;color:var(--gold);margin:4px 0}.rph span{font-size:13px;color:var(--mut)}
+.rpt .stats{margin-bottom:10px}.rpt .hb span{width:150px;font-size:12px}
+.rgr{margin-bottom:14px}.rgh{display:flex;justify-content:space-between;margin-bottom:6px}.rgr .prog{flex:none;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--mut)}.chip.ok{border-color:#2f4a35;color:var(--grn);background:#16261a}
+.cal{display:grid;grid-template-columns:repeat(14,1fr);gap:5px}.cal i{aspect-ratio:1;border-radius:4px;background:var(--line)}.cal i.on{background:var(--teal)}
+.tips{margin:0;padding-left:18px}.tips li{margin:6px 0;font-size:15px}
+.rhist .hrow{display:grid;grid-template-columns:105px 1fr auto;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}.rhist .hrow span{color:var(--mut)}.rhist em{font-style:normal;color:var(--teal)}
+@media print{.rpt .card,.rpt .stats div,.rpt .lvl{border-color:#ccc;background:#fff;color:#000}.rpt h2{color:#7a2e1f}}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -3335,7 +3345,7 @@ function vRoad(){
     <div class="hb"><span>Kelime</span><div><i style="width:${100*kw/ws.length}%"></i></div><b>${kw}/${ws.length}</b></div>${LS.length?`<div class="hb"><span>Ders</span><div><i style="width:${100*LS.filter(x=>x.id in S.ls).length/LS.length}%"></i></div><b>${LS.filter(x=>x.id in S.ls).length}/${LS.length}</b></div>`:''}<div class="hb"><span>Formül</span><div><i style="width:${100*kg/gs.length}%"></i></div><b>${kg}/${gs.length}</b></div></div>`}).join('');
   return `<h1 class="pt">Yol Haritası</h1><p class="lead">Yöntem: <b>kadim</b> (hafıza sarayı, ses köprüsü, sesli tekrar) · <b>modern</b> (aralıklı tekrar, aktif hatırlama, gölgeleme) · <b>keyifli</b> (devam eden hikâye, bol örnek, anında geri bildirim).</p>
   ${ph}<p class="note">* Toplam süreler, Cambridge'in rehberli çalışma saati tahminlerine dayanan yaklaşık değerlerdir. Uygulama kelime ve yapı iskeletini kurar; ileri seviye için her aşamada önerilen okuma ve dinlemeyi de eklemek gerekir.</p>
-  ${acctBox()}${!T.cfg?`<h2>Ekip</h2><div class="card"><p class="note">Şu an tek başına kullanıyorsun. Otelin ekip bağlantısı varsa bağlanınca sınavların öğretmenine gider.</p><button class="btn ghost" onclick="saveJ('zs_solo',null);V={tab:'today'};render()">Ekibe bağlan ya da ekip kur</button></div>`:''}<h2>Ayarlar</h2><div class="card">
+  ${acctBox()}${!T.cfg?`<h2>Ekip</h2><div class="card"><p class="note">Şu an tek başına kullanıyorsun. Otelin ekip bağlantısı varsa bağlanınca sınavların öğretmenine gider.</p><button class="btn ghost" onclick="saveJ('zs_solo',null);V={tab:'today'};render()">Ekibe bağlan ya da ekip kur</button></div>`:''}<button class="row rbtn" onclick="openReport()"><div class="num">📊</div><div class="sb"><b>İlerleme raporum</b><span>Tüm çalışmanın tek sayfalık özeti</span></div></button><h2>Ayarlar</h2><div class="card">
   <label>Günlük yeni kelime</label><div class="seg">${[5,10,15,20].map(n=>`<button class="${S.n==n?'on':''}" onclick="S.n=${n};save();render()">${n}</button>`).join('')}</div>
   <label>Seslendirme hızı</label><div class="seg">${[[.7,'Yavaş'],[.9,'Normal'],[1.1,'Hızlı']].map(r=>`<button class="${S.rate==r[0]?'on':''}" onclick="S.rate=${r[0]};save();render();say('Hello, how are you today?')">${r[1]}</button>`).join('')}</div>
   <label>Yedek — telefon ve web arasında ilerleme taşımak için</label>
@@ -3364,13 +3374,13 @@ function vHotel(){
 /* ---------- Çatı ---------- */
 function curTabs(){const t=[['today','☀','Bugün'],['gram','📖','Ders'],['sinav','📝','Sınav'],['otel','🏨','Otel'],['palace','🏛','Saray']];
   if(T.uid){t.push(['sor','🙋','Sor']);t.push(isStaff()?['panel','🧑‍🏫','Panel']:['kutu','📬','Kutu'])}return t}
-function go(t){V.kv=null;V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
+function go(t){V.kv=null;V.rep=null;V.tab=t;V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.ex&&(V.ex.done||t!='sinav'))V.ex=null;render();window.scrollTo(0,0)}
 const needGate=()=>(T.cfg&&!T.uid)||(!T.cfg&&!loadJ('zs_solo',0));
 function render(){const ae=document.activeElement,aid=ae&&ae.id&&/^f-/.test(ae.id)?ae.id:null;let ss=null,se=null;try{ss=ae.selectionStart;se=ae.selectionEnd}catch(e){}
   let v,nav=true;const gate=needGate();
   if(gate){v=vGate();nav=false}
   else{if(V.tab=='panel'&&!isStaff())V.tab='today';if(V.tab=='kutu'&&(!T.uid||isStaff()))V.tab='today';
-    v=V.kv&&T.uid?vKarneView():V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
+    v=V.rep?vReport():V.kv&&T.uid?vKarneView():V.sess?vSess():V.tab=='today'?vToday():V.tab=='palace'?vPalace():V.tab=='gram'?vGram():V.tab=='otel'?vHotel():V.tab=='sinav'?vSinav():V.tab=='kutu'?vKutu():V.tab=='sor'?(T.uid?vSor():vToday()):V.tab=='panel'?vPanel():vRoad();
     if(V.sess||(V.tab=='sinav'&&V.ex&&!V.ex.done))nav=false}
   if(v==='')return;const app=document.getElementById('app');app.className=!gate&&V.tab=='panel'?'wide':'';
   app.innerHTML=`<main>${v}</main>`+(nav?`<nav>${curTabs().map(t=>`<button class="${V.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><i>${t[1]}</i>${t[2]}${t[0]=='kutu'||t[0]=='panel'||t[0]=='sor'?`<em class="bdg" id="bdg-${t[0]}" style="display:none"></em>`:''}</button>`).join('')}</nav>`:'');
@@ -3437,7 +3447,7 @@ function tCheckMe(){if(!T.uid||!T.loaded)return;const m=me();if(!m||m.a===false)
 /* ----- ilerleme senkronu ----- */
 function tSync(){if(!T.uid||!T.cfg)return;clearTimeout(tSync.h);tSync.h=setTimeout(async()=>{
   const st=JSON.stringify(S);if(st!=T.lastSt){try{await tReq('PUT',T.uid,JSON.parse(st),true);T.lastSt=st}catch(e){}}
-  const P={xp:S.xp||0,lv:lvl().name,ls:S.ls||{},k:known(),sk:streak(),t:Date.now()},ps=JSON.stringify(Object.assign({},P,{t:0}));
+  const lg={},t0=today();for(let d=t0-59;d<=t0;d++)if(S.log[d])lg[d]=S.log[d];const P={xp:S.xp||0,lv:lvl().name,ls:S.ls||{},k:known(),sk:streak(),t:Date.now(),lg,bk:wordBuckets(S),due:dueList().length,exb:S.exb||{}},ps=JSON.stringify(Object.assign({},P,{t:0}));
   if(ps!=T.lastPr){try{await tReq('PUT','progress/'+T.uid,P);T.lastPr=ps}catch(e){}}},2500)}
 
 /* ----- canlı güncellemede yeniden çizim ----- */
@@ -3576,7 +3586,7 @@ function vSinav(){if(V.ex)return vExamRun();
   if(ce.length)h+=`<h2>Öğretmenin hazırladığı sınavlar</h2>`+ce.map(e=>row('c-'+e.id,e.t,(e.d?e.d+' · ':'')+(e.qs||[]).length+' soru',(e.qs||[]).length)).join('');
   Object.entries(groups).forEach(([g,L])=>{h+=`<h2>${g}</h2>`+L.map(E=>row(E.key,E.t,E.d,E.n)).join('')});
   const mine=T.uid?resultsOf(T.uid):(S.exh||[]).map((x,i)=>Object.assign({id:'l'+i},x));
-  h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>`+(mine.length?mine.map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
+  h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>${isStaff()?'':`<button class="lnk" onclick="openReport()">📊 İlerleme raporumu aç</button>`}`+(mine.length?mine.map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
     return `<div class="res"><div class="grow"><b>${esc(r.t)}</b><span>${fmtT(r.at)}${r.p!=null?` · otomatik %${r.p}`:''}</span>${g?`<div class="gr"><b>Not: ${esc(g.s)}</b>${g.n?` · ${esc(g.n)}`:''}<small>${esc(uname(g.by))}</small></div>`:r.open&&T.uid?'<div class="note">Öğretmen değerlendirmesi bekleniyor</div>':''}</div>${g?`<span class="pill">${esc(g.s)}</span>`:''}</div>`}).join(''):'<p class="note">Henüz sınav çözmedin.</p>');
   return h}
 
@@ -3590,6 +3600,7 @@ function hwDoneSelf(hid){tPatch('hwdone/'+hid+'/'+T.uid,{at:Date.now()}).then(()
 function vKutu(){setTimeout(markRead,300);const hw=myHw(),gr=Object.entries((T.D.grades||{})[T.uid]||{}).map(([rid,g])=>Object.assign({rid},g)).sort((a,b)=>b.at-a.at);
   const rmap={};resultsOf(T.uid).forEach(r=>rmap[r.id]=r);
   return `<h1 class="pt">Kutum</h1><p class="lead">Ödevlerin, notların ve öğretmeninle mesajların.</p>
+  <button class="row rbtn" onclick="openReport()"><div class="num">📊</div><div class="sb"><b>İlerleme raporum</b><span>Alanlara göre başarı, sınav grafiği, ders ve kelime ilerlemesi, öneriler</span></div></button>
   ${karneListHtml(T.uid)}
   <h2>Ödevler</h2>${hw.length?hw.map(x=>{const d=hwDone(x.id,T.uid),E=x.ex&&examByKey(x.ex),r=hwRec(x.id,T.uid)||{};if(x.arch&&!d&&r.g==null)return '';return `<div class="hwc ${d?'done':''}"><div class="grow"><b>${d?'✓ ':''}${esc(x.t)}${x.arch?' · geçmiş':''}</b>${x.x&&!d?`<p>${esc(x.x).replace(/\n/g,'<br>')}</p>`:''}<span>${esc(uname(x.by))} · ${fmtT(x.at)}${x.due?' · son gün '+esc(x.due):''}${E?' · sınav: '+esc(E.t):''}</span>${r.g!=null?`<div class="gr">Ödev notu: <b>${esc(r.g)}</b>${r.n?' · '+esc(r.n):''}</div>`:''}</div>${r.g!=null?`<span class="pill">${esc(r.g)}</span>`:''}
     ${d||x.arch?'':E?`<button class="btn sm" onclick="startExam('${x.ex}','${x.id}')">Başla</button>`:`<button class="btn sm" onclick="hwDoneSelf('${x.id}')">Yaptım</button>`}</div>`}).join(''):'<p class="note">Şu an ödevin yok.</p>'}
@@ -3618,7 +3629,7 @@ function vStudent(uid){const P=V.pn,u=U()[uid],p=(T.D.progress||{})[uid]||{},rs=
     return h+`<div class="stats"><div><b>${p.xp||0}</b><span>XP · ${esc(p.lv||'Stajyer')}</span></div><div><b>${done.length}/${LESSONS.length}</b><span>ders</span></div><div><b>${p.k||0}</b><span>kelime</span></div></div>
     <div class="stats"><div><b>${p.sk||0}</b><span>gün seri</span></div><div><b>${rs.length}</b><span>sınav</span></div><div><b style="font-size:15px">${fmtT(p.t)}</b><span>son çalışma</span></div></div>
     <h2>Bitirdiği dersler</h2>${done.length?done.map(L=>`<div class="aff"><b>${L.l=='H'?'Hafıza':L.l}</b><span>${esc(L.t)} · alıştırma ${p.ls[L.id]} doğru</span></div>`).join(''):'<p class="note">Henüz ders bitirmedi.</p>'}
-    <button class="btn" onclick="V.pn.t='odev';V.pn.sel=null;V.hw={t:'',x:'',ex:'',due:'',all:false,to:{'${uid}':true}};render();window.scrollTo(0,0)">Bu kişiye ödev ver</button>`}
+    <button class="btn" onclick="openReport('${uid}')">📊 Ayrıntılı ilerleme raporu</button><button class="btn ghost" onclick="V.pn.t='odev';V.pn.sel=null;V.hw={t:'',x:'',ex:'',due:'',all:false,to:{'${uid}':true}};render();window.scrollTo(0,0)">Bu kişiye ödev ver</button>`}
   return h+(rs.length?rs.map(r=>{const g=gradeOf(uid,r.id),op=(V.pn.op||{})[r.id],gf=(V.gf||{})[r.id]||{s:g?g.s:(r.p!=null&&!r.open?r.p:''),n:g?g.n||'':''};
     return `<div class="card rcard"><div class="rh"><div class="grow"><b>${esc(r.t)}</b><span>${fmtT(r.at)}${r.p!=null?` · otomatik %${r.p} (${r.c}/${r.n})`:''}${r.open?` · ${r.open} yazılı cevap`:''}${r.hw?' · ödev':''}</span></div>${g?`<span class="pill">${esc(g.s)}</span>`:r.open?'<span class="pill warn">notlanacak</span>':''}</div>
     <button class="lnk" onclick="(V.pn.op=V.pn.op||{})['${r.id}']=!${!!op};render()">${op?'Cevapları gizle':'Cevapları göster'}</button>
@@ -3934,6 +3945,55 @@ function exportGb(){const R=gbRows(),q=v=>'"'+String(v==null?'':v).replace(/"/g,
   const det=[];students().forEach(([id,u])=>resultsOf(id).forEach(r=>{const g=gradeOf(id,r.id);det.push([u.n,r.t,new Date(r.at).toLocaleString('tr-TR'),r.p,g?g.s:'',g?g.n:''])}));
   const csv='﻿'+[head,...rows].map(r=>r.map(q).join(';')).join('\n')+'\n\n'+[['Öğrenci','Sınav','Tarih','Otomatik puan','Öğretmen notu','Öğretmen yorumu'],...det].map(r=>r.map(q).join(';')).join('\n');
   try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='zihin-sarayi-not-defteri-'+new Date().toISOString().slice(0,10)+'.csv';document.body.appendChild(a);a.click();a.remove()}catch(e){toast('İndirme bu ortamda desteklenmiyor.')}}
+
+
+/* ================= İLERLEME RAPORU ================= */
+function wordBuckets(st){const b=[0,0,0,0,0];Object.values(st.c||{}).forEach(c=>{b[c.i==0?0:c.i<2?1:c.i<7?2:c.i<21?3:4]++});return b}
+function openReport(uid){V.rep={uid:uid||T.uid||'me'};render();window.scrollTo(0,0)}
+function repData(uid){const self=uid=='me'||uid==T.uid;
+  if(self){const rs=T.uid?resultsOf(T.uid):(S.exh||[]).map((x,i)=>Object.assign({id:'l'+i},x));
+    return {self,name:T.uid?uname(T.uid):'Ben',xp:S.xp||0,lvName:lvl().name,pct:lvl().pct,next:lvl().next,left:lvl().left,ls:S.ls||{},k:known(),sk:streak(),lg:S.log||{},bk:wordBuckets(S),due:dueList().length,exb:S.exb||{},rs,uid:T.uid}}
+  const p=(T.D.progress||{})[uid]||{},xp=p.xp||0;let i=0;while(i+1<LEVELS.length&&xp>=LEVELS[i+1][0])i++;const a=LEVELS[i][0],b2=LEVELS[i+1]?LEVELS[i+1][0]:null;
+  return {self,name:uname(uid),xp,lvName:LEVELS[i][1],pct:b2?100*(xp-a)/(b2-a):100,next:b2?LEVELS[i+1][1]:null,left:b2?b2-xp:0,ls:p.ls||{},k:p.k||0,sk:p.sk||0,lg:p.lg||{},bk:p.bk||[0,0,0,0,0],due:p.due||0,exb:p.exb||{},rs:resultsOf(uid),uid,last:p.t}}
+function vReport(){const D=repData(V.rep.uid),uid=D.uid,sc=r=>uid?rscore(uid,r):r.p;
+  const rs=D.rs.slice().sort((a,b)=>a.at-b.at),scored=rs.map(r=>({r,v:sc(r)})).filter(x=>x.v!=null),avg=scored.length?Math.round(scored.reduce((a,x)=>a+x.v,0)/scored.length):null;
+  const subs=KSUB.map(K=>{const xs=rs.filter(K.m).map(r=>K.teacher?(uid&&gradeOf(uid,r.id)?+gradeOf(uid,r.id).s:null):sc(r)).filter(v=>v!=null);return {n:K.n,c:xs.length,p:xs.length?Math.round(xs.reduce((a,b)=>a+b,0)/xs.length):null}});
+  const hw=uid&&T.uid?hwOf(uid):[],hd=hw.filter(h=>hwDone(h.id,uid)).length,hg=hw.map(h=>(hwRec(h.id,uid)||{}).g).filter(g=>g!=null).map(Number),hga=hg.length?Math.round(hg.reduce((a,b)=>a+b,0)/hg.length):null;
+  const grp=[['A1','Konu anlatımı (A1)'],['O','Otel İngilizcesi'],['H','Hafıza Okulu']].map(([l,n])=>{const L=LESSONS.filter(x=>x.l==l);return {n,L,d:L.filter(x=>x.id in D.ls).length}});
+  const totL=LESSONS.length,doneL=LESSONS.filter(x=>x.id in D.ls).length;
+  // grafik
+  const last=scored.slice(-15),W=320,H=130,X=i=>20+(W-30)*(last.length<2?0.5:i/(last.length-1)),Y=v=>H-18-(H-30)*v/100;
+  const chart=last.length?`<svg viewBox="0 0 ${W} ${H}" class="chart">${[0,50,70,85,100].map(v=>`<line x1="20" x2="${W-10}" y1="${Y(v)}" y2="${Y(v)}" class="grid"/><text x="16" y="${Y(v)+3}" text-anchor="end">${v}</text>`).join('')}
+    <polyline fill="none" stroke="var(--teal)" stroke-width="2.5" points="${last.map((x,i)=>X(i)+','+Y(x.v)).join(' ')}"/>${last.map((x,i)=>`<circle cx="${X(i)}" cy="${Y(x.v)}" r="4" fill="${x.v>=85?'var(--grn)':x.v>=55?'var(--gold)':'var(--red)'}"><title>${esc(x.r.t)}: ${x.v}</title></circle>`).join('')}</svg>`:'<p class="note">Henüz puanlı sınav yok.</p>';
+  // takvim (son 28 gün)
+  const t0=today(),cal=[];for(let d=t0-27;d<=t0;d++)cal.push(D.lg[d]||0);const mx=Math.max(1,...cal),act=cal.filter(Boolean).length;
+  const calH=`<div class="cal">${cal.map((v,i)=>`<i style="opacity:${v?0.35+0.65*v/mx:1}" class="${v?'on':''}" title="${v} etkinlik"></i>`).join('')}</div><p class="note">Son 28 günde ${act} gün çalışıldı · güncel seri ${D.sk} gün</p>`;
+  const bkN=['Yeni','1 gün','2–6 gün','7–20 gün','21+ gün'],bmx=Math.max(1,...D.bk);
+  const bar=(n,p,extra)=>`<div class="hb"><span>${n}</span><div><i style="width:${p||0}%;background:${p==null?'var(--line)':p>=85?'var(--grn)':p>=55?'var(--gold)':'var(--red)'}"></i></div><b>${p==null?'—':'%'+p}</b></div>${extra||''}`;
+  const withData=subs.filter(x=>x.p!=null).sort((a,b)=>b.p-a.p),best=withData[0],worst=withData.length>1?withData[withData.length-1]:null;
+  // öneriler
+  const tips=[];if(D.due)tips.push(`${D.due} kelimenin tekrar zamanı geldi. Bugün "Kelime tekrarı"nı yapmak hafızayı en çok güçlendiren adım.`);
+  if(worst&&worst.p<70)tips.push(`En çok zorlanılan alan: <b>${worst.n}</b> (%${worst.p}). Bu alandan bir ders tekrar okunup aynı sınav yeniden çözülebilir.`);
+  const nx=LESSONS.find(x=>!(x.id in D.ls));if(nx)tips.push(`Sıradaki ders: <b>${LGN(nx)} · ${esc(nx.t)}</b>.`);
+  const pend=hw.filter(h=>!h.arch&&!hwDone(h.id,uid)).length;if(pend)tips.push(`${pend} bekleyen ödev var.`);
+  if(rs.length%5)tips.push(`Bir sonraki karneye ${5-rs.length%5} sınav kaldı.`);
+  if(act<8)tips.push('Kısa ama her gün: haftada 5 gün 15 dakika, haftada bir 2 saatten daha kalıcıdır.');
+  if(best&&best.p>=85)tips.push(`Güçlü yan: <b>${best.n}</b> (%${best.p}). Bu alanda ekip arkadaşlarına yardım edilebilir.`);
+  const back=D.self?'V.rep=null;render()':'V.rep=null;render()';
+  return `<div class="bar noprint"><button class="back" onclick="${back}">‹ Geri</button><span class="grow"></span><button class="lnk" onclick="window.print()">🖨 Yazdır / PDF</button></div>
+  <div class="rpt"><div class="rph"><small>İLERLEME RAPORU</small><h1>${esc(D.name)}</h1><span>${new Date().toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'})}${D.last&&!D.self?' · son çalışma '+fmtT(D.last):''}</span></div>
+  <div class="lvl"><div class="lvh"><b>${D.lvName}</b><span>${D.xp} XP</span></div><div class="prog"><i style="width:${D.pct}%"></i></div><small>${D.next?D.next+' olmaya '+D.left+' XP':'En üst unvan'}</small></div>
+  <div class="stats"><div><b>${doneL}/${totL}</b><span>ders</span></div><div><b>${rs.length}</b><span>sınav</span></div><div><b>${avg!=null?'%'+avg:'—'}</b><span>sınav ortalaması</span></div></div>
+  <div class="stats"><div><b>${D.k}</b><span>bilinen kelime</span></div><div><b>${D.sk}</b><span>gün seri</span></div><div><b>${hw.length?hd+'/'+hw.length:'—'}</b><span>ödev${hga!=null?' · not '+hga:''}</span></div></div>
+  <h2>Alanlara göre başarı</h2><div class="card">${subs.map(x=>bar(x.n+(x.c?` (${x.c})`:''),x.p)).join('')}${hw.length?bar('Ödev notları',hga):''}
+  <p class="note">${best?`En güçlü alan: <b>${best.n}</b>.`:'Henüz yeterli sınav yok.'}${worst&&worst!==best?` Geliştirilecek alan: <b>${worst.n}</b>.`:''} Yazılı sınavlarda öğretmen notu, diğerlerinde öğretmen notu varsa o, yoksa otomatik puan kullanılır.</p></div>
+  <h2>Sınav puanları · son ${last.length}</h2><div class="card">${chart}</div>
+  <h2>Ders ilerlemesi</h2><div class="card">${grp.map(g=>`<div class="rgr"><div class="rgh"><b>${g.n}</b><span>${g.d}/${g.L.length}</span></div><div class="prog"><i style="width:${100*g.d/g.L.length}%"></i></div>
+    <div class="chips">${g.L.map(L=>{const e=D.exb['u-'+L.id];return `<span class="chip ${L.id in D.ls?'ok':''}" title="${esc(L.t)}">${L.id in D.ls?'✓ ':''}${esc(L.t)}${e!=null?` · %${e}`:''}</span>`}).join('')}</div></div>`).join('')}</div>
+  <h2>Kelime hafızası</h2><div class="card">${D.bk.map((n,i)=>`<div class="hb"><span>${bkN[i]}</span><div><i style="width:${100*n/bmx}%"></i></div><b>${n}</b></div>`).join('')}<p class="note">Sağdaki sütunlar kalıcı hafızadır. ${D.due?D.due+' kelimenin tekrar zamanı geldi.':'Tekrar zamanı gelmiş kelime yok.'}</p></div>
+  <h2>Çalışma takvimi</h2><div class="card">${calH}</div>
+  <h2>Öneriler</h2><div class="card"><ul class="tips">${tips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+  ${rs.length?`<h2>Sınav geçmişi</h2><div class="card rhist">${rs.slice().reverse().map(r=>{const g=uid&&gradeOf(uid,r.id);return `<div class="hrow"><span>${fmtT(r.at)}</span><b>${esc(r.t)}</b><em>${r.p!=null?'%'+r.p:'—'}${g?' · not '+esc(g.s):''}</em></div>`}).join('')}</div>`:''}</div>`}
 
 /* ----- açılış ----- */
 (function boot(){const m=/[#&]z=([A-Za-z0-9_-]+)/.exec(location.hash||'');

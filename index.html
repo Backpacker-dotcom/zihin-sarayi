@@ -3257,8 +3257,14 @@ const RULES_JSON={
         },
         "st": {
           "$uid": {
-            ".read": "(auth!=null && auth.uid===$uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
-            ".write": "(auth!=null && auth.uid===$uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+            ".read": "(auth!=null && auth.uid===$uid) || ((auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')) && root.child('zs/'+$t+'/pub/users/'+$uid+'/r').val()!=='owner')",
+            ".write": "(auth!=null && auth.uid===$uid) || ((auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')) && root.child('zs/'+$t+'/pub/users/'+$uid+'/r').val()!=='owner')"
+          }
+        },
+        "me": {
+          "$uid": {
+            ".read": "auth!=null && auth.uid===$uid",
+            ".write": "auth!=null && auth.uid===$uid && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true"
           }
         }
       }
@@ -3618,10 +3624,12 @@ async function tReq(method,p,body){const go=async()=>fetch(await rUrl(p),{method
   let r=await go();if(r.status==401&&T.uid){T.tok=null;r=await go()}
   if(!r.ok){const e=new Error(r.status==401?'DENIED':'HTTP '+r.status);e.status=r.status;throw e}return r.json()}
 const PUBK=['users','meta','homework','exams','content','qa','boards','goal','lb','dc','cmp','ce'],UCAT=['results','grades','msgs','reads','karne','progress','qread','pq'];
+const OWNP=()=>!!(T.uid&&isOwnerR());
+const uRoot=uid=>OWNP()&&uid===T.uid?'me/':'u/';
 function netPath(p){const s=p.split('/'),c=s[0];
   if(PUBK.includes(c))return 'pub/'+p;
-  if(c=='hwdone'||c=='hwgrade')return 'u/'+s[2]+'/'+c+'/'+s[1]+(s.length>3?'/'+s.slice(3).join('/'):'');
-  if(UCAT.includes(c))return 'u/'+s[1]+'/'+c+(s.length>2?'/'+s.slice(2).join('/'):'');
+  if(c=='hwdone'||c=='hwgrade')return uRoot(s[2])+s[2]+'/'+c+'/'+s[1]+(s.length>3?'/'+s.slice(3).join('/'):'');
+  if(UCAT.includes(c))return uRoot(s[1])+s[1]+'/'+c+(s.length>2?'/'+s.slice(2).join('/'):'');
   return p}
 function setPath(o,segs,val){segs=segs.filter(Boolean);if(!segs.length)return;let cur=o;for(let i=0;i<segs.length-1;i++){if(cur[segs[i]]==null||typeof cur[segs[i]]!=='object')cur[segs[i]]={};cur=cur[segs[i]]}
   const k=segs[segs.length-1];if(val==null)delete cur[k];else cur[k]=val}
@@ -3635,7 +3643,8 @@ function applyPub(path,data,patch){if(patch){Object.entries(data||{}).forEach(([
   const sg=path.split('/').filter(Boolean);if(!sg.length){PUBK.forEach(k=>{if(data&&data[k]!=null)T.D[k]=data[k];else delete T.D[k]});return}setPath(T.D,sg,data)}
 function applyU(path,data,patch){if(patch){Object.entries(data||{}).forEach(([k,v])=>applyU(path.replace(/\/$/,'')+'/'+k,v,false));return}
   const sg=path.split('/').filter(Boolean);
-  if(!sg.length){UCAT.concat(['hwdone','hwgrade']).forEach(c=>delete T.D[c]);Object.entries(data||{}).forEach(([uid,v])=>applyU('/'+uid,v));return}
+  if(!sg.length){const keep=OWNP()?T.uid:null;UCAT.forEach(c=>{if(!T.D[c])return;Object.keys(T.D[c]).forEach(u=>{if(u!==keep)delete T.D[c][u]})});['hwdone','hwgrade'].forEach(c=>Object.values(T.D[c]||{}).forEach(m=>Object.keys(m).forEach(u=>{if(u!==keep)delete m[u]})));
+    Object.entries(data||{}).forEach(([uid,v])=>{if(uid!==keep)applyU('/'+uid,v)});return}
   const uid=sg[0];
   if(sg.length==1){UCAT.forEach(c=>{if(T.D[c])delete T.D[c][uid]});['hwdone','hwgrade'].forEach(c=>Object.values(T.D[c]||{}).forEach(m=>delete m[uid]));Object.entries(data||{}).forEach(([c,v])=>applyU('/'+uid+'/'+c,v));return}
   const c=sg[1],rest=sg.slice(2);
@@ -3643,6 +3652,9 @@ function applyU(path,data,patch){if(patch){Object.entries(data||{}).forEach(([k,
   if(UCAT.includes(c))setPath(T.D,[c,uid].concat(rest),data)}
 async function tLoad(){const pub=await tReq('GET','pub');T.D={};applyPub('/',pub||{});const staff=isStaff();
   const u=await tReq('GET',staff?'u':'u/'+T.uid);if(staff)applyU('/',u||{});else applyU('/'+T.uid,u||{});
+  if(OWNP()){let mine=await tReq('GET','me/'+T.uid).catch(()=>null);const old=u&&u[T.uid];
+    if(old){mine=Object.assign({},old,mine||{});try{await tReq('PUT','me/'+T.uid,mine);await tReq('DELETE','u/'+T.uid)}catch(e){}}
+    applyU('/'+T.uid,mine||{})}
   T.loaded=true;T.streamRole=role();qaEvents();applyContent();return T.D}
 function closeStreams(){(T.ess||[]).forEach(e=>{try{e.close()}catch(x){}});T.ess=[]}
 async function openStream(p,apply){const es=new EventSource(await rUrl(p));T.ess.push(es);
@@ -3651,7 +3663,7 @@ async function openStream(p,apply){const es=new EventSource(await rUrl(p));T.ess
   es.addEventListener('auth_revoked',()=>{T.tok=null;tStream()});es.addEventListener('cancel',()=>{T.live=false;tLoad().then(()=>{tCheckMe();render()}).catch(()=>{tCheckMe(true)})});
   es.onopen=()=>{T.live=true;badges()};es.onerror=()=>{T.live=false;badges()}}
 async function tStream(){closeStreams();if(!T.uid||typeof EventSource=='undefined')return;T.streamRole=role();
-  try{await openStream('pub',applyPub);if(isStaff())await openStream('u',applyU);else await openStream('u/'+T.uid,(p,d,pt)=>applyU('/'+T.uid+(p=='/'?'':p),d,pt))}catch(e){}}
+  try{await openStream('pub',applyPub);if(isStaff()){await openStream('u',applyU);if(OWNP())await openStream('me/'+T.uid,(p,d,pt)=>applyU('/'+T.uid+(p=='/'?'':p),d,pt))}else await openStream('u/'+T.uid,(p,d,pt)=>applyU('/'+T.uid+(p=='/'?'':p),d,pt))}catch(e){}}
 async function tConnect(){if(!T.uid){render();return}try{await tLoad();tCheckMe();render()}catch(e){if(e.message=='DENIED'){tCheckMe(true);return}T.err=String(e.message||e);render()}tStream()}
 
 
@@ -3671,7 +3683,7 @@ function tCheckMe(denied){if(!T.uid)return;if(!denied&&!T.loaded)return;if(!deni
 function tSync(){if(!T.uid||!T.cfg)return;clearTimeout(tSync.h);tSync.h=setTimeout(async()=>{
   const st=JSON.stringify(S);if(st!=T.lastSt){try{await tReq('PUT','st/'+T.uid,JSON.parse(st));T.lastSt=st}catch(e){}}
   const lg={},t0=today();for(let d=t0-59;d<=t0;d++)if(S.log[d])lg[d]=S.log[d];const P={xp:S.xp||0,lv:lvl().name,ls:S.ls||{},k:known(),sk:streak(),t:Date.now(),lg,bk:wordBuckets(S),due:dueList().length,exb:S.exb||{}},ps=JSON.stringify(Object.assign({},P,{t:0}));
-  if(ps!=T.lastPr){try{await tReq('PUT','u/'+T.uid+'/progress',P);T.lastPr=ps}catch(e){}}lbSync()},2500)}
+  if(ps!=T.lastPr){try{await tReq('PUT',uRoot(T.uid)+T.uid+'/progress',P);T.lastPr=ps}catch(e){}}lbSync()},2500)}
 
 /* ----- canlı güncellemede yeniden çizim ----- */
 function tChanged(local){qaEvents();const cc=applyContent();badges();if(cc&&!V.sess&&!V.ls&&!V.ex&&!V.ed&&!local&&['otel','palace','gram'].includes(V.tab)){render()}clearTimeout(tChanged.h);tChanged.h=setTimeout(()=>{tCheckMe();
@@ -4304,7 +4316,7 @@ function checkBadges(){S.bdg=S.bdg||{};const nw=BADGES.filter(b=>!S.bdg[b[0]]&&b
 
 /* ----- lig kaydı (herkesin görebildiği özet) ----- */
 function lbEntry(){return {xp:S.xp||0,lv:lvl().name,wk:wkOf(today()),wx:weekXP(),sk:streak(),k:known(),sv:S.sv||0,bd:Object.keys(S.bdg||{}).join(','),t:Date.now()}}
-async function lbSync(){if(!T.uid||!T.cfg||!me())return;const e=lbEntry(),s=JSON.stringify(Object.assign({},e,{t:0}));if(s==T.lastLb)return;
+async function lbSync(){if(!T.uid||!T.cfg||!me()||OWNP())return;const e=lbEntry(),s=JSON.stringify(Object.assign({},e,{t:0}));if(s==T.lastLb)return;
   try{await tReq('PUT','pub/lb/'+T.uid,e);T.lastLb=s;setPath(T.D,['lb',T.uid],e)}catch(x){}}
 function lbRows(mode){const wk=wkOf(today()),u=U();let L=Object.entries(T.D.lb||{}).filter(([id])=>u[id]&&u[id].a!==false).map(([id,e])=>({id,n:u[id].n,r:u[id].r,v:mode=='all'?(e.xp||0):(e.wk==wk?(e.wx||0):0),e}));
   if(T.uid&&!L.some(x=>x.id==T.uid)){const e=lbEntry();L.push({id:T.uid,n:uname(T.uid),r:role(),v:mode=='all'?e.xp:e.wx,e})}
@@ -4320,7 +4332,7 @@ function gamePool(n){const a=[];
   return shuffle(a.filter(q=>q.k=='mc'&&q.o&&q.o.length>1)).slice(0,n)}
 const dcQs=d=>seeded(d*7919+13,()=>gamePool(10));
 const dcMine=d=>{const r=T.uid&&((T.D.dc||{})[d]||{})[T.uid];return r?r.s:(S.dcd||{})[d]};
-function dcRank(d){const u=U();return rankIt(Object.entries((T.D.dc||{})[d]||{}).filter(([id])=>u[id]).map(([id,r])=>({id,n:u[id].n,s:r.s,at:r.at})).sort((a,b)=>b.s-a.s||a.n.localeCompare(b.n,'tr')),x=>x.s)}
+function dcRank(d){const u=U(),E=Object.assign({},(T.D.dc||{})[d]||{});if(OWNP()&&(S.dcd||{})[d]!=null)E[T.uid]={s:S.dcd[d]};return rankIt(Object.entries(E).filter(([id])=>u[id]).map(([id,r])=>({id,n:u[id].n,s:r.s,at:r.at})).sort((a,b)=>b.s-a.s||a.n.localeCompare(b.n,'tr')),x=>x.s)}
 
 function gStart(k,cid){if(k=='cmp'){const C=cmpGet(cid);if(!C)return toast('Bu yarışma artık yok.');if(cmpMine(cid)!=null)return toast('Bu yarışmaya katıldın.');if(!cmpOpen(C))return toast('Bu yarışma kapandı.');V.gm={k,cid,t:C.t,qs:C.qs,i:0,ok:0,pick:null}}
   else if(k=='dc'){const d=today();if(dcMine(d)!=null)return toast('Bugünkü yarışmaya katıldın. Yarın yeni sorular gelir.');
@@ -4334,7 +4346,7 @@ function gNext(){const G=V.gm;G.pick=null;G.i++;
 function gEnd(){const G=V.gm;G.done=true;
   if(G.k=='cmp'){addXP(5+G.ok*3);S.log[today()]=(S.log[today()]||0)+1;save();if(T.uid)tPut('ce/'+G.cid+'/'+T.uid,{s:G.ok,n:G.qs.length,at:Date.now()}).catch(()=>{});if(G.ok>=G.qs.length*0.8)confetti()}
   else if(G.k=='dc'){S.dcd=S.dcd||{};S.dcd[G.d]=G.ok;addXP(5+G.ok*3);S.log[today()]=(S.log[today()]||0)+1;save();
-    if(T.uid)tPut('dc/'+G.d+'/'+T.uid,{s:G.ok,at:Date.now()}).catch(()=>{});if(G.ok>=8)confetti()}
+    if(T.uid&&!OWNP())tPut('dc/'+G.d+'/'+T.uid,{s:G.ok,at:Date.now()}).catch(()=>{});if(G.ok>=8)confetti()}
   else{G.best=G.ok>(S.sv||0);S.sv=Math.max(S.sv||0,G.ok);addXP(Math.min(100,G.ok*2));S.log[today()]=(S.log[today()]||0)+1;save();if(G.best&&G.ok)confetti()}
   render();window.scrollTo(0,0)}
 function gQuit(b){const G=V.gm;if((G.k=='dc'||G.k=='cmp')&&G.i>0){if(!b.dataset.sure){b.dataset.sure=1;b.textContent='Şu ana kadarki puan kaydedilsin mi?';return}return gEnd()}V.gm=null;render()}
@@ -4371,7 +4383,7 @@ function vYaris(){if(V.gm)return vGame();V.lm=V.lm||'wk';
     ${yR.length?`<p class="note">Dünün birincisi: ${yR.map(x=>'🏅 <b>'+esc(x.n)+'</b> ('+x.s+'/10)').join(', ')}</p>`:''}
     ${R.length?`<h3>Bugünün sıralaması</h3>${rankTable(R.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,v:x.s+'/10'})))}`:T.uid?'<p class="note">Bugün henüz kimse katılmadı. İlk sen ol!</p>':''}</div>`;
   h+=`<h2>❤️ Üç Can</h2><div class="card gcard"><p>Otel cümleleri ve kelimeler art arda gelir. 3 yanlışta oyun biter. Rekorun: <b>${S.sv||0}</b></p><button class="btn" onclick="gStart('sv')">Oyna</button>
-    ${T.uid?(()=>{const L=rankIt(Object.entries(T.D.lb||{}).filter(([id,e])=>U()[id]&&U()[id].a!==false&&e.sv>0).map(([id,e])=>({id,n:uname(id),v:e.sv})).sort((a,b)=>b.v-a.v),x=>x.v).slice(0,5);return L.length?`<h3>Rekorlar</h3>`+rankTable(L.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,v:x.v+' seri'}))):''})():''}</div>`;
+    ${T.uid?(()=>{const LB=Object.assign({},T.D.lb||{});if(OWNP()&&S.sv)LB[T.uid]={sv:S.sv};const L=rankIt(Object.entries(LB).filter(([id,e])=>U()[id]&&U()[id].a!==false&&e.sv>0).map(([id,e])=>({id,n:uname(id),v:e.sv})).sort((a,b)=>b.v-a.v),x=>x.v).slice(0,5);return L.length?`<h3>Rekorlar</h3>`+rankTable(L.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,v:x.v+' seri'}))):''})():''}</div>`;
   if(T.uid){const L=lbRows(V.lm),wk=wkOf(d),left=wk+7-d,G=T.D.goal||{},tot=Object.entries(T.D.lb||{}).filter(([id,e])=>U()[id]&&e.wk==wk).reduce((a,[,e])=>a+(e.wx||0),0),goal=+G.g||Math.max(500,students().length*250),gp=Math.min(100,Math.round(100*tot/goal));
     h+=`<h2>🏆 Lig</h2><div class="seg"><button class="${V.lm=='wk'?'on':''}" onclick="V.lm='wk';render()">Bu hafta</button><button class="${V.lm=='all'?'on':''}" onclick="V.lm='all';render()">Tüm zamanlar</button></div>
     ${L.length?rankTable(L.map(x=>({rk:x.rk,n:x.n,me:x.id==T.uid,sub:(x.e.lv||'')+(x.e.sk?' · 🔥'+x.e.sk:'')+(x.e.bd?' · '+x.e.bd.split(',').length+' rozet':''),v:x.v+' XP'}))):'<p class="note">Henüz kimse XP toplamadı.</p>'}

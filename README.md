@@ -41,3 +41,7 @@ Zihin Sarayı için **ayrı bir Firebase projesi** önerilir (Turno'nun açık k
 - **Sınav sonuçları:** öğrenci ve öğretmen için sonuç belgesi çıktısı.
 
 > 3.1 ve 3.2 ile `database.rules.json` güncellendi. Firebase › Realtime Database › Rules sekmesine yeni dosyayı yapıştırıp **Publish** etmek gerekir.
+
+## Yöneticinin gizliliği (3.3)
+
+Yöneticinin (owner) kendi sınav sonuçları, ilerlemesi, günün yarışması ve oyun puanları yalnızca kendisinin okuyabildiği `me/<uid>` dalında tutulur; öğretmen ve öğrenciler bunları göremez, ligde ve sıralamalarda görünmez.

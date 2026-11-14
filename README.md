@@ -36,7 +36,8 @@ Zihin Sarayı için **ayrı bir Firebase projesi** önerilir (Turno'nun açık k
 
 - **Yarış sekmesi:** Günün yarışması (herkese aynı 10 soru, tek hak, süre yok), Üç Can oyunu, haftalık XP ligi, ekip hedefi, 18 rozet.
 - **İlan panosu:** Panel › 📌 İlan sekmesinden sınav sonucu, başarı sıralaması, karne listesi ya da lig tablosu yayınlanır; herkes Yarış sekmesinde görür. Her ilan A4 yazdırılır / PDF yapılır.
+- **Yarışmalar (3.2):** Panel › 🏁 Yarışma sekmesinden öğretmen ya da yönetici kendi yarışmasını kurar (hazır bir sınavdan ya da kendi yazdığı sorulardan); tek hak, isteğe bağlı son gün, ödül ve gizli sıralama; bitince sonuç tek dokunuşla ilan panosuna asılır.
 - **Ödevler:** kişiye ayrı ayrı gönderme, öğrencinin yazılı cevap teslimi, ödev kâğıdı (cevap anahtarıyla) ve ödev çizelgesi çıktısı.
 - **Sınav sonuçları:** öğrenci ve öğretmen için sonuç belgesi çıktısı.
 
-> 3.1 ile `database.rules.json` güncellendi. Firebase › Realtime Database › Rules sekmesine yeni dosyayı yapıştırıp **Publish** etmek gerekir.
+> 3.1 ve 3.2 ile `database.rules.json` güncellendi. Firebase › Realtime Database › Rules sekmesine yeni dosyayı yapıştırıp **Publish** etmek gerekir.

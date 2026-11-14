@@ -68,6 +68,18 @@
                 ".validate": "newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=10"
               }
             }
+          },
+          "cmp": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+          },
+          "ce": {
+            "$c": {
+              "$uid": {
+                ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid && !data.exists() && root.child('zs/'+$t+'/pub/cmp/'+$c).exists() && root.child('zs/'+$t+'/pub/cmp/'+$c+'/closed').val()!==true) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
+                ".validate": "newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=newData.child('n').val() && newData.child('n').val()<=40"
+              },
+              ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+            }
           }
         },
         "u": {

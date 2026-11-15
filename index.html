@@ -244,6 +244,10 @@ code{background:#262240;border-radius:4px;padding:1px 5px;font-size:13px}
 @media (max-width:520px){.shinfo{grid-template-columns:1fr 1fr}.po{grid-template-columns:1fr}.bdgs{grid-template-columns:repeat(2,1fr)}nav button{font-size:9.5px}}
 .sheet th{color:#1a1a1a!important;font-weight:700}.sheet td{color:#1a1a1a}
 .cmpc.off{opacity:.75}.warnt{color:var(--red)}
+.ucard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px}.ucard>b{display:block;margin-bottom:8px;font-size:15px}
+.lvs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.lvb{display:flex;flex-direction:column;align-items:center;gap:2px;background:transparent;border:1px solid var(--line);border-radius:10px;padding:8px 2px;color:inherit;font:inherit;cursor:pointer}
+.lvb i{font-style:normal;font-size:18px}.lvb span{font-size:12px;font-weight:600}.lvb small{font-size:10.5px;color:var(--mut)}.lvb.ok{border-color:var(--grn);background:#16261a}.lvb.ok small{color:var(--grn)}.lvb.nx{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.ucard .lnk{margin-top:6px}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -2915,6 +2919,813 @@ mc | Misafir "Can I pay in euros?" diye soruyor, kabul ediyorsunuz. | Yes, of co
 mc | Misafir odanın fotoğraflardaki gibi olmadığını söylüyor. | Photos are old. / I'm very sorry. Let me see if I can move you to another room. / All rooms are the same. | 1 | Empati + çözüm.
 mc | Misafir Wi-Fi şifresini soruyor. | The password is on your key card holder. / I don't know. / No Wi-Fi. | 0 | Net bilgi.`;
 
+/* Kademeli ünite sınavları — A1 (satırlar kolaydan zora sıralı)
+   1: çoktan seçmeli · 2: cümle tamamlama · 3: ipuçlu cümle yazma · 4: serbest yazma (öğretmen notlar) */
+const ULV={
+'a1-1':{
+1:`mc | "Merhaba, hoş geldiniz!" hangisi? | Hello, welcome! / Hello, goodbye! / Hello, thank you! | 0 | welcome = hoş geldiniz.
+mc | "I work." ne demek? | Çalışırım. / Çalışmam. / Çalıştım. | 0 | I = ben, work = çalışmak.
+mc | İngilizce cümle hangi sırayla kurulur? | Özne + nesne + fiil / Özne + fiil + nesne / Fiil + nesne + özne | 1 | Kim + ne yapıyor + neyi: I drink tea.
+mc | "Çay içerim." hangisi? | I tea drink. / I drink tea. / Drink I tea. | 1 | Fiil, özneden hemen sonra gelir.
+mc | "a big room" ne demek? | büyük bir oda / oda büyük bir / odası büyük | 0 | Sıfat ismin önünde, tıpkı Türkçedeki gibi.
+mc | "sıcak bir kahve" hangisi? | a coffee hot / a hot coffee / hot a coffee | 1 | Sıfat isimden önce.
+mc | "The guest drinks water." cümlesinde fiil hangisi? | guest / drinks / water | 1 | Fiil öznenin hemen arkasında durur.
+mc | "Misafir anahtarı alır." hangisi? | The guest takes the key. / The key takes the guest. / The guest the key takes. | 0 | Sırayı değiştirirsen anlam değişir: anahtar misafiri alır!
+mc | "odanın kapısı" hangisi? | the room of the door / the door of the room / the door the room | 1 | of tamlamayı tersten okutur: kapısı ← odanın.
+mc | Hangisi doğru? | I every day check emails. / I check emails every day. / I check every day emails. | 1 | Fiil ile nesnesi ayrılmaz; zaman sona gider.
+mc | "Akşam otelde çalışırım." hangisi? | I work in the evening at the hotel. / I work at the hotel in the evening. / At the hotel I in the evening work. | 1 | Önce yer, sonra zaman.
+mc | "masadaki telefon" hangisi? | the on the table phone / the phone on the table / the table on the phone | 1 | Önce şey, sonra nerede olduğu.`,
+2:`gap | I ___ coffee every morning. (drink) | drink | I ile fiil olduğu gibi kalır.
+gap | We ___ at a hotel. (work) | work | we ile fiil yalın kalır.
+gap | a ___ room (büyük) | big / large | Sıfat ismin önünde.
+gap | a ___ coffee (sıcak) | hot | Sıfat ismin önünde.
+gap | They ___ breakfast at eight. (have) | have | have breakfast = kahvaltı etmek.
+gap | I speak ___. (İngilizce) | English | Dil adları büyük harfle yazılır.
+gap | the door ___ the room (odanın kapısı) | of | of = -ın/-in.
+gap | the phone ___ the table (masadaki telefon) | on | on = üstünde.
+gap | I check my emails every ___. (gün) | day | Zaman ifadesi cümlenin sonunda.
+gap | We work at the hotel in the ___. (akşam) | evening | in the evening = akşamları.
+gap | You have a ___ view. (güzel) | beautiful / nice / lovely / great | Sıfat isimden önce.
+gap | The woman ___ the reception is my manager. (resepsiyondaki) | at | at the reception = resepsiyonda.`,
+3:`tr | Çay içerim. | I drink tea | Özne + fiil + nesne.
+tr | Otelde çalışırım. (at the hotel) | I work at the hotel / I work in the hotel / I work in a hotel / I work at a hotel | Önce fiil, sonra yer.
+tr | büyük bir oda | a big room / a large room | Sıfat önde.
+tr | Kahveyi severiz. (we, like) | We like coffee / We love coffee | Genel konuşurken the gerekmez.
+tr | odanın kapısı (of) | the door of the room / the room's door | of tamlaması.
+tr | masadaki telefon | the phone on the table | Önce şey, sonra yeri.
+tr | Her gün İngilizce çalışırım. (study, every day) | I study English every day | Zaman sonda.
+tr | Akşamları otelde çalışırız. (in the evening) | We work at the hotel in the evening / We work in the hotel in the evening / We work at the hotel in the evenings | Yer, sonra zaman.
+tr | resepsiyondaki kadın | the woman at the reception / the woman at reception | Önce kişi, sonra yeri.
+tr | Misafirler sabah kahvaltı eder. (have breakfast, in the morning) | The guests have breakfast in the morning / Guests have breakfast in the morning | Özne + fiil + nesne + zaman.`,
+4:`open | Kendini 3 kısa cümleyle tanıt: adın, nerede çalıştığın, ne içmeyi sevdiğin. Kalıplar: I am … / I work at … / I like … | - | -
+open | Otelinde gördüğün 4 şeyi sıfatıyla birlikte yaz. Örnek: a big lobby, a blue pool. | - | -
+open | Sabah rutinini 3 cümleyle anlat. Önce yer, sonra zaman kuralına dikkat et. Örnek: I drink coffee at home in the morning. | - | -
+open | of kullanarak 4 tamlama yaz: odanın numarası, otelin adı, kapının rengi… Örnek: the number of the room. | - | -`},
+
+'a1-2':{
+1:`mc | "I am" ne demek? | benim / ben … -ım / sen … -sın | 1 | I am tired = Yorgunum.
+mc | Hangisi doğru? | I is tired. / I am tired. / I are tired. | 1 | I yalnızca am ile.
+mc | Hangisi doğru? | She are busy. / She is busy. / She am busy. | 1 | he / she / it → is.
+mc | Hangisi doğru? | We are ready. / We is ready. / We am ready. | 0 | we / you / they → are.
+mc | "Oda hazır." hangisi? | The room ready. / The room is ready. / The room are ready. | 1 | Türkçede görünmeyen fiil İngilizcede is olur.
+mc | "Acıktım." hangisi? | I hungry. / I am hungry. / I have hungry. | 1 | Durumlar be ile söylenir.
+mc | "Kaç yaşındasın?" hangisi? | How many years are you? / How old are you? / How old do you have? | 1 | Yaş be ile sorulur.
+mc | "Değilim" nasıl kurulur? | I not am / I am not / I don't am | 1 | be + not.
+mc | "Is the pool open?" sorusuna kısa cevap hangisi? | Yes, it is. / Yes, it does. / Yes, is it. | 0 | Soru is ile ise cevap da is ile.
+mc | "Misafirler İngiliz mi?" hangisi? | The guests are English? / Are the guests English? / Is the guests English? | 1 | Soru için be başa geçer; çoğul → are.
+mc | "Wi-Fi şifresi doğru değil." hangisi? | The Wi-Fi password is not correct. / The Wi-Fi password not is correct. / The Wi-Fi password are not correct. | 0 | is + not.
+mc | "Where are you from?" sorusuna doğru cevap? | I from Turkey. / I'm from Turkey. / I'm Turkey from. | 1 | I'm = I am.`,
+2:`gap | I ___ a receptionist. (be) | am | I → am.
+gap | My manager ___ very busy today. (be) | is | Tekil özne → is.
+gap | The towels ___ in the bathroom. (be) | are | Çoğul → are.
+gap | We ___ open 24 hours. (be) | are | we → are.
+gap | ___ you tired? (be) | are | Soruda be başa gelir.
+gap | The breakfast ___ not ready yet. (be) | is | is not.
+gap | I ___ not from Istanbul. (be) | am | am not.
+gap | ___ the restaurant open now? (be) | is | Tekil → is.
+gap | The guests ___ very happy with the room. (be) | are | Çoğul → are.
+gap | How old ___ your son? (be) | is | Yaş: How old is …?
+gap | It ___ cold today, so take a jacket. (be) | is | Hava durumu: It is …
+gap | Sorry, we ___ full tonight. (be) | are | we → are.`,
+3:`tr | Yorgunum. | I am tired / I'm tired | be + sıfat.
+tr | Oda hazır. | The room is ready | Görünmeyen fiil: is.
+tr | Biz açığız. (open) | We are open | we → are.
+tr | Havuz açık mı? | Is the pool open | Soru: is başa.
+tr | Acıkmadım. (hungry) | I am not hungry / I'm not hungry | am not.
+tr | Nerelisiniz? (Where … from) | Where are you from | Where + are + you + from.
+tr | Yönetici şu an meşgul. (the manager, busy, now) | The manager is busy now / The manager is busy right now | Zaman sonda.
+tr | Misafirler Almanya'dan. (from Germany) | The guests are from Germany / Guests are from Germany | Çoğul → are.
+tr | Kahvaltı ücretsiz değil. (free) | Breakfast is not free / Breakfast isn't free / The breakfast is not free / The breakfast isn't free | is not.
+tr | Wi-Fi şifresi doğru mu? (correct) | Is the Wi-Fi password correct / Is the wifi password correct | Soru: is başa.`,
+4:`open | Kendin hakkında am / is / are kullanarak 4 cümle yaz: yaşın, memleketin, işin, bugün nasıl hissettiğin. | - | -
+open | Otelinin lobisini anlat: 4 cümle, en az bir tanesi olumsuz olsun. Örnek: The lobby is big. It is not noisy. | - | -
+open | Yeni gelen bir misafire 3 soru yaz (Are you…? / Is the…?). Örnek: Are you tired? | - | -
+open | Bir iş arkadaşını 3 cümleyle anlat: adı, nereli olduğu, nasıl biri olduğu. | - | -`},
+
+'a1-3':{
+1:`mc | Hangisi doğru? | a apple / an apple / an banana | 1 | Sesli harfle başlayan kelimeden önce an.
+mc | Hangisi doğru? | a room / an room / the a room | 0 | Sessiz sesle başlıyorsa a.
+mc | Hangisi doğru? | a hour / an hour / an house | 1 | hour sessiz h ile başlar, sesli okunur: an hour.
+mc | Hangisi doğru? | an university / a university / university a | 1 | university "yu" sesiyle başlar: a university.
+mc | "a" ne zaman kullanılır? | Bir tane, ilk kez söz edilen şey / Herkesin bildiği belirli şey / Çoğul isimler | 0 | a = herhangi bir.
+mc | "the" ne zaman kullanılır? | İlk kez söz edilen şey / Herkesin bildiği belirli şey / Hiçbir zaman | 1 | the = o bilinen.
+mc | "Bir rezervasyonum var." hangisi? | I have the reservation. / I have a reservation. / I have reservation. | 1 | İlk kez söz ediliyor: a.
+mc | "Asansör nerede?" (otelin tek asansörü) | Where is a lift? / Where is the lift? / Where is lift? | 1 | Herkesin bildiği tek asansör: the.
+mc | "an umbrella" doğru mu? | Evet / Hayır, a umbrella olmalı | 0 | umbrella sesli harfle başlar.
+mc | Hangisi doğru? | I am a receptionist. / I am receptionist. / I am the receptionist a. | 0 | Meslekten önce a/an gelir.
+mc | Hangisi doğru? | I like the coffee in general. / I like coffee. / I like a coffee in general. | 1 | Genel konuşurken article yok.
+mc | "Bir oda ayırttım. Oda 305 numaralı." hangisi? | I booked the room. A room is number 305. / I booked a room. The room is number 305. / I booked room. Room is 305. | 1 | İlk söz: a, sonra: the.`,
+2:`gap | I have ___ reservation. (a/an/the) | a | İlk kez söz ediliyor.
+gap | Do you have ___ umbrella? (a/an) | an | Sesli harften önce an.
+gap | We open in ___ hour. (a/an) | an | hour → an.
+gap | She is ___ engineer. (a/an) | an | engineer sesli başlar.
+gap | He is ___ waiter. (a/an) | a | Meslek → a/an.
+gap | ___ pool is on the roof. (the) | the | Otelin bilinen tek havuzu.
+gap | Can I have ___ glass of water? (a/an) | a | glass sessiz başlar.
+gap | Where is ___ elevator? (the) | the | Bilinen asansör.
+gap | It is ___ honest mistake. (a/an) | an | honest: h okunmaz.
+gap | I need ___ taxi to the airport. (a/an) | a | Herhangi bir taksi.
+gap | ___ sun is very strong today. (the) | the | Tek olan şeyler: the sun.
+gap | There is ___ email for you. (a/an) | an | email sesli başlar.`,
+3:`tr | Bir rezervasyonum var. (I have) | I have a reservation / I have a booking | İlk kez: a.
+tr | O bir garson. (he) | He is a waiter / He's a waiter | Meslekten önce a.
+tr | Bir saat içinde (in) | in an hour / in one hour | hour → an.
+tr | Havuz çatıda. (on the roof) | The pool is on the roof | Bilinen havuz: the.
+tr | Bir şemsiyeniz var mı? (Do you have) | Do you have an umbrella | an umbrella.
+tr | Bir taksiye ihtiyacım var. (need) | I need a taxi | Herhangi bir taksi: a.
+tr | Asansör orada. (over there) | The lift is over there / The elevator is over there / The lift is there / The elevator is there | Bilinen asansör: the.
+tr | Kahve severim. (genel) | I like coffee / I love coffee | Genel: article yok.
+tr | Bir oda ayırttım. Oda deniz manzaralı. (booked, has a sea view) | I booked a room. The room has a sea view | Önce a, sonra the.
+tr | Sizin için bir e-posta var. (There is) | There is an email for you / There's an email for you | email → an.`,
+4:`open | Çantanda ya da masanda olan 5 şeyi a/an ile yaz. Örnek: a phone, an umbrella. | - | -
+open | Bir misafire oteli tanıt: 4 cümle; ilk söz ettiğinde a, sonra the kullan. Örnek: We have a pool. The pool is on the roof. | - | -
+open | Ailenden 3 kişinin mesleğini yaz. Örnek: My sister is a teacher. | - | -
+open | Sevdiğin ve sevmediğin 3 şeyi genel olarak yaz (article olmadan). Örnek: I like tea. I don't like coffee. | - | -`},
+
+'a1-4':{
+1:`mc | "two room___" boşluğa ne gelir? | -s / -es / hiçbir şey | 0 | Çoğulda çoğunlukla -s: two rooms.
+mc | "üç anahtar" hangisi? | three key / three keys / threes key | 1 | Sayıdan sonra isim çoğul olur (Türkçeden farklı!).
+mc | "glass" çoğulu? | glasss / glasses / glassies | 1 | -s, -ss, -sh, -ch, -x → -es.
+mc | "child" çoğulu? | childs / children / childrens | 1 | Düzensiz: child → children.
+mc | "person" çoğulu? | persons / people / peoples | 1 | Günlük dilde person → people.
+mc | "this" ne demek? | bu (yakındaki tek şey) / şu (uzaktaki tek şey) / bunlar | 0 | this = bu.
+mc | "those" ne demek? | bu / şunlar (uzaktakiler) / bunlar | 1 | that → those.
+mc | Elindeki anahtarları gösterirken? | These are your keys. / This are your keys. / Those is your keys. | 0 | Yakın + çoğul → these.
+mc | Uzaktaki tek bir binayı gösterirken? | This is our spa. / That is our spa. / These is our spa. | 1 | Uzak + tekil → that.
+mc | "family" çoğulu? | familys / families / familyes | 1 | Sessiz harf + y → -ies.
+mc | Hangisi doğru? | These towel is clean. / These towels are clean. / This towels are clean. | 1 | these + çoğul isim + are.
+mc | "Şu valizler sizin mi?" hangisi? | Are those suitcases yours? / Is that suitcases yours? / Are this suitcases yours? | 0 | Uzak + çoğul → those.`,
+2:`gap | We have three ___. (pool) | pools | Sayıdan sonra çoğul.
+gap | Two ___, please. (coffee) | coffees | Sipariş verirken: two coffees.
+gap | There are two ___ in the room. (bed) | beds | Çoğul -s.
+gap | Can I have two ___ of water? (glass) | glasses | -ss → -es.
+gap | We have three ___ on the menu today. (dish) | dishes | -sh → -es.
+gap | The ___ are in the kids club. (child) | children | Düzensiz çoğul.
+gap | Four ___ are waiting at the reception. (person) | people | person → people.
+gap | ___ is your key card. (bu) | this | Yakın, tekil.
+gap | ___ are your towels. (bunlar) | these | Yakın, çoğul.
+gap | Is ___ your car over there? (şu) | that | Uzak, tekil.
+gap | ___ bags over there are mine. (şunlar) | those | Uzak, çoğul.
+gap | We welcome many ___ every summer. (family) | families | y → ies.`,
+3:`tr | iki oda | two rooms | Sayıdan sonra çoğul.
+tr | Bu sizin anahtarınız. (your key) | This is your key | Yakın, tekil.
+tr | Bunlar sizin havlularınız. (towels) | These are your towels | Yakın, çoğul.
+tr | Şu bizim spa'mız. (our spa) | That is our spa / That's our spa | Uzak, tekil.
+tr | Üç çocuğum var. (I have) | I have three children / I have three kids | child → children.
+tr | Beş kişiyiz. (We are) | We are five people / There are five of us | person → people.
+tr | İki kahve lütfen. | Two coffees please / Two coffees, please | Siparişte çoğul.
+tr | Şu valizler sizin mi? (suitcases, yours) | Are those suitcases yours / Are those your suitcases | Uzak + çoğul.
+tr | Bu bardaklar temiz değil. (glasses, clean) | These glasses are not clean / These glasses aren't clean | these + are not.
+tr | Oteldeki bütün odaların balkonu var. (All the rooms, have balconies) | All the rooms have balconies / All rooms have balconies / All the rooms have a balcony / All rooms have a balcony | Çoğul özne + have.`,
+4:`open | Otel odasında neler var? Sayılarla 5 şey yaz. Örnek: two beds, three towels. | - | -
+open | Resepsiyonda bir misafire eşyalarını gösteriyorsun: this / that / these / those ile 4 cümle yaz. | - | -
+open | Restoranda 4 kişilik bir masa için sipariş ver (çoğul kullan). Örnek: Two teas and two coffees, please. | - | -
+open | Ailende kaç kişi olduğunu ve kimler olduğunu 3 cümleyle anlat. | - | -`},
+
+'a1-5':{
+1:`mc | "my" ne demek? | benim / ben / beni | 0 | my room = benim odam.
+mc | "your" ne demek? | sen / senin, sizin / seni | 1 | your key = anahtarınız.
+mc | "Adım Ufuk." hangisi? | Me name is Ufuk. / My name is Ufuk. / I name is Ufuk. | 1 | my + isim.
+mc | "her" bir kadın için ne demek? | onun / o / onu | 0 | her bag = onun çantası.
+mc | "Onu (erkek) arıyorum." hangisi? | I am calling he. / I am calling him. / I am calling his. | 1 | Fiilden sonra nesne hâli: him.
+mc | "Bize yardım edin." hangisi? | Help we. / Help us. / Help our. | 1 | we → us.
+mc | Hangisi doğru? | This is their room. / This is they room. / This is them room. | 0 | they → their (onların).
+mc | "Bu çanta benim." hangisi? | This bag is my. / This bag is mine. / This bag is me. | 1 | İsim gelmiyorsa mine.
+mc | "its" ne demek? | (şeyin, hayvanın) onun / o dur / onlar | 0 | The hotel and its pool.
+mc | "Can I see your passport?" cevabı? | Yes, here it is. / Yes, here is it. / Yes, it here is. | 0 | Kalıp: Here it is.
+mc | "Bu sizin mi?" hangisi? | Is this yours? / Is this your? / Is this you? | 0 | İsim yoksa yours.
+mc | Hangisi doğru? | The hotel has its own beach. / The hotel has it's own beach. / The hotel has his own beach. | 0 | its = onun; it's = it is.`,
+2:`gap | ___ name is Ece. (benim) | my | my + isim.
+gap | What is ___ room number? (sizin) | your | your + isim.
+gap | This is Mr Brown and this is ___ wife. (onun, erkeğin) | his | his = erkeğin.
+gap | Mrs Smith left ___ phone at the bar. (onun, kadının) | her | her = kadının.
+gap | Can you help ___? (biz) | us | Nesne hâli.
+gap | Please call ___ tomorrow. (ben) | me | Nesne hâli.
+gap | I know ___. She is our guest. (o, kadın) | her | Nesne hâli de her.
+gap | The guests love ___ room. (onların) | their | their + isim.
+gap | Is this bag ___? (sizin) | yours | İsim yok → yours.
+gap | No, it isn't mine. It's ___. (onun, erkeğin) | his | his iki görevde aynı.
+gap | The restaurant is famous for ___ fish. (onun, şeyin) | its | its = şeyin.
+gap | We love ___ job. (bizim) | our | our + isim.`,
+3:`tr | Benim adım Ece. | My name is Ece | my + isim.
+tr | Oda numaranız ne? | What is your room number / What's your room number | your + isim.
+tr | Pasaportunuzu görebilir miyim? (Can I see) | Can I see your passport / May I see your passport / Could I see your passport | your passport.
+tr | Buyurun, işte. (pasaportu verirken) | Here it is / Here you are | Kalıp.
+tr | Bu çanta benim. | This bag is mine / This is my bag | mine.
+tr | Lütfen beni arayın. | Please call me / Call me please / Call me, please | me.
+tr | Onun (kadın) telefonu barda. | Her phone is at the bar / Her phone is in the bar | her + isim.
+tr | Ona (erkek) yardım edebilir misin? (Can you help) | Can you help him | him.
+tr | Bu sizin mi? | Is this yours / Is it yours | yours.
+tr | Otelin kendi plajı var. (its own) | The hotel has its own beach | its.`,
+4:`open | Kendini ve ailenden birini my / his / her kullanarak 4 cümleyle tanıt. | - | -
+open | Kayıp eşya: bir misafirle konuşma yaz. Is this yours? / No, it isn't mine… En az 4 satır. | - | -
+open | Ekibini anlat: our / their kullanarak 3 cümle. Örnek: Our team is small. | - | -
+open | Bir misafirden 3 bilgi iste (adı, pasaportu, telefonu): Can I have your …? | - | -`},
+
+'a1-6':{
+1:`mc | "I work." → "O (kadın) çalışır." hangisi? | She work. / She works. / She working. | 1 | he / she / it ile fiile -s.
+mc | Hangisi doğru? | He like coffee. / He likes coffee. / He liking coffee. | 1 | he → likes.
+mc | Present Simple ne anlatır? | Şu an olan / Her zaman, genelde olan / Dün olan | 1 | Alışkanlık ve genel doğrular.
+mc | "watch" fiili he ile? | watchs / watches / watchies | 1 | -ch → -es.
+mc | "study" fiili she ile? | studys / studies / studyes | 1 | sessiz + y → -ies.
+mc | "have" fiili he ile? | haves / has / have | 1 | Düzensiz: has.
+mc | "go" fiili it ile? | gos / goes / go | 1 | go → goes.
+mc | Hangisi doğru? | The shuttle leave at 9. / The shuttle leaves at 9. / The shuttle leaving at 9. | 1 | Program ve saatler Present Simple ile.
+mc | "always" cümlede nereye gelir? | Fiilden önce / Cümlenin en sonuna / Öznenin önüne | 0 | I always smile.
+mc | Hangisi doğru? | She always is late. / She is always late. / Always she late is. | 1 | be fiilinden sonra: is always.
+mc | "Restoran 7'de açılır." hangisi? | The restaurant opens at 7. / The restaurant open at 7. / The restaurant is open at 7 o'clock opens. | 0 | Tekil özne → opens.
+mc | "Misafirlerimizin çoğu Booking'den rezervasyon yapar." hangisi? | Most of our guests books on Booking. / Most of our guests book on Booking. / Most of our guests booking on Booking. | 1 | Çoğul özne → -s yok.`,
+2:`gap | I ___ at 8 every morning. (start) | start | I → yalın.
+gap | She ___ in the kitchen. (work) | works | she → -s.
+gap | Breakfast ___ at 7:30. (start) | starts | Tekil → -s.
+gap | He ___ three languages. (speak) | speaks | he → -s.
+gap | The manager ___ a meeting every Monday. (have) | has | have → has.
+gap | My colleague ___ English online. (study) | studies | y → ies.
+gap | The bus ___ to the airport every hour. (go) | goes | go → goes.
+gap | She ___ TV after work. (watch) | watches | ch → es.
+gap | We ___ fresh bread every day. (bake) | bake | we → yalın.
+gap | The housekeeper ___ the rooms before noon. (clean) | cleans | Tekil → -s.
+gap | I ___ check my phone at work. (asla) | never | Sıklık zarfı fiilden önce.
+gap | Our guests ___ ask for late check-out on Sundays. (genellikle) | usually / often | Fiilden önce.`,
+3:`tr | Otelde çalışırım. | I work at the hotel / I work in the hotel / I work at a hotel / I work in a hotel | I → yalın.
+tr | O (kadın) mutfakta çalışır. | She works in the kitchen | she → works.
+tr | Kahvaltı 7'de başlar. (at 7) | Breakfast starts at 7 / Breakfast starts at seven / The breakfast starts at 7 / Breakfast begins at 7 | Tekil → -s.
+tr | O (erkek) üç dil konuşur. | He speaks three languages | -s.
+tr | Servis her saat havalimanına gider. (The shuttle, every hour) | The shuttle goes to the airport every hour | go → goes.
+tr | Her zaman gülümseriz. (always, smile) | We always smile | Sıklık zarfı fiilden önce.
+tr | Yönetici her pazartesi toplantı yapar. (has a meeting) | The manager has a meeting every Monday | has.
+tr | Misafirlerimiz genellikle geç kalkar. (usually, get up late) | Our guests usually get up late | Çoğul özne → -s yok.
+tr | O (kadın) asla geç kalmaz. (is never late) | She is never late | be + never.
+tr | Restoran gece yarısı kapanır. (closes, at midnight) | The restaurant closes at midnight | Tekil → -s.`,
+4:`open | Bir iş gününü 5 cümleyle anlat (I ile). Örnek: I start at 8. I check the emails. | - | -
+open | Bir iş arkadaşının gününü 4 cümleyle anlat (he / she ile, -s takısına dikkat). | - | -
+open | Otelin günlük programını yaz: kahvaltı, havuz, restoran, servis saatleri (en az 4 cümle). | - | -
+open | always / usually / sometimes / never kullanarak kendinle ilgili 4 cümle yaz. | - | -`},
+
+'a1-7':{
+1:`mc | "Kahve içmem." hangisi? | I not drink coffee. / I don't drink coffee. / I doesn't drink coffee. | 1 | I + don't + fiil.
+mc | "O (kadın) sigara içmez." hangisi? | She don't smoke. / She doesn't smoke. / She doesn't smokes. | 1 | she + doesn't + yalın fiil.
+mc | doesn't'tan sonra fiil nasıl olur? | -s alır / Yalın kalır / -ing alır | 1 | -s, does'a geçti: He doesn't work.
+mc | "Do you speak English?" Türkçesi? | İngilizce konuşur musunuz? / İngilizce konuştunuz mu? / İngilizce konuşuyor musunuz şu an? | 0 | Genel soru: Do you …?
+mc | "Kahvaltı istiyor musunuz?" hangisi? | You want breakfast? / Do you want breakfast? / Does you want breakfast? | 1 | Soru için Do başa.
+mc | "Restoran pazar günü açılıyor mu?" hangisi? | Do the restaurant open on Sunday? / Does the restaurant open on Sunday? / Does the restaurant opens on Sunday? | 1 | Tekil → Does + yalın fiil.
+mc | "Do you have a room for tonight?" kısa olumsuz cevap? | No, I don't. / No, we don't. / No, we aren't. | 1 | Otel adına: we.
+mc | "Does he work here?" kısa olumlu cevap? | Yes, he does. / Yes, he works. / Yes, he is. | 0 | Soru does ise cevap da does.
+mc | "Nerede yaşıyorsun?" hangisi? | Where you live? / Where do you live? / Where does you live? | 1 | Soru kelimesi + do + özne + fiil.
+mc | "Kahvaltı ne zaman başlıyor?" hangisi? | What time does breakfast start? / What time breakfast starts? / What time does breakfast starts? | 0 | does + yalın fiil.
+mc | "Kredi kartı kabul ediyor musunuz?" hangisi? | Do you accept credit cards? / Are you accept credit cards? / Does you accept credit cards? | 0 | Fiil cümlesi → do.
+mc | "Bu otelde evcil hayvan kabul edilmiyor." hangisi? | This hotel doesn't allow pets. / This hotel don't allow pets. / This hotel isn't allow pets. | 0 | Tekil → doesn't + yalın fiil.`,
+2:`gap | I ___ drink coffee. (olumsuz) | don't / do not | I → don't.
+gap | She ___ smoke. (olumsuz) | doesn't / does not | she → doesn't.
+gap | We ___ accept cash at the bar. (olumsuz) | don't / do not | we → don't.
+gap | ___ you speak Turkish? | do | Soru: Do you…?
+gap | ___ the pool close at 8? | does | Tekil → Does.
+gap | He doesn't ___ on Sundays. (work) | work | doesn't + yalın.
+gap | Does she ___ English? (speak) | speak | does + yalın.
+gap | Where ___ you live? | do | Soru kelimesi + do.
+gap | What time ___ the shuttle leave? | does | Tekil → does.
+gap | – Do you have a car park? – Yes, we ___. | do | Kısa cevap.
+gap | – Does the room have a minibar? – No, it ___. | doesn't / does not | Kısa olumsuz cevap.
+gap | How much ___ a double room cost? | does | Tekil → does.`,
+3:`tr | Kahve içmem. | I don't drink coffee / I do not drink coffee | don't + fiil.
+tr | O (erkek) burada çalışmıyor. (here) | He doesn't work here / He does not work here | doesn't + yalın.
+tr | İngilizce konuşur musunuz? | Do you speak English | Do + özne + fiil.
+tr | Kredi kartı kabul ediyor musunuz? (accept credit cards) | Do you accept credit cards / Do you take credit cards | Do you …?
+tr | Havuz kaçta kapanıyor? (What time) | What time does the pool close / When does the pool close | does + yalın.
+tr | Nerede yaşıyorsun? | Where do you live | Soru kelimesi + do.
+tr | Odada minibar yok. (The room doesn't have) | The room doesn't have a minibar / The room does not have a minibar / There is no minibar in the room / There isn't a minibar in the room | doesn't have.
+tr | Kahvaltı istiyor musunuz? (want) | Do you want breakfast / Would you like breakfast | Do you want …?
+tr | Çift kişilik oda ne kadar? (How much, cost) | How much does a double room cost / How much is a double room | How much does … cost?
+tr | Evcil hayvan kabul etmiyoruz. (allow pets) | We don't allow pets / We do not allow pets / We don't accept pets / We do not accept pets | we → don't.`,
+4:`open | Bir misafire otel hakkında 4 Do/Does sorusu sor ve kısa cevaplarını yaz. Örnek: Do you need a taxi? – Yes, I do. | - | -
+open | Kendinle ilgili yapmadığın 4 şeyi yaz (don't kullan). | - | -
+open | Bir iş arkadaşını doesn't kullanarak 3 cümleyle anlat. Örnek: She doesn't drink tea. | - | -
+open | Telefonda rezervasyon alırken soracağın 4 soruyu yaz (Do you…? / What time…? / How many…?). | - | -`},
+
+'a1-8':{
+1:`mc | "Bir arabam var." hangisi? | I have a car. / There is a car. / I am a car. | 0 | Sahiplik: have.
+mc | "Otelde bir havuz var." hangisi? | The hotel is a pool. / There is a pool in the hotel. / A pool have the hotel. | 1 | Bir yerde bulunma: there is.
+mc | "O (kadın) iki çocuğa sahip." hangisi? | She have two children. / She has two children. / She is two children. | 1 | she → has.
+mc | Çoğul için hangisi? | There is two lifts. / There are two lifts. / There have two lifts. | 1 | Çoğul → there are.
+mc | "Odada havlu yok." hangisi? | There isn't any towel in the room. / There aren't any towels in the room. / There not towels in the room. | 1 | Çoğul olumsuz: there aren't any.
+mc | "Yakında bir eczane var mı?" hangisi? | Is there a pharmacy near here? / Are there a pharmacy near here? / Have a pharmacy near here? | 0 | Soru: Is there …?
+mc | "Is there a gym?" kısa olumlu cevap? | Yes, there is. / Yes, it is. / Yes, there has. | 0 | Kalıp: Yes, there is.
+mc | "Do you have a sea view room?" otel adına cevap? | Yes, we have. / Yes, we do. / Yes, there do. | 1 | Do ile soru → do ile cevap.
+mc | "Bugün çok misafirimiz var." hangisi? | There are many guests today. / We have a lot of guests today. / İkisi de doğru | 2 | Her ikisi de doğal.
+mc | "Wi-Fi'ınız var mı?" en doğal hangisi? | Do you have Wi-Fi? / Have you Wi-Fi? / Is you Wi-Fi? | 0 | Günlük dilde Do you have …?
+mc | "Kasada hiç para yok." hangisi? | There isn't any money in the safe. / There aren't any money in the safe. / There is no any money. | 0 | money sayılamaz → isn't.
+mc | "Odanızda iki yatak ve bir balkon var." hangisi? | Your room has two beds and a balcony. / Your room have two beds and a balcony. / Your room is two beds. | 0 | Tekil özne → has.`,
+2:`gap | I ___ a reservation. (sahiplik) | have | I → have.
+gap | She ___ a nice smile. (sahiplik) | has | she → has.
+gap | There ___ a pool on the roof. | is | Tekil → is.
+gap | There ___ two restaurants in the hotel. | are | Çoğul → are.
+gap | ___ there a lift? | is | Soru: Is there …?
+gap | ___ there any vegan dishes on the menu? | are | Çoğul soru.
+gap | The room ___ a balcony. (sahiplik) | has | Tekil → has.
+gap | There ___ any milk in the fridge. (olumsuz) | isn't / is not | Sayılamaz → isn't.
+gap | We don't ___ any rooms for tonight. | have | don't + have.
+gap | Does the hotel ___ a car park? | have | does + have.
+gap | – Is there a bank near here? – Yes, there ___. | is | Kısa cevap.
+gap | There ___ no towels in room 204. Please send some. | are | there are no.`,
+3:`tr | Rezervasyonum var. | I have a reservation / I have a booking | have.
+tr | Çatıda bir havuz var. (on the roof) | There is a pool on the roof / There's a pool on the roof | there is.
+tr | Otelde iki restoran var. | There are two restaurants in the hotel / The hotel has two restaurants | there are.
+tr | Odanın balkonu var. | The room has a balcony | Tekil → has.
+tr | Asansör var mı? | Is there a lift / Is there an elevator | Is there …?
+tr | Yakında bir eczane var mı? (near here) | Is there a pharmacy near here / Is there a pharmacy nearby | Is there …?
+tr | Bu gece boş odamız yok. (any rooms, tonight) | We don't have any rooms tonight / We do not have any rooms tonight / We don't have any rooms for tonight / We have no rooms tonight | don't have any.
+tr | Odada havlu yok. (any towels) | There aren't any towels in the room / There are no towels in the room | there aren't any.
+tr | Otoparkınız var mı? (a car park) | Do you have a car park / Do you have parking / Is there a car park | Do you have …?
+tr | Menüde vegan yemek var mı? (any vegan dishes) | Are there any vegan dishes on the menu / Do you have any vegan dishes | Are there any …?`,
+4:`open | Otelini 5 cümleyle tanıt: There is / There are / We have kullan. | - | -
+open | Odanı ya da evini 4 cümleyle anlat (has / there is). | - | -
+open | Bir misafir mahalleyi soruyor: yakında neler var, neler yok? 4 cümle yaz. | - | -
+open | Arkadaşına mesaj yaz: senin nelerin var, nelerin yok (have / don't have), 4 cümle. | - | -`},
+
+'a1-9':{
+1:`mc | "at" genelde neyle kullanılır? | Saat / Ay / Yıl | 0 | at 7 o'clock.
+mc | "Pazartesi" için hangisi? | in Monday / on Monday / at Monday | 1 | Günler: on.
+mc | "Temmuzda" için hangisi? | in July / on July / at July | 0 | Aylar: in.
+mc | "2027'de" için hangisi? | in 2027 / on 2027 / at 2027 | 0 | Yıllar: in.
+mc | "Saat 3'te" için hangisi? | in 3 o'clock / on 3 o'clock / at 3 o'clock | 2 | Saat: at.
+mc | "Masanın üstünde" için hangisi? | in the table / on the table / at the table | 1 | Yüzey: on.
+mc | "Odada" için hangisi? | in the room / on the room / at the room | 0 | İçinde: in.
+mc | "Resepsiyonda" için hangisi? | in reception / on reception / at reception | 2 | Nokta, görev yeri: at.
+mc | "2. katta" için hangisi? | in the second floor / on the second floor / at the second floor | 1 | Kat: on.
+mc | "Hafta sonu" için hangisi? | at the weekend / in weekend / on weekend the | 0 | İngiliz İngilizcesi: at the weekend (Amerikan: on the weekend).
+mc | "Sabahları" için hangisi? | in the morning / on the morning / at the morning | 0 | Gün bölümleri: in the morning, at night.
+mc | "Check-out pazar günü saat 11'de." hangisi? | Check-out is on Sunday at 11. / Check-out is at Sunday on 11. / Check-out is in Sunday in 11. | 0 | Gün → on, saat → at.`,
+2:`gap | Breakfast starts ___ 7:30. | at | Saat → at.
+gap | The spa is closed ___ Mondays. | on | Günler → on.
+gap | We are very busy ___ August. | in | Aylar → in.
+gap | The hotel opened ___ 2019. | in | Yıllar → in.
+gap | Your room is ___ the third floor. | on | Kat → on.
+gap | Your key is ___ the envelope. | in | İçinde → in.
+gap | The guest is waiting ___ reception. | at | Görev noktası → at.
+gap | The menu is ___ the table. | on | Yüzey → on.
+gap | We have live music ___ night. | at | at night.
+gap | I go for a walk ___ the evening. | in | in the evening.
+gap | The bus stop is ___ the corner. | on / at | on the corner / at the corner.
+gap | Can I pay ___ euros? | in | Para birimi: in euros.`,
+3:`tr | Kahvaltı saat 7'de başlar. | Breakfast starts at 7 / Breakfast starts at seven / Breakfast begins at 7 / Breakfast starts at 7 o'clock | Saat → at.
+tr | Spa pazartesi günleri kapalı. | The spa is closed on Mondays / The spa is closed on Monday | Gün → on.
+tr | Odanız ikinci katta. | Your room is on the second floor | Kat → on.
+tr | Ağustosta çok yoğunuz. (busy) | We are very busy in August / We're very busy in August | Ay → in.
+tr | Anahtarınız zarfın içinde. (the envelope) | Your key is in the envelope | in.
+tr | Misafir resepsiyonda bekliyor. (is waiting) | The guest is waiting at reception / The guest is waiting at the reception | at reception.
+tr | Otel 2019'da açıldı. (opened) | The hotel opened in 2019 | Yıl → in.
+tr | Geceleri canlı müzik var. (There is live music) | There is live music at night / There's live music at night | at night.
+tr | Check-out pazar günü saat 11'de. | Check-out is on Sunday at 11 / Check-out is at 11 on Sunday / Check-out is on Sunday at eleven | Gün on, saat at.
+tr | Euro ile ödeyebilir miyim? (Can I pay) | Can I pay in euros | in euros.`,
+4:`open | Otelinin saatlerini in / on / at kullanarak 5 cümleyle yaz (kahvaltı, havuz, spa, check-in, check-out). | - | -
+open | Bir misafire odasını nasıl bulacağını anlat: kat, asansör, koridor (4 cümle). | - | -
+open | Haftanı anlat: hangi gün ne yaparsın, hangi saatte? (4 cümle) | - | -
+open | En sevdiğin mevsimi ve ayı anlat (in July, in summer, at the weekend…) 3 cümle. | - | -`},
+
+'a1-10':{
+1:`mc | Present Continuous ne anlatır? | Şu an olan / Her zaman olan / Dün olan | 0 | am / is / are + -ing.
+mc | "Şu an çalışıyorum." hangisi? | I work now. / I am working now. / I working now. | 1 | am + -ing.
+mc | "O (kadın) telefonla konuşuyor." hangisi? | She is talking on the phone. / She talking on the phone. / She talks on the phone now. | 0 | is + -ing.
+mc | "make" -ing hâli? | makeing / making / makking | 1 | Sondaki e düşer.
+mc | "swim" -ing hâli? | swiming / swimming / swimeing | 1 | Kısa kelimede son harf ikilenir.
+mc | Hangisi doğru? | They are waiting in the lobby. / They is waiting in the lobby. / They waiting are in the lobby. | 0 | they → are.
+mc | "Ne yapıyorsun?" hangisi? | What do you doing? / What are you doing? / What you are doing? | 1 | Soru: are başa.
+mc | "Bekliyor musunuz?" hangisi? | Are you waiting? / Do you waiting? / You are waiting? | 0 | be başa.
+mc | Hangisi şu an olanı anlatır? | I usually walk to work. / Look! It's raining. / The bus leaves at 9. | 1 | Look! şu an olanı gösterir.
+mc | "Bu hafta gece vardiyasında çalışıyorum." hangisi? | I am working nights this week. / I work nights this week now. / I working nights this week. | 0 | Bu aralar olan geçici durum da -ing.
+mc | "Şu an odanızı temizliyoruz." hangisi? | We are cleaning your room right now. / We clean your room right now. / We cleaning your room now. | 0 | right now → -ing.
+mc | "Misafir gülmüyor." hangisi? | The guest isn't smiling. / The guest doesn't smiling. / The guest not smiling. | 0 | is not + -ing.`,
+2:`gap | I am ___ right now. (work) | working | am + -ing.
+gap | She is ___ a guest. (help) | helping | is + -ing.
+gap | The guests ___ waiting in the lobby. (be) | are | Çoğul → are.
+gap | We ___ preparing your room. (be) | are | we → are.
+gap | He is ___ a coffee. (make) | making | e düşer.
+gap | The kids are ___ in the pool. (swim) | swimming | m ikilenir.
+gap | Look! It ___ raining. (be) | is | Hava → it is.
+gap | What are you ___? (do) | doing | What are you doing?
+gap | ___ you waiting for a taxi? (be) | are | Soru: Are you …?
+gap | The lift ___ working at the moment. (olumsuz) | isn't / is not | is not + -ing.
+gap | I'm ___ on the night shift this week. (work) | working | Geçici durum.
+gap | Sorry, the manager is ___ a call. (take) | taking | e düşer.`,
+3:`tr | Şu an çalışıyorum. (now) | I am working now / I'm working now / I am working right now / I'm working right now | am + -ing.
+tr | Misafirler lobide bekliyor. (in the lobby) | The guests are waiting in the lobby / Guests are waiting in the lobby | are + -ing.
+tr | Ne yapıyorsun? | What are you doing | Soru: are başa.
+tr | Bak! Yağmur yağıyor. (Look) | Look! It is raining / Look! It's raining / Look, it is raining / Look, it's raining | It is raining.
+tr | Odanızı hazırlıyoruz. (prepare) | We are preparing your room / We're preparing your room | e düşer.
+tr | Asansör şu an çalışmıyor. (at the moment) | The lift isn't working at the moment / The lift is not working at the moment / The elevator isn't working at the moment / The elevator is not working at the moment | is not + -ing.
+tr | Taksi mi bekliyorsunuz? (for a taxi) | Are you waiting for a taxi | Are you …?
+tr | Çocuklar havuzda yüzüyor. (The kids) | The kids are swimming in the pool / The children are swimming in the pool | swimming.
+tr | Bu hafta gece vardiyasında çalışıyorum. (on the night shift) | I am working on the night shift this week / I'm working on the night shift this week | Geçici durum.
+tr | Yönetici telefonla konuşuyor. (on the phone) | The manager is talking on the phone / The manager is speaking on the phone | is + -ing.`,
+4:`open | Şu an lobide neler oluyor? 5 cümleyle anlat (-ing). Örnek: A family is checking in. | - | -
+open | Bir iş arkadaşına mesaj yaz: şu an ne yapıyorsun, bu hafta neyle meşgulsün? (4 cümle) | - | -
+open | Telefondaki misafire bekletme cümleleri yaz: I am checking…, We are preparing… (3 cümle) | - | -
+open | Present Simple ile Present Continuous farkını kendi cümlelerinle göster: 2 alışkanlık + 2 şu an. | - | -`},
+
+'a1-11':{
+1:`mc | "Yüzebilirim." hangisi? | I can swim. / I can swimming. / I can to swim. | 0 | can + yalın fiil.
+mc | "O (erkek) İngilizce konuşabilir." hangisi? | He cans speak English. / He can speak English. / He can speaks English. | 1 | can hiç -s almaz.
+mc | "Yapamam." hangisi? | I can't. / I don't can. / I not can. | 0 | can't = cannot.
+mc | "Size yardım edebilir miyim?" hangisi? | Can I help you? / Do I can help you? / I can help you? | 0 | Soru: Can başa.
+mc | Emir cümlesi hangisi? | Please sit down. / You sitting down. / You can sit? | 0 | Emir: fiille başlar.
+mc | Olumsuz emir hangisi? | Don't touch, please. / No touch, please. / Not touch, please. | 0 | Don't + fiil.
+mc | "Hadi başlayalım." hangisi? | Let's start. / Let start us. / Let's to start. | 0 | Let's + yalın fiil.
+mc | Misafire en kibar hangisi? | Give me your passport. / Can I see your passport, please? / Passport! | 1 | Can I …, please? kibar istek.
+mc | "Burada sigara içemezsiniz." hangisi? | You can't smoke here. / You don't smoke here. / You can smoke not here. | 0 | can't + fiil.
+mc | "Kartla ödeyebilir miyim?" cevap olarak hangisi? | Yes, of course you can. / Yes, you can paying. / Yes, you cans. | 0 | Kısa cevap: you can.
+mc | "Lütfen bu formu doldurun." hangisi? | Please fill in this form. / Please you fill in this form. / Please filling this form. | 0 | Emir: Please + fiil.
+mc | "Asansörü kullanmayın, bozuk." hangisi? | Don't use the lift, it's out of order. / Not use the lift, it's broken. / No use lift, it's out of order. | 0 | Don't + fiil; out of order = bozuk.`,
+2:`gap | I ___ speak a little English. (-ebilmek) | can | can + yalın.
+gap | ___ I help you? (-ebilmek) | can | Soru: Can …?
+gap | She can ___ three languages. (speak) | speak | can + yalın.
+gap | Sorry, I ___ find your booking. (-emiyorum) | can't / cannot | can't + fiil.
+gap | Please ___ down. (sit) | sit | Emir: Please + fiil.
+gap | ___ touch the screen. (olumsuz emir) | don't / do not | Don't + fiil.
+gap | ___ go to the beach! (hadi … gidelim) | let's | Let's + fiil.
+gap | Can you ___ that, please? (spell) | spell | can + yalın.
+gap | ___ this form, please. (doldurun: fill in) | fill in | Emir: fiille başlar.
+gap | You ___ park here. It's for staff only. (olumsuz) | can't / cannot | can't.
+gap | ___ I pay by card? – Yes, of course. | can | Can I …?
+gap | ___ forget your umbrella! (olumsuz emir) | don't / do not | Don't forget.`,
+3:`tr | Size yardım edebilir miyim? | Can I help you / May I help you / How can I help you | Can I …?
+tr | Biraz İngilizce konuşabilirim. (a little) | I can speak a little English | can + yalın.
+tr | Lütfen oturun. | Please sit down / Sit down please / Please have a seat / Have a seat please / Have a seat, please / Sit down, please | Emir.
+tr | Kartla ödeyebilir miyim? (by card) | Can I pay by card / Can I pay with a card / Can I pay with card | by card.
+tr | Burada sigara içemezsiniz. | You can't smoke here / You cannot smoke here | can't.
+tr | Hadi başlayalım. | Let's start / Let's begin | Let's.
+tr | Ekrana dokunmayın. (the screen) | Don't touch the screen / Do not touch the screen / Please don't touch the screen | Don't + fiil.
+tr | Lütfen bu formu doldurun. (fill in) | Please fill in this form / Please fill out this form / Fill in this form please | Emir.
+tr | Rezervasyonunuzu bulamıyorum. (your booking) | I can't find your booking / I cannot find your booking / I can't find your reservation / I cannot find your reservation | can't + fiil.
+tr | Bunu heceleyebilir misiniz? (spell) | Can you spell that / Could you spell that / Can you spell it / Could you spell it | Can you …?`,
+4:`open | Yapabildiğin ve yapamadığın 4 şeyi yaz (can / can't). | - | -
+open | Otel kurallarını yaz: 4 emir ya da yasak cümlesi. Örnek: Please don't smoke in the room. | - | -
+open | Misafirle kısa bir diyalog yaz: Can I…? / Can you…? soruları ve cevapları (en az 4 satır). | - | -
+open | Ekibine sabah toplantısında söyleyeceğin 3 cümle yaz (Let's …). | - | -`},
+
+'a1-12':{
+1:`mc | Hangisi sayılabilir? | water / chair / money | 1 | one chair, two chairs.
+mc | Hangisi sayılamaz? | apple / bottle / milk | 2 | milk tek tek sayılmaz.
+mc | "Biraz su" hangisi? | some water / a water / many water | 0 | Sayılamaz → some.
+mc | Olumsuz cümlede hangisi? | I don't have some money. / I don't have any money. / I don't have many money. | 1 | Olumsuz → any.
+mc | Soruda hangisi? | Do you have any questions? / Do you have some question? / Do you have much questions? | 0 | Soru → any.
+mc | Sayılabilen çoğulla hangisi? | many guests / much guests / a guests | 0 | Sayılabilir → many.
+mc | Sayılamayanla hangisi? | many time / much time / a time much | 1 | Sayılamaz → much.
+mc | "Ne kadar?" (fiyat) hangisi? | How many is it? / How much is it? / How much are it? | 1 | Fiyat: How much.
+mc | "Kaç gece?" hangisi? | How much nights? / How many nights? / How many night? | 1 | Sayılabilir → How many + çoğul.
+mc | Kibar teklif hangisi? | Would you like some tea? / Would you like any tea? / Would you like many tea? | 0 | Teklifte some.
+mc | "Bir şişe su" hangisi? | a water / a bottle of water / a waters | 1 | Sayılamazı birimle say: a bottle of.
+mc | "Bugün çok misafirimiz var." en doğal hangisi? | We have a lot of guests today. / We have much guests today. / We have a lot guests today. | 0 | a lot of her ikisiyle de olur.`,
+2:`gap | Can I have ___ water, please? (biraz) | some | Rica → some.
+gap | We don't have ___ rooms tonight. | any | Olumsuz → any.
+gap | Do you have ___ questions? | any | Soru → any.
+gap | Would you like ___ coffee? | some | Teklif → some.
+gap | How ___ nights are you staying? | many | Sayılabilir.
+gap | How ___ is the airport transfer? | much | Fiyat.
+gap | There isn't ___ milk left. | much / any | Sayılamaz olumsuz.
+gap | We have ___ guests from Germany this week. (çok, many) | many | Sayılabilir çoğul.
+gap | I don't have ___ time. (çok, much) | much | Sayılamaz.
+gap | Can I have a ___ of water? (şişe) | bottle / glass | Birimle say.
+gap | There are a ___ of people at the pool. | lot | a lot of.
+gap | How ___ luggage do you have? | much | luggage sayılamaz!`,
+3:`tr | Biraz su alabilir miyim? (Can I have) | Can I have some water / Could I have some water / Can I have some water please | some.
+tr | Hiç sorunuz var mı? | Do you have any questions | Soru → any.
+tr | Biraz kahve ister misiniz? (Would you like) | Would you like some coffee | Teklif → some.
+tr | Kaç gece kalıyorsunuz? | How many nights are you staying / How many nights will you stay | How many.
+tr | Havalimanı transferi ne kadar? | How much is the airport transfer / How much does the airport transfer cost | How much.
+tr | Bu gece hiç boş odamız yok. (any rooms) | We don't have any rooms tonight / We do not have any rooms tonight / We have no rooms tonight / We don't have any rooms available tonight | any.
+tr | Bir şişe su lütfen. | A bottle of water please / A bottle of water, please | a bottle of.
+tr | Fazla vaktim yok. (much time) | I don't have much time / I do not have much time | much.
+tr | Ne kadar bagajınız var? (luggage) | How much luggage do you have | luggage sayılamaz.
+tr | Bugün havuzda çok insan var. (a lot of people) | There are a lot of people at the pool today / There are many people at the pool today / There are a lot of people in the pool today | a lot of.`,
+4:`open | Kahvaltı büfesini anlat: some / any / a lot of kullanarak 5 cümle. | - | -
+open | Mutfaktan market siparişi yaz: 5 ürün, miktarlarıyla (a bottle of, two kilos of, some…). | - | -
+open | Telefonda rezervasyon alırken How many / How much ile 4 soru yaz. | - | -
+open | Restoranda bir misafire teklif cümleleri yaz: Would you like some …? (3 cümle) | - | -`}
+};
+
+/* Kademeli ünite sınavları — Otel İngilizcesi dersleri */
+Object.assign(ULV,{
+'o-1':{
+1:`mc | "Lütfen" hangisi? | please / thanks / sorry | 0 | please = lütfen.
+mc | "Teşekkür ederim" hangisi? | Excuse me. / Thank you. / You're welcome. | 1 | Thank you = teşekkür ederim.
+mc | "Rica ederim" hangisi? | You're welcome. / Thank you. / Sorry. | 0 | Teşekküre cevap: You're welcome.
+mc | Birinin dikkatini kibarca çekmek için? | Hey! / Excuse me. / Listen! | 1 | Excuse me = affedersiniz.
+mc | En kibar istek hangisi? | Give me your passport. / Can I have your passport? / Could I see your passport, please? | 2 | Could … please en kibarı.
+mc | "Bir şey ister misiniz?" hangisi? | Do you want something? / Would you like something? / You want something? | 1 | Misafire: Would you like …?
+mc | "Sizi bekletebilir miyim?" kibar hâli? | Wait. / May I put you on hold? / Hold on you. | 1 | May I …? izin istemenin en kibarı.
+mc | Kötü haberi yumuşatan kalıp hangisi? | I'm afraid … / I'm happy … / I'm sure … | 0 | I'm afraid the pool is closed.
+mc | "Hayır, olmaz." yerine misafire ne dersin? | No. / I'm afraid that's not possible. / Impossible! | 1 | Önce yumuşat, sonra açıkla.
+mc | "Would you like a taxi?" sorusuna kibar "evet"? | Yes, I would like. / Yes, please. / Yes, give. | 1 | Kısa ve doğal: Yes, please.
+mc | "Could you wait a moment?" ne demek? | Bir dakika bekleyebilir misiniz? / Biraz bekledin mi? / Beklemek zorundasınız. | 0 | Could you …? = -ebilir misiniz?
+mc | Misafir teşekkür etti, en sıcak cevap? | No problem. / My pleasure. / OK. | 1 | My pleasure = ne demek, memnuniyetle.`,
+2:`gap | Could I see your passport, ___? | please | please sona da gelebilir.
+gap | ___ you like a drink? | would | Would you like …?
+gap | ___ I help you? (en kibar) | may / how may | May I help you?
+gap | ___ you spell your surname, please? | could / can | Could you …?
+gap | Thank you. – You're ___. | welcome | You're welcome.
+gap | I'm ___, the spa is fully booked today. | afraid / sorry | Kötü haberi yumuşat.
+gap | ___ me, is this seat free? | excuse | Excuse me.
+gap | Would you ___ a wake-up call? | like | Would you like …?
+gap | It's my ___. Enjoy your stay! | pleasure | My pleasure.
+gap | Could you wait a ___, please? | moment / minute | a moment.
+gap | I'm afraid that's not ___. | possible | not possible.
+gap | ___ you mind closing the door? | would | Would you mind + -ing?`,
+3:`tr | Teşekkür ederim. | Thank you / Thanks / Thank you very much | Kalıp.
+tr | Rica ederim. | You're welcome / You are welcome / My pleasure / It's my pleasure | Kalıp.
+tr | Size nasıl yardımcı olabilirim? (How may) | How may I help you / How can I help you | How may I …?
+tr | Bir içecek ister misiniz? (Would you like) | Would you like a drink / Would you like something to drink | Would you like …?
+tr | Pasaportunuzu görebilir miyim lütfen? (Could I) | Could I see your passport please / Could I see your passport, please / May I see your passport please / May I see your passport, please | Could I …?
+tr | Bir dakika bekleyebilir misiniz? (Could you) | Could you wait a moment / Could you wait a minute / Could you wait a moment please / Could you wait a moment, please | Could you …?
+tr | Maalesef spa bugün dolu. (I'm afraid, fully booked) | I'm afraid the spa is fully booked today / I am afraid the spa is fully booked today | I'm afraid …
+tr | Maalesef bu mümkün değil. | I'm afraid that's not possible / I'm afraid that is not possible / I am afraid that is not possible / I'm afraid it's not possible | Yumuşatma.
+tr | Uyandırma araması ister misiniz? (a wake-up call) | Would you like a wake-up call | Would you like …?
+tr | Kapıyı kapatır mısınız? (Would you mind) | Would you mind closing the door | Would you mind + -ing.`,
+4:`open | Aynı isteği üç kibarlık basamağında yaz: "Pasaportunu göster." (normal, kibar, çok kibar) | - | -
+open | Misafire 3 hayır cevabı yaz; her birini I'm afraid ile yumuşat ve bir alternatif öner. | - | -
+open | Lobide bir misafire Would you like …? ile 4 teklif yaz (içecek, taksi, harita, uyandırma). | - | -
+open | Kibar bir karşılama ve vedalaşma konuşması yaz (en az 5 satır). | - | -`},
+
+'o-2':{
+1:`mc | "15" nasıl okunur? | fifty / fifteen / five-teen | 1 | fifteen (on beş), fifty (elli): vurguya dikkat!
+mc | "50" nasıl okunur? | fifteen / fifty / five-ty | 1 | fifty.
+mc | "Saat 2:30" nasıl söylenir? | half past two / half to two / two and half | 0 | half past two ya da two thirty.
+mc | "Saat 3:15" nasıl söylenir? | quarter to three / quarter past three / three and quarter | 1 | past = geçiyor.
+mc | "Saat 4:45" nasıl söylenir? | quarter to five / quarter past four / four and three quarters | 0 | to = kala.
+mc | "12 Ağustos" nasıl söylenir? | the twelve August / the twelfth of August / August twelve of | 1 | Tarih: the + sıra sayısı + of.
+mc | "1st" nasıl okunur? | one / first / oneth | 1 | 1st = first.
+mc | "Oda 305" nasıl okunur? | room three-oh-five / room three hundred five / room thirty-five | 0 | Oda numaraları tek tek: three-oh-five.
+mc | "€150" nasıl söylenir? | a hundred fifty euro / one hundred and fifty euros / euro one fifty | 1 | Fiyat: … euros.
+mc | "Gecelik 120 euro" hangisi? | 120 euros per night / 120 euros a nights / 120 euro for nights | 0 | per night = gecelik.
+mc | "Kaç gece?" sorusu hangisi? | How many nights? / How much nights? / How long nights? | 0 | Sayılabilir → many.
+mc | Tarihi teyit ederken en doğru hangisi? | That's the 12th to the 15th, three nights. Is that correct? / OK, bye. / You come 12. | 0 | Rakamları her zaman tekrar ederek teyit et.`,
+2:`gap | Check-in is ___ 2 p.m. | at | Saat → at.
+gap | Breakfast is from 7 ___ 10:30. | to / till / until | from … to …
+gap | It's half ___ six. (6:30) | past | half past.
+gap | It's a quarter ___ nine. (8:45) | to | quarter to.
+gap | Your room is three-oh-___. (305) | five | Tek tek okunur.
+gap | That's 90 euros ___ night. | per / a | per night.
+gap | You are arriving on the ___ of May. (5th) | fifth | 5th = fifth.
+gap | Your stay is from the 3rd ___ the 7th of June. | to / until / till | from … to …
+gap | How ___ nights would you like to stay? | many | many nights.
+gap | How ___ is the room per night? | much | Fiyat → much.
+gap | The total is two hundred ___ forty euros. (240) | and | İngiliz İngilizcesinde hundred'dan sonra and.
+gap | Your flight lands at nine ___. (9:15 → nine …) | fifteen | nine fifteen.`,
+3:`tr | Check-in saat 14:00'te. (at 2 p.m.) | Check-in is at 2 p.m. / Check-in is at 2 pm / Check-in is at two p.m. / Check-in is at 2 / Check-in is at two | at.
+tr | Kahvaltı 7'den 10'a kadar. (from … to) | Breakfast is from 7 to 10 / Breakfast is from seven to ten / Breakfast is served from 7 to 10 | from … to.
+tr | Saat iki buçuk. | It's half past two / It is half past two / It's two thirty / It is two thirty | half past.
+tr | Odanız 305. (three-oh-five) | Your room is 305 / Your room is three-oh-five / Your room number is 305 | Oda numarası.
+tr | Gecelik 120 euro. (per night) | It's 120 euros per night / It is 120 euros per night / 120 euros per night / It's 120 euros a night | per night.
+tr | Kaç gece kalacaksınız? (How many nights) | How many nights will you stay / How many nights are you staying / How many nights would you like to stay | How many …?
+tr | 12 Ağustos'ta geliyorsunuz. (You are arriving) | You are arriving on the 12th of August / You're arriving on the 12th of August / You are arriving on August 12th / You're arriving on August 12th / You are arriving on 12 August | on + tarih.
+tr | Toplam 240 euro. (The total is) | The total is 240 euros / The total is two hundred and forty euros | Fiyat.
+tr | Saat dokuza çeyrek var. (quarter to) | It's a quarter to nine / It is a quarter to nine / It's quarter to nine / It is quarter to nine | quarter to.
+tr | 12'sinden 15'ine kadar, üç gece. Doğru mu? (Is that correct) | From the 12th to the 15th, three nights. Is that correct / The 12th to the 15th, three nights. Is that correct | Teyit.`,
+4:`open | Bir rezervasyonu tekrar ederek teyit et: geliş, çıkış, gece sayısı, oda tipi, fiyat (en az 4 cümle). | - | -
+open | Otelin saatlerini yaz: kahvaltı, havuz, spa, check-in, check-out (saatleri İngilizce yaz). | - | -
+open | Bir misafire faturasını anlat: 3 kalem ve toplam tutar. Örnek: The room is 360 euros. | - | -
+open | Doğum gününü, bugünün tarihini ve gelecek ay önemli bir tarihi İngilizce yaz (the … of …). | - | -`},
+
+'o-3':{
+1:`mc | "Could you spell that?" ne demek? | Tekrar eder misiniz? / Harf harf söyler misiniz? / Yazar mısınız? | 1 | spell = hecelemek, harf harf söylemek.
+mc | "@" nasıl okunur? | at / and / dot | 0 | ali@mail.com → ali at mail dot com.
+mc | "." e-postada nasıl okunur? | point / dot / full stop | 1 | E-postada: dot.
+mc | "_" nasıl okunur? | dash / underscore / line | 1 | underscore = alt çizgi.
+mc | "-" nasıl okunur? | dash / hyphen / İkisi de olur | 2 | dash ya da hyphen.
+mc | "A for Alpha" ne işe yarar? | Harfleri karıştırmamak için / Selamlaşmak için / Fiyat söylemek için | 0 | Telefonda harf kodlama.
+mc | "B" kodu hangisi? | Bravo / Bob / Bar | 0 | B for Bravo.
+mc | "M" kodu hangisi? | Mike / Mary / Moon | 0 | M for Mike.
+mc | Telefonda en çok karışan harfler? | B ve P / A ve Z / K ve O | 0 | B–P, D–T, M–N, F–S.
+mc | "double L" ne demek? | iki tane L (LL) / büyük L / L yok | 0 | Bell → B-E-double L.
+mc | "Is that with a capital M?" ne sorar? | M büyük harf mi? / M var mı? / M kaç tane? | 0 | capital = büyük harf.
+mc | Soyadı aldıktan sonra en iyi hangisi? | OK. / Let me read that back: S-M-I-T-H. / Bye. | 1 | Okuyarak teyit et.`,
+2:`gap | Could you ___ your surname, please? | spell | spell.
+gap | Is that B for ___? | bravo | B for Bravo.
+gap | Is that M for ___ or N for November? | mike | M for Mike.
+gap | ali ___ mail dot com (@) | at | @ = at.
+gap | ali at mail ___ com (.) | dot | . = dot.
+gap | john ___ smith at mail dot com (_) | underscore | _ = underscore.
+gap | Is that a capital letter or a ___ letter? | small / lower case / lowercase | small letter.
+gap | It's Bell: B-E-___ L. | double | double L.
+gap | Let me read that ___ to you. | back | read back = okuyarak teyit etmek.
+gap | Sorry, could you say that ___? | again | Tekrar.
+gap | How do you ___ your first name? | spell | How do you spell …?
+gap | Is that all one word or is there a ___ between? | space / dash / hyphen | Boşluk mu, tire mi?`,
+3:`tr | Soyadınızı harf harf söyler misiniz? (spell) | Could you spell your surname please / Could you spell your surname, please / Can you spell your surname please / Could you spell your last name please / Could you spell your surname | spell.
+tr | Bravo'daki B mi? (B for) | Is that B for Bravo | B for Bravo.
+tr | E-posta adresiniz nedir? | What is your email address / What's your email address / What is your e-mail address | email address.
+tr | "ali@mail.com" adresini sesli nasıl okursun? | ali at mail dot com | @ = at, . = dot.
+tr | Tekrar söyler misiniz? (Could you say that) | Could you say that again / Could you say that again please / Could you repeat that / Could you repeat that please | again.
+tr | Size okuyarak teyit edeyim. (Let me read that back) | Let me read that back / Let me read that back to you | read back.
+tr | Büyük harfle mi? (capital) | Is that with a capital letter / Is that a capital letter / With a capital letter | capital.
+tr | Adınızı nasıl yazıyorsunuz? (How do you spell) | How do you spell your name / How do you spell your first name | How do you spell …?
+tr | İki tane L ile mi? (double L) | Is that with a double L / With a double L / Is that double L | double.
+tr | Arada alt çizgi var mı? (an underscore) | Is there an underscore / Is there an underscore between | underscore.`,
+4:`open | Kendi adını ve soyadını kodlama alfabesiyle yaz (örnek: A for Alpha, L for Lima…). | - | -
+open | Kendi e-posta adresini nasıl okunacağı gibi yaz (at, dot, underscore…). Gerçek adresini yazmak zorunda değilsin, uydurabilirsin. | - | -
+open | Telefonda bir misafirden ad ve e-posta aldığın kısa bir diyalog yaz; harfleri tekrar ederek teyit et (en az 6 satır). | - | -
+open | Karışabilecek 3 harf çiftini (B–P gibi) ve bunları nasıl ayırt edeceğini İngilizce kalıplarla yaz. | - | -`},
+
+'o-4':{
+1:`mc | Telefonu açarken en uygun hangisi? | Hello? / Good morning, Zeytin Hotel, Deniz speaking. How may I help you? / Yes? | 1 | Selam + otel + adın + yardım teklifi.
+mc | "Deniz speaking" ne demek? | Deniz konuşuyor / Ben Deniz / Deniz'i arıyorum | 1 | Telefonda: ben Deniz.
+mc | "Who's calling, please?" ne demek? | Kim arıyor, öğrenebilir miyim? / Kimi aradınız? / Neden aradınız? | 0 | Arayanın adını sormak.
+mc | Bekletmeden önce ne dersin? | Wait. / May I put you on hold for a moment? / Stop. | 1 | İzin iste.
+mc | "Hold on" ne demek? | Hatta kalın / Kapatın / Tekrar arayın | 0 | Hold on, please = hatta kalın.
+mc | "I'll put you through." ne demek? | Sizi bağlıyorum / Sizi bekletiyorum / Sizi arayacağım | 0 | put through = aktarmak.
+mc | Aranan kişi yoksa hangisi? | He's not here, bye. / I'm afraid he's not available. Can I take a message? / Call later! | 1 | Mesaj almayı teklif et.
+mc | "Can I take a message?" ne demek? | Mesaj bırakabilir miyim? / Mesajınızı alayım mı? / Mesaj attınız mı? | 1 | take a message = not almak.
+mc | Ses kesik geliyorsa hangisi? | Sorry, the line is bad. Could you repeat that? / What? / Speak! | 0 | Kibar tekrar isteği.
+mc | Bekletme bitince ne dersin? | Thank you for holding. / Finally. / You waited. | 0 | Bekleyen misafire teşekkür.
+mc | "Ext. 204" ne demek? | 204 numaralı dahili hat / 204 numaralı oda fiyatı / 204 dakika | 0 | extension = dahili hat.
+mc | Görüşmeyi kapatırken en uygun hangisi? | Bye. / Thank you for calling Zeytin Hotel. Have a nice day! / OK, finished. | 1 | Teşekkür + iyi dilek.`,
+2:`gap | Good morning, Zeytin Hotel, Deniz ___. | speaking | Ben Deniz.
+gap | How may I ___ you? | help | How may I help you?
+gap | Who's ___, please? | calling | Kim arıyor?
+gap | May I put you on ___? | hold | on hold = beklemede.
+gap | Thank you for ___. (beklediğiniz için) | holding / waiting | Thank you for holding.
+gap | I'll put you ___ to housekeeping. | through | put through = aktarmak.
+gap | I'm afraid she's not ___ at the moment. | available / here | available = müsait.
+gap | Can I take a ___? | message | take a message.
+gap | Could you ___ that again? The line is bad. | repeat / say | repeat.
+gap | Could you speak a little more ___, please? | slowly | Yavaş konuşun.
+gap | Can I have your phone ___, please? | number | phone number.
+gap | Thank you for ___ Zeytin Hotel. | calling | Kapanış.`,
+3:`tr | Günaydın, Zeytin Otel, ben Deniz. | Good morning, Zeytin Hotel, Deniz speaking / Good morning Zeytin Hotel Deniz speaking / Good morning, Zeytin Hotel, this is Deniz | Telefon açılışı.
+tr | Nasıl yardımcı olabilirim? | How may I help you / How can I help you | Kalıp.
+tr | Kim arıyor acaba? (Who's calling) | Who's calling please / Who's calling, please / Who is calling please / Who is calling | Kalıp.
+tr | Sizi bir dakika bekletebilir miyim? (put you on hold) | May I put you on hold for a moment / Can I put you on hold for a moment / May I put you on hold / Can I put you on hold | on hold.
+tr | Beklediğiniz için teşekkürler. | Thank you for holding / Thank you for waiting / Thanks for holding / Thanks for waiting | Kalıp.
+tr | Sizi kat hizmetlerine bağlıyorum. (housekeeping) | I'll put you through to housekeeping / I will put you through to housekeeping / I'm putting you through to housekeeping | put through.
+tr | Maalesef şu an müsait değil. (he) | I'm afraid he's not available at the moment / I'm afraid he is not available at the moment / I'm afraid he isn't available at the moment / I'm afraid he's not available right now / I'm afraid he is not available right now | I'm afraid …
+tr | Mesajınızı alabilir miyim? | Can I take a message / May I take a message / Could I take a message | take a message.
+tr | Biraz daha yavaş konuşabilir misiniz? | Could you speak more slowly / Could you speak a little more slowly / Could you speak more slowly please / Could you speak a little more slowly please / Can you speak more slowly | slowly.
+tr | Zeytin Otel'i aradığınız için teşekkürler. | Thank you for calling Zeytin Hotel / Thanks for calling Zeytin Hotel | Kapanış.`,
+4:`open | Telefonu açıp bir oda rezervasyonu sorusunu karşıladığın kısa bir konuşma yaz (en az 6 satır). | - | -
+open | Aranan kişi yok: mesaj aldığın bir konuşma yaz (ad, telefon, mesaj, teyit). | - | -
+open | Bekletme, aktarma ve kapanış cümlelerinden 4 tane yaz. | - | -
+open | Kötü hatta konuşma: misafirden tekrar ve yavaş konuşmasını rica ettiğin 3 cümle yaz. | - | -`},
+
+'o-5':{
+1:`mc | "I'm sorry to hear that." ne demek? | Bunu duyduğuma üzüldüm / Duyamıyorum / Duydum, tamam | 0 | Empati cümlesi.
+mc | Şikâyette ilk adım hangisi? | Savunma yapmak / Dinlemek / Konuyu değiştirmek | 1 | Dinle → özür dile → çöz → takip et.
+mc | Şikâyet eden misafire hangisi söylenmez? | I understand. / It's not my fault. / I'm sorry about that. | 1 | Suçu atmak durumu kötüleştirir.
+mc | "Klima çalışmıyor." hangisi? | The air conditioning isn't working. / The air conditioning don't work now. / The air conditioning no working. | 0 | isn't working = çalışmıyor.
+mc | "Hemen birini gönderiyorum." hangisi? | I'll send someone right away. / I send someone yesterday. / Someone go now. | 0 | I'll + fiil: söz verme.
+mc | Çözüm önerirken en uygun hangisi? | Would you like to change rooms? / Change room! / You must change. | 0 | Seçenek sun.
+mc | "I apologise for the inconvenience." ne demek? | Verdiğimiz rahatsızlık için özür dilerim / Rahatsız etmeyin / Uygun değil | 0 | Resmî özür.
+mc | "Let me check that for you." ne demek? | Sizin için kontrol edeyim / Bunu siz kontrol edin / Kontrol bitti | 0 | Let me … = izin verin …
+mc | Çözdükten sonra takip cümlesi hangisi? | Is everything all right with the room now? / Don't complain again. / Finished. | 0 | Takip et.
+mc | "Thank you for letting us know." ne zaman denir? | Misafir sorunu bildirdiğinde / Misafir giderken / Fiyat söylerken | 0 | Bildirdiği için teşekkür.
+mc | Gürültü şikâyetine en iyi cevap? | That's normal here. / I'm so sorry. I'll call the room right away. / Close the window. | 1 | Özür + somut adım.
+mc | Misafir çok sinirli; ilk cümle hangisi? | Calm down! / I completely understand how you feel. / Not my problem. | 1 | Önce empati.`,
+2:`gap | I'm sorry to ___ that. | hear | sorry to hear.
+gap | I completely ___. | understand | Empati.
+gap | The shower ___ working. (olumsuz) | isn't / is not | isn't working.
+gap | I'll send someone right ___. | away / now | right away = hemen.
+gap | Let me ___ that for you. | check | Let me check.
+gap | I ___ for the inconvenience. | apologise / apologize | Resmî özür.
+gap | Would you like to ___ rooms? | change / move | change rooms.
+gap | Thank you for letting us ___. | know | let us know.
+gap | Is everything all ___ now? | right | all right.
+gap | I'll call you ___ in ten minutes. | back | call back.
+gap | As a ___, we'd like to offer you a free dinner. (özür jesti) | gesture / small gesture | a gesture of apology.
+gap | Please accept our ___. | apologies | Kalıp.`,
+3:`tr | Bunu duyduğuma üzüldüm. | I'm sorry to hear that / I am sorry to hear that | Kalıp.
+tr | Sizi çok iyi anlıyorum. (completely) | I completely understand / I understand completely / I completely understand you | Empati.
+tr | Klima çalışmıyor. (air conditioning) | The air conditioning isn't working / The air conditioning is not working / The air conditioning doesn't work | isn't working.
+tr | Hemen birini gönderiyorum. (right away) | I'll send someone right away / I will send someone right away / I'll send someone right now | I'll + fiil.
+tr | Sizin için kontrol edeyim. (Let me) | Let me check that for you / Let me check for you / Let me check it for you | Let me.
+tr | Verdiğimiz rahatsızlık için özür dilerim. (inconvenience) | I apologise for the inconvenience / I apologize for the inconvenience / We apologise for the inconvenience / We apologize for the inconvenience | Resmî özür.
+tr | Oda değiştirmek ister misiniz? | Would you like to change rooms / Would you like to change your room / Would you like to move rooms | Seçenek sun.
+tr | Bize bildirdiğiniz için teşekkürler. (letting us know) | Thank you for letting us know / Thanks for letting us know | Kalıp.
+tr | On dakika içinde sizi geri arayacağım. (call you back) | I'll call you back in ten minutes / I will call you back in ten minutes / I'll call you back in 10 minutes | call back.
+tr | Şimdi her şey yolunda mı? (all right) | Is everything all right now / Is everything OK now / Is everything okay now / Is everything alright now | Takip.`,
+4:`open | LAST adımlarıyla (Listen, Apologise, Solve, Thank) bir "oda temiz değil" şikâyetine cevap yaz (en az 5 cümle). | - | -
+open | Gürültü şikâyeti alan resepsiyonistin telefondaki konuşmasını yaz (en az 6 satır). | - | -
+open | Misafire şikâyet sonrası gönderilecek kısa bir özür e-postası yaz (4-5 cümle). | - | -
+open | "It's not my fault", "This is normal" gibi söylenmemesi gereken 3 cümle ve yerine söylenecek kibar cümleleri yaz. | - | -`},
+
+'o-6':{
+1:`mc | "spacious" ne demek? | geniş, ferah / pahalı / gürültülü | 0 | A spacious room.
+mc | "sea view" ne demek? | deniz manzarası / deniz kenarı / deniz ürünü | 0 | a room with a sea view.
+mc | Özellik + fayda cümlesi hangisi? | The room has a balcony, so you can have breakfast outside. / Balcony. / The room balcony is. | 0 | Özellik + so you can + fayda.
+mc | "upgrade" ne demek? | daha üst oda tipine geçiş / indirim / iptal | 0 | an upgrade to a suite.
+mc | Nazik satış cümlesi hangisi? | You must take the suite. / Would you like to upgrade to a suite? / Take suite, it's better. | 1 | Öneri dili: Would you like to …?
+mc | "For only 20 euros more…" ne demek? | Sadece 20 euro fazlasına… / 20 euro indirim… / 20 euro iade… | 0 | Fiyat farkını yumuşak söylemek.
+mc | "quiet" ne demek? | sessiz / küçük / yeni | 0 | a quiet room.
+mc | Hangisi doğru sıra? | a large comfortable bed / a comfortable large bed / a bed large comfortable | 0 | Boyut genelde önce: large comfortable bed (en doğal).
+mc | Misafir hayır dedi, ne dersin? | Are you sure? Really? / No problem at all. / You will be sorry. | 1 | Bir kez teşekkür et, konuyu kapat.
+mc | "The suite is bigger than the standard room." ne anlatır? | Karşılaştırma / Emir / Soru | 0 | bigger than = -den daha büyük.
+mc | "It's our most popular room." ne demek? | En popüler odamız / Daha popüler oda / Popüler değil | 0 | most + sıfat = en.
+mc | "including breakfast" ne demek? | kahvaltı dahil / kahvaltı hariç / sadece kahvaltı | 0 | including = dahil.`,
+2:`gap | The room is very ___. (geniş) | spacious / large / big | spacious.
+gap | All our rooms have a sea ___. | view | sea view.
+gap | The room has a balcony, ___ you can enjoy the sunset. | so | Özellik + so + fayda.
+gap | Would you like to ___ to a suite? | upgrade | upgrade.
+gap | For ___ 20 euros more, you can have a sea view. | only / just | Sadece.
+gap | The suite is bigger ___ the standard room. | than | bigger than.
+gap | It's our most ___ room. | popular | most popular.
+gap | The price is 150 euros, ___ breakfast. | including | dahil.
+gap | This room is ___ than the one on the first floor. (sessiz) | quieter | quiet → quieter.
+gap | It's the ___ room in the hotel. (en büyük) | biggest / largest | the biggest.
+gap | Would you ___ to see the room first? | like | Would you like to …?
+gap | No problem at ___. Enjoy your stay. | all | No problem at all.`,
+3:`tr | Oda çok geniş. (spacious) | The room is very spacious | spacious.
+tr | Bütün odalarımız deniz manzaralı. (have a sea view) | All our rooms have a sea view / All of our rooms have a sea view / All our rooms have sea views | sea view.
+tr | Suit'e geçmek ister misiniz? (upgrade) | Would you like to upgrade to a suite / Would you like to upgrade to the suite | upgrade.
+tr | Odanın balkonu var, böylece dışarıda kahvaltı edebilirsiniz. (so you can) | The room has a balcony, so you can have breakfast outside / The room has a balcony so you can have breakfast outside | Özellik + fayda.
+tr | Sadece 20 euro fazlasına (For only) | For only 20 euros more / For just 20 euros more / For only twenty euros more | Fiyat farkı.
+tr | Suit, standart odadan daha büyük. | The suite is bigger than the standard room / The suite is larger than the standard room | -er than.
+tr | En popüler odamız. | It's our most popular room / It is our most popular room / Our most popular room | most.
+tr | Fiyata kahvaltı dahil. (included) | Breakfast is included in the price / Breakfast is included / The price includes breakfast | included.
+tr | Önce odayı görmek ister misiniz? | Would you like to see the room first | Would you like to …?
+tr | Hiç sorun değil. İyi konaklamalar. | No problem at all. Enjoy your stay / No problem. Enjoy your stay / No problem at all. Have a nice stay | Kapanış.`,
+4:`open | Otelindeki bir odayı 4 sıfat ve en az 2 "so you can" faydası ile anlat. | - | -
+open | Standart odadan deniz manzaralı odaya nazik bir upgrade teklifi yaz (misafir hayır derse ne dersin, onu da ekle). | - | -
+open | İki oda tipini karşılaştır: -er than ve most kullanarak 4 cümle. | - | -
+open | Instagram için otelinin en güzel odasını anlatan 3-4 cümlelik İngilizce bir açıklama yaz. | - | -`},
+
+'o-7':{
+1:`mc | "Turn left" ne demek? | Sola dön / Sağa dön / Düz git | 0 | left = sol.
+mc | "Turn right" ne demek? | Sola dön / Sağa dön / Geri dön | 1 | right = sağ.
+mc | "Go straight ahead" ne demek? | Dümdüz git / Geri dön / Karşıya geç | 0 | straight = düz.
+mc | "next to" ne demek? | yanında / karşısında / arkasında | 0 | next to the pharmacy.
+mc | "opposite" ne demek? | yanında / karşısında / içinde | 1 | opposite the bank.
+mc | "between" ne demek? | arasında / altında / üstünde | 0 | between the bank and the café.
+mc | "Take the second right." ne demek? | İkinci sağdan dön / İki kez sağa dön / Sağda iki dakika bekle | 0 | Sokak sırası.
+mc | "It's a five-minute walk." ne demek? | Yürüyerek beş dakika / Beş dakika bekleyin / Beş kilometre | 0 | a five-minute walk.
+mc | "How do I get to the beach?" ne demek? | Plaja nasıl giderim? / Plaj ne zaman açık? / Plaj güzel mi? | 0 | How do I get to …?
+mc | Restoran önerirken en doğal hangisi? | I recommend the fish restaurant by the harbour. / You eat fish. / Fish restaurant go. | 0 | I recommend … / I'd recommend …
+mc | "You can't miss it." ne demek? | Kaçırmanız imkânsız, hemen göreceksiniz / Kaçırmayın / Gitmeyin | 0 | Kolay bulunur.
+mc | "at the end of the street" ne demek? | sokağın sonunda / sokağın başında / sokağın ortasında | 0 | at the end of.`,
+2:`gap | Turn ___ at the traffic lights. (sol) | left | left.
+gap | Go ___ ahead for 200 metres. | straight | straight ahead.
+gap | The pharmacy is ___ to the bank. | next | next to.
+gap | The museum is ___ the park. (karşısında) | opposite | opposite.
+gap | Take the ___ right. (ikinci) | second | Sıra sayısı.
+gap | It's a ten-minute ___. (yürüyüş) | walk | a ten-minute walk.
+gap | How do I get ___ the old town? | to | get to.
+gap | The café is ___ the bank and the bakery. | between | between … and …
+gap | It's at the ___ of the street. | end | at the end of.
+gap | I'd ___ the seafood restaurant by the harbour. | recommend | I'd recommend.
+gap | You can't ___ it. | miss | Kalıp.
+gap | You can take a taxi or ___ the bus. | take / catch | take the bus.`,
+3:`tr | Sola dönün. | Turn left / Turn left please | Emir.
+tr | Dümdüz gidin. | Go straight ahead / Go straight on / Go straight | straight.
+tr | Eczane bankanın yanında. | The pharmacy is next to the bank | next to.
+tr | Müze parkın karşısında. | The museum is opposite the park / The museum is across from the park | opposite.
+tr | İkinci sağdan dönün. | Take the second right / Take the second turn on the right | the second right.
+tr | Yürüyerek beş dakika. | It's a five-minute walk / It is a five-minute walk / It's a five minute walk / It is a five minute walk | a five-minute walk.
+tr | Plaja nasıl giderim? | How do I get to the beach / How can I get to the beach | How do I get to …?
+tr | Kafe, banka ile fırının arasında. (bakery) | The café is between the bank and the bakery / The cafe is between the bank and the bakery | between.
+tr | Limandaki balık restoranını öneririm. (by the harbour) | I recommend the fish restaurant by the harbour / I'd recommend the fish restaurant by the harbour / I would recommend the fish restaurant by the harbour / I recommend the fish restaurant by the harbor | I recommend.
+tr | Kaçırmanız imkânsız. | You can't miss it / You cannot miss it | Kalıp.`,
+4:`open | Otelinden en yakın eczaneye, plaja ya da bir restorana yol tarifi yaz (en az 4 adım ve bir yer işareti). | - | -
+open | Bir misafire akşam yemeği için 2 restoran öner: neden önerdiğini ve nasıl gideceğini yaz. | - | -
+open | Şehrinde görülecek 3 yeri anlat: ne var, ne kadar uzak, nasıl gidilir. | - | -
+open | Misafirle yol soran bir diyalog yaz (en az 6 satır). | - | -`},
+
+'o-8':{
+1:`mc | Resmî e-posta açılışı hangisi? | Hey John! / Dear Mr Smith, / Yo Smith | 1 | Resmî: Dear Mr/Ms + soyad.
+mc | "Thank you for your email." nerede kullanılır? | Açılışta / Kapanışta / Konu satırında | 0 | Cevabın ilk cümlesi.
+mc | "We are pleased to confirm your booking." ne demek? | Rezervasyonunuzu onaylamaktan memnuniyet duyarız / Rezervasyonunuz iptal edildi / Rezervasyon yapamıyoruz | 0 | Onay kalıbı.
+mc | Kapanış cümlesi hangisi? | We look forward to welcoming you. / Dear Sir. / Subject: booking | 0 | Sizi ağırlamayı sabırsızlıkla bekliyoruz.
+mc | E-postanın sonundaki imza öncesi hangisi? | Kind regards, / Dear, / Hello, | 0 | Kind regards / Best regards.
+mc | "Please find attached your invoice." ne demek? | Faturanız ektedir / Faturayı bulun / Fatura yok | 0 | attached = ekte.
+mc | "Unfortunately, we are fully booked." ne demek? | Maalesef doluyuz / Neyse ki doluyuz / Henüz dolu değiliz | 0 | Unfortunately = maalesef.
+mc | Konu satırı hangisi daha iyi? | Booking confirmation – 12–15 August / hi / mail | 0 | Kısa ve açık.
+mc | "If you have any questions, please do not hesitate to contact us." ne demek? | Sorunuz olursa çekinmeden bize ulaşın / Soru sormayın / Bize ulaşmayın | 0 | Kalıp kapanış.
+mc | Samimi kapanış hangisi? | Best, / Yours faithfully, / To whom it may concern | 0 | Best = samimi.
+mc | Adını bilmediğin kişiye resmî açılış? | Dear Sir or Madam, / Dear Friend, / Hi there mate, | 0 | Resmî, adsız.
+mc | "We would like to inform you that…" ne demek? | …olduğunu bildirmek isteriz / …olduğunu sorarız / …olduğunu bilmiyoruz | 0 | Resmî bilgilendirme.`,
+2:`gap | ___ Mr Smith, | dear | Açılış.
+gap | Thank you for your ___. | email / e-mail / message | Kalıp.
+gap | We are pleased to ___ your booking. | confirm | confirm.
+gap | Please find ___ your invoice. | attached | attached.
+gap | ___, we are fully booked on those dates. (maalesef) | unfortunately | Unfortunately.
+gap | If you have any questions, please do not ___ to contact us. | hesitate | Kalıp.
+gap | We look forward to ___ you. | welcoming / seeing | look forward to + -ing.
+gap | Kind ___, | regards | Kind regards.
+gap | We would like to ___ you that the pool is closed for maintenance. | inform | inform.
+gap | Your room ___ breakfast for two. | includes | includes.
+gap | Could you please ___ your arrival time? | confirm / let us know | confirm.
+gap | We are happy to ___ an airport transfer for you. | arrange / book | arrange.`,
+3:`tr | Sayın Smith Bey, | Dear Mr Smith / Dear Mr. Smith | Resmî açılış.
+tr | E-postanız için teşekkür ederiz. | Thank you for your email / Thank you for your e-mail / Thank you for your message | Kalıp.
+tr | Rezervasyonunuzu onaylamaktan memnuniyet duyarız. (pleased) | We are pleased to confirm your booking / We are pleased to confirm your reservation / We're pleased to confirm your booking | Onay.
+tr | Faturanız ektedir. (Please find attached) | Please find attached your invoice / Please find your invoice attached | attached.
+tr | Maalesef o tarihlerde doluyuz. | Unfortunately we are fully booked on those dates / Unfortunately, we are fully booked on those dates / Unfortunately we're fully booked on those dates / Unfortunately, we're fully booked on those dates | Unfortunately.
+tr | Sizi ağırlamayı dört gözle bekliyoruz. (look forward to) | We look forward to welcoming you / We are looking forward to welcoming you | look forward to + -ing.
+tr | Saygılarımla, (kapanış) | Kind regards / Best regards / Yours sincerely | Kapanış.
+tr | Varış saatinizi bize bildirir misiniz? (let us know) | Could you please let us know your arrival time / Could you let us know your arrival time / Please let us know your arrival time | let us know.
+tr | Sizin için havalimanı transferi ayarlayabiliriz. (arrange) | We can arrange an airport transfer for you / We would be happy to arrange an airport transfer for you / We are happy to arrange an airport transfer for you | arrange.
+tr | Sorunuz olursa bizimle iletişime geçmekten çekinmeyin. | If you have any questions, please do not hesitate to contact us / If you have any questions please don't hesitate to contact us / Please do not hesitate to contact us if you have any questions / If you have any questions, please don't hesitate to contact us | Kalıp.`,
+4:`open | 12-15 Ağustos için deniz manzaralı çift kişilik odayı onaylayan bir e-posta yaz (açılış, onay, fiyat, kapanış). | - | -
+open | O tarihlerde dolu olduğunuzu bildiren ve başka tarih öneren nazik bir e-posta yaz. | - | -
+open | Misafirin havalimanı transferi talebine cevap veren kısa bir e-posta yaz (saat, fiyat, buluşma yeri). | - | -
+open | Konaklamadan sonra misafire teşekkür ve yorum rica eden bir e-posta yaz (4-5 cümle). | - | -`}
+});
+
 /* Sınav bankaları. Satır biçimi derslerdekiyle aynı: mc · gap · tr · ord */
 const UNIT_BANK={
 'a1-1':`mc | "Misafir anahtarı unutuyor." hangisi? | The guest the key forgets. / The guest forgets the key. / Forgets the guest the key. | 1 | Kim + ne yapıyor + neyi.
@@ -3098,14 +3909,17 @@ function hotelQs(idx,n){const S=[],W=[];idx.forEach(i=>{S.push(...hotelPairs(i))
     if(j%2==0){const o=shuffle([p,...ot]);out.push({k:'mc',q:`"${p[0]}" ne demek?`,o:o.map(x=>x[1]),a:o.indexOf(p),w:`${p[0]} = ${p[1]}`})}
     else out.push({k:'gap',q:`"${p[1]}" İngilizcesi: ___`,a:[p[0]],w:`${p[1]} = ${p[0]}`})});
   return shuffle(out)}
+const LVN={1:10,2:10,3:8,4:3},LVT={1:'Seviye 1 · Çoktan seçmeli',2:'Seviye 2 · Cümle tamamlama',3:'Seviye 3 · Cümle yazma',4:'Seviye 4 · Serbest yazma'},LVD={1:'Isınma: doğru olanı seç',2:'Boşluğu doldur; parantez içi ipucu',3:'Türkçe cümleyi İngilizce yaz; parantez içi yardımcı kelimeler',4:'Kendi cümlelerinle yaz · öğretmen notlar'};
+function lvQs(id,lv){const all=parseQ(ULV[id][lv]),n=Math.min(LVN[lv],all.length);if(lv==4)return shuffle(all).slice(0,n).map(q=>({k:'open',q:q.q}));
+  const pick=shuffle(all.map((_,i)=>i)).slice(0,n).sort((a,b)=>a-b);return pick.map(i=>all[i])}
 function unitQs(ids,n){let all=[];ids.forEach(id=>all.push(...parseQ(UNIT_BANK[id])));return shuffle(all).slice(0,n)}
 
 const EXAMS=[];
-LESSONS.filter(L=>L.l=='A1').forEach((L,i)=>EXAMS.push({key:'u-'+L.id,grp:'A1 ünite sınavları',t:`Ünite ${i+1} · ${L.t}`,n:10,gen:()=>unitQs([L.id],10)}));
+LESSONS.filter(L=>L.l=='A1').forEach((L,i)=>{[1,2,3,4].forEach(lv=>{if(ULV[L.id]&&ULV[L.id][lv])EXAMS.push({key:'u-'+L.id+'-'+lv,grp:'A1 ünite sınavları',unit:L.id,un:`Ünite ${i+1} · ${L.t}`,lv,t:`Ünite ${i+1} · ${L.t} · ${LVT[lv]}`,d:LVD[lv],n:LVN[lv],written:lv==4,gen:()=>lvQs(L.id,lv)})});EXAMS.push({key:'u-'+L.id,grp:'A1 ünite sınavları',unit:L.id,lv:5,t:`Ünite ${i+1} · ${L.t} · Karışık tekrar`,d:'Her türden karışık 10 soru',n:10,gen:()=>unitQs([L.id],10)})});
 EXAMS.push({key:'a1-final',grp:'Seviye sınavları',t:'A1 Genel Sınavı',d:'12 ünitenin hepsinden karışık',n:30,gen:()=>unitQs(Object.keys(UNIT_BANK),30)});
 EXAMS.push({key:'irr',grp:'Seviye sınavları',t:'Düzensiz fiiller',d:'Geçmiş ve üçüncü hâller',n:16,gen:()=>irrQs(16)});
 ['A1','A2','B1','B2','C1'].forEach(l=>EXAMS.push({key:'v-'+l,grp:'Kelime sınavları',t:l+' kelime sınavı',d:'Her seferinde farklı 20 kelime',n:20,gen:()=>vocabQs(l,20)}));
-LESSONS.filter(L=>L.l=='O').forEach((L,i)=>EXAMS.push({key:'u-'+L.id,grp:'Otel İngilizcesi ders sınavları',t:`Ders ${i+1} · ${L.t}`,n:10,gen:()=>unitQs([L.id],10)}));
+LESSONS.filter(L=>L.l=='O').forEach((L,i)=>{[1,2,3,4].forEach(lv=>{if(ULV[L.id]&&ULV[L.id][lv])EXAMS.push({key:'u-'+L.id+'-'+lv,grp:'Otel İngilizcesi ders sınavları',unit:L.id,un:`Ders ${i+1} · ${L.t}`,lv,t:`Ders ${i+1} · ${L.t} · ${LVT[lv]}`,d:LVD[lv],n:LVN[lv],written:lv==4,gen:()=>lvQs(L.id,lv)})});EXAMS.push({key:'u-'+L.id,grp:'Otel İngilizcesi ders sınavları',unit:L.id,lv:5,t:`Ders ${i+1} · ${L.t} · Karışık tekrar`,d:'Her türden karışık 10 soru',n:10,gen:()=>unitQs([L.id],10)})});
 EXAMS.push({key:'o-final',grp:'Otel İngilizcesi ders sınavları',t:'Otel İngilizcesi Dersleri Genel Sınavı',d:'8 dersin hepsinden karışık',n:30,gen:()=>unitQs(Object.keys(O_BANK),30)});
 EXAMS.push({key:'durum',grp:'Otel İngilizcesi ders sınavları',t:'💬 Ne dersin? Durum sınavı',d:'Gerçek iş anlarında doğru cümleyi seç · her seferinde farklı 15 durum',n:15,gen:()=>shuffle(parseQ(DURUM)).slice(0,15)});
 HOTEL.forEach((H,i)=>EXAMS.push({key:'h-'+i,grp:'Otel İngilizcesi sınavları',t:H.i+' '+H.t,n:12,gen:()=>hotelQs([i],12)}));
@@ -3823,17 +4637,23 @@ function vExamRun(){const X=V.ex,n=X.qs.length;
   if(X.confirm){const empty=X.qs.filter((q,i)=>!filled(q,X.ans[i])).length;
     return `<div class="card center"><h3>Sınavı bitir</h3><p>${n-empty}/${n} soruyu cevapladın.${empty?` <b>${empty} soru boş.</b>`:''}</p>
     <button class="btn" onclick="exSubmit()">${T.uid?'Gönder':'Bitir'}</button><button class="btn ghost" onclick="V.ex.confirm=false;render()">Geri dön</button></div>`}
-  const q=X.qs[X.i],a=X.ans[X.i],lab={mc:'Doğru olanı seç',gap:'Boşluğu doldur',tr:'İngilizceye çevir',ord:'Kelimeleri sıraya diz',open:'Yazılı cevap · öğretmen değerlendirir'}[q.k];let body='';
+  const q=X.qs[X.i],a=X.ans[X.i],hint=/\(.+\)\s*$/.test(q.q||''),lab={mc:'Doğru olanı seç',gap:'Boşluğu doldur'+(hint?' · parantezdeki ipucuna bak':''),tr:'İngilizce yaz'+(hint?' · parantezdekiler yardımcı kelimeler':''),ord:'Kelimeleri sıraya diz',open:'Yazılı cevap · öğretmen değerlendirir'}[q.k];let body='';
   const Q=`<div class="qq">${esc(q.q).replace('___','<u class="gapu"></u>')}</div>`;
   if(q.k=='mc')body=Q+q.o.map((o,k)=>`<button class="opt ${a===k?'sel':''}" onclick="exAns(${k});render()">${esc(o)}</button>`).join('');
   else if(q.k=='ord'){const o=exOrd(),used=new Set(X.ans[X.i]);body=Q+`<div class="slots">${X.ans[X.i].map((j,k)=>`<button class="tile" onclick="exUn(${k})">${esc(o.tok[j])}</button>`).join('')||'<span class="ph">Kelimelere sırayla dokun</span>'}</div><div class="pool">${o.pool.map(j=>`<button class="tile" ${used.has(j)?'disabled':''} onclick="exPick(${j})">${esc(o.tok[j])}</button>`).join('')}</div>`}
   else if(q.k=='open')body=`<div class="qq sm">${esc(q.q)}</div><textarea id="f-ex-${X.i}" rows="9" placeholder="İngilizce yaz…" oninput="exAns(this.value)">${esc(a||'')}</textarea>`;
-  else body=Q+`<input id="f-ex-${X.i}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Cevabını yaz…" value="${esc(a||'')}" oninput="exAns(this.value)" onkeydown="if(event.key=='Enter')${X.i<n-1?'exGo(1)':'V.ex.confirm=true;render()'}">`;
+  else body=Q+`<input id="f-ex-${X.i}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${q.k=='tr'?'İngilizce cümleyi yaz…':'Cevabını yaz…'}" value="${esc(a||'')}" oninput="exAns(this.value)" onkeydown="if(event.key=='Enter')${X.i<n-1?'exGo(1)':'V.ex.confirm=true;render()'}">`;
   const dots=X.qs.map((qq,i)=>`<button class="dot ${i==X.i?'cur':''} ${filled(qq,X.ans[i])?'ok':''}" onclick="V.ex.i=${i};render()">${i+1}</button>`).join('');
   return `<div class="bar"><button class="back" onclick="exQuit(this)">‹ Çık</button><span class="grow">${esc(X.t)}</span><span>${X.i+1}/${n}</span></div>
   <div class="dots">${dots}</div><div class="card"><span class="tag">${lab}</span>${body}</div>
   <div class="two">${X.i>0?`<button class="btn ghost" onclick="exGo(-1)">‹ Önceki</button>`:'<span></span>'}${X.i<n-1?`<button class="btn" onclick="exGo(1)">Sonraki ›</button>`:`<button class="btn" onclick="V.ex.confirm=true;render()">Bitir</button>`}</div>
   <p class="note center">Süre yok. Cevaplarını istediğin kadar değiştirebilirsin; doğru cevaplar sınav bitince görünür.</p>`}
+function unitCard(es,best){const name=es[0].un,L=es.filter(E=>E.lv<5),mix=es.find(E=>E.lv==5);
+  const st=E=>{const b=best(E.key);return E.written?((S.exh||[]).some(x=>x.key==E.key)?'gönderildi':''):b!=null?'%'+b:''};
+  const nx=L.find(E=>E.written?!(S.exh||[]).some(x=>x.key==E.key):(best(E.key)||0)<70);
+  const ic={1:'🔘',2:'✏️',3:'📝',4:'🖋'};
+  return `<div class="ucard"><b>${esc(name)}</b><div class="lvs">${L.map(E=>{const s=st(E),ok=E.written?!!s:(best(E.key)||0)>=70;return `<button class="lvb ${ok?'ok':''} ${nx===E?'nx':''}" onclick="startExam('${E.key}')"><i>${ic[E.lv]}</i><span>${E.lv}. ${['','Seç','Tamamla','Yaz','Serbest'][E.lv]}</span><small>${ok?'✓ ':''}${s||E.n+' soru'}</small></button>`}).join('')}</div>
+  ${mix?`<button class="lnk" onclick="startExam('${mix.key}')">🔀 Karışık tekrar${best(mix.key)!=null?' · %'+best(mix.key):''}</button>`:''}</div>`}
 function vSinav(){if(V.ex)return vExamRun();
   const groups={};EXAMS.forEach(E=>(groups[E.grp]=groups[E.grp]||[]).push(E));
   const ce=T.uid?customExams():[],best=k=>(S.exb||{})[k];
@@ -3841,7 +4661,10 @@ function vSinav(){if(V.ex)return vExamRun();
   let h=`<h1 class="pt">Sınavlar</h1><p class="lead">${EXAMS.length+ce.length} sınav. Çoğu her açılışta farklı sorularla gelir. Süre sınırı yok.</p>`;
   if(T.uid&&!isStaff()){const hw=myHw().filter(x=>x.ex&&!hwDone(x.id,T.uid));if(hw.length)h+=`<h2>Ödev olarak verilen</h2>`+hw.map(x=>{const E=examByKey(x.ex);return E?`<button class="row hw" onclick="startExam('${x.ex}','${x.id}')"><div class="num">📌</div><div class="sb"><b>${esc(E.t)}</b><span>${esc(x.t)}${x.due?' · son gün '+esc(x.due):''}</span></div></button>`:''}).join('')}
   if(ce.length)h+=`<h2>Öğretmenin hazırladığı sınavlar</h2>`+ce.map(e=>row('c-'+e.id,e.t,(e.d?e.d+' · ':'')+(e.qs||[]).length+' soru',(e.qs||[]).length)).join('');
-  Object.entries(groups).forEach(([g,L])=>{h+=`<h2>${g}</h2>`+L.map(E=>row(E.key,E.t,E.d,E.n)).join('')});
+  Object.entries(groups).forEach(([g,L])=>{h+=`<h2>${g}</h2>`;
+    if(L[0].unit){if(g.startsWith('A1'))h+=`<p class="note">Her ünitede 4 basamak var: önce çoktan seçmeli ısınma, sonra cümle tamamlama, sonra cümle yazma, en son serbest yazma (öğretmenin notlar). Sıfırdan başlıyorsan 1. üniteden ve 1. seviyeden başla; %70'i geçince bir sonrakine geç.</p>`;
+      const U={};L.forEach(E=>(U[E.unit]=U[E.unit]||[]).push(E));h+=Object.values(U).map(es=>unitCard(es,best)).join('')}
+    else h+=L.map(E=>row(E.key,E.t,E.d,E.n)).join('')});
   const mine=T.uid?resultsOf(T.uid):(S.exh||[]).map((x,i)=>Object.assign({id:'l'+i},x));
   h+=`<h2>Sonuçlarım${T.uid?' ve notlarım':''}</h2>${isStaff()?'':`<button class="lnk" onclick="openReport()">📊 İlerleme raporumu aç</button>`}${mine.length?` <button class="lnk" onclick="V.pr={k:'res',uid:T.uid||null};render();window.scrollTo(0,0)">🖨 Sonuçlarımı yazdır</button>`:''}`+(mine.length?mine.map(r=>{const g=T.uid&&gradeOf(T.uid,r.id);
     return `<div class="res"><div class="grow"><b>${esc(r.t)}</b><span>${fmtT(r.at)}${r.p!=null?` · otomatik %${r.p}`:''}</span>${g?`<div class="gr"><b>Not: ${esc(g.s)}</b>${g.n?` · ${esc(g.n)}`:''}<small>${esc(uname(g.by))}</small></div>`:r.open&&T.uid?'<div class="note">Öğretmen değerlendirmesi bekleniyor</div>':''}</div>${g?`<span class="pill">${esc(g.s)}</span>`:''}</div>`}).join(''):'<p class="note">Henüz sınav çözmedin.</p>');

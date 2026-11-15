@@ -314,7 +314,7 @@ code{background:#262240;border-radius:4px;padding:1px 5px;font-size:13px}
 .nds{display:flex;gap:10px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--line);transition:opacity .3s,transform .3s}.nds.gone{opacity:0;transform:translateX(30px)}.nds .dsx{font-size:15px}
 .obd{font-size:12.5px;margin-top:8px;color:var(--mut)}.obd div{padding:3px 0;border-bottom:1px solid var(--line)}.resume code{font-size:12px;color:var(--gold)}
 .reo{margin:8px 0 0;width:auto}.reon{font-size:13px;color:var(--gold);background:#2a2412;border-radius:8px;padding:6px 10px;margin:6px 0}.reod{margin:6px 0}.reod .chip{margin:4px 4px 0 0}
-.lvtabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.lvtabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
 .lvtabs button{position:relative;overflow:hidden;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:9px 4px 11px;display:flex;flex-direction:column;align-items:center;color:var(--ink)}
 .lvtabs button b{font-size:16px}.lvtabs button span{font-size:11.5px;color:var(--mut)}
 .lvtabs button i{position:absolute;left:0;bottom:0;height:4px;background:var(--teal)}
@@ -322,6 +322,37 @@ code{background:#262240;border-radius:4px;padding:1px 5px;font-size:13px}
 .contcard{display:flex;flex-direction:column;gap:3px;width:100%;text-align:left;border-color:var(--gold);color:var(--ink)}
 .contcard b{font-size:17px}.contcard span{color:var(--mut);font-size:13.5px}.contcard .go{color:var(--gold);font-weight:700;margin-top:4px}
 .contcard .tag{align-self:flex-start}.contcard.done{border-color:var(--grn)}
+/* ders akışı */
+.fhero{background:linear-gradient(160deg,#2a2240,#1c192b 70%);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px}
+.fhero h1{font-family:Georgia,serif;font-size:28px;line-height:1.15;margin:10px 0 8px;color:var(--ink)}
+.fchips{display:flex;flex-wrap:wrap;gap:6px}.lvchip{background:var(--gold);color:#1a1404;font-weight:800;border-radius:8px;padding:2px 9px;font-size:13px}
+.mchip{background:#0e0c17;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:2px 9px;font-size:12.5px}
+.gchip{display:inline-block;background:#183a37;color:var(--teal);border-radius:8px;padding:3px 10px;font-size:13.5px;font-weight:600;margin-bottom:6px}.gchip.sm{font-size:12px;padding:1px 8px;margin:3px 0}
+.fsub{color:var(--mut);margin:6px 0}.goal{background:#0e0c17;border-left:3px solid var(--gold);border-radius:10px;padding:10px 12px;margin-top:10px}.goal small{display:block;color:var(--gold);font-weight:700;letter-spacing:.06em;font-size:11px;margin-bottom:3px}
+.fdone{margin-top:10px;color:var(--grn);font-weight:600}
+.froad{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;position:relative}
+.fstep{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;text-align:left;color:var(--ink)}
+.fstep i{font-style:normal;width:28px;height:28px;display:grid;place-items:center;background:#0e0c17;border-radius:50%}.fstep.seen{border-color:#3b5f58}.fstep.seen i{background:#183a37}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:8px}.frow .btn{font-size:14px;padding:11px 6px}.frow2{display:flex;gap:8px;margin:8px 0}
+.fdots{flex:1;display:flex;gap:4px;margin:0 8px}.fdots i{flex:1;height:6px;border-radius:4px;background:var(--line)}.fdots i.d{background:var(--teal)}.fdots i.c{background:var(--gold)}
+.fcnt{font-size:13px;color:var(--mut)}.ftag{font-size:20px;font-weight:700;margin:4px 0 12px;font-family:Georgia,serif}
+.fcard{min-height:200px}.fnav{display:grid;grid-template-columns:1fr 2fr;gap:8px;position:sticky;bottom:72px;background:var(--bg);padding:8px 0}
+.fnav .btn{margin:0}.big2{font-size:17px;line-height:1.6}
+.bub small{display:block;font-size:11px;color:var(--mut);font-weight:700}
+.mini{margin-top:16px;border:1.5px dashed var(--gold);border-radius:14px;padding:12px}.mini small{color:var(--gold);font-weight:800;letter-spacing:.06em;font-size:11px}
+.trapq{border:1px solid var(--line);border-radius:12px;padding:8px;margin:8px 0}.trapq.ok{border-color:var(--grn)}.trapq.no{border-color:var(--red)}.trapq .opt{margin:4px 0}.why{font-size:14px;color:var(--mut);padding:6px 4px 2px}
+.spq{display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}.spq div:first-child{display:flex;flex-direction:column}.spq span{color:var(--mut);font-size:14px}.spq em{color:var(--grn);font-size:13px}.spb{display:flex;gap:6px}.spq.ok b{color:var(--grn)}.spk.on{background:var(--grn);color:#0c1a0e}
+/* ders haritası */
+.mod{margin:18px 0 6px}.modh{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.modh small{color:var(--gold);font-weight:800;letter-spacing:.06em;font-size:11px}.modh b{display:block;font-size:19px;font-family:Georgia,serif}.modh span{color:var(--mut);font-size:13.5px}
+.ring{--p:0;width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--teal) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}.ring span{width:36px;height:36px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:11px;color:var(--mut)}
+.path{position:relative;padding-left:6px}.path:before{content:'';position:absolute;left:25px;top:20px;bottom:20px;width:2px;background:var(--line)}
+.pnode{position:relative;display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;padding:8px 0;color:var(--ink)}
+.pdot{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:2px solid var(--line);font-weight:800;z-index:1}
+.pnode.done .pdot{background:var(--grn);border-color:var(--grn);color:#0c1a0e}.pnode.cur .pdot{background:var(--gold);border-color:var(--gold);color:#1a1404;box-shadow:0 0 0 5px rgba(226,180,92,.18)}
+.pb{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column}.pnode.cur .pb{border-color:var(--gold)}
+.pb b{font-size:16px}.pcan{color:var(--mut);font-size:13px;line-height:1.4}.pmeta{color:var(--teal);font-size:12.5px;font-weight:600;margin-top:3px}
+.mistcard{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;border-color:#6b4a7a;color:var(--ink)}.mistcard span{color:var(--mut);font-size:13.5px}.mistcard .go{color:var(--gold);font-weight:700}
+.pb .gchip{align-self:flex-start}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -3730,6 +3761,591 @@ op:`Bir rezervasyon onay e-postası yaz (selamlama, tarihler, bir hatırlatma, k
 Şu günlük cümleleri resmî dile çevir: Sorry, we can't give you a refund. / Send me your receipt. / Tell us when you arrive.`}
 );
 
+/* C1 dersleri · t: başlık, g: dilbilgisi etiketi, can: hedef, m: modül */
+LESSONS.push(
+{id:'c1-1',l:'C1',m:0,t:'Asla böyle bir manzara görmedim',g:'Devrik yapılar (inversion)',can:'Vurgu ve resmiyet katmak için cümleyi ters çevirebilir; Never have I…, Not only… but also…, Should you need… kalıplarını yerinde kullanabilirsin.',s:'Never have I… · Not only… · Should you…',b:[
+['k',`Olumsuz ya da kısıtlayıcı bir zarf cümlenin <b>başına</b> gelince, ardından <b>soru düzeni</b> gelir: "I have never seen such a view" → <b>Never have I seen such a view.</b> Etki: vurgu, dram ve resmiyet. Konuşmada az, yazıda, sunumda ve şık e-postalarda çok kullanılır.`],
+['f','Olumsuz zarf + yardımcı fiil + özne + fiil     ·     Should / Had / Were + özne… (if yerine)'],
+['tbl',`Başlangıç | Örnek | Normal hâli
+Never / Rarely / Seldom | Rarely do we receive such kind feedback. | We rarely receive…
+Not only… but also | Not only is the hotel central, but it is also quiet. | The hotel is not only central…
+No sooner… than | No sooner had I sat down than the phone rang. | As soon as I sat down…
+Hardly / Scarcely… when | Hardly had the guests arrived when it started to rain. | The guests had just arrived when…
+Under no circumstances | Under no circumstances should guests enter the kitchen. | Guests should never…
+Only then / Only after | Only after the inspection will the pool reopen. | The pool will reopen only after…
+Should (if) | Should you need anything, please call reception. | If you need anything…
+Had (if + had) | Had we known, we would have upgraded you. | If we had known…
+Were (if + were) | Were the hotel closer, we would stay there. | If the hotel were closer…`],
+['x','Vurgu için',`Never have I seen such a beautiful sunset. | Hayatımda böyle güzel bir gün batımı görmedim.
+Rarely do guests leave without visiting Cunda. | Misafirler nadiren Cunda'yı görmeden ayrılır.
+Not only did they upgrade our room, but they also sent us champagne. | Sadece odamızı yükseltmekle kalmadılar, şampanya da gönderdiler.
+No sooner had we checked in than the power went out. | Giriş yapar yapmaz elektrik kesildi.
+Little did he know that the whole team was preparing a surprise. | Bütün ekibin bir sürpriz hazırladığından haberi yoktu.`],
+['x','Resmî koşul (if\'siz)',`Should you require any assistance, please do not hesitate to contact us. | Herhangi bir yardıma ihtiyaç duymanız hâlinde lütfen bize ulaşmaktan çekinmeyin.
+Should your plans change, kindly let us know 48 hours in advance. | Planlarınız değişirse lütfen 48 saat önceden bize bildirin.
+Had we been informed earlier, we would have arranged a transfer. | Daha önce bilgilendirilseydik transfer ayarlardık.
+Were you to extend your stay, we would be delighted to offer a discount. | Konaklamanızı uzatmanız hâlinde size memnuniyetle indirim sunarız.`],
+['x','🏨 Kural ve duyuru dili',`Under no circumstances should the fire doors be left open. | Yangın kapıları hiçbir koşulda açık bırakılmamalıdır.
+Only after the guest has signed the form can the key be issued. | Anahtar ancak misafir formu imzaladıktan sonra verilebilir.
+At no time may guests bring glass bottles into the pool area. | Misafirler hiçbir zaman havuz alanına cam şişe getiremez.
+Not until the inspection is complete will the spa reopen. | Spa, denetim tamamlanmadan yeniden açılmayacak.`],
+['mem','Kapıyı ters açan anahtar',`Olumsuz zarflar (never, rarely, only, not until, under no circumstances) birer <b>ters anahtar</b>: cümlenin başına takıldıklarında kapı tersine açılır ve yardımcı fiil özneden <b>önce</b> içeri girer: Never <b>have I</b>… Yardımcı fiil yoksa kapıyı do / does / did açar: Rarely <b>do we</b>…`],
+['trap',`Never I have seen such a view. | Never have I seen such a view. | Başta olumsuz zarf varsa soru düzeni.
+Rarely we receive complaints. | Rarely do we receive complaints. | Yardımcı fiil yoksa do eklenir.
+Should you will need help, … | Should you need help, … | should + yalın fiil.
+Not only the hotel is central, but… | Not only is the hotel central, but… | not only başta: devrik.
+If had we known… | Had we known… | Devrik yapıda if kullanılmaz.`],
+['faq',`Her zaman devrik mi kullanmalıyım? | Hayır. Günlük konuşmada yapay durur. Resmî yazı, konuşma, sunum ve vurgulu anlatımda etkilidir.
+"Only" her zaman devrik mi yapar? | Hayır, yalnızca "Only after / Only then / Only when / Only by" gibi zarf öbekleri başta olunca. "Only Ali came" devrik değildir.
+Should ile If arasında anlam farkı var mı? | "Should you need" biraz daha kibar ve "ihtimal düşük ama olursa" havası taşır. Otel yazışmalarının vazgeçilmezidir.`],
+['dlg','Bölüm 53 · Unutulmaz akşam',`Misafir: I must say, never have I stayed in such a charming hotel. | Söylemeliyim ki hiç bu kadar büyüleyici bir otelde kalmadım.
+Deniz: That's very kind of you. Not only is the building historic, but every room is unique. | Çok naziksiniz. Bina hem tarihi hem de her oda benzersiz.
+Misafir: And the dinner last night! No sooner had we sat down than the chef came to greet us. | Ya dün akşamki yemek! Oturur oturmaz şef bizi selamlamaya geldi.
+Deniz: He loves meeting our guests. Should you wish, he could prepare a tasting menu tomorrow. | Misafirlerimizle tanışmayı çok sever. Dilerseniz yarın bir tadım menüsü hazırlayabilir.
+Misafir: Rarely do we get such offers. Yes, please! | Böyle teklifleri nadiren alırız. Evet, lütfen!`,'Memnun bir misafirle zarif bir sohbet.'],
+['q',`gap | Never ___ I seen such a beautiful sunset. | have | Devrik: have + I.
+gap | Rarely ___ guests leave without visiting Cunda. | do | Yardımcı fiil yoksa do.
+gap | ___ you require any assistance, please contact us. | should | Should = If.
+gap | ___ we known, we would have arranged a transfer. | had | Had = If we had.
+gap | Not only ___ the hotel central, but it is also quiet. | is | not only + devrik.
+mc | Hangisi doğru? | Never I have seen this. / Never have I seen this. / Never have seen I this. | 1 | Olumsuz zarf + yardımcı + özne.
+mc | "If you need anything" en resmî karşılığı? | Should you need anything / Do you need anything / If need you anything | 0 | Should + özne + yalın.
+tr | Hiçbir koşulda misafirler mutfağa girmemeli. (Under no circumstances) | Under no circumstances should guests enter the kitchen / Under no circumstances should guests go into the kitchen | Devrik.
+tr | Giriş yapar yapmaz elektrik kesildi. (No sooner had we) | No sooner had we checked in than the power went out / No sooner had we checked in than the electricity went out / No sooner had we checked in than the power cut out | No sooner… than.
+ord | Spa denetim bitmeden açılmayacak. | Not until the inspection is complete will the spa reopen | Not until + devrik.`]],
+ub:`mc | Devrik yapı ne zaman gerekir? | Olumsuz ya da kısıtlayıcı zarf cümle başına gelince / Her soru cümlesinde / Sadece geçmiş zamanda | 0 | Zarf başta.
+mc | "Little did he know…" ne demek? | Az şey biliyordu / Hiç haberi yoktu / Biraz biliyordu | 1 | Little did… = hiç farkında değildi.
+mc | Hangisi doğru? | No sooner had I arrived than it rained. / No sooner I had arrived when it rained. / No sooner had I arrived when it rained. | 0 | No sooner… than.
+mc | "Were you to extend your stay" ne demek? | Konaklamanızı uzatsaydınız (geçmiş) / Konaklamanızı uzatmanız hâlinde / Konaklamanızı uzattınız mı | 1 | Were + özne + to = If you were to.
+gap | Hardly ___ the guests arrived when it started to rain. | had | Hardly had… when.
+gap | Only after the guest has signed the form ___ the key be issued. | can | Only after + devrik.
+gap | Little ___ he know about the surprise. | did | did + özne + yalın.
+gap | Under no circumstances ___ the fire doors be left open. | should | Devrik.
+tr | Sadece odamızı yükseltmekle kalmadılar, şampanya da gönderdiler. | Not only did they upgrade our room, but they also sent us champagne / Not only did they upgrade our room but they also sent us champagne / Not only did they upgrade our room, they also sent us champagne | Not only did…
+tr | Böyle teklifleri nadiren alırız. (Rarely) | Rarely do we get such offers / Rarely do we receive such offers | Rarely do…
+tr | Planlarınız değişirse lütfen bize bildirin. (Should) | Should your plans change, please let us know / Should your plans change, kindly let us know / Should your plans change please let us know | Should + özne.
+tr | Daha önce bilgilendirilseydik transfer ayarlardık. (Had we been) | Had we been informed earlier, we would have arranged a transfer / Had we been informed earlier we would have arranged a transfer / Had we been told earlier, we would have arranged a transfer | Had we been…
+ord | Hayatımda hiç böyle bir otelde kalmadım. | Never have I stayed in such a hotel | Never have I.`,
+op:`Otelini anlatan 4 cümle yaz; her biri farklı bir devrik yapıyla başlasın (Never…, Not only…, Rarely…, Should you…).
+Bir misafire gönderilecek resmî e-postada Should / Had / Were ile başlayan 3 koşul cümlesi kullan.
+Unutamadığın bir anı No sooner… than / Hardly… when / Little did I know ile 3-4 cümlede anlat.`},
+
+{id:'c1-2',l:'C1',m:0,t:'Asıl önemli olan…',g:'Vurgulu (cleft) yapılar',can:'Cümlenin tam olarak hangi kısmını vurgulamak istediğini seçebilir; What… is, It was… who, All I… ile mesajı keskinleştirebilirsin.',s:'What we need is… · It was the chef who…',b:[
+['k',`Türkçede vurguyu kelime sırası ve tonlama yapar: "Pastayı <b>şef</b> yaptı." İngilizcede sıra sabit olduğu için cümle ikiye bölünür: <b>It was the chef who made the cake.</b> (başkası değil, şef) ya da <b>What I loved was the view.</b> (en çok sevdiğim şey manzaraydı). Sunumda, şikâyet yanıtında ve satışta mesajı keskinleştirir.`],
+['f','It is/was + vurgulanan + who/that…     ·     What + özne + fiil + is/was…     ·     All / The thing / The reason why…'],
+['tbl',`Yapı | Vurgulanan | Örnek
+It + be + X + that/who | kişi, şey, zaman, yer | It was in 2012 that the hotel reopened.
+What… is/was | eylem ya da şey | What we need is more staff.
+What… do is | eylemin kendisi | What we do is call the guest the day before.
+All… is | "tek … şu" | All I want is a quiet room.
+The reason (why)… is that | neden | The reason why we're full is the festival.
+The place where / The person who | yer, kişi | The person who helped us was Deniz.`],
+['x','It… that / who',`It was the night manager who found the lost ring. | Kayıp yüzüğü bulan gece müdürüydü.
+It's not the price that bothers me, it's the noise. | Beni rahatsız eden fiyat değil, gürültü.
+It was only when we arrived that we saw the view. | Manzarayı ancak vardığımızda gördük.
+It is the staff that makes this hotel special. | Bu oteli özel yapan personeli.`],
+['x','What… ve All…',`What I loved most was the breakfast on the terrace. | En çok sevdiğim şey terastaki kahvaltıydı.
+What we need is a clear plan for August. | İhtiyacımız olan şey ağustos için net bir plan.
+What happened was that the booking system crashed. | Olan şu: rezervasyon sistemi çöktü.
+All we ask is that you inform us 24 hours in advance. | Tek istediğimiz 24 saat önceden haber vermeniz.
+What you should do is book the boat tour today. | Yapmanız gereken, tekne turunu bugün ayırtmak.`],
+['x','🏨 Şikâyet ve satışta',`What we can do is move you to a quieter room on the top floor. | Yapabileceğimiz şey sizi en üst kattaki daha sessiz bir odaya almak.
+The reason why the pool was closed is that the filter broke overnight. | Havuzun kapalı olmasının nedeni, filtrenin gece bozulması.
+What makes this suite unique is its private terrace. | Bu süiti eşsiz kılan özel terası.
+It was your feedback that helped us improve our breakfast. | Kahvaltımızı geliştirmemize yardım eden sizin geri bildiriminizdi.`],
+['mem','Spot ışığı',`Cleft cümle bir sahnede <b>spot ışığı</b> açmaktır. "It was ___ who…" ışığı bir kişiye, "What ___ was…" ışığı bir şeye ya da eyleme çevirir. Kendine sor: "Bu cümlede seyircinin görmesini istediğim tek şey ne?" Işığı oraya tut.`],
+['trap',`What I need it is a taxi. | What I need is a taxi. | what yapısında it yok.
+It was the chef which cooked. | It was the chef who cooked. | Kişi için who (ya da that).
+The thing what I like is… | The thing (that) I like is… | the thing + that.
+What we do is we call the guest. | What we do is call the guest. | Eylem vurgusunda yalın fiil.`],
+['faq',`Normal cümleden farkı ne? | Anlam aynı ama vurgu net: dinleyici cümlenin hangi parçasının yeni ve önemli bilgi olduğunu hemen anlar.
+Konuşmada çok kullanılır mı? | What… is yapısı konuşmada çok doğal: "What I mean is…", "What happened was…". It… that daha çok yazıda ve düzeltme yaparken.
+Şikâyet yanıtında neden işe yarar? | Konuyu çözüm üzerine toplar: "What we can do is…" misafirin dikkatini sorundan çözüme çevirir.`],
+['dlg','Bölüm 54 · Asıl sorun',`Misafir: I'm unhappy with my room. | Odamdan memnun değilim.
+Deniz: I'm sorry to hear that. What exactly is the problem? | Bunu duyduğuma üzüldüm. Sorun tam olarak ne?
+Misafir: It isn't the size that bothers me. It's the noise from the street. | Beni rahatsız eden büyüklük değil. Sokaktan gelen gürültü.
+Deniz: I understand. What I can do is move you to the garden side. | Anlıyorum. Yapabileceğim şey sizi bahçe tarafına almak.
+Misafir: Is it quiet there? | Orası sessiz mi?
+Deniz: Very. What our guests usually say is that they hear only the birds. | Çok. Misafirlerimizin genelde söylediği şey sadece kuşları duydukları.`,'Sorunu netleştirip çözüme odaklanmak.'],
+['q',`gap | It was the night manager ___ found the ring. | who / that | Kişi: who.
+gap | What I loved most ___ the breakfast. | was | What… was.
+gap | ___ we need is a clear plan. | what | What + özne + fiil.
+gap | All we ask ___ that you inform us in advance. | is | All… is.
+gap | It's not the price ___ bothers me. | that | It's… that.
+mc | Hangisi doğru? | What I need it is a taxi. / What I need is a taxi. / What I need a taxi is. | 1 | it yok.
+mc | "Yapmanız gereken turu ayırtmak." | What you should do is book the tour. / What you should do is you book the tour. / What should you do is book the tour. | 0 | Yalın fiil.
+tr | Bu oteli özel yapan personeli. (It is… that) | It is the staff that makes this hotel special / It's the staff that makes this hotel special / It is the staff who make this hotel special | It is… that.
+tr | Yapabileceğimiz şey sizi daha sessiz bir odaya almak. | What we can do is move you to a quieter room / What we can do is to move you to a quieter room | What… is.
+ord | Manzarayı ancak vardığımızda gördük. | It was only when we arrived that we saw the view | It was… that.`]],
+ub:`mc | Cleft yapının amacı? | Vurgu / Soru sormak / Geçmişi anlatmak | 0 | Vurgu.
+mc | "What happened was that…" ne zaman kullanılır? | Bir olayı anlatmaya başlarken / Özür dilerken / Veda ederken | 0 | Olayı açmak.
+mc | Hangisi doğru? | The thing what I like… / The thing that I like… / The thing I like it… | 1 | the thing that.
+mc | "Tek istediğim sessiz bir oda." | All I want is a quiet room. / All what I want is a quiet room. / I want all a quiet room. | 0 | All… is.
+gap | The reason ___ the pool was closed is that the filter broke. | why | The reason why.
+gap | What makes this suite unique ___ its private terrace. | is | What… is.
+gap | It was your feedback ___ helped us improve. | that | It was… that.
+gap | What happened ___ that the system crashed. | was | What happened was.
+tr | Kayıp yüzüğü bulan gece müdürüydü. | It was the night manager who found the lost ring / It was the night manager that found the lost ring | It was… who.
+tr | En çok sevdiğim şey manzaraydı. | What I loved most was the view / What I liked most was the view | What… was.
+tr | Beni rahatsız eden gürültü. (What bothers me) | What bothers me is the noise | What… is.
+tr | Olan şu: rezervasyon sistemi çöktü. | What happened was that the booking system crashed / What happened was the booking system crashed / What happened was that the reservation system crashed | What happened was.
+ord | Tek istediğimiz önceden haber vermeniz. | All we ask is that you inform us in advance | All… is.`,
+op:`Otelinin en güçlü 3 yanını cleft yapılarla anlat (What makes… is, It is… that).
+Bir şikâyete What we can do is… ve The reason why… is that… kullanarak yanıt ver (4 cümle).
+Bir yanlış anlamayı It isn't… that…, it's… kalıbıyla düzelten 2 cümle yaz.`},
+
+{id:'c1-3',l:'C1',m:0,t:'Az kelimeyle çok şey söylemek',g:'İsimleştirme ve yoğun resmî üslup',can:'Fiilleri isme çevirerek raporlarda ve resmî yazıda yoğun, nesnel ve profesyonel cümleler kurabilirsin.',s:'decide → the decision · improve → an improvement',b:[
+['k',`Resmî İngilizce eylemleri sık sık <b>isme</b> çevirir: "We decided to renovate, so occupancy increased" yerine <b>The decision to renovate led to an increase in occupancy.</b> Bu üslup daha nesnel, daha kısa ve rapor diline daha uygun. Türkçede de "yenileme kararı", "doluluk artışı" diyerek aynı şeyi yaparız.`],
+['tbl',`Fiil / sıfat | İsim | Kalıp
+decide | decision | the decision to + fiil
+improve | improvement | an improvement in + isim
+increase / decrease | increase / decrease | an increase in occupancy
+arrive / depart | arrival / departure | on arrival, prior to departure
+complain | complaint | a complaint about
+available | availability | subject to availability
+reduce | reduction | a reduction in costs
+satisfied | satisfaction | guest satisfaction`],
+['x','Günlükten resmîye',`We renovated the rooms and guests were happier. → The renovation of the rooms led to higher guest satisfaction. | Odaların yenilenmesi misafir memnuniyetini artırdı.
+Prices went up, so fewer people booked. → The rise in prices resulted in a drop in bookings. | Fiyat artışı rezervasyonlarda düşüşe yol açtı.
+Because the flight was late, the group arrived late. → Due to the delay of the flight, the group's arrival was postponed. | Uçuşun rötarı nedeniyle grubun varışı ertelendi.
+We will decide next week. → A decision will be made next week. | Karar gelecek hafta verilecek.`],
+['x','Rapor cümleleri',`There was a 12% increase in occupancy compared with last year. | Geçen yıla göre dolulukta %12 artış oldu.
+The main reason for the decline was the closure of the airport. | Düşüşün ana nedeni havalimanının kapanmasıydı.
+The introduction of online check-in has reduced waiting times. | Online girişin kullanıma sunulması bekleme sürelerini azalttı.
+Guest satisfaction remains our top priority. | Misafir memnuniyeti en önemli önceliğimiz olmaya devam ediyor.`],
+['x','🏨 Otel dili',`Late check-out is subject to availability. | Geç çıkış müsaitliğe bağlıdır.
+Payment is required upon arrival. | Ödeme varışta alınır.
+Please note that the cancellation of a non-refundable booking will result in a full charge. | İade edilemez bir rezervasyonun iptali tam ücret alınmasına yol açar.
+Our recommendation would be an early arrival to avoid traffic. | Önerimiz trafikten kaçınmak için erken varış olur.`],
+['mem','Fiili dondur',`İsimleştirmeyi <b>bir fiili dondurmak</b> gibi düşün: "decide" hareket eden bir eylem; donunca "decision" olur ve artık elden ele verilebilen bir nesnedir: The decision <b>was made</b>, the decision <b>led to</b>… Donmuş isimler cümlenin öznesi olup raporları ağırlaştırır.`],
+['trap',`The increase of prices | The increase in prices | increase / decrease / rise + in.
+make a research | do research / carry out research | research sayılamaz; do / carry out.
+The decision of renovating | The decision to renovate | decision + to.
+Subject to availabilities | Subject to availability | Kalıp tekil.`],
+['faq',`Her yerde isimleştirme mi kullanmalıyım? | Hayır. Misafirle sohbette sade fiiller daha sıcaktır. Rapor, sunum, sözleşme ve kurallarda isimleştirme güçlü durur.
+Hangi fiillerle birlikte kullanılır? | lead to, result in, cause, bring about (neden olmak); make a decision, carry out an inspection, give an explanation.
+Çok ağır olur mu? | Bir cümlede iki üç isimleştirme yeterli. Hepsini isme çevirmek okunmayı zorlaştırır.`],
+['dlg','Bölüm 55 · Aylık rapor',`Müdür: Can you summarise last month in two sentences? | Geçen ayı iki cümleyle özetleyebilir misin?
+Deniz: There was an 8% increase in occupancy, mainly due to the festival. | Dolulukta %8 artış oldu, esas olarak festival sayesinde.
+Müdür: And the complaints? | Ya şikâyetler?
+Deniz: The introduction of quiet hours led to a sharp reduction in noise complaints. | Sessiz saatlerin getirilmesi gürültü şikâyetlerinde keskin bir düşüşe yol açtı.
+Müdür: Excellent. Put that in the report for the owner. | Mükemmel. Bunu otel sahibine giden rapora yaz.`,'Müdüre kısa ve profesyonel rapor.'],
+['q',`gap | There was a 12% increase ___ occupancy. | in | increase in.
+gap | Late check-out is subject to ___. | availability | Kalıp.
+gap | Payment is required upon ___. (arrive) | arrival | İsim hâli.
+gap | The decision ___ renovate was made in May. | to | decision to.
+gap | The rise in prices resulted ___ a drop in bookings. | in | result in.
+mc | Hangisi doğru? | the increase of prices / the increase in prices / the increase at prices | 1 | increase in.
+mc | "Karar gelecek hafta verilecek." | A decision will be made next week. / A decision will be done next week. / A decision will be taken next week by decide. | 0 | make a decision.
+tr | Misafir memnuniyeti en önemli önceliğimiz. | Guest satisfaction is our top priority / Guest satisfaction is our main priority / Guest satisfaction is our highest priority | İsim.
+tr | Online girişin getirilmesi bekleme sürelerini azalttı. (The introduction of) | The introduction of online check-in has reduced waiting times / The introduction of online check-in reduced waiting times | İsimleştirme.
+ord | Düşüşün ana nedeni havalimanının kapanmasıydı. | The main reason for the decline was the closure of the airport | İsimler.`]],
+ub:`mc | İsimleştirme nerede en uygun? | Raporlarda / Arkadaşla sohbette / Şarkı sözünde | 0 | Resmî yazı.
+mc | "lead to" ne demek? | yol açmak / önderlik etmek / yönlendirmek | 0 | lead to = neden olmak.
+mc | Hangisi doğru? | make a research / carry out research / do a researches | 1 | research sayılamaz.
+mc | "satisfied" isim hâli? | satisfy / satisfaction / satisfiedness | 1 | satisfaction.
+gap | Due to the ___ of the flight, the group arrived late. (delay) | delay | İsim.
+gap | The renovation led ___ higher guest satisfaction. | to | lead to.
+gap | Please note that cancellation will ___ in a full charge. | result | result in.
+gap | Our ___ would be an early arrival. (recommend) | recommendation | İsim.
+tr | Geç çıkış müsaitliğe bağlıdır. | Late check-out is subject to availability | subject to.
+tr | Dolulukta %12 artış oldu. | There was a 12% increase in occupancy / There was an increase of 12% in occupancy | increase in.
+tr | Ödeme varışta alınır. | Payment is required upon arrival / Payment is required on arrival / Payment is taken on arrival | upon arrival.
+tr | Fiyat artışı rezervasyonlarda düşüşe yol açtı. | The rise in prices led to a drop in bookings / The rise in prices resulted in a drop in bookings / The increase in prices led to a decrease in bookings | İsimler.
+ord | Karar gelecek hafta verilecek. | A decision will be made next week | make a decision.`,
+op:`Geçen ayı ya da sezonu 4 cümlelik bir raporla özetle; en az 4 isimleştirme kullan (increase in, decision to, introduction of…).
+Şu cümleleri resmîleştir: We decided to close the pool. / Prices went up so guests complained. / You can check out late if we have rooms.
+Otelinin 3 kuralını "subject to / upon / prior to" ile yaz.`},
+
+{id:'c1-4',l:'C1',m:1,t:'Kesin konuşmadan ikna etmek',g:'Yumuşatma (hedging) ve diplomatik dil',can:'Kesin olmayan bilgiyi dürüstçe, eleştiriyi kırmadan ve "hayır"ı diplomatik biçimde söyleyebilirsin.',s:'It would seem that… · tend to · somewhat · arguably',b:[
+['k',`İleri seviyede iyi konuşmak her şeyi <b>kesin</b> söylemek değil, ne kadar emin olduğunu ve ne kadar nazik olmak istediğini ayarlayabilmektir. "The room is dirty" yerine <b>"The room doesn't seem to have been cleaned thoroughly"</b> ya da "You're wrong" yerine <b>"I'm not sure that's entirely accurate"</b>. Bu, özellikle misafirle ve üst yönetimle konuşurken altın değerindedir.`],
+['tbl',`Araç | Örnek | Etkisi
+seem / appear | It seems that there was a mix-up. | Kesinlik azalır
+tend to | Guests tend to prefer the sea view. | Genelleme yumuşar
+may / might / could | This could be due to the storm. | Olasılık
+somewhat / slightly / rather | The price is slightly higher this year. | Etkiyi küçültür
+arguably / possibly | It is arguably the best view in Ayvalık. | İddiayı yumuşatır
+I'm afraid / Unfortunately | I'm afraid we're fully booked. | Kötü haberi yastıklar
+not entirely / not quite | That's not entirely accurate. | Kibar itiraz
+would + say/suggest | I would suggest booking early. | Kibar öneri`],
+['x','Belirsizliği dürüstçe söylemek',`It appears that your booking was made for the wrong dates. | Rezervasyonunuz yanlış tarihlere yapılmış görünüyor.
+The delay may have been caused by a system error. | Gecikme bir sistem hatasından kaynaklanmış olabilir.
+Guests from Germany tend to book further in advance. | Almanya'dan gelen misafirler daha önceden rezervasyon yapma eğiliminde.
+There seems to be a slight problem with the card. | Kartta küçük bir sorun var gibi görünüyor.`],
+['x','Kibar itiraz ve eleştiri',`I see your point, but I'm not sure that's entirely the case. | Ne demek istediğinizi anlıyorum ama durumun tam olarak öyle olduğundan emin değilim.
+The new menu is somewhat limited for vegetarian guests. | Yeni menü vejetaryen misafirler için biraz sınırlı.
+It might be worth reconsidering the opening hours. | Açılış saatlerini yeniden düşünmekte fayda olabilir.
+With respect, the figures suggest a different picture. | Saygıyla belirteyim, rakamlar farklı bir tablo gösteriyor.`],
+['x','🏨 Diplomatik "hayır"',`I'm afraid that won't be possible on this occasion. | Korkarım bu sefer mümkün olmayacak.
+Unfortunately, we're unable to offer a refund for non-refundable rates. | Maalesef iade edilemez fiyatlarda iade sunamıyoruz.
+What I could suggest instead is a complimentary late check-out. | Bunun yerine önerebileceğim, ücretsiz geç çıkış olabilir.
+I'd rather not promise something we can't guarantee. | Garanti edemeyeceğimiz bir şeyi vaat etmek istemem.`],
+['mem','Ses düğmesi',`Her cümlenin bir <b>ses düğmesi</b> olduğunu düşün. "The room is dirty" en yüksek ses. "seems", "slightly", "might", "I'm afraid" her biri düğmeyi biraz kısar. C1 konuşmacısı düğmeyi duruma göre ayarlar: otel sahibine bir ses, kızgın misafire başka bir ses.`],
+['trap',`You are wrong. | I'm not sure that's entirely accurate. | Doğrudan "yanlış" kırıcı.
+It is the problem of the system. | It seems to be a system issue. | Kesinlik + yanlış kalıp.
+We can't. | I'm afraid we're unable to… | Yastıklamadan ret sert.
+Too much hedging: It might possibly perhaps be… | It might be… | Fazla yumuşatma güvensiz görünür.`],
+['faq',`Fazla yumuşatmak kötü mü? | Evet. Her cümlede üç yumuşatıcı belirsiz ve güvensiz görünür. Bir cümlede bir tane çoğu zaman yeterli.
+Türkçede karşılığı var mı? | "Gibi görünüyor", "-ebilir", "biraz", "korkarım ki", "açıkçası emin değilim"… Türkçede de kullanırız ama İngilizce iş dilinde çok daha sistematiktir.
+Yazıda mı konuşmada mı? | İkisinde de. Raporlarda "appears / suggests", konuşmada "I'm afraid / I'm not sure" öne çıkar.`],
+['dlg','Bölüm 56 · Zor misafir',`Misafir: Your hotel overcharged me! This is a scam! | Oteliniz benden fazla ücret aldı! Bu bir dolandırıcılık!
+Deniz: I'm sorry you feel that way. Let me have a look. It appears that the minibar was charged twice. | Böyle hissettiğiniz için üzgünüm. Bir bakayım. Minibar iki kez ücretlendirilmiş görünüyor.
+Misafir: So you admit it! | Yani kabul ediyorsunuz!
+Deniz: There does seem to have been a mistake, and I'll correct it right away. | Bir hata yapılmış gibi görünüyor ve hemen düzelteceğim.
+Misafir: And I want a full refund for the night. | Ve gecenin tamamı için iade istiyorum.
+Deniz: I'm afraid that might be difficult, but what I could do is offer you a complimentary dinner. | Korkarım bu zor olabilir ama size ücretsiz bir akşam yemeği sunabilirim.`,'Sinirli bir misafiri sakinleştirmek.'],
+['q',`gap | It ___ that your booking was made for the wrong dates. | appears / seems | Yumuşatma.
+gap | Guests from Germany ___ to book further in advance. | tend | tend to.
+gap | I'm ___ that won't be possible. | afraid | I'm afraid.
+gap | The price is ___ higher this year. (biraz) | slightly / somewhat / a bit | Küçültücü.
+mc | En diplomatik itiraz? | You are wrong. / I'm not sure that's entirely accurate. / No. | 1 | Kibar itiraz.
+mc | Hangisi fazla yumuşatılmış? | It might be a system error. / It might possibly perhaps maybe be an error. | 1 | Ölçülü ol.
+tr | Kartta küçük bir sorun var gibi görünüyor. | There seems to be a slight problem with the card / There seems to be a small problem with the card | There seems to be.
+tr | Açılış saatlerini yeniden düşünmekte fayda olabilir. | It might be worth reconsidering the opening hours / It may be worth reconsidering the opening hours | It might be worth.
+tr | Gecikme bir sistem hatasından kaynaklanmış olabilir. | The delay may have been caused by a system error / The delay might have been caused by a system error / The delay could have been caused by a system error | may have been.
+ord | Bunun yerine ücretsiz geç çıkış önerebilirim. | What I could suggest instead is a complimentary late check-out | Yumuşak teklif.`]],
+ub:`mc | "tend to" ne anlatır? | Genel eğilim / Kesin kural / Geçmiş alışkanlık | 0 | Eğilim.
+mc | "With respect, …" ne zaman? | Kibarca itiraz ederken / Teşekkür ederken / Selamlaşırken | 0 | Kibar itiraz.
+mc | Kötü haberi yastıklayan ifade? | I'm afraid… / Of course… / Definitely… | 0 | I'm afraid.
+mc | "arguably" ne demek? | tartışmasız / belki de söylenebilir ki / kavgacı | 1 | İddiayı yumuşatır.
+gap | There seems ___ be a slight problem. | to | seem to.
+gap | It might be ___ reconsidering the hours. | worth | worth + -ing.
+gap | I'd ___ not promise something we can't guarantee. | rather | I'd rather not.
+gap | There does seem to ___ been a mistake. | have | seem to have been.
+tr | Korkarım bu sefer mümkün olmayacak. | I'm afraid that won't be possible this time / I'm afraid that won't be possible on this occasion / I am afraid that will not be possible this time | I'm afraid.
+tr | Rakamlar farklı bir tablo gösteriyor. (suggest) | The figures suggest a different picture / The numbers suggest a different picture | suggest.
+tr | Yeni menü vejetaryenler için biraz sınırlı. (somewhat) | The new menu is somewhat limited for vegetarians / The new menu is somewhat limited for vegetarian guests | somewhat.
+tr | Maalesef iade sunamıyoruz. (unable) | Unfortunately, we are unable to offer a refund / Unfortunately we're unable to offer a refund / Unfortunately, we're unable to offer a refund | unable to.
+ord | Minibar iki kez ücretlendirilmiş görünüyor. | It appears that the minibar was charged twice | It appears that.`,
+op:`Üst yöneticine bir fikrine katılmadığını 3 diplomatik cümleyle söyle.
+Bir misafirin isteğini reddedip alternatif sunan 4 cümlelik yanıt yaz (I'm afraid…, What I could suggest…).
+Kesin olmadığın 3 bilgiyi seem / appear / may have ile raporla.`},
+
+{id:'c1-5',l:'C1',m:1,t:'Şart, rica ve tam zamanı',g:'Resmî kipler: subjunctive · I\'d rather · It\'s time',can:'Resmî gereklilikleri (It is essential that he be…), kibar tercihleri (I\'d rather you didn\'t) ve "artık zamanı geldi" anlamını doğru kurabilirsin.',s:'It is vital that… · I\'d rather you… · It\'s high time…',b:[
+['k',`Bazı kalıplar beklenmedik bir fiil biçimi ister. <b>Resmî gereklilik</b>: It is essential that every guest <b>be</b> informed (is değil, yalın be). <b>Başkasının yapmasını tercih</b>: I'd rather you <b>didn't</b> smoke here (geçmiş biçim, anlamı şimdi). <b>Gecikmiş bir iş</b>: It's high time we <b>renovated</b> the lobby. Bunlar sözleşmelerde, kurallarda ve kibar isteklerde karşına çıkar.`],
+['tbl',`Kalıp | Fiil biçimi | Örnek
+It is essential / vital / important that | yalın fiil (her kişi) | It is vital that the guest sign the form.
+recommend / suggest / insist / demand that | yalın fiil | We recommend that he arrive early.
+I'd rather + (başka özne) | geçmiş | I'd rather you called before coming.
+I'd rather + (aynı kişi) | yalın | I'd rather stay in tonight.
+It's (high / about) time + özne | geçmiş | It's high time we updated the website.
+as if / as though (gerçek dışı) | geçmiş (were) | He talks as if he owned the hotel.
+if need be / so be it | kalıp | We'll open an extra desk if need be.`],
+['x','Resmî gereklilik (subjunctive)',`It is essential that all staff be trained in fire safety. | Tüm personelin yangın güvenliği eğitimi alması şarttır.
+The manager insisted that the guest receive a full apology. | Müdür misafirden tam bir özür dilenmesinde ısrar etti.
+We recommend that guests not leave valuables in their rooms. | Misafirlerin değerli eşyalarını odalarında bırakmamalarını öneririz.
+It is vital that the pool gate be kept closed at night. | Havuz kapısının geceleri kapalı tutulması hayati önem taşır.`],
+['x','I\'d rather ve It\'s time',`I'd rather you didn't use the terrace after midnight. | Gece yarısından sonra terası kullanmamanızı tercih ederim.
+Would you rather we sent the invoice by email? | Faturayı e-postayla göndermemizi mi tercih edersiniz?
+It's high time we replaced these old beds. | Bu eski yatakları değiştirmemizin zamanı çoktan geldi.
+It's about time the city fixed this road. | Belediyenin bu yolu onarmasının vakti geldi.
+He acts as if he were the owner. | Sanki sahibiymiş gibi davranıyor.`],
+['x','🏨 Sözleşme ve kurallar',`The client requests that the meeting room be set up by 8 am. | Müşteri toplantı salonunun saat 8'e kadar hazırlanmasını talep ediyor.
+It is imperative that the deposit be paid within seven days. | Depozitonun yedi gün içinde ödenmesi zorunludur.
+The hotel requires that each guest present a valid ID. | Otel her misafirin geçerli bir kimlik göstermesini şart koşar.
+We'll arrange an additional shuttle, if need be. | Gerekirse ek bir servis ayarlarız.`],
+['mem','Donmuş komut',`"It is essential that…" bir <b>donmuş komut</b> taşır: arkasındaki fiil emir kipi gibi çıplak kalır, ek almaz: that he <b>be</b>, that she <b>sign</b>, that they <b>not leave</b>. I'd rather / It's time ise <b>hayal makinesi</b>: arkalarındaki fiil geçmişe kayar ama anlam şimdidir.`],
+['trap',`It is essential that he is informed. | It is essential that he be informed. | Resmî dilde yalın be (İngiliz konuşmada "should be" de olur).
+We recommend that he arrives early. | We recommend that he arrive early. | -s almaz.
+I'd rather you don't smoke. | I'd rather you didn't smoke. | Başka özne: geçmiş biçim.
+It's time we renovate. | It's time we renovated. | It's time + geçmiş.`],
+['faq',`Bu kalıplar günlük konuşmada var mı? | "I'd rather" ve "It's time" çok yaygın. Subjunctive daha çok resmî yazıda; İngilizler konuşmada sık sık "should" ekler: It's important that he should be informed.
+"I'd rather you didn't" neden geçmiş? | Gerçek olmayan bir isteği anlatır, ikinci koşul gibi bir adım geri gider. Anlamı şimdi ya da gelecektir.
+"It's high time" ile "It's time" farkı? | high ve about vurgu ekler: zaten geç kalınmış.`],
+['dlg','Bölüm 57 · Grup sözleşmesi',`Müşteri: Our company requires that every participant receive a personal welcome pack. | Şirketimiz her katılımcının kişisel bir karşılama paketi almasını şart koşuyor.
+Deniz: Certainly. It is essential that we receive the final list by Friday, then. | Elbette. O hâlde son listenin cuma gününe kadar bize ulaşması şart.
+Müşteri: I'd rather you didn't print the names until Thursday. Some might change. | İsimleri perşembeye kadar basmamanızı tercih ederim. Bazıları değişebilir.
+Deniz: No problem. And if need be, we can prepare a few spare packs. | Sorun değil. Gerekirse birkaç yedek paket de hazırlayabiliriz.
+Müşteri: Perfect. Frankly, it's high time we found a hotel this flexible. | Mükemmel. Açıkçası bu kadar esnek bir otel bulmamızın vakti çoktan gelmişti.`,'Kurumsal bir grubun koşullarını görüşmek.'],
+['q',`gap | It is essential that all staff ___ trained. (be) | be | Yalın be.
+gap | We recommend that he ___ early. (arrive) | arrive | -s yok.
+gap | I'd rather you ___ smoke here. (olumsuz) | didn't / did not | Geçmiş biçim.
+gap | It's high time we ___ the website. (update) | updated | It's time + geçmiş.
+gap | He acts as if he ___ the owner. (be) | were / was | as if + were.
+mc | Hangisi resmî ve doğru? | It is vital that the guest signs the form. / It is vital that the guest sign the form. / It is vital that the guest to sign the form. | 1 | Yalın fiil.
+mc | "Faturayı e-postayla göndermemizi mi tercih edersiniz?" | Would you rather we sent the invoice by email? / Would you rather we send by email invoice? / Do you rather we sent the invoice? | 0 | rather + geçmiş.
+tr | Depozitonun yedi gün içinde ödenmesi zorunludur. (imperative) | It is imperative that the deposit be paid within seven days / It is imperative that the deposit be paid within 7 days | be + V3.
+tr | Bu yatakları değiştirmemizin zamanı geldi. | It's time we replaced these beds / It is time we replaced these beds / It's high time we replaced these beds | It's time + geçmiş.
+ord | Gerekirse ek bir servis ayarlarız. | We'll arrange an additional shuttle if need be | if need be.`]],
+ub:`mc | "It is essential that…" sonrasında fiil? | Yalın / Geçmiş / -ing | 0 | Subjunctive: yalın.
+mc | "I'd rather stay in." özne aynı mı? | Evet, yalın fiil / Hayır, geçmiş olmalı | 0 | Aynı kişi: yalın.
+mc | Hangisi doğru? | It's time we go. / It's time we went. / It's time we going. | 1 | Geçmiş.
+mc | "if need be" ne demek? | gerekirse / ihtiyaç olmadan / kesinlikle | 0 | gerekirse.
+gap | The manager insisted that the guest ___ a full apology. (receive) | receive | Yalın.
+gap | We recommend that guests ___ leave valuables in the room. (olumsuz) | not | that + not + yalın.
+gap | It is vital that the gate ___ kept closed. | be | be + V3.
+gap | I'd rather you ___ before coming. (call) | called | Geçmiş.
+tr | Gece yarısından sonra terası kullanmamanızı tercih ederim. | I'd rather you didn't use the terrace after midnight / I would rather you didn't use the terrace after midnight / I'd rather you did not use the terrace after midnight | I'd rather + geçmiş.
+tr | Otel her misafirin geçerli kimlik göstermesini şart koşar. | The hotel requires that each guest present a valid ID / The hotel requires that every guest present a valid ID / The hotel requires each guest to present a valid ID | require that + yalın.
+tr | Tüm personelin eğitim alması şarttır. (essential) | It is essential that all staff be trained / It is essential that all staff receive training / It's essential that all staff be trained | Subjunctive.
+tr | Sanki sahibiymiş gibi davranıyor. | He acts as if he were the owner / He acts as if he was the owner / He behaves as if he were the owner | as if + were.
+ord | Belediyenin yolu onarmasının vakti geldi. | It's about time the city fixed this road | It's about time + geçmiş.`,
+op:`Otelin için resmî bir kural listesi yaz: It is essential / vital / imperative that… ile 4 madde.
+Bir misafire 3 kibar tercih bildir: I'd rather you…, Would you rather we…?
+İşyerinde "artık zamanı geldi" dediğin 3 değişikliği It's high time we… ile yaz.`},
+
+{id:'c1-6',l:'C1',m:2,t:'Konuşmayı yönetmek',g:'Söylem işaretleri (discourse markers)',can:'Fikirleri sıralayabilir, kabul edip karşı çıkabilir, konuyu değiştirip toparlayabilir; bir sunumu ya da toplantıyı akıcı biçimde yönetebilirsin.',s:'That said · Admittedly · As far as… is concerned · All in all',b:[
+['k',`Söylem işaretleri cümlelerin arasındaki <b>trafik işaretleri</b>dir: dinleyiciye nereye gittiğini söyler. "However" ve "so" ile B1'de tanıştın; C1'de amaç daha ince ayardır: bir noktayı <b>kabul edip</b> (Admittedly…), <b>karşı çıkmak</b> (That said…), <b>konuyu daraltmak</b> (As far as… is concerned), <b>toparlamak</b> (All in all…). İyi bir sunum ya da e-posta bu işaretlerle akıcı görünür.`],
+['tbl',`İşlev | İşaretler | Örnek
+Kabul etmek | Admittedly, Granted, Of course | Admittedly, the rooms are small.
+Karşı çıkmak | That said, Even so, Nevertheless | That said, they're beautifully designed.
+Konu daraltmak | As far as… is concerned, In terms of, Regarding | In terms of price, we're very competitive.
+Örnek / açıklama | For instance, In other words, That is to say | In other words, we're fully booked.
+Ekleme | Moreover, What's more, On top of that | What's more, breakfast is included.
+Konu değiştirme | Incidentally, By the way, Speaking of… | Speaking of dinner, have you booked?
+Toparlamak | All in all, On the whole, To sum up | All in all, it was a great season.`],
+['x','Kabul et, sonra çevir',`Admittedly, the hotel isn't new. That said, it has a lot of character. | Kabul etmek gerekir ki otel yeni değil. Bununla birlikte çok karakterli.
+Granted, the road is narrow, but the view is worth it. | Kabul, yol dar ama manzara buna değer.
+The price is higher than last year. Even so, we're still fully booked. | Fiyat geçen yıldan yüksek. Buna rağmen yine de doluyuz.
+Of course, there were a few complaints. On the whole, though, feedback was positive. | Elbette birkaç şikâyet oldu. Yine de genel olarak geri bildirimler olumluydu.`],
+['x','Yönlendirmek',`As far as the budget is concerned, we have no room for extra staff. | Bütçe açısından ek personele yerimiz yok.
+In terms of location, nothing beats the old town. | Konum açısından eski şehri hiçbir yer geçemez.
+In other words, we need to cut costs without cutting quality. | Başka bir deyişle, kaliteyi düşürmeden maliyetleri azaltmalıyız.
+Speaking of costs, has anyone checked the new electricity prices? | Maliyetlerden söz açılmışken, yeni elektrik fiyatlarına bakan oldu mu?`],
+['x','🏨 Sunum ve toplantı',`To begin with, let me give you a quick overview of the season. | Öncelikle size sezona kısa bir genel bakış sunayım.
+Moving on to guest feedback, the main issue was Wi-Fi. | Misafir geri bildirimine geçersek, ana sorun Wi-Fi'ydi.
+On top of that, online reviews have improved significantly. | Bunun üstüne online yorumlar belirgin şekilde iyileşti.
+All in all, it was our strongest year so far. | Sonuç olarak bugüne kadarki en güçlü yılımızdı.`],
+['mem','Navigasyon sesi',`Söylem işaretlerini bir <b>navigasyon sesi</b> gibi düşün: "Birazdan sağa döneceksiniz" (That said…), "Bu yolda devam edin" (What's more…), "Hedefe ulaştınız" (All in all…). Dinleyici yolu görmese bile kaybolmaz. Sunum hazırlarken her paragrafın başına bir navigasyon cümlesi koy.`],
+['trap',`As far as the budget, … | As far as the budget is concerned, … | is concerned eksik kalmasın.
+Moreover, but… | Moreover, … / However, … | Ekleme ile zıtlığı karıştırma.
+In the other hand | On the other hand | Edat: on.
+At the end, it was a good season. | In the end / All in all, it was a good season. | Sonuç: in the end.`],
+['faq',`Her cümleye işaret koymalı mıyım? | Hayır. Paragraf geçişlerinde ve önemli dönüşlerde kullan. Fazlası yapay durur.
+That said ile However farkı? | That said daha konuşma dilidir ve "az önce söylediğimi kabul ediyorum ama…" anlamı taşır.
+Konuşmada hangileri doğal? | Admittedly, That said, Mind you, Anyway, By the way, In other words, All in all.`],
+['dlg','Bölüm 58 · Sezon toplantısı',`Müdür: Deniz, can you sum up the season for the owners? | Deniz, sezonu sahipler için özetleyebilir misin?
+Deniz: Of course. To begin with, occupancy reached 91%, a record for us. | Elbette. Öncelikle doluluk %91'e ulaştı, bizim için bir rekor.
+Sahip: Impressive. What about costs? | Etkileyici. Ya maliyetler?
+Deniz: Admittedly, energy costs rose sharply. That said, we covered them with higher room rates. | Kabul etmek gerek, enerji maliyetleri sert yükseldi. Bununla birlikte bunu daha yüksek oda fiyatlarıyla karşıladık.
+Sahip: And guest satisfaction? | Peki misafir memnuniyeti?
+Deniz: In terms of reviews, our score went from 8.9 to 9.3. All in all, it was our best year so far. | Yorumlar açısından puanımız 8,9'dan 9,3'e çıktı. Sonuç olarak bugüne kadarki en iyi yılımızdı.`,'Otel sahiplerine sezon sunumu.'],
+['q',`gap | ___, the rooms are small. That said, they're beautifully designed. (Kabul etmek gerekirse) | admittedly / granted | Kabul.
+gap | As far as the budget is ___, we can't hire more staff. | concerned | As far as… is concerned.
+gap | In ___ of location, nothing beats the old town. | terms | In terms of.
+gap | ___ in all, it was our best year so far. | all | All in all.
+gap | Speaking ___ dinner, have you booked a table? | of | Speaking of.
+mc | "Bununla birlikte" (az önceki sözü kabul ederek) hangisi? | That said / What's more / For instance | 0 | That said.
+mc | Hangisi doğru? | In the other hand / On the other hand / At the other hand | 1 | On.
+tr | Başka bir deyişle, tamamen doluyuz. | In other words, we're fully booked / In other words, we are fully booked / In other words we're fully booked | In other words.
+tr | Bunun üstüne kahvaltı da dahil. | On top of that, breakfast is included / What's more, breakfast is included / Moreover, breakfast is included | Ekleme.
+ord | Misafir geri bildirimine geçersek ana sorun Wi-Fi'ydi. | Moving on to guest feedback the main issue was Wi-Fi | Moving on to.`]],
+ub:`mc | "Granted, …" ne işlev görür? | Kabul etmek / Sonuç / Örnek vermek | 0 | Kabul.
+mc | "Incidentally" ne demek? | Bu arada / Sonuç olarak / Kazara | 0 | Konu değiştirme.
+mc | Sonuç için hangisi? | At the end / In the end / On the end | 1 | In the end.
+mc | "Even so" ne demek? | Buna rağmen / Aynen öyle / Bile değil | 0 | Karşıtlık.
+gap | To ___ with, let me give you an overview. | begin / start | To begin with.
+gap | ___ the whole, feedback was positive. | on | On the whole.
+gap | In other ___, we need to cut costs. | words | In other words.
+gap | ___ on to guest feedback, … | moving | Moving on to.
+tr | Kabul, yol dar ama manzara buna değer. (Granted) | Granted, the road is narrow, but the view is worth it / Granted the road is narrow but the view is worth it | Granted.
+tr | Konum açısından eski şehri hiçbir yer geçemez. (In terms of) | In terms of location, nothing beats the old town / In terms of location nothing beats the old town | In terms of.
+tr | Sonuç olarak harika bir sezondu. (All in all) | All in all, it was a great season / All in all it was a great season | All in all.
+tr | Buna rağmen hâlâ doluyuz. (Even so) | Even so, we're still fully booked / Even so, we are still fully booked / Even so we're still full | Even so.
+ord | Bütçe açısından ek personele yerimiz yok. | As far as the budget is concerned we have no room for extra staff | As far as… is concerned.`,
+op:`Otelinin sezonunu 6 cümlelik kısa bir sunumla anlat; başlangıç, kabul-karşı çıkış, ekleme ve toparlama işaretleri kullan.
+Bir tartışmalı konu seç (ör. fiyat artışı) ve Admittedly… That said… In the end… ile dengeli bir paragraf yaz.
+Bir toplantıda konuyu değiştirmek ve toparlamak için kullanacağın 3 cümle yaz.`},
+
+{id:'c1-7',l:'C1',m:2,t:'Doğal duyulan İngilizce',g:'Eşdizimler (collocations) ve iş deyimleri',can:'Kelimeleri anadili konuşanların birlikte kullandığı biçimde (meet a deadline, address a concern) seçebilir, otel işinde yaygın deyimleri anlayıp yerinde kullanabilirsin.',s:'meet expectations · address a concern · go the extra mile',b:[
+['k',`Dilbilgisi doğru olsa bile "do a mistake" ya da "big rain" kulağa yabancı gelir. Anadili konuşanlar kelimeleri <b>hazır çiftler</b> hâlinde kullanır: make a mistake, heavy rain. Bunlara <b>eşdizim</b> denir. C1'in sırrı tek tek kelime değil bu çiftleri öğrenmektir. Otel ve hizmet sektörünün en önemlileri bu derste.`],
+['tbl',`Fiil + isim | Türkçe | Yanlış (Türkçeden çeviri)
+meet / exceed expectations | beklentileri karşılamak / aşmak | answer expectations
+address a concern / an issue | bir endişeyi ele almak | solve a concern
+make / handle a complaint | şikâyette bulunmak / şikâyeti yönetmek | do a complaint
+take / place an order | sipariş almak / vermek | get an order
+meet a deadline | son tarihe yetişmek | catch a deadline
+raise / lower prices | fiyat artırmak / düşürmek | rise prices
+run a business / a hotel | işletmek | turn a hotel
+pay attention to detail | ayrıntıya dikkat etmek | give attention to detail`],
+['x','Hizmet eşdizimleri',`Our goal is not just to meet expectations, but to exceed them. | Amacımız beklentileri karşılamak değil, aşmak.
+We take every complaint seriously and address it within 24 hours. | Her şikâyeti ciddiye alır ve 24 saat içinde ele alırız.
+The team paid close attention to every detail. | Ekip her ayrıntıya büyük özen gösterdi.
+We need to run a tighter operation in winter. | Kışın daha sıkı bir işletme yönetmeliyiz.
+She has a strong command of three languages. | Üç dile güçlü bir şekilde hâkim.`],
+['x','Sıfat + isim',`heavy traffic · heavy rain · strong coffee | yoğun trafik · şiddetli yağmur · sert kahve
+a fully booked weekend · a last-minute booking | tamamen dolu bir hafta sonu · son dakika rezervasyonu
+a warm welcome · a lasting impression | sıcak karşılama · kalıcı izlenim
+a highly recommended restaurant · a long-standing guest | çok önerilen bir restoran · uzun yıllardır gelen misafir
+a minor issue · a major setback | küçük bir sorun · büyük bir aksilik`],
+['x','🏨 İş deyimleri',`Our staff always go the extra mile for guests. | Personelimiz misafirler için her zaman fazlasını yapar.
+We're running at full capacity this week. | Bu hafta tam kapasite çalışıyoruz.
+Let's touch base after the morning meeting. | Sabah toplantısından sonra kısaca konuşalım.
+The new manager hit the ground running. | Yeni müdür işe hızlı ve güçlü başladı.
+It's a win-win situation for both the hotel and the agency. | Bu hem otel hem acente için kazan-kazan durumu.`],
+['mem','Kelime arkadaşlığı',`Kelimeleri tek başına değil <b>arkadaşıyla</b> birlikte ezberle: "expectations" yalnız değil, yanında hep "meet / exceed" dolaşır. Kartına tek kelime yazma: <b>meet ___ expectations</b> yaz. Beyin yalnız kelimeyi değil, arkadaşlığı hatırlar.`],
+['trap',`do a mistake | make a mistake | mistake ile make.
+big rain / strong rain | heavy rain | rain ile heavy.
+rise the prices | raise the prices | Nesne alan: raise.
+answer the expectations | meet the expectations | expectations ile meet.
+take a decision (İngiliz) / make a decision | ikisi de olur | make a decision daha yaygın.`],
+['faq',`Eşdizimleri nasıl öğrenirim? | Okurken kelimeyi değil öbeği işaretle. Hata defterine "yanlış - doğru" çift olarak yaz. Kelime kartlarına öbek ekle.
+Deyimleri misafirle kullanmalı mıyım? | Dikkatli ol: misafirlerin çoğu da anadili İngilizce değil. "go the extra mile" gibi yaygın olanlar güvenli; argo ve çok yerel deyimlerden kaçın.
+Sözlük var mı? | Oxford Collocations Dictionary ve Cambridge Dictionary'deki "collocations" kutuları çok faydalı.`],
+['dlg','Bölüm 59 · Ödül yorumu',`Müdür: Did you see the review from the Lee family? | Lee ailesinin yorumunu gördün mü?
+Deniz: Yes! They said we exceeded their expectations. | Evet! Beklentilerini aştığımızı söylemişler.
+Müdür: They also mentioned that you went the extra mile with the birthday cake. | Doğum günü pastasında fazlasını yaptığından da bahsetmişler.
+Deniz: It was a team effort. The kitchen paid great attention to detail. | Ekip işiydi. Mutfak ayrıntılara büyük özen gösterdi.
+Müdür: That kind of service leaves a lasting impression. Let's touch base tomorrow about doing it more often. | Bu tür hizmet kalıcı bir izlenim bırakır. Bunu daha sık yapmak için yarın kısaca konuşalım.`,'Övgü dolu bir yorum üzerine.'],
+['q',`gap | Our goal is to ___ expectations, not just meet them. (aşmak) | exceed / surpass | exceed expectations.
+gap | We need to ___ a deadline by Friday. | meet | meet a deadline.
+gap | We'll ___ your concern within 24 hours. (ele almak) | address / deal with / handle | address a concern.
+gap | There was ___ traffic on the way to the airport. (yoğun) | heavy | heavy traffic.
+gap | Our staff always go the extra ___. | mile | Deyim.
+mc | Hangisi doğal? | do a mistake / make a mistake / take a mistake | 1 | make a mistake.
+mc | Hangisi doğru? | rise the prices / raise the prices / arise the prices | 1 | raise + nesne.
+tr | Bu hafta tam kapasite çalışıyoruz. | We're running at full capacity this week / We are running at full capacity this week / We're operating at full capacity this week | Deyim.
+tr | Sıcak bir karşılama kalıcı bir izlenim bırakır. | A warm welcome leaves a lasting impression / A warm welcome makes a lasting impression | Eşdizimler.
+ord | Ekip her ayrıntıya büyük özen gösterdi. | The team paid close attention to every detail | pay attention to.`]],
+ub:`mc | "touch base" ne demek? | kısaca görüşmek, haberleşmek / üsse dönmek / yere dokunmak | 0 | İş deyimi.
+mc | "hit the ground running" ne demek? | yere düşmek / işe hızlı ve güçlü başlamak / koşarken düşmek | 1 | Deyim.
+mc | "şiddetli yağmur" hangisi? | strong rain / heavy rain / big rain | 1 | heavy rain.
+mc | "win-win" ne demek? | iki tarafın da kazandığı / iki kez kazanmak / berabere | 0 | Kazan-kazan.
+gap | We take every complaint ___. (ciddiye almak) | seriously | take seriously.
+gap | She has a strong ___ of three languages. | command | command of.
+gap | It was a last-___ booking. | minute | last-minute.
+gap | The kitchen paid great attention ___ detail. | to | attention to.
+tr | Amacımız beklentileri aşmak. | Our goal is to exceed expectations / Our aim is to exceed expectations | exceed expectations.
+tr | Sabah toplantısından sonra kısaca konuşalım. (touch base) | Let's touch base after the morning meeting | Deyim.
+tr | Siparişinizi alabilir miyim? | Can I take your order / May I take your order / Could I take your order | take an order.
+tr | Küçük bir sorun vardı. | There was a minor issue / There was a small issue / There was a minor problem | minor issue.
+ord | Yeni müdür işe hızlı başladı. | The new manager hit the ground running | Deyim.`,
+op:`Bir misafir yorumuna verdiğin yanıtta en az 5 eşdizim kullan (exceed expectations, address a concern, pay attention to detail…).
+Türkçeden birebir çevrildiği için yanlış olan 3 ifade bul ve doğrusunu yaz (do a mistake → make a mistake gibi).
+Ekibine kısa bir motivasyon mesajı yaz; 2 iş deyimi kullan.`},
+
+{id:'c1-8',l:'C1',m:2,t:'Kazan-kazan pazarlık',g:'İkna ve müzakere dili',can:'Bir acente ya da grup müşterisiyle teklifi tartışabilir, koşullu öneri sunabilir, kibarca geri adım attırıp anlaşmayı bağlayabilirsin.',s:'I take your point, but… · Would you be willing to… · Provided that…',b:[
+['k',`Müzakere üç şey ister: <b>dinlediğini göstermek</b> (I take your point), <b>koşullu teklif</b> (If you could…, we would… · Provided that…) ve <b>yüz kurtaran ret</b> (I'm not in a position to…, but what I can do is…). C1'de amaç kazanmak değil, iki tarafın da memnun ayrıldığı bir anlaşma kurmaktır. Bu dil acente görüşmelerinde, grup tekliflerinde ve maaş görüşmelerinde işe yarar.`],
+['tbl',`Aşama | Kalıplar
+Açılış ve ortak zemin | We both want… · I think we can find a solution that works for both of us.
+Dinleme ve anlama | I take your point. · If I understand you correctly, … · So what you're saying is…
+Koşullu teklif | If you could guarantee 30 rooms, we would be able to offer… · Provided / As long as you confirm by May…
+Yoklama | Would you be willing to…? · How flexible are you on…? · What if we…?
+Kibar ret | I'm afraid that's beyond what we can offer. · I'm not in a position to agree to that.
+Ödünleşme | We could meet you halfway. · In return, we would need…
+Kapanış | So, to confirm, … · Shall we put that in writing? · I think we have a deal.`],
+['x','Koşullu teklif',`If you could commit to 200 room nights, we would be able to offer a 12% discount. | 200 oda gecesi taahhüt edebilirseniz %12 indirim sunabiliriz.
+Provided that the deposit is paid by March, the rate will remain fixed. | Depozito marta kadar ödenirse fiyat sabit kalacak.
+As long as the group arrives on a weekday, we can include the dinner. | Grup hafta içi geldiği sürece akşam yemeğini dahil edebiliriz.
+What if we extended the release date to 21 days? | Ya iade tarihini 21 güne uzatsak?`],
+['x','Dinle, ret et, alternatif sun',`I take your point about the price, but our rates already include breakfast and transfer. | Fiyat konusundaki görüşünüzü anlıyorum ama fiyatlarımıza zaten kahvaltı ve transfer dahil.
+I'm afraid a 25% discount is beyond what we can offer in August. | Korkarım %25 indirim ağustosta sunabileceğimiz sınırın ötesinde.
+I'm not in a position to agree to that today, but I'll discuss it with the owner. | Bugün bunu kabul edecek konumda değilim ama sahibiyle görüşeceğim.
+We could meet you halfway: 15%, provided you confirm by Friday. | Ortada buluşabiliriz: cumaya kadar onaylamanız şartıyla %15.`],
+['x','🏨 Anlaşmayı bağlamak',`So, to confirm: 40 rooms, three nights, half board, at 95 euros per room. | Teyit edelim: 40 oda, üç gece, yarım pansiyon, oda başı 95 euro.
+In return, we would need a 30% deposit and a final rooming list 14 days before arrival. | Karşılığında %30 depozito ve varıştan 14 gün önce son oda listesi gerekiyor.
+Shall I send you the contract this afternoon? | Sözleşmeyi bu öğleden sonra göndereyim mi?
+I think we have a deal. It's a pleasure doing business with you. | Sanırım anlaştık. Sizinle çalışmak bir zevk.`],
+['mem','Terazi',`Müzakereyi bir <b>terazi</b> gibi düşün. Bir kefeye bir şey koyduğunda (indirim) diğerinden de bir şey iste (erken ödeme, daha çok oda): <b>If you…, we would…</b> Teraziyi hiç dengesiz bırakma; karşılıksız ödün vermek değer kaybettirir.`],
+['trap',`We will give you discount if you will book. | We would give you a discount if you booked. / We'll give you a discount if you book. | Koşul cümlesi kuralları.
+I can't accept. (çıplak ret) | I'm afraid I'm not in a position to accept that. | Ret yastıklanmalı.
+Give us cheaper price. | Would you be willing to reconsider the rate? | Talep soru biçiminde.
+Provided that you will pay… | Provided that you pay… | provided that + şimdiki zaman.`],
+['faq',`Neden "would" ile teklif? | "We would offer" henüz bağlayıcı olmayan, koşula bağlı bir teklif anlamı verir; pazarlıkta esneklik bırakır.
+İlk fiyatı kim söylemeli? | Genelde önce söyleyen çerçeveyi belirler. Raf fiyatından başla ve indirimleri koşula bağla.
+Yazılı teyit şart mı? | Evet. Her görüşmeden sonra "To confirm…" diye başlayan kısa bir e-posta gönder.`],
+['dlg','Bölüm 60 · Acente görüşmesi',`Acente: Your rates are higher than the hotel next door. | Fiyatlarınız yandaki otelden yüksek.
+Deniz: I take your point. That said, our rates include breakfast, transfer and a sea view. | Haklısınız. Bununla birlikte fiyatlarımıza kahvaltı, transfer ve deniz manzarası dahil.
+Acente: We'd need at least 20% off to make it work. | İşimize yaraması için en az %20 indirim gerekir.
+Deniz: I'm afraid that's beyond what we can offer in high season. However, if you could commit to 150 room nights, we would be able to offer 12%. | Korkarım yüksek sezonda bu sunabileceğimizin ötesinde. Ancak 150 oda gecesi taahhüt ederseniz %12 sunabiliriz.
+Acente: Could you meet us halfway at 15%? | %15'te ortada buluşabilir miyiz?
+Deniz: Provided that the deposit is paid by March, yes. Shall I send you the contract? | Depozito marta kadar ödenirse, evet. Sözleşmeyi göndereyim mi?
+Acente: I think we have a deal. | Sanırım anlaştık.`,'Bir acenteyle sezon fiyatı pazarlığı.'],
+['q',`gap | I take your ___, but our rates include breakfast. | point | I take your point.
+gap | ___ that the deposit is paid by March, the rate stays fixed. | provided / providing | Provided that.
+gap | If you could commit to 200 nights, we ___ be able to offer 12%. | would | Koşullu teklif.
+gap | We could meet you ___: 15%. | halfway | meet halfway.
+gap | I'm not in a ___ to agree to that today. | position | not in a position.
+mc | En profesyonel ret? | No way. / I'm afraid that's beyond what we can offer. / We can't, sorry. | 1 | Yastıklı ret.
+mc | Hangisi doğru? | Provided that you will pay… / Provided that you pay… / Provided you paying… | 1 | Şimdiki zaman.
+tr | Karşılığında %30 depozito gerekiyor. (In return) | In return, we would need a 30% deposit / In return we would need a 30% deposit / In return, we'd need a 30% deposit | In return.
+tr | Fiyat konusunda ne kadar esneksiniz? | How flexible are you on the price / How flexible are you on price | How flexible.
+ord | Sözleşmeyi bu öğleden sonra göndereyim mi? | Shall I send you the contract this afternoon | Shall I.`]],
+ub:`mc | Koşullu teklifte hangi yapı? | If you could…, we would… / If you can…, we did… / If you…, we were… | 0 | Koşullu teklif.
+mc | "As long as" ne demek? | -dığı sürece / kadar uzun / beri | 0 | Koşul.
+mc | "So what you're saying is…" ne işe yarar? | Anladığını teyit etmek / Konuyu kapatmak / Ret etmek | 0 | Dinleme.
+mc | Pazarlıkta ödün verirken ne yapmalı? | Karşılığında bir şey istemek / Sessiz kalmak / Hemen her şeyi kabul etmek | 0 | Terazi.
+gap | Would you be ___ to reconsider the rate? | willing | willing to.
+gap | What ___ we extended the release date? | if | What if…
+gap | So, to ___: 40 rooms, three nights. | confirm | To confirm.
+gap | It's a pleasure doing ___ with you. | business | Kalıp.
+tr | Ortada buluşabiliriz. | We could meet you halfway / We can meet you halfway / We could meet halfway | meet halfway.
+tr | Bugün bunu kabul edecek konumda değilim. | I'm not in a position to agree to that today / I am not in a position to agree to that today / I'm not in a position to accept that today | not in a position.
+tr | Grup hafta içi geldiği sürece akşam yemeğini dahil edebiliriz. (As long as) | As long as the group arrives on a weekday, we can include the dinner / As long as the group arrives on a weekday, we can include dinner / As long as the group comes on a weekday, we can include dinner | As long as.
+tr | Sanırım anlaştık. | I think we have a deal / I think we've got a deal | have a deal.
+ord | Ya iade tarihini 21 güne uzatsak? | What if we extended the release date to 21 days | What if + geçmiş.`,
+op:`Bir acenteyle 6-8 satırlık bir fiyat pazarlığı yaz; en az bir koşullu teklif, bir kibar ret ve bir kapanış cümlesi kullan.
+Bir grup teklifini teyit eden kısa bir e-posta yaz ("To confirm our conversation…").
+Kendi maaş ya da çalışma koşulların için kullanabileceğin 3 müzakere cümlesi yaz.`}
+);
+
+/* Ders kimlikleri: akılda kalan başlık (t), dilbilgisi etiketi (g), "bu dersin sonunda" hedefi (can), modül (m) */
+const MODS={
+A1:[['Merhaba İngilizce','İlk cümleler, tanışma, a/an/the'],['Etrafımdaki dünya','Eşyalar, sahiplik, "var"'],['Günlük hayat','Rutinler, sorular, yer ve zaman'],['Şimdi ve burada','Şu an, rica, miktar']],
+A2:[['Geçmişi anlatmak','Dün, geçen hafta, o sırada'],['Plan, kıyas, kural','Gelecek, karşılaştırma, zorunluluk'],['Deneyim ve olasılık','Hiç yaptın mı, -ing/to, koşul'],['Ayrıntıyla konuşmak','Nasıl, nereye, hangi soru']],
+B1:[['Zamanlarda ustalık','Bitti mi, ne zamandır, hikâye'],['Hayal, süreç, ayrıntı','Yerinde olsam, edilgen, ilgi cümlesi'],['Aktarmak ve tahmin','Dedi ki, olmalı, eskiden'],['Profesyonel akıcılık','Bağlaçlar, kibar soru, phrasal verbs']],
+B2:[['Pişmanlık ve hayal','Bilseydik, keşke, yapmalıydık'],['İleri yapılar','Gelecekte, yaptırmak, aktarmak'],['Yazılı ustalık','Tanıtım metni ve resmî e-posta']],
+C1:[['Etkileyici anlatım','Devrik yapı, vurgu, yoğun üslup'],['İnce ayar','Yumuşatma ve resmî kipler'],['Profesyonel ikna','Söylem, eşdizim, müzakere']],
+O:[['Ön büro ve servis','Mesleki iletişimin temelleri'],['Satış ve yazışma','Oda satmak, yol tarifi, e-posta']],
+H:[['Hafıza okulu','Tekniklerin kendisi']]};
+const LMETA={
+'a1-1':['İlk cümlen','Cümle düzeni: özne + fiil + nesne','Basit bir İngilizce cümleyi doğru sırayla kurabilirsin: kim, ne yapar, neyi.',0],
+'a1-2':['Ben, sen, o: tanışma','am · is · are','Kendini ve başkalarını tanıtabilir, Türkçedeki "-dır/-dir" anlamını İngilizce söyleyebilirsin.',0],
+'a1-3':['Bir oda mı, o oda mı?','a · an · the','Bir şeyden ilk kez mi yoksa bilinen bir şey olarak mı bahsettiğini doğru kelimeyle gösterebilirsin.',0],
+'a1-4':['Bu valiz, şu anahtarlar','Çoğullar · this / that','Eşyaları gösterip sayabilir, tekil ile çoğulu doğru söyleyebilirsin.',1],
+'a1-5':['Benim odam, sizin bavulunuz','Zamirler ve sahiplik','Kime ait olduğunu söyleyebilir; I, me, my, mine farkını kullanabilirsin.',1],
+'a1-6':['Her sabah ne yaparsın?','Present Simple','Günlük rutinini, alışkanlıklarını ve otelin düzenini anlatabilirsin.',2],
+'a1-7':['Sormak ve "hayır" demek','do · does','Geniş zamanda olumsuz cümle kurabilir, misafire evet/hayır ve wh- sorusu sorabilirsin.',2],
+'a1-8':['Otelde neler var?','have · there is / there are','Bir yerde ne olduğunu ve kimin neye sahip olduğunu anlatabilirsin.',1],
+'a1-9':['Nerede, ne zaman?','in · on · at','Yer ve zaman söylerken doğru edatı seçebilirsin.',2],
+'a1-10':['Şu an ne oluyor?','Present Continuous','Şu anda olanları ve bu aralar yaptıklarını anlatabilirsin.',3],
+'a1-11':['Yapabilir misiniz?','can · emirler · let\'s','Yetenek ve izin sorabilir, kibar ricada bulunabilir, yol gösterebilirsin.',3],
+'a1-12':['Biraz şeker, birkaç havlu','some · any · much · many','Miktar sorabilir ve söyleyebilir, sayılanla sayılmayanı ayırabilirsin.',3],
+'a2-1':['Dünkü vardiya','Geçmiş zaman: was · were · -ed','Dün nerede olduğunu ve ne yaptığını düzenli fiillerle anlatabilirsin.',0],
+'a2-2':['Ne oldu, ne yaptın?','Düzensiz fiiller · did','En sık düzensiz fiillerle geçmişi anlatabilir, did ile soru sorup olumsuz cümle kurabilirsin.',0],
+'a2-3':['Tam o sırada…','Past Continuous · when · while','Bir olayın arka planını ve araya giren anı birlikte anlatabilirsin.',0],
+'a2-4':['Yarın ne olacak?','will · going to · -ing','Anlık kararı, planı ve kesin randevuyu doğru gelecek kalıbıyla söyleyebilirsin.',1],
+'a2-5':['Hangi oda daha iyi?','Karşılaştırma · en üstünlük · as…as','İki seçeneği karşılaştırıp misafire en iyisini önerebilirsin.',1],
+'a2-6':['Kurallar ve tavsiyeler','must · have to · should · don\'t have to','Kuralı, yasağı, gerek olmayanı ve tavsiyeyi karıştırmadan anlatabilirsin.',1],
+'a2-7':['Hiç … yaptın mı?','Present Perfect: ever · never · just · already · yet','Deneyimlerini ve yeni bitmiş işleri zaman belirtmeden anlatabilirsin.',2],
+'a2-8':['Seven, isteyen, bitiren fiiller','-ing mi, to mu?','Bir fiilin arkasından -ing mi to mu geleceğini seçebilir, kibar teklif yapabilirsin.',2],
+'a2-9':['Olursa ne olur?','Koşul cümleleri: 0 ve 1','Gerçek olasılıkları ve kuralları if, when ve unless ile anlatabilirsin.',2],
+'a2-10':['Fazla mı, yeterli mi?','Zarflar · too · enough','Bir işin nasıl yapıldığını anlatabilir, sorunun "fazla" ya da "yetersiz" olduğunu söyleyebilirsin.',3],
+'a2-11':['Sağdan gidin, köprüyü geçin','Yön ve hareket edatları','Haritasız, adım adım ve anlaşılır yol tarifi verebilirsin.',3],
+'a2-12':['Doğru soruyu sormak','How long/often/far · özne soruları','Süre, sıklık, mesafe ve kişi soran doğru soruyu kurabilirsin.',3],
+'b1-1':['Bitti mi, ne zaman bitti?','Present Perfect mi, Past Simple mı?','Sonucu bugünü ilgilendiren olayla tarihi belli olan olayı doğru zamanla anlatabilirsin.',0],
+'b1-2':['Ne zamandır bekliyorsunuz?','for · since · Present Perfect Continuous','Geçmişte başlayıp hâlâ süren durumları ve süreleri anlatabilirsin.',0],
+'b1-3':['Hikâye anlatma sanatı','Past Perfect ve anlatı zamanları','Arka planı, olayları ve "daha önce olmuş" olanı ayırarak akıcı bir hikâye anlatabilirsin.',0],
+'b1-4':['Yerinizde olsam…','İkinci koşul · If I were you','Hayalî durumları konuşabilir, kibar ve dolaylı tavsiye verebilirsin.',1],
+'b1-5':['Kahvaltı 7\'de servis edilir','Edilgen yapı (Passive)','Kuralları, hizmetleri ve süreçleri resmî ve tarafsız biçimde anlatabilirsin.',1],
+'b1-6':['Dün gelen misafir','İlgi cümleleri: who · which · where · whose','İnsanları, yerleri ve şeyleri tek cümlede ayrıntılı tanımlayabilirsin.',1],
+'b1-7':['Misafir ne dedi?','Dolaylı anlatım: said · told · asked','Birinin söylediğini, sorduğunu ve istediğini doğru aktarabilirsin.',2],
+'b1-8':['Olmalı, olabilir, olamaz','Tahmin: must · might · can\'t','Emin olmadığın durumlarda ne kadar emin olduğunu doğru kelimeyle gösterebilirsin.',2],
+'b1-9':['Eskiden ve artık','used to · would · be used to','Geçmiş alışkanlıkları anlatabilir, "alışkınım" ile "eskiden yapardım"ı ayırabilirsin.',2],
+'b1-10':['Fikirleri bağlamak','although · however · despite · so that','Zıtlık, neden, sonuç ve amacı akıcı bağlaçlarla anlatabilirsin.',3],
+'b1-11':['Kibar sormanın inceliği','Dolaylı sorular · question tags','Sert gelmeyen kibar sorular sorabilir ve sohbeti "değil mi?" ile yumuşatabilirsin.',3],
+'b1-12':['Otelin gizli fiilleri','Phrasal verbs: check in, sort out, put through…','Otelde her gün duyulan phrasal verb\'leri anlayıp doğal biçimde kullanabilirsin.',3],
+'b2-1':['Bilseydik…','Üçüncü ve karışık koşul','Geçmişte olmamış durumları, sonuçlarını ve bugüne etkisini anlatabilirsin.',0],
+'b2-2':['Keşke','wish · if only','Şimdiki ve geçmiş pişmanlıkları, değişmesini istediğin şeyleri ifade edebilirsin.',0],
+'b2-3':['Yapmalıydık, yapmış olmalı','Geçmiş modallar','Geçmişi değerlendirebilir, eleştirebilir ve kanıta dayanarak tahmin yürütebilirsin.',0],
+'b2-4':['Yarın bu saatte','Future Continuous · Future Perfect','Gelecekte o anda süren ve o ana kadar bitmiş olacak işleri planlayabilirsin.',1],
+'b2-5':['Yaptırmak ve söylenti','have something done · It is said that','Başkasına yaptırılan işleri ve tarafsız bilgiyi profesyonelce anlatabilirsin.',1],
+'b2-6':['Kim, ne niyetle söyledi?','Aktarma fiilleri','Bir konuşmayı niyetiyle birlikte (teklif, ret, uyarı, özür) kısa ve doğru raporlayabilirsin.',1],
+'b2-7':['Akıcı tanıtım metni','Sıfat-fiil yapıları','Cümleleri birleştirip yoğun, akıcı tanıtım ve rapor metinleri yazabilirsin.',2],
+'b2-8':['Kusursuz e-posta','Resmî dil ve şikâyet yanıtı','Misafire resmî, sıcak ve çözüm odaklı e-posta yazabilirsin.',2],
+'o-1':[null,null,'Aynı isteği farklı kibarlık düzeylerinde söyleyebilir, misafire en uygun olanı seçebilirsin.',0],
+'o-2':[null,null,'Sayı, tarih, saat ve fiyatları yanlış anlaşılmadan söyleyip anlayabilirsin.',0],
+'o-3':[null,null,'İsim ve e-posta adreslerini harf harf kodlayabilir ve doğru not alabilirsin.',0],
+'o-4':[null,null,'Telefonu profesyonelce açabilir, bekletebilir, aktarabilir ve mesaj alabilirsin.',0],
+'o-5':[null,null,'Bir şikâyeti dinleyip özür dileyebilir, çözüm sunup takip edebilirsin.',0],
+'o-6':[null,null,'Odayı özellik ve fayda diliyle anlatabilir, ikna edici teklif sunabilirsin.',1],
+'o-7':[null,null,'Yol tarifi verebilir ve yakındaki yerleri önerebilirsin.',1],
+'o-8':[null,null,'Hazır kalıplarla düzgün bir otel e-postası yazabilirsin.',1],
+'h-1':[null,null,'Yabancı bir kelimeyi tanıdık bir görüntüye bağlayarak kalıcı ezberleyebilirsin.',0],
+'h-2':[null,null,'Kendi hafıza sarayını kurup kelimeleri odalarına yerleştirebilirsin.',0],
+'h-3':[null,null,'Düzensiz fiilleri ses ailelerine göre gruplayıp hızla öğrenebilirsin.',0]};
+LESSONS.forEach(L=>{const M=LMETA[L.id];if(!M)return;if(M[0]){L.g=M[1]||L.t;L.t=M[0]}else L.g=L.s;L.can=M[2];L.m=M[3]});
+
 /* Derslere ek: k = sade özet · x = ek örnekler · d = Zeytin Otel bölümü · q = ek sorular (ord = kelime dizme, lis = dinle-yaz) */
 const PLUS={
 'a1-1':{k:`İngilizcede kelimelerin sırası sabittir: önce <b>KİM</b>, sonra <b>NE YAPIYOR</b>, sonra <b>NEYİ</b>. Türkçedeki gibi fiili sona atarsan cümle bozulur.`,
@@ -6038,7 +6654,7 @@ tr | Bu ne kadar? | How much is this | Fiyat: How much.`
 
 Object.assign(UNIT_BANK,O_BANK);
 /* A2–B2: banka ve kademeli seviyeler dersin kendi sorularından kurulur */
-const LV_UP=['A2','B1','B2'];
+const LV_UP=['A2','B1','B2','C1'];
 LESSONS.filter(L=>L.ub).forEach(L=>{const LN=x=>x.split('\n').filter(r=>r.trim()),q=L.b[L.b.length-1][1],all=LN(q+'\n'+L.ub),by=k=>all.filter(r=>k.includes(r.split(' | ')[0])).join('\n');
   UNIT_BANK[L.id]=q+'\n'+L.ub;ULV[L.id]={1:by(['mc']),2:by(['gap']),3:by(['tr','ord']),4:LN(L.op).map(t=>'open | '+t+' | - | -').join('\n')}});
 const WRITTEN=[
@@ -6445,6 +7061,7 @@ function gPick(i){const g=V.g;if(g.res)return;g.pick.push(i);if(g.pick.length==g
 function gUn(k){const g=V.g;if(g.res)return;g.pick.splice(k,1);render()}
 function gNext(){const g=V.g;if(g.step<2)gStart(g.step+1);else{S.g[g.i]=1;addXP(20);S.log[today()]=(S.log[today()]||0)+1;save();g.step=3;render()}}
 function vGram(){
+  if(V.mv)return vMist();
   if(V.ls)return vLesson();
   if(V.g){const g=V.g,G=GRAM[g.i];const top=`<div class="bar"><button class="back" onclick="V.g=null;render()">‹ Formüller</button><span class="grow">${G.l} · ${g.i+1}/${GRAM.length}</span></div>`;
     if(g.step==-1)return top+`<div class="card"><h3>${G.t}</h3><div class="formula">${esc(G.f)}</div><p>${esc(G.n)}</p>
@@ -6458,15 +7075,16 @@ function vGram(){
       <div class="pool">${g.pool.map(i=>`<button class="tile" ${used.has(i)?'disabled':''} onclick="gPick(${i})">${esc(g.tok[i])}</button>`).join('')}</div>
       ${g.res=='ok'?`<div class="verdict good">Doğru</div><button class="btn" onclick="gNext()">Devam →</button>`:g.res=='no'?`<div class="verdict bad">Doğrusu: ${esc(g.tok.join(' '))}</div><button class="btn" onclick="gStart(${g.step})">Tekrar dene</button>`:''}</div>`}
   const sg=V.dseg||0,SEGS=[['L','Konu anlatımı'],['O','Otel İngilizcesi'],['H','Hafıza Okulu'],['K','Özet kartlar']],seg=`<h1 class="pt">Dersler</h1><div class="seg">${SEGS.map((x,i)=>`<button class="${i==sg?'on':''}" onclick="V.dseg=${i};render()">${x[1]}</button>`).join('')}</div>`;
-  if(sg<3){const LVS=['A1','A2','B1','B2'],dl=V.dlv||LVS.find(l=>LESSONS.some(L=>L.l==l&&!(L.id in S.ls)))||'A1',lv=sg==0?dl:SEGS[sg][0];let h='',n=0;
+  if(sg<3){const LVS=['A1','A2','B1','B2','C1'],dl=V.dlv||LVS.find(l=>LESSONS.some(L=>L.l==l&&!(L.id in S.ls)))||'A1',lv=sg==0?dl:SEGS[sg][0];let h='',n=0;
     const prog=l=>{const A=LESSONS.filter(L=>L.l==l);return [A.filter(L=>L.id in S.ls).length,A.length]};
-    LESSONS.forEach((L,i)=>{if(L.l!=lv)return;n++;const d=L.id in S.ls,ex=EXAMS.find(E=>E.key=='u-'+L.id),eb=ex&&(S.exb||{})[ex.key];
-      h+=`<button class="row ${d?'done':''}" onclick="openL(${i})"><div class="num">${d?'✓':n}</div><div class="sb"><b>${L.t}</b><span>${L.s}${ex?' · sınav'+(eb!=null?' %'+eb:''):''}</span></div>${d?`<span class="iv">${S.ls[L.id]} ✓</span>`:''}</button>`});
-    const LEAD={A1:'Sıfırdan başlayanlar için 12 ders: cümle düzeni, to be, geniş zaman, şimdiki zaman, sorular, sayılar ve saat, can, sıfatlar…',A2:'Temel iletişimden akıcılığa: geçmiş zaman, gelecek, karşılaştırma, zorunluluk, present perfect, koşul cümleleri, yol tarifi ve soru kalıpları. 12 ders.',B1:'Orta seviye: zamanları karıştırmadan kullanmak, edilgen yapı, ilgi cümleleri, dolaylı anlatım, tahmin, bağlaçlar, kibar sorular ve phrasal verbs. 12 ders.',B2:'İleri seviye: koşulların tamamı, keşke, geçmiş modallar, ileri gelecek zamanlar, ettirgen, aktarma fiilleri, sıfat-fiiller ve resmî yazışma. 8 ders.',O:'Ön büro ve servis ekibi için mesleki İngilizce: kibar dil, sayılar ve tarihler, harf kodlama, telefon, şikâyet, satış, yol tarifi ve e-posta. Hazır cümle listeleri Otel sekmesinde.',H:'Tekniklerin kendisi: nasıl çalıştıkları ve İngilizceye uygulanmış hazır örnekleri.'}[lv];
+    if(sg==0)h=vCourse(lv);else LESSONS.forEach((L,i)=>{if(L.l!=lv)return;n++;const d=L.id in S.ls,ex=EXAMS.find(E=>E.key=='u-'+L.id),eb=ex&&(S.exb||{})[ex.key];
+      h+=`<button class="row ${d?'done':''}" onclick="openL(${i})"><div class="num">${d?'✓':n}</div><div class="sb"><b>${L.t}</b><span>${L.can||L.s}${ex?' · sınav'+(eb!=null?' %'+eb:''):''}</span></div>${d?`<span class="iv">${S.ls[L.id]} ✓</span>`:''}</button>`});
+    const LEAD={A1:'Sıfırdan başlayanlar için 12 ders: cümle düzeni, to be, geniş zaman, şimdiki zaman, sorular, sayılar ve saat, can, sıfatlar…',A2:'Temel iletişimden akıcılığa: geçmiş zaman, gelecek, karşılaştırma, zorunluluk, present perfect, koşul cümleleri, yol tarifi ve soru kalıpları. 12 ders.',B1:'Orta seviye: zamanları karıştırmadan kullanmak, edilgen yapı, ilgi cümleleri, dolaylı anlatım, tahmin, bağlaçlar, kibar sorular ve phrasal verbs. 12 ders.',B2:'İleri seviye: koşulların tamamı, keşke, geçmiş modallar, ileri gelecek zamanlar, ettirgen, aktarma fiilleri, sıfat-fiiller ve resmî yazışma. 8 ders.',C1:'Ustalık: devrik ve vurgulu yapılar, yoğun resmî üslup, yumuşatma, resmî kipler, söylem işaretleri, eşdizimler ve müzakere dili. 8 ders.',O:'Ön büro ve servis ekibi için mesleki İngilizce: kibar dil, sayılar ve tarihler, harf kodlama, telefon, şikâyet, satış, yol tarifi ve e-posta. Hazır cümle listeleri Otel sekmesinde.',H:'Tekniklerin kendisi: nasıl çalıştıkları ve İngilizceye uygulanmış hazır örnekleri.'}[lv];
     let top='';if(sg==0){top=`<div class="lvtabs">${LVS.map(l=>{const [d,t]=prog(l);return `<button class="${l==lv?'on':''}" onclick="V.dlv='${l}';render()"><b>${l}</b><span>${d}/${t}</span><i style="width:${t?Math.round(d*100/t):0}%"></i></button>`}).join('')}</div>`;
       const ci=LESSONS.findIndex(L=>L.l==lv&&!(L.id in S.ls)),[d,t]=prog(lv);
-      top+=ci>=0?`<button class="card contcard" onclick="openL(${ci})"><span class="tag">${d?'Kaldığın yerden devam':'Buradan başla'}</span><b>${LESSONS[ci].t}</b><span>${LESSONS[ci].s}</span><span class="go">Derse git →</span></button>`:`<div class="card contcard done"><span class="tag">🎉 ${lv} tamamlandı</span><b>${t} dersin hepsi bitti</b><span>${lv} Genel Sınavı Sınavlar sekmesinde seni bekliyor.</span></div>`}
-    return seg+top+`<p class="lead">${LEAD}</p>${sg==0?`<p class="note">Her ders: kısa özet · Türkçe karşılaştırmalı anlatım · tablo · bol örnek · 🏨 otel örnekleri · hafıza tekniği · tuzaklar · sık sorulanlar · Zeytin Otel hikâyesi · alıştırma. Sonunda 4 seviyeli ünite sınavı.</p>`:''}${h}`}
+      top+=ci>=0?`<button class="card contcard" onclick="openL(${ci})"><span class="tag">${d?'Kaldığın yerden devam':'Buradan başla'}</span><b>${LESSONS[ci].t}</b><span>${esc(LESSONS[ci].g||'')}${(S.lst||{})[LESSONS[ci].id]!=null?' · adım '+((S.lst||{})[LESSONS[ci].id]+1)+'\'de kaldın':''}</span><span class="go">Derse git →</span></button>`:`<div class="card contcard done"><span class="tag">🎉 ${lv} tamamlandı</span><b>${t} dersin hepsi bitti</b><span>${lv} Genel Sınavı Sınavlar sekmesinde seni bekliyor.</span></div>`}
+    if(sg==0)top+=mistCard();
+    return seg+top+`<p class="lead">${LEAD}</p>${sg==0?`<p class="note">Her ders adım adım ilerler: 🎬 sahne · 💡 kural · 🗣 örnekler ve ⚡ mini kontroller · 🧠 hafıza kancası · 🪤 tuzak avı · ❓ sık sorulanlar · 🎙 sesli tekrar · 🏁 alıştırma. Yanlışların 📒 hata defterine düşer ve aralıklarla geri gelir.</p>`:''}${h}`}
   let h='',lv='';GRAM.forEach((G,i)=>{if(G.l!=lv){h+=`<h2>${G.l}</h2>`;lv=G.l}
     h+=`<button class="row ${S.g[i]?'done':''}" onclick="openG(${i})"><div class="num">${S.g[i]?'✓':i+1}</div><div class="sb"><b>${G.t}</b><span>${esc(G.f)}</span></div></button>`});
   return seg+`<p class="lead">Her kalıbın tek satırlık özeti ve cümle kurma alıştırması.</p>${h}`}
@@ -6497,17 +7115,19 @@ function lStart(){const l=V.ls,L=LESSONS[l.i];l.qs=parseQ(L.b[L.b.length-1][1]);
 function lPick(i){const l=V.ls;if(l.rev)return;l.pick.push(i);if(l.pick.length==l.tok.length)return lAns();render()}
 function lUn(k){const l=V.ls;if(l.rev)return;l.pick.splice(k,1);render()}
 function lSkip(){const l=V.ls,q=l.qs[l.qi];if(!q.re)l.n0--;l.qs.splice(l.qi,1);if(l.qi>=l.qs.length)return lFinish();lSetup();render();lAuto()}
+const L0id=()=>V.ls&&LESSONS[V.ls.i]?LESSONS[V.ls.i].id:'';
 function lAns(k){const l=V.ls,q=l.qs[l.qi];if(l.rev)return;
   if(q.k=='mc'){l.sel=k;l.ok=k==q.a}
   else if(q.k=='ord'){l.ans=l.pick.map(i=>l.tok[i]).join(' ');l.ok=l.ans==q.a[0]}
   else{l.ans=document.getElementById('ans').value;l.ok=q.a.some(a=>same(a,l.ans))}
+  if(!l.ok&&!q.re&&typeof mistAdd=='function')mistAdd(q,L0id());
   if(l.ok){if(!q.re)l.score++;l.combo++;const x=q.re?5:10;l.gain+=x;addXP(x);l.praise=PRAISE[rnd(PRAISE.length)]}else{l.combo=0;if(!q.re)l.qs.push(Object.assign({},q,{re:1}))}
   l.rev=true;render();const t=q.k=='mc'?q.o[q.a]:q.a[0];if(q.k=='mc'?(/[.?!]$/.test(t)&&!/[çğıöşüÇĞİÖŞÜ]/.test(t)):q.k!='gap')say(t)}
 function lNext(){const l=V.ls;l.qi++;if(l.qi>=l.qs.length)return lFinish();lSetup();render();lAuto()}
 function lFinish(){const l=V.ls,id=LESSONS[l.i].id;l.qi=l.qs.length;l.fin=true;S.ls[id]=Math.max(S.ls[id]||0,l.score);l.gain+=30;addXP(30);S.log[today()]=(S.log[today()]||0)+1;save();render();confetti()}
-function vLesson(){const l=V.ls,L=LESSONS[l.i],back=`<button class="back" onclick="V.ls=null;render()">‹ Dersler</button>`;
+function vLesson(){const l=V.ls,L=LESSONS[l.i],back=`<button class="back" onclick="V.ls=null;render()">‹ Dersler</button>`;if(l.qi<0&&!l.full)return vFlow();
   if(l.qi<0){let xn=0;const body=L.b.slice(0,-1).map(b=>{if(b[0]!='x')return blk(b);const k=L.id+'~'+(xn++);if(V.ed&&V.ed.key==k)return edView((b[1]||'Örnekler')+' · '+L.t);return blk(b)+(canEditC()?`<div class="edbar">${edNote(b.ed)}<button class="lnk" onclick="edLx('${k}')">✏️ Bu örnekleri düzenle</button></div>`:'')}).join(''),n=lines(L.b[L.b.length-1][1]).length;
-    return `<div class="bar">${back}<span class="grow">${LGN(L)}</span></div><h1 class="pt">${L.t}</h1><p class="lead">${L.s}</p><div class="lesson">${body}</div>${T.uid&&!isStaff()?`<button class="btn ghost" onclick="askAbout('${L.id}')">🙋 Bu konuyu hocama sor</button>`:''}<button class="btn" onclick="lStart()">Alıştırmalara geç · ${n} soru →</button>`}
+    return `<div class="bar"><button class="back" onclick="V.ls.full=0;render()">‹ Ders akışı</button><span class="grow">${LGN(L)}</span></div><h1 class="pt">${L.t}</h1>${L.g&&L.g!=L.t?`<div class="gchip">${esc(L.g)}</div>`:''}<p class="lead">${L.s}</p><div class="lesson">${body}</div>${T.uid&&!isStaff()?`<button class="btn ghost" onclick="askAbout('${L.id}')">🙋 Bu konuyu hocama sor</button>`:''}<button class="btn" onclick="lStart()">Alıştırmalara geç · ${n} soru →</button>`}
   const n=l.qs.length,top=`<div class="bar">${back}<div class="prog"><i style="width:${100*l.qi/Math.max(n,1)}%"></i></div><span>${l.combo>=3?'🔥 '+l.combo:''}</span></div>`;
   if(l.fin||l.qi>=n){const nx=l.i+1<LESSONS.length&&LESSONS[l.i+1].l==L.l,L2=lvl();
     return top+`<div class="card center"><div class="big">${l.score}/${l.n0}</div><h3>${l.score==l.n0?'Kusursuz! 🏆':l.score>=l.n0*.7?'Ders tamamlandı 🎉':'Bitti; bir kez daha okumaya değer'}</h3><p class="xpg">+${l.gain} XP</p><p>Unvanın: <b>${L2.name}</b>${L2.next?` · ${L2.next} olmaya ${L2.left} XP`:''}</p>
@@ -6630,6 +7250,105 @@ function render(){const ae=document.activeElement,aid=ae&&ae.id&&/^f-/.test(ae.i
   badges()}
 function goBack(){if(V.as){V.as=null;render();return true}if(V.pr){V.pr=null;render();return true}if(V.mt){V.mt=null;render();return true}if(V.room!=null&&V.pal){V.room=null;render();return true}if(V.pal){V.pal=0;render();return true}if(V.dk){V.dk=null;render();return true}if(V.gm){V.gm=null;render();return true}if(V.ex){V.ex=null;render();return true}if(V.sess||V.g||V.ls||V.ot!=null||V.room!=null||(V.pn&&V.pn.sel)){V.sess=null;V.g=null;V.ls=null;V.ot=null;V.room=null;if(V.pn)V.pn.sel=null;render();return true}if(V.tab!='today'){go('today');return true}return false}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b)say(b.dataset.say)});
+
+/* ===== Ders oynatıcı: adım adım, etkileşimli ders akışı + hata defteri ===== */
+const FL_ICON={scene:'🎬',learn:'💡',ex:'🗣',mem:'🧠',trap:'🪤',faq:'❓',speak:'🎙',quiz:'🏁'};
+const LV_ORDER=['A1','A2','B1','B2','C1'];
+function xPairs(s){return lines(s).map(r=>r.split(' | ')).filter(e=>e.length>=2&&e[0].trim()&&e[1].trim()).map(e=>[e[0].trim(),e[1].trim()])}
+function uniqBy(arr,f){const seen=new Set(),o=[];arr.forEach(x=>{const k=norm(f(x));if(!seen.has(k)){seen.add(k);o.push(x)}});return o}
+function mkMC(P,dir){P=uniqBy(uniqBy(P,p=>p[0]),p=>p[1]);if(P.length<3)return null;const t=P[rnd(P.length)],ot=shuffle(P.filter(p=>p!==t)).slice(0,2),o=shuffle([t,...ot]);
+  return dir=='en'?{k:'mc',q:`"${t[0]}" ne demek?`,o:o.map(p=>p[1]),a:o.indexOf(t),w:`${t[0]} = ${t[1]}`,say:t[0]}:{k:'mc',q:`"${t[1]}" İngilizcesi hangisi?`,o:o.map(p=>p[0]),a:o.indexOf(t),w:`${t[1]} = ${t[0]}`,say:t[0]}}
+function mkOrd(P){const C=shuffle(P.filter(p=>{const n=p[0].split(' ').length;return n>=4&&n<=9&&!/[–—·→]/.test(p[0])}));if(!C.length)return null;const t=C[0],tok=t[0].split(' ');let pool=shuffle(tok.map((_,i)=>i)),g=0;while(pool.every((v,i)=>v==i)&&g++<9)pool=shuffle(pool);
+  return {k:'ord',q:t[1],a:[t[0]],tok,pool,w:'Doğru sıra: '+t[0],say:t[0]}}
+function flowSteps(L){const B=L.b.slice(0,-1),S2=[];let grp=[],xi=0;
+  const flush=()=>{if(!grp.length)return;const h=grp[0][0]=='h'?grp[0][1]:null;S2.push({k:'learn',t:h||(S2.some(s=>s.k=='learn')?'Yakından bak':'Kuralın özü'),bs:h?grp.slice(1):grp});grp=[]};
+  const dl=B.find(b=>b[0]=='dlg');
+  if(dl){const P=lines(dl[2]).map(r=>{const e=r.split(' | '),c=e[0].indexOf(': ');return [e[0].slice(c+2).trim(),(e[1]||'').trim()]}).filter(p=>p[0]&&p[1]);S2.push({k:'scene',t:'Önce sahne: '+dl[1].replace(/^Bölüm \d+ · /,''),b:dl,ck:mkMC(P,'tr')})}
+  B.forEach(b=>{const k=b[0];
+    if(k=='k'||k=='p'||k=='f'||k=='tbl'||k=='hints'){grp.push(b);if(grp.length>=4)flush()}
+    else if(k=='h'){flush();grp.push(b)}
+    else if(k=='x'){flush();const P=xPairs(b[2]),ty=xi%3;xi++;S2.push({k:'ex',t:b[1]||'Örnekler',b,ck:ty==1?(mkOrd(P)||mkMC(P,'tr')):mkMC(P,ty==2?'en':'tr')})}
+    else if(k=='mem'){flush();S2.push({k:'mem',t:'Hafıza kancası: '+b[1],b})}
+    else if(k=='trap'){flush();S2.push({k:'trap',t:'Tuzak avı',rows:lines(b[1]).map(r=>{const t=r.split(' | '),o=shuffle([0,1]);return {w:t[0],r:t[1],why:t[2]||'',o}})})}
+    else if(k=='faq'){flush();S2.push({k:'faq',t:'Aklına takılabilir',b})}});
+  flush();
+  /* sahneyi kuralın hemen arkasına değil başa koy; tuzak ve sss sona doğru */
+  const ord={scene:0,learn:1,ex:1,mem:2,trap:3,faq:4};const st=S2.map((s,i)=>[s,i]).sort((a,b)=>(ord[a[0].k]==1&&ord[b[0].k]==1)?a[1]-b[1]:(ord[a[0].k]-ord[b[0].k])||a[1]-b[1]).map(x=>x[0]);
+  const allX=B.filter(b=>b[0]=='x').flatMap((b,i)=>xPairs(b[2]).map(p=>[...p,/🏨/.test(b[1]||'')?1:0])),sp=shuffle(allX.filter(p=>{const n=p[0].split(' ').length;return n>=3&&n<=11&&!/[–—·→]/.test(p[0])})).sort((a,b)=>b[2]-a[2]).slice(0,4);
+  if(sp.length>=2)st.push({k:'speak',t:'Sesli tekrar',lines:sp});
+  return st}
+function estMin(L){let n=0;L.b.forEach(b=>{n+=typeof b[1]=='string'?b[1].length:0;n+=typeof b[2]=='string'?b[2].length:0});return Math.max(6,Math.round(n/900)+5)}
+function flInit(){const l=V.ls,L=LESSONS[l.i];if(!l.steps){l.steps=flowSteps(L);l.ck={};l.tg={};l.sp={};if(l.st==null)l.st=-1;if(l.trh==null)l.trh=['B1','B2','C1'].includes(L.l)}return l}
+function flGo(n){const l=V.ls,L=LESSONS[l.i];l.st=n;if(n>=0){(S.lst=S.lst||{})[L.id]=n;save()}render();window.scrollTo(0,0)}
+function flMod(L){const M=MODS[L.l];return M&&L.m!=null&&M[L.m]?M[L.m][0]:LGN(L)}
+function vFlow(){const l=flInit(),L=LESSONS[l.i],N=l.steps.length,back=`<button class="back" onclick="V.ls=null;render()">‹ Dersler</button>`;
+  if(l.st<0){const sv=(S.lst||{})[L.id],done=L.id in S.ls,res=sv!=null&&sv>0&&sv<N&&!done;
+    const road=l.steps.map((s,i)=>`<button class="fstep ${sv!=null&&i<=sv?'seen':''}" onclick="flGo(${i})"><i>${FL_ICON[s.k]}</i><span>${esc(s.t)}</span></button>`).join('')+`<button class="fstep" onclick="lStart()"><i>${FL_ICON.quiz}</i><span>Alıştırma · ${lines(L.b[L.b.length-1][1]).length} soru</span></button>`;
+    return `<div class="bar">${back}<span class="grow"></span></div><div class="fhero"><div class="fchips"><span class="lvchip">${LGN(L)}</span><span class="mchip">${esc(flMod(L))}</span><span class="mchip">⏱ ~${estMin(L)} dk</span></div><h1>${esc(L.t)}</h1>${L.g&&L.g!=L.t?`<div class="gchip">${esc(L.g)}</div>`:''}<p class="fsub">${esc(L.s)}</p>${L.can?`<div class="goal"><small>🎯 BU DERSİN SONUNDA</small>${esc(L.can)}</div>`:''}${done?`<div class="fdone">✓ Bitirdin · alıştırma puanın ${S.ls[L.id]}</div>`:''}</div>
+      <button class="btn" onclick="flGo(${res?sv:0})">${res?`Kaldığın yerden devam · adım ${sv+1}/${N} →`:done?'Dersi yeniden oyna →':'Derse başla →'}</button>
+      <h3 class="lh">Dersin yol haritası</h3><div class="froad">${road}</div>
+      <div class="frow"><button class="btn ghost" onclick="V.ls.full=1;V.ls.st=-1;render()">📖 Tamamını tek sayfada oku</button><button class="btn ghost" onclick="lStart()">⚡ Doğrudan alıştırma</button></div>
+      ${T.uid&&!isStaff()?`<button class="btn ghost" onclick="askAbout('${L.id}')">🙋 Bu konuyu hocama sor</button>`:''}`}
+  const s=l.steps[l.st],dots=l.steps.map((x,i)=>`<i class="${i<l.st?'d':i==l.st?'c':''}"></i>`).join('')+'<i></i>';
+  const top=`<div class="bar"><button class="back" onclick="flGo(-1)">‹</button><div class="fdots">${dots}</div><span class="fcnt">${l.st+1}/${N+1}</span></div><div class="ftag">${FL_ICON[s.k]} ${esc(s.t)}</div>`;
+  let body='';
+  if(s.k=='scene'){const P=lines(s.b[2]);body=`${s.b[3]?`<p class="fsub">${s.b[3]}</p>`:''}<div class="frow2"><button class="btn sm" onclick="flPlay()">▶ Sahneyi dinle</button><button class="btn sm ghost" onclick="V.ls.trh=!V.ls.trh;render()">${l.trh?'Türkçeyi göster':'Türkçeyi gizle'}</button></div>
+      <div class="dlg">${P.map(r=>{const e=r.split(' | '),c=e[0].indexOf(': '),who=e[0].slice(0,c),t=e[0].slice(c+2);return `<div class="bub ${who=='Deniz'?'me':''}"><small>${esc(who)}</small><b>${esc(t)}</b>${l.trh?'':`<span>${esc(e[1]||'')}</span>`}${spk(t)}</div>`}).join('')}</div>${l.trh?'<p class="note">İpucu: önce Türkçesiz anlamaya çalış, takılırsan Türkçeyi aç.</p>':''}`}
+  else if(s.k=='learn')body=`<div class="lesson">${s.bs.map(blk).join('')}</div>`;
+  else if(s.k=='ex')body=`<div class="lesson">${blk(['x','',s.b[2]])}</div>`;
+  else if(s.k=='mem')body=`<div class="box gold big2">${s.b[2]}</div><p class="note">Bir saniye dur ve bu görüntüyü gözünün önüne getir. Hayal ettiğin şey ne kadar canlıysa o kadar kalıcı olur.</p>`;
+  else if(s.k=='faq')body=blk(s.b).replace('<h3 class="lh">Sık sorulan sorular</h3>','');
+  else if(s.k=='trap'){body=`<p class="fsub">Türkçe düşününce yapılan hatalar. Her satırda <b>doğru</b> olanı seç.</p>`+s.rows.map((r,i)=>{const ch=l.tg[i],ans=ch!=null,opts=r.o.map(k=>k?r.r:r.w);
+      return `<div class="trapq ${ans?(ch==1?'ok':'no'):''}">${opts.map((t,j)=>{const isR=r.o[j]==1;return `<button class="opt ${ans?(isR?'good':(ch==0?'bad':'')):''}" ${ans?'disabled':''} onclick="flTrap(${i},${r.o[j]})">${esc(t)}</button>`}).join('')}${ans?`<div class="why">${ch==1?'✓ ':'✗ Doğrusu: <b>'+esc(r.r)+'</b> · '}${r.why}</div>`:''}</div>`}).join('')}
+  else if(s.k=='speak'){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;body=`<p class="fsub">Dinle, sonra yüksek sesle tekrar et. Kendi sesini duymak kalıbı kalıcı yapar.${SR?' 🎙 ile söylediğini kontrol edebilirsin.':''}</p>`+s.lines.map((p,i)=>{const st=l.sp[i];return `<div class="spq ${st?'ok':''}"><div><b>${esc(p[0])}</b><span>${esc(p[1])}</span>${st&&st!==true?`<em>Duyulan: ${esc(st)}</em>`:''}</div><div class="spb">${spk(p[0])}${SR?`<button class="spk" onclick="flMic(${i})" aria-label="Söyle">🎙</button>`:''}<button class="spk ${st?'on':''}" onclick="V.ls.sp[${i}]=V.ls.sp[${i}]||true;render()" aria-label="Tekrarladım">✓</button></div></div>`}).join('')}
+  if(s.ck)body+=flCheck(s.ck,l.st);
+  const last=l.st==N-1;
+  return top+`<div class="card fcard">${body}</div><div class="fnav"><button class="btn ghost" onclick="flGo(${l.st-1})">‹ Geri</button>${last?`<button class="btn" onclick="lStart()">Alıştırmaya geç →</button>`:`<button class="btn" onclick="flGo(${l.st+1})">Devam →</button>`}</div>`}
+function flCheck(q,si){const l=V.ls,c=l.ck[si]||{};let h=`<div class="mini"><small>⚡ MİNİ KONTROL</small><div class="qq">${esc(q.q)}</div>`;
+  if(q.k=='mc')h+=q.o.map((o,k)=>`<button class="opt ${c.done?(k==q.a?'good':k==c.sel?'bad':''):''}" ${c.done?'disabled':''} onclick="flAns(${si},${k})">${esc(o)}</button>`).join('');
+  else{const pick=c.pick||[],used=new Set(pick);h+=`<div class="slots ${c.done?(c.ok?'ok':'no'):''}">${pick.map((i,k)=>`<button class="tile" onclick="flUn(${si},${k})">${esc(q.tok[i])}</button>`).join('')||'<span class="ph">Kelimelere sırayla dokun</span>'}</div>${c.done?'':`<div class="pool">${q.pool.map(i=>`<button class="tile" ${used.has(i)?'disabled':''} onclick="flPick(${si},${i})">${esc(q.tok[i])}</button>`).join('')}</div>`}`}
+  if(c.done)h+=`<div class="verdict ${c.ok?'good':'bad'}">${c.ok?PRAISE[si%PRAISE.length]+' +2 XP':'Olmadı · '+esc(q.w)+' (Hata defterine eklendi)'}</div>`;
+  return h+'</div>'}
+function flRes(si,ok){const l=V.ls,q=l.steps[si].ck,c=l.ck[si];c.done=1;c.ok=ok;if(ok)addXP(2);else mistAdd(q,LESSONS[l.i].id);render();if(q.say)say(q.say)}
+function flAns(si,k){const l=V.ls,c=l.ck[si]=l.ck[si]||{};if(c.done)return;c.sel=k;flRes(si,k==l.steps[si].ck.a)}
+function flPick(si,i){const l=V.ls,q=l.steps[si].ck,c=l.ck[si]=l.ck[si]||{pick:[]};if(c.done)return;c.pick=c.pick||[];c.pick.push(i);if(c.pick.length==q.tok.length)return flRes(si,c.pick.map(j=>q.tok[j]).join(' ')==q.a[0]);render()}
+function flUn(si,k){const c=V.ls.ck[si];if(!c||c.done)return;c.pick.splice(k,1);render()}
+function flTrap(i,v){const l=V.ls;if(l.tg[i]!=null)return;l.tg[i]=v;const r=l.steps[l.st].rows[i];if(v==1)addXP(2);else mistAdd({k:'mc',q:'Hangisi doğru?',o:[r.r,r.w],a:0,w:r.why||r.r},LESSONS[l.i].id);render()}
+function flPlay(){const l=V.ls,s=l.steps[l.st];let t=0;lines(s.b[2]).forEach(r=>{const e=r.split(' | ')[0],x=e.slice(e.indexOf(': ')+2);setTimeout(()=>say(x),t);t+=900+x.length*70/(S.rate||0.9)})}
+function flMic(i){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return;const l=V.ls,p=l.steps[l.st].lines[i];try{const r=new SR();r.lang='en-US';r.interimResults=false;r.maxAlternatives=3;toast('🎙 Dinliyorum… cümleyi söyle');
+  r.onresult=e=>{const alts=[...e.results[0]].map(a=>a.transcript),tw=normS(p[0]).split(' '),best=alts.map(a=>{const aw=new Set(normS(a).split(' '));return [a,tw.filter(w=>aw.has(w)).length/tw.length]}).sort((a,b)=>b[1]-a[1])[0];
+    if(best[1]>=.8){l.sp[i]=best[0];addXP(2);toast('Harika telaffuz! ✓')}else{toast('Tam anlaşılmadı: "'+best[0]+'" · bir daha dene')}render()};
+  r.onerror=e=>toast(e.error=='not-allowed'?'Mikrofon izni verilmedi.':'Ses tanınamadı, tekrar dene.');r.start()}catch(e){toast('Bu cihazda konuşma tanıma yok; dinleyip tekrar et ve ✓ ile işaretle.')}}
+
+/* ===== Hata defteri: yanlış yapılan sorular aralıklı tekrar ile geri gelir ===== */
+function mKey(q){const t=q.k+'|'+q.q+'|'+(q.k=='mc'?q.o[q.a]:q.a[0]);let h=5381;for(let i=0;i<t.length;i++)h=((h<<5)+h+t.charCodeAt(i))|0;return 'm'+(h>>>0).toString(36)}
+function mistAdd(q,src){if(!q)return;const M=S.mist=S.mist||{},k=mKey(q);const o={k:q.k,q:q.q,a:q.a,w:q.w||''};if(q.o)o.o=q.o;M[k]={q:o,n:0,due:today(),src:src||'',c:((M[k]||{}).c||0)+1};const ks=Object.keys(M);if(ks.length>200)ks.sort((a,b)=>M[b].due-M[a].due).slice(200).forEach(x=>delete M[x]);save()}
+function mistDue(){const M=S.mist||{};return Object.keys(M).filter(k=>M[k].due<=today())}
+function mistCard(){const M=S.mist||{},all=Object.keys(M).length;if(!all)return '';const d=mistDue().length;
+  return `<button class="card mistcard" onclick="${d?'mvStart()':''}"><b>📒 Hata defterin</b><span>${d?`${d} soru tekrar zamanı geldi · ${all} soru defterde`:`${all} soru defterde · sıradaki tekrar ${Math.min(...Object.values(M).map(x=>x.due))-today()} gün sonra`}</span>${d?'<span class="go">Tekrar et →</span>':''}</button>`}
+function mvStart(){const ks=shuffle(mistDue()).slice(0,12);if(!ks.length)return;V.mv={ks,i:0,ok:0};mvSetup();render();window.scrollTo(0,0)}
+function mvSetup(){const m=V.mv,q=S.mist[m.ks[m.i]].q;m.q=q;m.rev=false;m.sel=null;m.ans='';if(q.k=='ord'){m.tok=q.a[0].split(' ');m.pool=shuffle(m.tok.map((_,i)=>i));m.pick=[]}}
+function mvAns(k){const m=V.mv,K=m.ks[m.i],E=S.mist[K],q=E.q;if(m.rev)return;let ok;
+  if(q.k=='mc'){m.sel=k;ok=k==q.a}else if(q.k=='ord'){m.ans=m.pick.map(i=>m.tok[i]).join(' ');ok=m.ans==q.a[0]}else{m.ans=(document.getElementById('mvin')||{}).value||'';ok=q.a.some(a=>same(a,m.ans))}
+  m.rev=true;m.good=ok;if(ok){m.ok++;E.n++;addXP(3);if(E.n>=3)delete S.mist[K];else E.due=today()+[1,3,7][E.n-1]}else{E.n=0;E.due=today()+1}save();render()}
+function mvNext(){const m=V.mv;m.i++;if(m.i>=m.ks.length){m.fin=true;render();return}mvSetup();render()}
+function vMist(){const m=V.mv,back=`<button class="back" onclick="V.mv=null;render()">‹ Dersler</button>`;
+  if(m.fin)return `<div class="bar">${back}</div><div class="card center"><div class="big">${m.ok}/${m.ks.length}</div><h3>${m.ok==m.ks.length?'Defter temizleniyor! 🧹':'Tekrar bitti'}</h3><p>Doğru bildiğin sorular birkaç gün sonra bir kez daha gelecek; üç kez üst üste doğru bilince defterden çıkar. Yanlışlar yarın tekrar sorulur.</p><button class="btn" onclick="V.mv=null;render()">Derslere dön</button></div>`;
+  const K=m.ks[m.i],q=m.q,E=S.mist[K];const lab={mc:'Doğru olanı seç',gap:'Boşluğu doldur',tr:'İngilizceye çevir',ord:'Kelimeleri sıraya diz'}[q.k]||'';
+  let body=`<div class="qq">${esc(q.q||'').replace('___','<u class="gapu"></u>')}</div>`;
+  if(q.k=='mc')body+=q.o.map((o,k)=>`<button class="opt ${!m.rev?'':k==q.a?'good':k==m.sel?'bad':''}" onclick="mvAns(${k})">${esc(o)}</button>`).join('');
+  else if(q.k=='ord'){const used=new Set(m.pick);body+=`<div class="slots">${m.pick.map((i,k)=>`<button class="tile" onclick="if(!V.mv.rev){V.mv.pick.splice(${k},1);render()}">${esc(m.tok[i])}</button>`).join('')||'<span class="ph">Kelimelere sırayla dokun</span>'}</div>${m.rev?'':`<div class="pool">${m.pool.map(i=>`<button class="tile" ${used.has(i)?'disabled':''} onclick="V.mv.pick.push(${i});if(V.mv.pick.length==V.mv.tok.length)mvAns();else render()">${esc(m.tok[i])}</button>`).join('')}</div>`}`}
+  else body+=m.rev?'':`<input id="mvin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Cevabını yaz…" onkeydown="if(event.key=='Enter')mvAns()"><button class="btn" onclick="mvAns()">Kontrol et</button>`;
+  const ver=!m.rev?'':`<div class="verdict ${m.good?'good':'bad'}">${m.good?'Doğru! '+(E?'Bu soru '+(E.due-today())+' gün sonra bir kez daha gelecek.':'🎉 Üç kez doğru bildin, soru defterden çıktı.'):'Olmadı'+(q.k!='mc'?' · Doğrusu: <b>'+esc(q.a[0])+'</b>':'')}</div><div class="box teal"><small>NEDEN</small>${q.w||''}</div><button class="btn" onclick="mvNext()">Devam →</button>`;
+  return `<div class="bar">${back}<div class="prog"><i style="width:${100*m.i/m.ks.length}%"></i></div><span>📒</span></div><div class="card"><span class="tag">Hata defteri · ${lab}${E&&E.src?' · '+esc((LESSONS.find(L=>L.id==E.src)||{}).t||''):''}</span>${body}${ver}</div>`}
+
+/* ===== Ders haritası: seviye > modül > ders ===== */
+function vCourse(lv){const LS=LESSONS.map((L,i)=>[L,i]).filter(([L])=>L.l==lv),M=MODS[lv]||[[LGN({l:lv}),'']],nx=LS.find(([L])=>!(L.id in S.ls));let h='';
+  M.forEach((m,mi)=>{const ls=LS.filter(([L])=>(L.m||0)==mi);if(!ls.length)return;const d=ls.filter(([L])=>L.id in S.ls).length;
+    h+=`<div class="mod"><div class="modh"><div><small>MODÜL ${mi+1} · ${d}/${ls.length}</small><b>${esc(m[0])}</b><span>${esc(m[1])}</span></div><div class="ring" style="--p:${Math.round(d*100/ls.length)}"><span>${Math.round(d*100/ls.length)}%</span></div></div><div class="path">`+
+    ls.map(([L,i],k)=>{const dn=L.id in S.ls,cur=nx&&nx[0]===L,sv=(S.lst||{})[L.id],ex=EXAMS.find(E=>E.key=='u-'+L.id),eb=ex&&(S.exb||{})[ex.key];
+      return `<button class="pnode ${dn?'done':cur?'cur':''}" onclick="openL(${i})"><div class="pdot">${dn?'✓':LESSONS.filter(x=>x.l==lv).indexOf(L)+1}</div><div class="pb"><b>${esc(L.t)}</b>${L.g&&L.g!=L.t?`<span class="gchip sm">${esc(L.g)}</span>`:''}${L.can?`<span class="pcan">${esc(L.can)}</span>`:''}<span class="pmeta">${dn?`✓ Alıştırma ${S.ls[L.id]}`:sv!=null?`▶ Adım ${sv+1}'de kaldın`:cur?'▶ Sıradaki ders':''}${eb!=null?` · Sınav %${eb}`:''}</span></div></button>`}).join('')+`</div></div>`});
+  return h}
 
 /* ================= KELİME KARTLARI ================= */
 const LVLN={A1:'A1 · Başlangıç',A2:'A2 · Temel',B1:'B1 · Orta',B2:'B2 · Orta üstü',C1:'C1 · İleri',Ekip:'Ekibin eklediği kelimeler'};

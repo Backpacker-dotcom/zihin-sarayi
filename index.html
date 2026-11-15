@@ -5805,13 +5805,15 @@ function feedText(x){const n='<b>'+esc(uname(x.u).split(' ')[0])+'</b>';
   const B=BADGES.find(b=>b[0]==x.b);return B?`${n} <b>${B[1]} ${esc(B[2])}</b> rozetini kazandı!`:''}
 const feedIcon=x=>x.k=='l'?'🎊':(BADGES.find(b=>b[0]==x.b)||[,'🎖'])[1];
 const newsNew=()=>T.uid&&S.feedSeen!=null?feedAll().filter(x=>x.u!==T.uid&&x.at>S.feedSeen&&feedText(x)):[];
-function newsCheck(){if(!T.uid||!document.getElementById('app'))return;const N=newsNew();if(!N.length)return;
-  if(!V.newsShown&&!V.sess&&!V.ex&&!V.gm){V.newsShown=1;showNews(N);return}
-  if(V.newsShown&&!document.getElementById('newsov')){N.slice(0,3).forEach(x=>toast('🎉 '+feedText(x).replace(/<[^>]+>/g,'')));S.feedSeen=Date.now();save()}}
-function showNews(N){const o=document.createElement('div');o.id='newsov';o.className='newsov';
-  o.innerHTML=`<div class="newsbox"><div class="newsh">📣 Sen yokken neler oldu?</div><div class="newsl">${N.slice(0,10).map(x=>`<div class="newsi"><i>${feedIcon(x)}</i><div>${feedText(x)}<small>${fmtT(x.at)}</small></div></div>`).join('')}${N.length>10?`<p class="note center">… ve ${N.length-10} başarı daha. Hepsi Yarış sekmesinde.</p>`:''}</div>
+const newsRecent=()=>T.uid?feedAll().filter(x=>x.u!==T.uid&&x.at>Date.now()-864e5&&feedText(x)):[];
+function newsCheck(){if(!T.uid||!document.getElementById('app')||!T.D||!T.D.users)return;
+  if(!V.newsShown){if(V.sess||V.ex||V.gm||document.getElementById('newsov'))return;const N=newsNew(),fresh=N.length>0,L=fresh?N:newsRecent();
+    if(!L.length){if(T.loaded)V.newsShown=1;return}V.newsShown=1;showNews(L,fresh);return}
+  const N=newsNew();if(N.length&&!document.getElementById('newsov')){N.slice(0,3).forEach(x=>toast('🎉 '+feedText(x).replace(/<[^>]+>/g,'')));S.feedSeen=Date.now();save()}}
+function showNews(N,fresh){const o=document.createElement('div');o.id='newsov';o.className='newsov';
+  o.innerHTML=`<div class="newsbox"><div class="newsh">${fresh?'📣 Sen yokken neler oldu?':'📣 Bugün kimler parladı?'}</div><div class="newsl">${N.slice(0,12).map(x=>`<div class="newsi"><i>${feedIcon(x)}</i><div>${feedText(x)}<small>${fmtT(x.at)}</small></div></div>`).join('')}${N.length>12?`<p class="note center">… ve ${N.length-12} başarı daha. Hepsi Yarış sekmesinde.</p>`:''}</div>
   <button class="btn" id="newsok">Tebrikler hepsine! 👏</button></div>`;document.body.appendChild(o);
-  o.querySelector('#newsok').onclick=()=>{S.feedSeen=Date.now();save();o.remove();badges()};if(N.length>=3)confetti()}
+  o.addEventListener('click',e=>{if(e.target===o)close()});const close=()=>{S.feedSeen=Date.now();save();o.remove();badges()};o.querySelector('#newsok').onclick=close;if(fresh&&N.length>=3)confetti()}
 function feedSection(){if(!T.uid)return '';const F=feedAll().filter(x=>feedText(x)).slice(0,V.fall?60:8);if(!F.length)return '';
   return `<h2>📣 Son başarılar</h2><div class="feed">${F.map(x=>`<div class="newsi ${x.u===T.uid?'me':''}"><i>${feedIcon(x)}</i><div>${feedText(x)}<small>${fmtT(x.at)}</small></div></div>`).join('')}</div>${!V.fall&&feedAll().length>8?`<button class="lnk" onclick="V.fall=1;render()">Tümünü gör</button>`:''}`}
 

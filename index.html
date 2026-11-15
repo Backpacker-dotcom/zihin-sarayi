@@ -312,6 +312,7 @@ code{background:#262240;border-radius:4px;padding:1px 5px;font-size:13px}
 .hsrc{display:block;font-size:11.5px;color:var(--gold);margin-top:3px;cursor:pointer}
 .newsh.sm{font-size:16px;margin:14px 0 4px}.newsds{border-top:1px solid var(--line);margin-top:6px}.newsds .note{margin:0 0 6px}
 .nds{display:flex;gap:10px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--line);transition:opacity .3s,transform .3s}.nds.gone{opacity:0;transform:translateX(30px)}.nds .dsx{font-size:15px}
+.obd{font-size:12.5px;margin-top:8px;color:var(--mut)}.obd div{padding:3px 0;border-bottom:1px solid var(--line)}.resume code{font-size:12px;color:var(--gold)}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -4690,9 +4691,10 @@ const errText=e=>{const m=String((e&&e.message)||e||'');const k=Object.keys(ERR)
 async function authCall(ep,body){const r=await fetch(AUTH_URL+'/accounts:'+ep+'?key='+encodeURIComponent(T.cfg.k||''),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
   const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error((j.error&&j.error.message)||('HTTP '+r.status));return j}
 function setTok(idToken,refreshToken,expiresIn,uid,email){T.tok=idToken;T.exp=Date.now()+(+expiresIn||3600)*1000-120000;const o=sessGet()||{};sessSet({t:T.cfg.t,uid:uid||o.uid,rt:refreshToken||o.rt,le:email||o.le})}
-async function refreshTok(){const o=sessGet();if(!o||!o.rt)throw new Error('NO_SESSION');
+const authErr=m=>{const e=new Error(m);e.auth=true;return e};
+async function refreshTok(){const o=sessGet();if(!o||!o.rt)throw authErr('NO_SESSION');
   const r=await fetch(STS_URL+'/token?key='+encodeURIComponent(T.cfg.k||''),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=refresh_token&refresh_token='+encodeURIComponent(o.rt)});
-  const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error((j.error&&j.error.message)||'TOKEN');setTok(j.id_token,j.refresh_token,j.expires_in,j.user_id);return T.tok}
+  const j=await r.json().catch(()=>({}));if(!r.ok){const m=(j.error&&j.error.message)||'TOKEN';if(r.status>=500)throw new Error(m);throw authErr(m)}setTok(j.id_token,j.refresh_token,j.expires_in,j.user_id);return T.tok}
 async function token(){if(!T.uid)return null;if(!T.tok||Date.now()>T.exp)await refreshTok();return T.tok}
 const ROOT=()=>T.cfg.u.replace(/\/+$/,'')+'/zs/'+encodeURIComponent(T.cfg.t);
 async function rUrl(p){const t=await token();return ROOT()+(p?'/'+p:'')+'.json'+(t?'?auth='+encodeURIComponent(t):'')}
@@ -4713,18 +4715,26 @@ async function tWrite(method,path,val){
   if(method=='PATCH')Object.entries(val).forEach(([k,v])=>setPath(T.D,path.split('/').concat(k.split('/')),v));else setPath(T.D,path.split('/'),method=='DELETE'?null:val);
   tChanged(true);
   try{return await tReq(method,netPath(path),method=='DELETE'?undefined:val)}catch(e){
-    if(e.message!='DENIED'&&OB_OK.test(path)){obAdd(method,path,val);toast('İnternet yok gibi görünüyor. Kaydın cihazda saklandı; bağlantı gelince kendiliğinden gönderilecek.');return null}
-    toast(e.message=='DENIED'?'Bu işlem için yetkin yok.':'Kaydedilemedi. İnternet bağlantısını kontrol edip tekrar dene.');throw e}}
+    if(e.auth&&OB_OK.test(path)){obAdd(method,path,val,'oturum: '+e.message);authLost();return null}
+    if(isNetErr(e)&&OB_OK.test(path)){obAdd(method,path,val,errTxt(e));toast('Bağlantı kurulamadı ('+errTxt(e)+'). Kaydın cihazda saklandı; bağlantı gelince kendiliğinden gönderilecek.');return null}
+    if(e.auth){authLost();throw e}
+    toast(e.message=='DENIED'?'Bu işlem için yetkin yok.':isNetErr(e)?'Kaydedilemedi: bağlantı kurulamadı ('+errTxt(e)+').':'Kaydedilemedi: sunucu kabul etmedi ('+errTxt(e)+').');throw e}}
+const isNetErr=e=>e&&!e.auth&&e.message!='DENIED'&&(!e.status||e.status>=500||e.status==429);
+function authLost(){if(T.authLost)return;T.authLost=1;const u=T.uid;setTimeout(()=>{T.authLost=0;logout(true);toast('Oturumunun yenilenmesi gerekiyor: lütfen kullanıcı adın ve şifrenle tekrar giriş yap. Bekleyen kayıtların kaybolmaz.')},300)}
+const errTxt=e=>e?(e.status?'HTTP '+e.status:(e.name||'')+(e.message?': '+e.message:'')).slice(0,80):'?';
 /* gönderilemeyen kayıtlar (giden kutusu) */
 const OB_OK=/^(results|hwdone|msgs|ds|dc|ce)\//;
 const obKey=()=>'zs_ob:'+(T.uid||'');
 const obList=()=>{try{return JSON.parse(localStorage.getItem(obKey())||'[]')}catch(e){return []}};
 const obSet=L=>{try{localStorage.setItem(obKey(),JSON.stringify(L))}catch(e){}};
-function obAdd(m,p,v){const L=obList();L.push({m,p,v,at:Date.now()});obSet(L)}
-let obBusy=false;async function obFlush(){if(obBusy||!T.uid)return;const L=obList();if(!L.length)return;obBusy=true;const left=[];let sent=0;
-  for(const x of L){try{await tReq(x.m,netPath(x.p),x.m=='DELETE'?undefined:x.v);sent++}catch(e){if(e.message!='DENIED')left.push(x)}}
-  obSet(left);obBusy=false;if(sent){toast('📤 Bekleyen '+sent+' kayıt gönderildi.');render()}}
-setInterval(()=>{try{obFlush()}catch(e){}},60000);try{addEventListener('online',()=>setTimeout(obFlush,1500))}catch(e){}
+function obAdd(m,p,v,err){const L=obList();L.push({m,p,v,at:Date.now(),err:err||'',un:((U()||{})[T.uid]||{}).u||''});obSet(L)}
+let obBusy=false;async function obFlush(manual){if(!T.uid)return;if(obBusy){if(manual)toast('Gönderim sürüyor, birkaç saniye bekle.');return}const L=obList();if(!L.length){if(manual)toast('Bekleyen kayıt yok.');render();return}
+  obBusy=true;if(manual)toast('📤 Gönderiliyor…');const left=[];let sent=0,last='';
+  try{for(const x of L){try{await tReq(x.m,netPath(x.p),x.m=='DELETE'?undefined:x.v);sent++}catch(e){last=errTxt(e);if(e.auth){left.push(x);authLost();continue}if(e.message=='DENIED')continue;x.err=last;x.tries=(x.tries||0)+1;left.push(x)}}}
+  finally{obSet(left);obBusy=false}
+  if(sent)toast('📤 Bekleyen '+sent+' kayıt gönderildi.');if(manual&&left.length)toast('Hâlâ gönderilemedi: '+last+'. İnternetini kontrol et; sorun sürerse "Ayrıntı"ya bakıp hocana haber ver.');render()}
+function obClear(b){if(!confirm2(b))return;obSet([]);toast('Bekleyen kayıtlar silindi.');render()}
+setInterval(()=>{try{obFlush()}catch(e){}},60000);try{addEventListener('online',()=>setTimeout(()=>obFlush(),1500))}catch(e){}
 const tPut=(p,v)=>tWrite('PUT',p,v),tPatch=(p,v)=>tWrite('PATCH',p,v),tDel=p=>tWrite('DELETE',p);
 /* sunucu düzeni (pub/…, u/<kişi>/…) uygulamanın iç düzenine çevrilir */
 function applyPub(path,data,patch){if(patch){Object.entries(data||{}).forEach(([k,v])=>applyPub(path.replace(/\/$/,'')+'/'+k,v,false));return}
@@ -4752,7 +4762,7 @@ async function openStream(p,apply){const es=new EventSource(await rUrl(p));T.ess
   es.onopen=()=>{T.live=true;badges()};es.onerror=()=>{T.live=false;badges()}}
 async function tStream(){closeStreams();if(!T.uid||typeof EventSource=='undefined')return;T.streamRole=role();
   try{await openStream('pub',applyPub);if(isStaff()){await openStream('u',applyU);if(OWNP())await openStream('me/'+T.uid,(p,d,pt)=>applyU('/'+T.uid+(p=='/'?'':p),d,pt))}else await openStream('u/'+T.uid,(p,d,pt)=>applyU('/'+T.uid+(p=='/'?'':p),d,pt))}catch(e){}}
-async function tConnect(){if(!T.uid){render();return}try{await tLoad();tCheckMe();render();setTimeout(obFlush,1000)}catch(e){if(e.message=='DENIED'){tCheckMe(true);return}T.err=String(e.message||e);render()}tStream()}
+async function tConnect(){if(!T.uid){render();return}try{await tLoad();tCheckMe();render();obMigrate(T.uid);setTimeout(()=>obFlush(),1000)}catch(e){if(e.message=='DENIED'){tCheckMe(true);return}T.err=String(e.message||e);render()}tStream()}
 
 
 /* ----- roller ----- */
@@ -4825,11 +4835,13 @@ async function doLogin(){const L=V.lg;L.err='';L.busy=true;render();
     L.p='';await enterAs(j.localId)}catch(e){T.uid=null;L.err=errText(e);L.busy=false;render()}}
 async function forgotPw(){const u=(V.lg.u||'').trim();if(!u.includes('@')){V.lg.err='Şifreni öğretmenin ya da yöneticin yenileyebilir; Panel › Kullanıcılar › Yeni şifre. (Kullanıcı adın bir e-posta adresiyse buradan sıfırlama bağlantısı alabilirsin.)';return render()}
   try{await authCall('sendOobCode',{requestType:'PASSWORD_RESET',email:u.toLowerCase()});V.lg.err='Şifre sıfırlama bağlantısı '+u+' adresine gönderildi.'}catch(e){V.lg.err=errText(e)}render()}
+function obMigrate(uid){try{for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(!k||k.indexOf('zs_ob:')!=0||k=='zs_ob:'+uid)continue;const old=k.slice(6);
+  const me=((U()||{})[uid]||{}).u,all=JSON.parse(localStorage.getItem(k)||'[]'),mine=all.filter(x=>x.un&&me&&x.un===me),rest=all.filter(x=>!(x.un&&me&&x.un===me));if(!mine.length)continue;const L=mine.map(x=>Object.assign(x,{p:x.p.split('/').map(seg=>seg===old?uid:seg).join('/')}));const cur=JSON.parse(localStorage.getItem('zs_ob:'+uid)||'[]');localStorage.setItem('zs_ob:'+uid,JSON.stringify(cur.concat(L)));if(rest.length)localStorage.setItem(k,JSON.stringify(rest));else localStorage.removeItem(k)}}catch(e){}}
 async function enterAs(uid){T.uid=uid;KEY='zs1:'+uid;
   let remote=null;try{remote=await tReq('GET','st/'+uid)}catch(e){}
   const loc=load();if(remote&&typeof remote=='object'&&(remote.su||0)>=(loc.su||0)){S=Object.assign(load(),remote)}else if(Object.keys(loc.c||{}).length||loc.xp){S=loc}
   else{S=load();const solo=loadJ('zs1',null);if(!SHARED()&&solo&&Object.keys(solo.c||{}).length&&!Object.keys(S.c||{}).length)S=Object.assign(load(),solo)}
-  T.lastSt='';V={tab:'today'};save();tSync();tStream();render();window.scrollTo(0,0);idleStart()}
+  T.lastSt='';V={tab:'today'};save();tSync();tStream();render();window.scrollTo(0,0);idleStart();setTimeout(()=>{try{obMigrate(T.uid);obFlush()}catch(e){}},2500)}
 function logout(silent){const old=T.uid;closeStreams();T.uid=null;T.tok=null;T.D={};T.loaded=false;sessSet(null);if(SHARED()&&old){try{localStorage.removeItem('zs1:'+old)}catch(e){}}
   KEY='zs1';S=load();V={tab:'today',lg:{u:'',p:'',sh:SHARED()}};if(!silent)toast('Çıkış yapıldı.');render()}
 function idleStart(){if(T.idleOn)return;T.idleOn=1;T.act=Date.now();['click','keydown','touchstart','mousemove','scroll'].forEach(e=>document.addEventListener(e,()=>{T.act=Date.now()},{passive:true}));
@@ -4957,7 +4969,7 @@ function vSinav(){if(V.ex)return vExamRun();
   const row=(key,t,d,n)=>`<button class="row" onclick="startExam('${key}')"><div class="num">${best(key)!=null?'%'+best(key):n}</div><div class="sb"><b>${esc(t)}</b><span>${esc(d||n+' soru')}</span></div></button>`;
   const sv=exSaved(),ob=T.uid?obList().length:0;
   let h=(sv?`<div class="card resume"><b>⏸ Yarım kalan sınavın var</b><p>${esc(sv.t)} · ${sv.ans.filter((a,i)=>filled(sv.qs[i],a)).length}/${sv.qs.length} soru cevaplı · ${fmtT(sv.at)}</p><div class="two"><button class="btn" onclick="exResume()">Kaldığın yerden devam et</button><button class="btn ghost" onclick="if(confirm2(this))exDrop(),render()">Sil</button></div></div>`:'')
-   +(ob?`<div class="card resume"><b>📤 Gönderilmeyi bekleyen ${ob} kayıt</b><p class="note">İnternet gelince kendiliğinden gönderilecek.</p><button class="btn sm" onclick="obFlush()">Şimdi dene</button></div>`:'')+`<h1 class="pt">Sınavlar</h1><p class="lead">${EXAMS.length+ce.length} sınav. Çoğu her açılışta farklı sorularla gelir. Süre sınırı yok.</p>`;
+   +(ob?(()=>{const L=obList(),e=L.map(x=>x.err).filter(Boolean).pop();return `<div class="card resume"><b>📤 Gönderilmeyi bekleyen ${ob} kayıt</b><p class="note">Bağlantı gelince kendiliğinden gönderilecek.${e?' Son hata: <code>'+esc(e)+'</code>':''}</p><div class="two"><button class="btn sm" onclick="obFlush(true)">Şimdi dene</button><button class="btn sm ghost" onclick="V.obd=!V.obd;render()">Ayrıntı</button></div>${V.obd?`<div class="obd">${L.map(x=>`<div><b>${esc(x.p.split('/')[0])}</b> · ${fmtT(x.at)} · ${x.tries||0} deneme${x.err?' · '+esc(x.err):''}</div>`).join('')}<button class="lnk danger" onclick="obClear(this)">Bekleyenleri sil</button></div>`:''}</div>`})():'')+`<h1 class="pt">Sınavlar</h1><p class="lead">${EXAMS.length+ce.length} sınav. Çoğu her açılışta farklı sorularla gelir. Süre sınırı yok.</p>`;
   if(T.uid&&!isStaff()){const hw=myHw().filter(x=>x.ex&&!hwDone(x.id,T.uid));if(hw.length)h+=`<h2>Ödev olarak verilen</h2>`+hw.map(x=>{const E=examByKey(x.ex);return E?`<button class="row hw" onclick="startExam('${x.ex}','${x.id}')"><div class="num">📌</div><div class="sb"><b>${esc(E.t)}</b><span>${esc(x.t)}${x.due?' · son gün '+esc(x.due):''}</span></div></button>`:''}).join('')}
   if(ce.length)h+=`<h2>Öğretmenin hazırladığı sınavlar</h2>`+ce.map(e=>row('c-'+e.id,e.t,(e.d?e.d+' · ':'')+(e.qs||[]).length+' soru',(e.qs||[]).length)).join('');
   Object.entries(groups).forEach(([g,L])=>{h+=`<h2>${g}</h2>`;

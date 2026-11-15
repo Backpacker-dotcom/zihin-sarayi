@@ -52,3 +52,13 @@ Yöneticinin (owner) kendi sınav sonuçları, ilerlemesi, günün yarışması 
 - **Bugüne bir cümle:** her öğrenci günde bir İngilizce cümle yazar, herkes oylar; 5 ve üzeri oy alan cümleler havuza girer, Bugün ekranında her gün havuzdan bir cümle gösterilir.
 
 > 3.7 ile `database.rules.json` güncellendi; Firebase'e yeniden yapıştırıp Publish edin.
+
+## 3.8 · Genel kontrol
+
+- Cevap kontrolü esnetildi: Türkçe klavye (İ/ı), kısaltmalar (I'm / I am, dont), rakam/yazı (7 / seven), saat yazımları, İngiliz/Amerikan yazımı.
+- Otomatik üretilen sorularda aynı anlamlı iki doğru şık çıkması engellendi.
+- Yarım kalan sınav cihazda saklanır; internet yokken sonuçlar giden kutusunda bekler.
+- APK: yazdır/PDF ve dosya kaydetme; yeni sürüm uyarısı (`version.json`, `ZihinSarayi.apk`).
+- Yönetici: tüm verilerin yedeği ve eski günlük verilerin temizliği (Panel › Kullanıcılar).
+
+> `database.rules.json` güncellendi; Firebase'e yeniden yapıştırıp Publish edin.

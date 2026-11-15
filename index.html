@@ -359,6 +359,9 @@ code{background:#262240;border-radius:4px;padding:1px 5px;font-size:13px}
 .fx{color:var(--gold);font-weight:800;background:rgba(226,180,92,.12);border-radius:4px;padding:0 2px}
 .hlleg{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12.5px;color:var(--mut);margin:-4px 0 10px}.hlleg i{font-style:normal}.hlleg .lnk{margin-left:auto;font-size:12.5px}
 u.tm,strong.fx{display:inline;font-size:inherit;margin:0}
+.bdgc{position:relative}.bdgc.leg{border-color:#7a5cff;background:linear-gradient(160deg,#241b3f,#15121f)}.bdgc.leg.on{border-color:var(--gold);box-shadow:0 0 14px rgba(226,180,92,.35)}
+.legt{position:absolute;top:6px;right:6px;font-style:normal;font-size:9.5px;font-weight:800;letter-spacing:.08em;color:#c9b8ff;background:#3a2b6a;border-radius:6px;padding:1px 5px}
+.bdgc .bh{display:block;margin-top:3px;color:var(--teal);font-size:11px}
 </style></head><body><div id="app"></div>
 <script>const RAW={
 A1:"I:ben;you:sen / siz;he:o (erkek);she:o (kadın);it:o (nesne);we:biz;they:onlar;this:bu;that:şu / o;here:burada;there:orada;what:ne;who:kim;where:nerede;when:ne zaman;why:neden;how:nasıl;yes:evet;no:hayır;not:değil;and:ve;or:veya;but:ama;because:çünkü;with:ile;without:olmadan;in:içinde;on:üstünde;under:altında;to:-e / -a doğru;from:-den / -dan;for:için;of:-nın / -in (aitlik);be:olmak;have:sahip olmak;do:yapmak;go:gitmek;come:gelmek;see:görmek;look:bakmak;want:istemek;like:hoşlanmak / sevmek;love:aşk / çok sevmek;know:bilmek;think:düşünmek;say:söylemek;tell:anlatmak;speak:konuşmak;ask:sormak;answer:cevap;give:vermek;take:almak;get:elde etmek;make:yapmak / üretmek;work:çalışmak / iş;play:oynamak;eat:yemek yemek;drink:içmek;sleep:uyumak;read:okumak;write:yazmak;listen:dinlemek;learn:öğrenmek;live:yaşamak;buy:satın almak;open:açmak;close:kapatmak;start:başlamak;stop:durmak;help:yardım etmek;need:ihtiyaç duymak;can:-ebilmek;walk:yürümek;run:koşmak;sit:oturmak;wait:beklemek;find:bulmak;use:kullanmak;call:aramak / çağırmak;man:adam;woman:kadın;child:çocuk;boy:erkek çocuk;girl:kız;friend:arkadaş;family:aile;mother:anne;father:baba;brother:erkek kardeş;sister:kız kardeş;people:insanlar;name:isim;house:ev;home:yuva / ev;room:oda;door:kapı;window:pencere;table:masa;chair:sandalye;bed:yatak;kitchen:mutfak;city:şehir;street:sokak;country:ülke;school:okul;shop:dükkan;car:araba;bus:otobüs;train:tren;water:su;food:yiyecek;bread:ekmek;milk:süt;tea:çay;coffee:kahve;apple:elma;egg:yumurta;meat:et;fish:balık;day:gün;night:gece;morning:sabah;evening:akşam;today:bugün;tomorrow:yarın;yesterday:dün;now:şimdi;week:hafta;month:ay;year:yıl;time:zaman;hour:saat (süre);minute:dakika;one:bir;two:iki;three:üç;four:dört;five:beş;six:altı;seven:yedi;eight:sekiz;nine:dokuz;ten:on;big:büyük;small:küçük;good:iyi;bad:kötü;new:yeni;old:eski / yaşlı;young:genç;hot:sıcak;cold:soğuk;happy:mutlu;sad:üzgün;beautiful:güzel;easy:kolay;difficult:zor;fast:hızlı;slow:yavaş;long:uzun;short:kısa;cheap:ucuz;expensive:pahalı;many:çok (sayılabilir);much:çok (sayılamaz);some:biraz / bazı;all:hepsi;very:çok (pekiştirme);always:her zaman;never:asla;sometimes:bazen;book:kitap;pen:kalem;phone:telefon;money:para;job:iş / meslek;question:soru;word:kelime;language:dil;thing:şey;place:yer;way:yol;hand:el;head:baş;eye:göz;red:kırmızı;blue:mavi;green:yeşil;white:beyaz;black:siyah;sun:güneş;rain:yağmur;sea:deniz;dog:köpek;cat:kedi;right:doğru / sağ;left:sol;more:daha fazla;again:tekrar;please:lütfen;thanks:teşekkürler;hello:merhaba;sorry:üzgünüm / pardon",
@@ -6980,8 +6983,8 @@ function grade(q){const s=V.sess,id=s.q[s.pos],c=S.c[WORDS[id].w],i=nextI(c,q);
   if(q==0){c.r=0;c.i=0;c.e=Math.max(1.3,c.e-.2);s.q.push(id)}
   else{if(q==1)c.e=Math.max(1.3,c.e-.15);if(q==3)c.e+=.15;c.i=i;c.r++;c.d=today()+i;addXP(5)}
   S.log[today()]=(S.log[today()]||0)+1;save();s.pos++;s.rev=false;s.ans=null;render();autoSay()}
-const LEVELS=[[0,'🧳 Kayıp Turist'],[150,'🔑 Anahtar Avcısı'],[400,'🛎️ Zil Çalan Komi'],[800,'🍳 Büfe Muhafızı'],[1300,'🥷 Check-in Ninjası'],[2000,'📞 Telefon Bülbülü'],[3000,'🎩 Concierge Sihirbazı'],[4500,'🌟 Resepsiyon Süperstarı'],[6500,'🦸 Ön Büro Süper Kahramanı'],[9000,'🧠 Gramer Profesörü'],[12500,'👑 Otel Efsanesi'],[17000,'🏛️ Zihin Sarayı Sultanı']];
-function addXP(n){try{const D=new Date(),h=D.getHours();if(h>=23||h<4)S.night=1;if(h>=4&&h<7)S.early=1;(S.dow=S.dow||{})[D.getDay()]=1}catch(e){}S.xp=(S.xp||0)+n;const d=today();S.xd[d]=(S.xd[d]||0)+n;save()}
+const LEVELS=[[0,'🧳 Kayıp Turist'],[150,'🔑 Anahtar Avcısı'],[400,'🛎️ Zil Çalan Komi'],[800,'🍳 Büfe Muhafızı'],[1300,'🥷 Check-in Ninjası'],[2000,'📞 Telefon Bülbülü'],[3000,'🎩 Concierge Sihirbazı'],[4500,'🌟 Resepsiyon Süperstarı'],[6500,'🦸 Ön Büro Süper Kahramanı'],[9000,'🧠 Gramer Profesörü'],[12500,'👑 Otel Efsanesi'],[17000,'🏛️ Zihin Sarayı Sultanı'],[25000,'🐲 İngilizce Ejderhası'],[40000,'🧞 Lambadan Çıkan Dil Cini'],[65000,'🦕 Dilbilgisi Dinozoru'],[100000,'🌌 Dil Evreninin İmparatoru']];
+function addXP(n){try{const D=new Date(),h=D.getHours();if(h>=23||h<4)S.night=1;if(h>=4&&h<7)S.early=1;if(h>=3&&h<5)S.h3=1;if(h==12)S.noon=1;if(D.getDay()==1&&h<9)S.mon9=1;if((D.getMonth()==11&&D.getDate()==31)||(D.getMonth()==0&&D.getDate()==1))S.ny=1;(S.dow=S.dow||{})[D.getDay()]=1}catch(e){}S.xp=(S.xp||0)+n;const d=today();S.xd[d]=(S.xd[d]||0)+n;save()}
 function lvl(){let i=0;while(i+1<LEVELS.length&&S.xp>=LEVELS[i+1][0])i++;const a=LEVELS[i][0],b=LEVELS[i+1]?LEVELS[i+1][0]:null;return{i,name:LEVELS[i][1],next:b?LEVELS[i+1][1]:null,pct:b?100*(S.xp-a)/(b-a):100,left:b?b-S.xp:0}}
 function confetti(){const c=document.createElement('div');c.className='conf';const E=['🎉','✨','⭐','🎊','💛'];for(let i=0;i<28;i++){const e=document.createElement('i');e.textContent=E[i%E.length];e.style.left=rnd(100)+'%';e.style.animationDelay=(rnd(60)/100)+'s';e.style.fontSize=(16+rnd(18))+'px';c.appendChild(e)}document.body.appendChild(c);setTimeout(()=>c.remove(),3200)}
 function streak(){let d=today(),n=0;if(!S.log[d])d--;while(S.log[d]){n++;d--}return n}
@@ -7381,7 +7384,7 @@ function vFlow(){const l=flInit(),L=LESSONS[l.i],N=l.steps.length,back=`<button 
   else if(s.k=='faq')body=blk(s.b).replace('<h3 class="lh">Sık sorulan sorular</h3>','');
   else if(s.k=='trap'){body=`<p class="fsub">Türkçe düşününce yapılan hatalar. Her satırda <b>doğru</b> olanı seç.</p>`+s.rows.map((r,i)=>{const ch=l.tg[i],ans=ch!=null,opts=r.o.map(k=>k?r.r:r.w);
       return `<div class="trapq ${ans?(ch==1?'ok':'no'):''}">${opts.map((t,j)=>{const isR=r.o[j]==1;return `<button class="opt ${ans?(isR?'good':(ch==0?'bad':'')):''}" ${ans?'disabled':''} onclick="flTrap(${i},${r.o[j]})">${hlOn()?hlMark(t,[[TIME_EN,'tm']]):esc(t)}</button>`}).join('')}${ans?`<div class="why">${ch==1?'✓ ':'✗ Doğrusu: <b>'+esc(r.r)+'</b> · '}${r.why}</div>`:''}</div>`}).join('')}
-  else if(s.k=='speak'){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;body=`<p class="fsub">Dinle, sonra yüksek sesle tekrar et. Kendi sesini duymak kalıbı kalıcı yapar.${SR?' 🎙 ile söylediğini kontrol edebilirsin.':''}</p>`+s.lines.map((p,i)=>{const st=l.sp[i];return `<div class="spq ${st?'ok':''}"><div><b>${hlEN(p[0])}</b><span>${hlTR(p[1])}</span>${st&&st!==true?`<em>Duyulan: ${esc(st)}</em>`:''}</div><div class="spb">${spk(p[0])}${SR?`<button class="spk" onclick="flMic(${i})" aria-label="Söyle">🎙</button>`:''}<button class="spk ${st?'on':''}" onclick="V.ls.sp[${i}]=V.ls.sp[${i}]||true;render()" aria-label="Tekrarladım">✓</button></div></div>`}).join('')}
+  else if(s.k=='speak'){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;body=`<p class="fsub">Dinle, sonra yüksek sesle tekrar et. Kendi sesini duymak kalıbı kalıcı yapar.${SR?' 🎙 ile söylediğini kontrol edebilirsin.':''}</p>`+s.lines.map((p,i)=>{const st=l.sp[i];return `<div class="spq ${st?'ok':''}"><div><b>${hlEN(p[0])}</b><span>${hlTR(p[1])}</span>${st&&st!==true?`<em>Duyulan: ${esc(st)}</em>`:''}</div><div class="spb">${spk(p[0])}${SR?`<button class="spk" onclick="flMic(${i})" aria-label="Söyle">🎙</button>`:''}<button class="spk ${st?'on':''}" onclick="if(!V.ls.sp[${i}]){V.ls.sp[${i}]=true;S.spN=(S.spN||0)+1;save()}render()" aria-label="Tekrarladım">✓</button></div></div>`}).join('')}
   if(s.ck)body+=flCheck(s.ck,l.st);
   const last=l.st==N-1;
   return top+`<div class="card fcard">${body}</div><div class="fnav"><button class="btn ghost" onclick="flGo(${l.st-1})">‹ Geri</button>${last?`<button class="btn" onclick="lStart()">Alıştırmaya geç →</button>`:`<button class="btn" onclick="flGo(${l.st+1})">Devam →</button>`}</div>`}
@@ -7390,7 +7393,7 @@ function flCheck(q,si){const l=V.ls,c=l.ck[si]||{};let h=`<div class="mini"><sma
   else{const pick=c.pick||[],used=new Set(pick);h+=`<div class="slots ${c.done?(c.ok?'ok':'no'):''}">${pick.map((i,k)=>`<button class="tile" onclick="flUn(${si},${k})">${esc(q.tok[i])}</button>`).join('')||'<span class="ph">Kelimelere sırayla dokun</span>'}</div>${c.done?'':`<div class="pool">${q.pool.map(i=>`<button class="tile" ${used.has(i)?'disabled':''} onclick="flPick(${si},${i})">${esc(q.tok[i])}</button>`).join('')}</div>`}`}
   if(c.done)h+=`<div class="verdict ${c.ok?'good':'bad'}">${c.ok?PRAISE[si%PRAISE.length]+' +2 XP':'Olmadı · '+esc(q.w)+' (Hata defterine eklendi)'}</div>`;
   return h+'</div>'}
-function flRes(si,ok){const l=V.ls,q=l.steps[si].ck,c=l.ck[si];c.done=1;c.ok=ok;if(ok)addXP(2);else mistAdd(q,LESSONS[l.i].id);render();if(q.say)say(q.say)}
+function flRes(si,ok){const l=V.ls,q=l.steps[si].ck,c=l.ck[si];c.done=1;c.ok=ok;if(ok){S.ckN=(S.ckN||0)+1;addXP(2)}else mistAdd(q,LESSONS[l.i].id);render();if(q.say)say(q.say)}
 function flAns(si,k){const l=V.ls,c=l.ck[si]=l.ck[si]||{};if(c.done)return;c.sel=k;flRes(si,k==l.steps[si].ck.a)}
 function flPick(si,i){const l=V.ls,q=l.steps[si].ck,c=l.ck[si]=l.ck[si]||{pick:[]};if(c.done)return;c.pick=c.pick||[];c.pick.push(i);if(c.pick.length==q.tok.length)return flRes(si,c.pick.map(j=>q.tok[j]).join(' ')==q.a[0]);render()}
 function flUn(si,k){const c=V.ls.ck[si];if(!c||c.done)return;c.pick.splice(k,1);render()}
@@ -7398,7 +7401,7 @@ function flTrap(i,v){const l=V.ls;if(l.tg[i]!=null)return;l.tg[i]=v;const r=l.st
 function flPlay(){const l=V.ls,s=l.steps[l.st];let t=0;lines(s.b[2]).forEach(r=>{const e=r.split(' | ')[0],x=e.slice(e.indexOf(': ')+2);setTimeout(()=>say(x),t);t+=900+x.length*70/(S.rate||0.9)})}
 function flMic(i){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return;const l=V.ls,p=l.steps[l.st].lines[i];try{const r=new SR();r.lang='en-US';r.interimResults=false;r.maxAlternatives=3;toast('🎙 Dinliyorum… cümleyi söyle');
   r.onresult=e=>{const alts=[...e.results[0]].map(a=>a.transcript),tw=normS(p[0]).split(' '),best=alts.map(a=>{const aw=new Set(normS(a).split(' '));return [a,tw.filter(w=>aw.has(w)).length/tw.length]}).sort((a,b)=>b[1]-a[1])[0];
-    if(best[1]>=.8){l.sp[i]=best[0];addXP(2);toast('Harika telaffuz! ✓')}else{toast('Tam anlaşılmadı: "'+best[0]+'" · bir daha dene')}render()};
+    if(best[1]>=.8){if(!l.sp[i])S.spN=(S.spN||0)+1;l.sp[i]=best[0];addXP(2);toast('Harika telaffuz! ✓')}else{toast('Tam anlaşılmadı: "'+best[0]+'" · bir daha dene')}render()};
   r.onerror=e=>toast(e.error=='not-allowed'?'Mikrofon izni verilmedi.':'Ses tanınamadı, tekrar dene.');r.start()}catch(e){toast('Bu cihazda konuşma tanıma yok; dinleyip tekrar et ve ✓ ile işaretle.')}}
 
 /* ===== Hata defteri: yanlış yapılan sorular aralıklı tekrar ile geri gelir ===== */
@@ -7411,7 +7414,7 @@ function mvStart(){const ks=shuffle(mistDue()).slice(0,12);if(!ks.length)return;
 function mvSetup(){const m=V.mv,q=S.mist[m.ks[m.i]].q;m.q=q;m.rev=false;m.sel=null;m.ans='';if(q.k=='ord'){m.tok=q.a[0].split(' ');m.pool=shuffle(m.tok.map((_,i)=>i));m.pick=[]}}
 function mvAns(k){const m=V.mv,K=m.ks[m.i],E=S.mist[K],q=E.q;if(m.rev)return;let ok;
   if(q.k=='mc'){m.sel=k;ok=k==q.a}else if(q.k=='ord'){m.ans=m.pick.map(i=>m.tok[i]).join(' ');ok=m.ans==q.a[0]}else{m.ans=(document.getElementById('mvin')||{}).value||'';ok=q.a.some(a=>same(a,m.ans))}
-  m.rev=true;m.good=ok;if(ok){m.ok++;E.n++;addXP(3);if(E.n>=3)delete S.mist[K];else E.due=today()+[1,3,7][E.n-1]}else{E.n=0;E.due=today()+1}save();render()}
+  m.rev=true;m.good=ok;if(ok){m.ok++;E.n++;addXP(3);if(E.n>=3){delete S.mist[K];S.mvOut=(S.mvOut||0)+1}else E.due=today()+[1,3,7][E.n-1]}else{E.n=0;E.due=today()+1}save();render()}
 function mvNext(){const m=V.mv;m.i++;if(m.i>=m.ks.length){m.fin=true;render();return}mvSetup();render()}
 function vMist(){const m=V.mv,back=`<button class="back" onclick="V.mv=null;render()">‹ Dersler</button>`;
   if(m.fin)return `<div class="bar">${back}</div><div class="card center"><div class="big">${m.ok}/${m.ks.length}</div><h3>${m.ok==m.ks.length?'Defter temizleniyor! 🧹':'Tekrar bitti'}</h3><p>Doğru bildiğin sorular birkaç gün sonra bir kez daha gelecek; üç kez üst üste doğru bilince defterden çıkar. Yanlışlar yarın tekrar sorulur.</p><button class="btn" onclick="V.mv=null;render()">Derslere dön</button></div>`;
@@ -8339,12 +8342,58 @@ const BADGES=[
  ['wk300','🚀','Haftanın Roketi','Bir haftada 300 XP topla',()=>weekXP()>=300],
  ['wk1000','🛸','Uzay Mekiği','Bir haftada 1.000 XP topla',()=>weekXP()>=1000],
  ['ninja','🥷','Gölge Resepsiyonist','"Check-in Ninjası" unvanına ulaş',()=>lvl().i>=4],
- ['sultan','🏛️','Saraya Hoş Geldin','"Concierge Sihirbazı" unvanına ulaş',()=>lvl().i>=6]];
+ ['sultan','🏛️','Saraya Hoş Geldin','"Concierge Sihirbazı" unvanına ulaş',()=>lvl().i>=6],
+ /* seviye bitirme */
+ ['a1all','🍼','Emzik Bıraktım','A1\'in bütün derslerini bitir',()=>lvDone('A1')],
+ ['a2all','🚲','Yan Tekerlekleri Söktüm','A2\'nin bütün derslerini bitir',()=>lvDone('A2')],
+ ['b1all','🛵','Vespa ile Ege Turu','B1\'in bütün derslerini bitir',()=>lvDone('B1')],
+ ['b2all','🏎️','Gramerde Formula 1','B2\'nin bütün derslerini bitir',()=>lvDone('B2')],
+ ['c1all','🧙','Ak Sakallı Gramer Büyücüsü','C1\'in bütün derslerini bitir',()=>lvDone('C1'),1],
+ /* hata defteri, mini kontrol, sesli tekrar */
+ ['mist1','📒','Hatalarımla Barışığım','Hata defterinden 1 soruyu kalıcı olarak çıkar',()=>(S.mvOut||0)>=1],
+ ['mist50','🧹','Defter Temizlikçisi','Hata defterinden 50 soru çıkar',()=>(S.mvOut||0)>=50],
+ ['mist0','😇','Pırıl Pırıl Defter','En az 20 soru çıkardıktan sonra defteri tamamen boşalt',()=>(S.mvOut||0)>=20&&!Object.keys(S.mist||{}).length],
+ ['mist300','🧽','Silgi Tanrısı','Hata defterinden 300 soru çıkar',()=>(S.mvOut||0)>=300,1],
+ ['ck100','⚡','Şimşek Parmak','100 mini kontrolü doğru bil',()=>(S.ckN||0)>=100],
+ ['ck1000','🌩️','Zeus\'un Sekreteri','1.000 mini kontrolü doğru bil',()=>(S.ckN||0)>=1000,1],
+ ['sp50','🦜','Papağan Stajyer','50 cümleyi sesli tekrar et',()=>(S.spN||0)>=50],
+ ['sp500','🎤','Ayvalık Operasının Tenoru','500 cümleyi sesli tekrar et',()=>(S.spN||0)>=500,1],
+ /* zaman ve alışkanlık */
+ ['h3','🧟','Zombi Modu','Gece 03.00 ile 05.00 arasında çalış',()=>!!S.h3],
+ ['noon','🥪','Öğle Arası Kaçağı','12.00 ile 13.00 arasında çalış',()=>!!S.noon],
+ ['mon','☕','Pazartesi Sendromunu Yendim','Pazartesi sabah 09.00\'dan önce çalış',()=>!!S.mon9],
+ ['ny','🎆','Yılbaşında Bile mi?','31 Aralık ya da 1 Ocak\'ta çalış',()=>!!S.ny],
+ ['s60','🐢','İnatçı Kaplumbağa','60 gün üst üste çalış',()=>streak()>=60],
+ ['s100','🗿','Paskalya Adası Heykeli','100 gün üst üste çalış',()=>streak()>=100,1],
+ ['s365','🌍','Güneşin Etrafında Bir Tur','365 gün üst üste çalış',()=>streak()>=365,1],
+ ['days50','📅','Takvim Yırtıcısı','Toplam 50 farklı gün çalış',()=>Object.keys(S.log||{}).length>=50],
+ ['days200','🗓️','Takvim Benden Korkar','Toplam 200 farklı gün çalış',()=>Object.keys(S.log||{}).length>=200,1],
+ /* büyük sayılar */
+ ['xp20k','🌠','Samanyolu Kapıcısı','20.000 XP topla',()=>(S.xp||0)>=20000],
+ ['xp50k','🕳️','Kara Delik','50.000 XP topla',()=>(S.xp||0)>=50000,1],
+ ['xp100k','🪐','Evrenin Genel Müdürü','100.000 XP topla',()=>(S.xp||0)>=100000,1],
+ ['wk3000','🌪️','Haftalık Kasırga','Bir haftada 3.000 XP topla',()=>weekXP()>=3000,1],
+ ['k2000','🐋','Mavi Balina Hafızası','2.000 kelime öğren',()=>known()>=2000],
+ ['kAll','📚','Yürüyen Oxford Sözlüğü','Uygulamadaki bütün kelimeleri öğren',()=>WORDS.length>0&&known()>=WORDS.length,1],
+ ['cards5000','🎰','Kart Kumarbazı (Yasal)','5.000 kelime kartı çevir',()=>(S.cardN||0)>=5000,1],
+ ['sv100','🧛','Kont Drakula Resepsiyonda','Üç Can oyununda 100 doğru seri',()=>(S.sv||0)>=100,1],
+ ['sv250','👻','Hayalet Gece Müdürü','Üç Can oyununda 250 doğru seri',()=>(S.sv||0)>=250,1],
+ ['ex100','🐙','Sekiz Kollu Sınavcı','100 sınav çöz',()=>(S.exh||[]).length>=100],
+ ['p100x25','🏹','Robin Hood','25 farklı sınavdan %100 al',()=>nPerf()>=25],
+ ['p100all','🤖','Bu Kesin İnsan Değil','Bütün sınavlardan %100 al',()=>typeof EXAMS!='undefined'&&nPerf()>=EXAMS.length,1],
+ ['ds100','🖋️','Ayvalık\'ın Shakespeare\'i','100 gün "Bugüne bir cümle" yaz',()=>(S.dsN||0)>=100,1],
+ ['vote100','🗳️','Seçim Kurulu Başkanı','100 cümleye oy ver',()=>(S.voteN||0)>=100],
+ ['lv11','🏛️','Sarayın Sultanı','"Zihin Sarayı Sultanı" unvanına ulaş',()=>lvl().i>=11,1],
+ ['lvTop','🌌','Son Durak: Evren','En yüksek unvana ulaş',()=>lvl().i>=LEVELS.length-1,1],
+ ['allb','👑','Rozet Koleksiyoncusu','Diğer bütün rozetleri topla',()=>BADGES.every(b=>b[0]=='allb'||(S.bdg||{})[b[0]]),1]];
+const lvDone=l=>{const A=LESSONS.filter(L=>L.l==l);return A.length>0&&A.every(L=>L.id in (S.ls||{}))};
+/* rozeti ekipte kaç kişi aldı */
+function bdgHolders(id){const lb=(T.D&&T.D.lb)||{},u=typeof U=='function'?U():{};return Object.entries(lb).filter(([k,e])=>u[k]&&u[k].a!==false&&(','+(e.bd||'')+',').includes(','+id+',')).length}
 function checkBadges(){S.bdg=S.bdg||{};const nw=BADGES.filter(b=>{try{return !S.bdg[b[0]]&&b[4]()}catch(e){return false}}),L=lvl().i,first=!S.feedInit;
   nw.forEach(b=>S.bdg[b[0]]=Date.now());const lvUp=S.lvB!=null&&L>S.lvB;
   if(first){S.feedInit=1;S.lvB=L;if(T.uid&&S.feedSeen==null)S.feedSeen=Date.now()}
   if(!nw.length&&!lvUp&&!first)return;if(lvUp)S.lvB=L;save();
-  if(nw.length){toast('Yeni rozet: '+nw.map(b=>b[1]+' '+b[2]).join(', '));confetti()}
+  if(nw.length){toast((nw.some(b=>b[5])?'🐉 EFSANE ROZET! ':'Yeni rozet: ')+nw.map(b=>b[1]+' '+b[2]).join(', '));confetti();if(nw.some(b=>b[5]))setTimeout(confetti,900)}
   if(lvUp)setTimeout(()=>{toast('🎊 Yeni unvanın: '+LEVELS[L][1]);confetti()},nw.length?1800:0);
   if(T.uid&&!OWNP()&&!first){nw.forEach(b=>tPut('feed/'+genId(),{u:T.uid,k:'b',b:b[0],at:Date.now()}).catch(()=>{}));if(lvUp)tPut('feed/'+genId(),{u:T.uid,k:'l',l:L,at:Date.now()}).catch(()=>{})}}
 (function(){const o=save;save=function(){o.apply(this,arguments);clearTimeout(checkBadges.h);checkBadges.h=setTimeout(()=>{try{checkBadges()}catch(e){}},700)}})();
@@ -8431,7 +8480,9 @@ function vYaris(){if(V.gm)return vGame();V.lm=V.lm||'wk';
   else h+=`<p class="note">Haftalık lig, ilan panosu ve günün sıralaması ekip girişiyle çalışır.</p>`;
   {const Li=lvl().i;h+=`<h2>🪜 Unvan yolu</h2><div class="lvroad">${LEVELS.map(([x,n],i)=>`<div class="lvr ${i<Li?'done':i==Li?'cur':''}"><b>${esc(n)}</b><span>${x.toLocaleString('tr-TR')} XP</span></div>`).join('')}</div>`}
   S.bdg=S.bdg||{};const nE=BADGES.filter(b=>S.bdg[b[0]]).length;
-  h+=`<h2>🎖 Rozetlerim · ${nE}/${BADGES.length}</h2><div class="bdgs">${BADGES.map(b=>`<div class="bdgc ${S.bdg[b[0]]?'on':''}"><i>${b[1]}</i><b>${b[2]}</b><small>${S.bdg[b[0]]?fmtT(S.bdg[b[0]]).split(' ').slice(0,2).join(' '):b[3]}</small></div>`).join('')}</div>`;
+  const team=!!(T.uid&&T.D&&T.D.lb),nL=BADGES.filter(b=>b[5]).length;
+  h+=`<h2>🎖 Rozetlerim · ${nE}/${BADGES.length}</h2><p class="note">🐉 <b>Efsane</b> rozetler (${nL} tane) bilerek çok yüksek tutuldu${team?'; altında kaç kişinin aldığı yazıyor':''}. İlk alan bütün ekibe duyurulur.</p><div class="bdgs">${BADGES.map(b=>{const has=S.bdg[b[0]],n=team?bdgHolders(b[0]):null;
+    return `<div class="bdgc ${has?'on':''} ${b[5]?'leg':''}">${b[5]?'<em class="legt">EFSANE</em>':''}<i>${b[1]}</i><b>${b[2]}</b><small>${has?fmtT(has).split(' ').slice(0,2).join(' '):b[3]}</small>${n!=null?`<small class="bh">${n?n+' kişide var':'Henüz kimse alamadı 👀'}</small>`:''}</div>`}).join('')}</div>`;
   return h}
 async function saveGoal(){const f=V.gl||{},G=T.D.goal||{},g=String(f.g??G.g??'').trim();if(g&&(isNaN(+g)||+g<1))return toast('XP hedefi bir sayı olmalı.');
   try{await tPut('goal',{x:String(f.x??G.x??'').trim().slice(0,120),g:g?+g:0,by:T.uid,at:Date.now()});V.gl=null;toast('Ekip hedefi kaydedildi.');render()}catch(e){}}
@@ -8683,7 +8734,7 @@ function maintBox(){const kb=Math.round(dbSize()/1024),L=cleanupPlan(),bk=S.last
 const feedAll=()=>Object.entries(T.D.feed||{}).map(([id,x])=>Object.assign({id},x)).filter(x=>x&&x.u&&U()[x.u]).sort((a,b)=>b.at-a.at);
 function feedText(x){const n='<b>'+esc(uname(x.u).split(' ')[0])+'</b>';
   if(x.k=='l'){const L=LEVELS[x.l];return L?`${n} yeni unvan aldı: <b>${esc(L[1])}</b> 🎊`:''}
-  const B=BADGES.find(b=>b[0]==x.b);return B?`${n} <b>${B[1]} ${esc(B[2])}</b> rozetini kazandı!`:''}
+  const B=BADGES.find(b=>b[0]==x.b);return B?(B[5]?`🐉 EFSANE! ${n} <b>${B[1]} ${esc(B[2])}</b> rozetini kazandı!`:`${n} <b>${B[1]} ${esc(B[2])}</b> rozetini kazandı!`):''}
 const feedIcon=x=>x.k=='l'?'🎊':(BADGES.find(b=>b[0]==x.b)||[,'🎖'])[1];
 const newsNew=()=>T.uid&&S.feedSeen!=null?feedAll().filter(x=>x.u!==T.uid&&x.at>S.feedSeen&&feedText(x)):[];
 const newsRecent=()=>T.uid?feedAll().filter(x=>x.u!==T.uid&&x.at>Date.now()-864e5&&feedText(x)):[];

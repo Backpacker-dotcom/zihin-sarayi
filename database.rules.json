@@ -104,6 +104,13 @@
               }
             },
             ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+          },
+          "feed": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
+            "$f": {
+              ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && !data.exists() && newData.child('u').val()===auth.uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
+              ".validate": "newData.hasChildren(['u','k','at']) && (newData.child('k').val()==='b' || newData.child('k').val()==='l') && (!newData.child('b').exists() || (newData.child('b').isString() && newData.child('b').val().length<=24)) && (!newData.child('l').exists() || (newData.child('l').isNumber() && newData.child('l').val()<=50)) && newData.child('at').isNumber()"
+            }
           }
         },
         "u": {

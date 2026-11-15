@@ -111,6 +111,9 @@
               ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && !data.exists() && newData.child('u').val()===auth.uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
               ".validate": "newData.hasChildren(['u','k','at']) && (newData.child('k').val()==='b' || newData.child('k').val()==='l') && (!newData.child('b').exists() || (newData.child('b').isString() && newData.child('b').val().length<=24)) && (!newData.child('l').exists() || (newData.child('l').isNumber() && newData.child('l').val()<=50)) && newData.child('at').isNumber()"
             }
+          },
+          "story": {
+            ".write": "auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')"
           }
         },
         "u": {
@@ -183,6 +186,13 @@
           "$uid": {
             ".read": "auth!=null && auth.uid===$uid",
             ".write": "auth!=null && auth.uid===$uid && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true"
+          }
+        },
+        "aud": {
+          ".read": "auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true",
+          "$id": {
+            ".write": "auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')",
+            ".validate": "newData.child('a').isString() && newData.child('a').val().length < 9000000"
           }
         }
       }

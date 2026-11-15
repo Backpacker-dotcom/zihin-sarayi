@@ -45,3 +45,10 @@ Zihin Sarayı için **ayrı bir Firebase projesi** önerilir (Turno'nun açık k
 ## Yöneticinin gizliliği (3.3)
 
 Yöneticinin (owner) kendi sınav sonuçları, ilerlemesi, günün yarışması ve oyun puanları yalnızca kendisinin okuyabildiği `me/<uid>` dalında tutulur; öğretmen ve öğrenciler bunları göremez, ligde ve sıralamalarda görünmez.
+
+## Sonuç yayınlama ve Bugüne bir cümle (3.7)
+
+- Öğrenci sınav puanını, doğru-yanlışlarını ve otomatik karnesini öğretmen/yönetici "📢 Yayınla" deyince görür (Panel › Öğrenciler, öğrencinin Sınavlar sekmesi, Sınav analizi ya da İlan).
+- **Bugüne bir cümle:** her öğrenci günde bir İngilizce cümle yazar, herkes oylar; 5 ve üzeri oy alan cümleler havuza girer, Bugün ekranında her gün havuzdan bir cümle gösterilir.
+
+> 3.7 ile `database.rules.json` güncellendi; Firebase'e yeniden yapıştırıp Publish edin.

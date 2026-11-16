@@ -3,9 +3,10 @@
     "zs": {
       "$t": {
         "login": {
-          ".read": true,
           "$k": {
-            ".write": "auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')"
+            ".write": "auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher' && (!data.exists() || (root.child('zs/'+$t+'/pub/users/'+data.child('uid').val()+'/r').val()!=='owner' && root.child('zs/'+$t+'/pub/users/'+data.child('uid').val()+'/r').val()!=='teacher'))))",
+            ".read": true,
+            ".validate": "newData.child('e').isString() && newData.child('e').val().length<=120 && newData.child('uid').isString() && newData.child('uid').val().length<=64"
           }
         },
         "pub": {
@@ -15,11 +16,8 @@
           },
           "users": {
             "$uid": {
-              ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner') || (auth!=null && auth.uid===$uid && !root.child('zs/'+$t+'/pub/users').exists() && newData.child('r').val()==='owner') || ((auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher') && (!data.exists() || data.child('r').val()==='student') && (!newData.exists() || newData.child('r').val()==='student'))",
-              ".validate": "newData.hasChildren(['n','u','r'])",
-              "em": {
-                ".write": "auth!=null && auth.uid===$uid"
-              }
+              ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner') || ((auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher') && (!data.exists() || data.child('r').val()==='student') && (!newData.exists() || newData.child('r').val()==='student'))",
+              ".validate": "(newData.hasChildren(['n','u','r'])) && newData.child('n').isString() && newData.child('n').val().length<=80 && newData.child('u').isString() && newData.child('u').val().length<=80 && (newData.child('r').val()==='owner' || newData.child('r').val()==='teacher' || newData.child('r').val()==='student')"
             }
           },
           "homework": {
@@ -34,7 +32,7 @@
           "qa": {
             "$q": {
               ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')) || ((auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true) && ((!data.exists() && newData.child('f').val()===auth.uid) || (data.child('f').val()===auth.uid && !newData.exists() && !data.child('r').exists())))",
-              ".validate": "newData.child('x').isString() && newData.child('x').val().length<=3000",
+              ".validate": "(newData.child('x').isString() && newData.child('x').val().length<=3000) && $q.matches(/^[A-Za-z0-9_-]+$/) && $q.length<=64",
               "la": {
                 ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true) && data.parent().child('f').val()===auth.uid"
               },
@@ -44,7 +42,7 @@
               "r": {
                 "$r": {
                   ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true) && !data.exists() && newData.child('f').val()===auth.uid && root.child('zs/'+$t+'/pub/qa/'+$q+'/f').val()===auth.uid",
-                  ".validate": "newData.child('x').isString() && newData.child('x').val().length<=4000"
+                  ".validate": "(newData.child('x').isString() && newData.child('x').val().length<=4000) && $r.matches(/^[A-Za-z0-9_-]+$/) && $r.length<=64"
                 }
               }
             }
@@ -58,7 +56,7 @@
           "lb": {
             "$uid": {
               ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
-              ".validate": "newData.child('xp').isNumber() && newData.child('xp').val()>=0 && newData.child('xp').val()<1000000 && newData.child('wx').isNumber() && newData.child('wx').val()<100000"
+              ".validate": "(newData.child('xp').isNumber() && newData.child('xp').val()>=0 && newData.child('xp').val()<1000000 && newData.child('wx').isNumber() && newData.child('wx').val()<100000) && (!newData.child('bd').exists() || (newData.child('bd').isString() && newData.child('bd').val().length<=2000))"
             },
             ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
           },
@@ -66,7 +64,7 @@
             "$d": {
               "$uid": {
                 ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid && !data.exists()) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
-                ".validate": "newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=10"
+                ".validate": "(newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=10) && $d.matches(/^[A-Za-z0-9_-]+$/) && $d.length<=64"
               }
             },
             ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
@@ -88,7 +86,7 @@
             "$d": {
               "$uid": {
                 ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid && !root.child('zs/'+$t+'/pub/dv/'+$d+'/'+$uid).exists()) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
-                ".validate": "newData.child('x').isString() && newData.child('x').val().length>=3 && newData.child('x').val().length<=240 && (!newData.child('t').exists() || (newData.child('t').isString() && newData.child('t').val().length<=240))"
+                ".validate": "(newData.child('x').isString() && newData.child('x').val().length>=3 && newData.child('x').val().length<=240 && (!newData.child('t').exists() || (newData.child('t').isString() && newData.child('t').val().length<=240))) && $d.matches(/^[A-Za-z0-9_-]+$/) && $d.length<=64"
               }
             },
             ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
@@ -109,7 +107,7 @@
             ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
             "$f": {
               ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && !data.exists() && newData.child('u').val()===auth.uid) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
-              ".validate": "newData.hasChildren(['u','k','at']) && (newData.child('k').val()==='b' || newData.child('k').val()==='l') && (!newData.child('b').exists() || (newData.child('b').isString() && newData.child('b').val().length<=24)) && (!newData.child('l').exists() || (newData.child('l').isNumber() && newData.child('l').val()<=50)) && newData.child('at').isNumber()"
+              ".validate": "(newData.hasChildren(['u','k','at']) && (newData.child('k').val()==='b' || newData.child('k').val()==='l') && (!newData.child('b').exists() || (newData.child('b').isString() && newData.child('b').val().length<=24)) && (!newData.child('l').exists() || (newData.child('l').isNumber() && newData.child('l').val()<=50)) && newData.child('at').isNumber()) && $f.matches(/^[A-Za-z0-9_-]+$/) && $f.length<=64"
             }
           },
           "story": {
@@ -124,13 +122,13 @@
             "results": {
               "$r": {
                 ".write": "auth!=null && auth.uid===$uid && !data.exists()",
-                ".validate": "!newData.child('pub').exists() || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+                ".validate": "(!newData.child('pub').exists() || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))) && $r.matches(/^[A-Za-z0-9_-]+$/) && $r.length<=64 && newData.child('t').isString() && newData.child('t').val().length<=300 && newData.child('at').isNumber() && (!newData.child('p').exists() || (newData.child('p').isNumber() && newData.child('p').val()>=0 && newData.child('p').val()<=100))"
               }
             },
             "msgs": {
               "$m": {
                 ".write": "auth!=null && auth.uid===$uid && !data.exists() && newData.child('f').val()===auth.uid",
-                ".validate": "newData.child('x').isString() && newData.child('x').val().length<=4000"
+                ".validate": "(newData.child('x').isString() && newData.child('x').val().length<=4000) && $m.matches(/^[A-Za-z0-9_-]+$/) && $m.length<=64"
               }
             },
             "reads": {
@@ -141,17 +139,18 @@
             "hwdone": {
               "$h": {
                 ".write": "auth!=null && auth.uid===$uid",
-                ".validate": "!newData.child('ans').exists() || (newData.child('ans').isString() && newData.child('ans').val().length<=6000)"
+                ".validate": "(!newData.child('ans').exists() || (newData.child('ans').isString() && newData.child('ans').val().length<=6000)) && $h.matches(/^[A-Za-z0-9_-]+$/) && $h.length<=64"
               }
             },
             "karne": {
               "$k": {
                 ".write": "auth!=null && auth.uid===$uid && !data.exists() && newData.child('by').val()==='auto'",
-                ".validate": "!newData.child('pub').exists() || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))"
+                ".validate": "(!newData.child('pub').exists() || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))) && $k.matches(/^[A-Za-z0-9_-]+$/) && $k.length<=64"
               }
             },
             "progress": {
-              ".write": "auth!=null && auth.uid===$uid"
+              ".write": "auth!=null && auth.uid===$uid",
+              ".validate": "(!newData.child('xp').exists() || newData.child('xp').isNumber()) && (!newData.child('lv').exists() || (newData.child('lv').isString() && newData.child('lv').val().length<=80))"
             },
             "qread": {
               ".write": "auth!=null && auth.uid===$uid"
@@ -159,7 +158,7 @@
             "pq": {
               "$q": {
                 ".write": "auth!=null && auth.uid===$uid && ((!data.exists() && newData.child('f').val()===auth.uid) || (!newData.exists() && !data.child('r').exists()))",
-                ".validate": "newData.child('x').isString() && newData.child('x').val().length<=3000",
+                ".validate": "(newData.child('x').isString() && newData.child('x').val().length<=3000) && $q.matches(/^[A-Za-z0-9_-]+$/) && $q.length<=64",
                 "la": {
                   ".write": "auth!=null && auth.uid===$uid"
                 },
@@ -169,7 +168,7 @@
                 "r": {
                   "$r": {
                     ".write": "auth!=null && auth.uid===$uid && !data.exists() && newData.child('f').val()===auth.uid",
-                    ".validate": "newData.child('x').isString() && newData.child('x').val().length<=4000"
+                    ".validate": "(newData.child('x').isString() && newData.child('x').val().length<=4000) && $r.matches(/^[A-Za-z0-9_-]+$/) && $r.length<=64"
                   }
                 }
               }

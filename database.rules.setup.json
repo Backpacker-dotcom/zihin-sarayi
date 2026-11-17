@@ -112,6 +112,54 @@
           },
           "story": {
             ".write": "auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher')"
+          },
+          "pz": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+            "$p": {
+              ".validate": "$p.matches(/^[A-Za-z0-9_-]+$/) && $p.length<=64"
+            }
+          },
+          "pzg": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+            "$p": {
+              ".validate": "$p.matches(/^[A-Za-z0-9_-]+$/) && $p.length<=64 && newData.child('n').isNumber()"
+            }
+          },
+          "du": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+            "$d": {
+              ".validate": "$d.matches(/^[A-Za-z0-9_-]+$/) && $d.length<=64 && newData.child('a').isString() && newData.child('b').isString()"
+            }
+          },
+          "tm": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && (root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner' || root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='teacher'))",
+            "$m": {
+              ".validate": "$m.matches(/^[A-Za-z0-9_-]+$/) && $m.length<=64 && newData.child('n').isString() && newData.child('n').val().length<=40"
+            }
+          },
+          "rq": {
+            "$r": {
+              ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && !data.exists() && newData.child('f').val()===auth.uid && newData.child('st').val()==='open') || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && data.child('f').val()===auth.uid && data.child('st').val()==='open' && !newData.exists()) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+              ".validate": "$r.matches(/^[A-Za-z0-9_-]+$/) && $r.length<=64 && newData.child('f').isString() && newData.child('tm').isString() && newData.child('vs').isString() && (!newData.child('x').exists() || (newData.child('x').isString() && newData.child('x').val().length<=300)) && (!newData.child('ans').exists() || (newData.child('ans').isString() && newData.child('ans').val().length<=200))"
+            }
+          },
+          "due": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+            "$d": {
+              "$uid": {
+                ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid && !data.exists() && root.child('zs/'+$t+'/pub/du/'+$d).child('st').val()==='open' && (root.child('zs/'+$t+'/pub/tm/'+root.child('zs/'+$t+'/pub/du/'+$d).child('a').val()+'/m/'+$uid).exists() || root.child('zs/'+$t+'/pub/tm/'+root.child('zs/'+$t+'/pub/du/'+$d).child('b').val()+'/m/'+$uid).exists())) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+                ".validate": "newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=100 && newData.child('at').isNumber()"
+              }
+            }
+          },
+          "pzs": {
+            ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+            "$p": {
+              "$uid": {
+                ".write": "(auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && auth.uid===$uid && !data.exists() && (root.child('zs/'+$t+'/pub/pz/'+$p).exists() || root.child('zs/'+$t+'/pub/pzg/'+$p).exists())) || (auth!=null && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/a').val()===true && root.child('zs/'+$t+'/pub/users/'+auth.uid+'/r').val()==='owner')",
+                ".validate": "newData.child('s').isNumber() && newData.child('s').val()>=0 && newData.child('s').val()<=100 && newData.child('at').isNumber()"
+              }
+            }
           }
         },
         "u": {
